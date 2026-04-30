@@ -314,8 +314,12 @@ a:hover{{text-decoration:underline}}
 </html>"""
 
     OUT.write_text(html, encoding="utf-8")
+    # Tambien sobreescribir index.html para GitHub Pages
+    index = Path(__file__).parent / "index.html"
+    index.write_text(html, encoding="utf-8")
     size_kb = OUT.stat().st_size // 1024
     print(f"Generado: {OUT}  ({size_kb} KB)")
+    print(f"GitHub Pages: https://mendozavolcanic.github.io/MOUNTS-Chile/")
 
 
 if __name__ == "__main__":
