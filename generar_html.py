@@ -2,15 +2,20 @@
 Genera latest.html — replica el layout de MOUNTS con las 5 graficas y las
 imagenes mas recientes para los 7 volcanes chilenos.
 Todo embebido en un HTML estatico (no requiere servidor).
+
+Las imagenes se sirven desde latest/<volcan>/ (paths relativos, funciona en
+GitHub Pages sin problemas de mixed-content).
 """
 
 import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-BASE   = "https://www.mounts-project.com/static"
-TS_DIR = Path(__file__).parent / "timeseries"
-OUT    = Path(__file__).parent / "latest.html"
+BASE      = "https://www.mounts-project.com/static"
+TS_DIR    = Path(__file__).parent / "timeseries"
+LATEST    = Path(__file__).parent / "latest"
+DATA_DIR  = Path(__file__).parent / "data"
+OUT       = Path(__file__).parent / "latest.html"
 
 VOLCANES = [
     ("lascar",             "Lasear",              355100),
@@ -75,8 +80,13 @@ def load_ts(key):
     return {t["name"]: t for t in data.get("traces", []) if t.get("name")}
 
 
-def get_latest_imgs(ts_by_name):
-    """Recorre los textos de todas las trazas y extrae la ultima imagen de cada producto."""
+def get_latest_imgs(ts_by_name, vol_key):
+    """
+    Recorre los textos de todas las trazas y extrae la ultima imagen de cada
+    producto. Prefiere la version local en latest/<vol_key>/ (path relativo,
+    compatible con GitHub Pages). Si no existe localmente usa la URL HTTP
+    solo como fallback (no visible en GitHub Pages por mixed-content).
+    """
     imgs = {}
     # Recopilar (fecha, path) de todas las trazas que tengan texto
     all_items = []
@@ -89,12 +99,20 @@ def get_latest_imgs(ts_by_name):
     # Ordenar desc por fecha
     all_items.sort(key=lambda t: t[0], reverse=True)
     for date_x, path in all_items:
+        fn = path.split("/")[-1]
         for suffix, label in IMG_PRODUCTS:
             if suffix in path and suffix not in imgs:
+                # ¿Existe localmente en latest/?
+                local = LATEST / vol_key / fn
+                if local.exists():
+                    url = f"latest/{vol_key}/{fn}"
+                else:
+                    url = f"{BASE}/{path}"   # fallback HTTP (no visible en Pages)
                 imgs[suffix] = {
-                    "url":   f"{BASE}/{path}",
+                    "url":   url,
                     "label": label,
                     "date":  (date_x or "")[:10],
+                    "local": local.exists(),
                 }
         if len(imgs) == len(IMG_PRODUCTS):
             break
@@ -205,7 +223,7 @@ def build_plotly_call(div_id, ts_by_name):
 def build_section(key, nombre, sid):
     mounts_url = f"https://www.mounts-project.com/timeseries/{sid}"
     ts = load_ts(key)
-    imgs = get_latest_imgs(ts)
+    imgs = get_latest_imgs(ts, key)
     chart_call = build_plotly_call(f"chart-{key}", ts)
 
     # Imagenes
@@ -213,6 +231,8 @@ def build_section(key, nombre, sid):
     for suffix, label in IMG_PRODUCTS:
         info = imgs.get(suffix)
         if info:
+            # Para links externos usamos la URL de MOUNTS; para locales el mismo src
+            link_url = info["url"] if info.get("local") else f"https://www.mounts-project.com/static/data_mounts/{key}/"
             cells += (
                 f'<div class="ic">'
                 f'<div class="il">{esc(info["label"])}</div>'
