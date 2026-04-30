@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mounts-dashboard",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "streamlit", "run", "dashboard.py", "--server.port", "8510", "--server.headless", "true"],
+      "port": 8510
+    }
+  ]
+}
