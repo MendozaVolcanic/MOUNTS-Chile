@@ -22,7 +22,7 @@ from pathlib import Path
 
 import requests
 
-BASE_URL  = "http://www.mounts-project.com"
+BASE_URL  = "https://www.mounts-project.com"
 STATIC    = f"{BASE_URL}/static"
 BASE_DIR  = Path(__file__).parent
 DATA_DIR  = BASE_DIR / "data"

@@ -8,7 +8,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-BASE   = "http://www.mounts-project.com/static"
+BASE   = "https://www.mounts-project.com/static"
 TS_DIR = Path(__file__).parent / "timeseries"
 OUT    = Path(__file__).parent / "latest.html"
 
@@ -203,7 +203,7 @@ def build_plotly_call(div_id, ts_by_name):
 
 
 def build_section(key, nombre, sid):
-    mounts_url = f"http://www.mounts-project.com/timeseries/{sid}"
+    mounts_url = f"https://www.mounts-project.com/timeseries/{sid}"
     ts = load_ts(key)
     imgs = get_latest_imgs(ts)
     chart_call = build_plotly_call(f"chart-{key}", ts)
@@ -307,7 +307,7 @@ a:hover{{text-decoration:underline}}
 </div>
 {sections}
 <div class="foot">
-  Fuente: <a href="http://www.mounts-project.com" target="_blank">mounts-project.com</a>
+  Fuente: <a href="https://www.mounts-project.com" target="_blank">mounts-project.com</a>
   (Valade et al. 2019, TU Berlin / GFZ Potsdam) &middot; Sentinel-1/2/5P &copy; Copernicus/ESA
 </div>
 </body>

@@ -33,7 +33,7 @@ from pathlib import Path
 
 import requests
 
-BASE_URL = "http://www.mounts-project.com"
+BASE_URL = "https://www.mounts-project.com"
 STATIC_URL = f"{BASE_URL}/static"
 DATA_DIR = Path(__file__).parent / "data"
 CATALOG_FILE = Path(__file__).parent / "catalog.csv"

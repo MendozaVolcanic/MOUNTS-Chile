@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
 TIMESERIES_DIR = BASE_DIR / "timeseries"
 CATALOG_FILE = BASE_DIR / "catalog.csv"
-MOUNTS_BASE = "http://www.mounts-project.com"
+MOUNTS_BASE = "https://www.mounts-project.com"
 
 VOLCANO_NAMES = {
     "lascar":             "Láscar",
@@ -321,7 +321,7 @@ def main():
             label_visibility="collapsed",
         )
         st.divider()
-        st.markdown("**Fuente**: [mounts-project.com](http://www.mounts-project.com)")
+        st.markdown("**Fuente**: [mounts-project.com](https://www.mounts-project.com)")
         st.markdown("**Repo**: VRP-Chile / MOUNTS")
         st.caption(f"Generado: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')} UTC")
 
