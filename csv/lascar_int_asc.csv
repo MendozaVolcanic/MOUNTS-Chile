@@ -1,0 +1,6 @@
+date,value,unit,product,sensor,image_path,image_url
+2020-01-05T23:06:06,0.1,placeholder,int_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200105T230626_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2020/lascar_20200105T230626_VV_int.png
+2020-01-11T23:05:19,0.1,placeholder,int_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200111T230542_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2020/lascar_20200111T230542_VV_int.png
+2020-01-17T23:06:06,0.1,placeholder,int_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200117T230625_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2020/lascar_20200117T230625_VV_int.png
+2020-01-23T23:05:19,0.1,placeholder,int_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200123T230542_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2020/lascar_20200123T230542_VV_int.png
+2020-01-29T23:06:05,0.1,placeholder,int_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200129T230625_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2020/lascar_20200129T230625_VV_int.png

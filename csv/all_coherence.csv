@@ -1,0 +1,1236 @@
+date,volcano,value,unit,track,product,sensor,image_path
+2018-09-02T09:56:15,Nevados de Chillan,530397.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2018/nevadoschillan_20180821T095614_20180902T095615_VV_coh.png
+2018-09-07T10:04:08,Nevados de Chillan,534628.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2018/nevadoschillan_20180826T100426_20180907T100407_VV_coh.png
+2020-01-11T23:05:19,Lascar,413154.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200105T230606_20200111T230519_VV_coh.png
+2020-01-12T10:00:34,Lascar,497370.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20200106T100120_20200112T100033_VV_coh.png
+2020-01-17T23:06:06,Lascar,514085.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200111T230519_20200117T230605_VV_coh.png
+2020-01-18T10:01:20,Lascar,165183.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20200112T100033_20200118T100120_VV_coh.png
+2020-01-19T09:52:25,Lascar,379524.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20200107T095225_20200119T095224_VV_coh.png
+2020-01-23T23:05:19,Lascar,264241.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200117T230605_20200123T230519_VV_coh.png
+2020-01-24T10:00:34,Lascar,112505.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20200118T100120_20200124T100033_VV_coh.png
+2020-01-25T09:57:23,Villarrica,257463.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200119T095659_20200125T095723_VV_coh.png
+2020-01-29T23:06:05,Lascar,514085.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/lascar/2020/lascar_20200123T230519_20200129T230605_VV_coh.png
+2020-01-30T10:01:20,Lascar,421262.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20200124T100033_20200130T100119_VV_coh.png
+2020-01-30T23:42:57,Villarrica,277040.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200118T234257_20200130T234256_VV_coh.png
+2020-01-31T09:52:24,Lascar,379335.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20200119T095224_20200131T095224_VV_coh.png
+2020-02-05T10:00:33,Lascar,467130.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20200130T100119_20200205T100033_VV_coh.png
+2020-02-11T23:42:56,Villarrica,259809.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200130T234256_20200211T234256_VV_coh.png
+2020-02-12T09:56:59,Villarrica,371396.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200125T095723_20200212T095659_VV_coh.png
+2020-02-18T09:57:22,Villarrica,293340.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200212T095659_20200218T095722_VV_coh.png
+2020-02-23T23:42:56,Villarrica,278573.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200211T234256_20200223T234256_VV_coh.png
+2020-02-24T09:56:59,Villarrica,304343.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200218T095722_20200224T095658_VV_coh.png
+2020-03-01T09:57:22,Villarrica,318591.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200224T095658_20200301T095722_VV_coh.png
+2020-03-06T23:42:56,Villarrica,270173.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200223T234256_20200306T234256_VV_coh.png
+2020-03-07T09:56:59,Villarrica,336195.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200301T095722_20200307T095658_VV_coh.png
+2020-03-13T09:57:22,Villarrica,290228.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200307T095658_20200313T095722_VV_coh.png
+2020-03-18T23:42:56,Villarrica,291522.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200306T234256_20200318T234256_VV_coh.png
+2020-03-19T09:56:59,Villarrica,318825.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200313T095722_20200319T095659_VV_coh.png
+2020-03-19T23:34:05,Villarrica,252563.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200307T233404_20200319T233404_VV_coh.png
+2020-03-25T09:57:23,Villarrica,299521.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200319T095659_20200325T095722_VV_coh.png
+2020-03-30T23:42:57,Villarrica,240881.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200318T234256_20200330T234256_VV_coh.png
+2020-03-31T09:56:59,Villarrica,287026.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200325T095722_20200331T095659_VV_coh.png
+2020-03-31T23:34:05,Villarrica,274127.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200319T233404_20200331T233404_VV_coh.png
+2020-04-06T09:57:23,Villarrica,334198.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200331T095659_20200406T095722_VV_coh.png
+2020-04-11T23:42:57,Villarrica,239180.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200330T234256_20200411T234256_VV_coh.png
+2020-04-12T09:57:00,Villarrica,297005.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200406T095722_20200412T095659_VV_coh.png
+2020-04-12T23:34:05,Villarrica,219187.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200331T233404_20200412T233405_VV_coh.png
+2020-04-18T09:57:23,Villarrica,357055.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200412T095659_20200418T095723_VV_coh.png
+2020-04-23T23:42:57,Villarrica,293851.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200411T234256_20200423T234257_VV_coh.png
+2020-04-24T09:57:00,Villarrica,292985.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200418T095723_20200424T095700_VV_coh.png
+2020-04-24T23:34:06,Villarrica,348343.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200412T233405_20200424T233405_VV_coh.png
+2020-04-30T09:57:24,Villarrica,321078.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200424T095700_20200430T095723_VV_coh.png
+2020-05-05T23:42:58,Villarrica,324874.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200423T234257_20200505T234257_VV_coh.png
+2020-05-06T09:57:01,Villarrica,346883.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200430T095723_20200506T095700_VV_coh.png
+2020-05-12T09:57:24,Villarrica,440842.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200506T095700_20200512T095724_VV_coh.png
+2020-05-17T23:42:59,Villarrica,297853.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200505T234257_20200517T234258_VV_coh.png
+2020-05-18T09:57:01,Villarrica,418533.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200512T095724_20200518T095701_VV_coh.png
+2020-05-24T09:57:25,Villarrica,300593.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200518T095701_20200524T095725_VV_coh.png
+2020-05-29T23:42:59,Villarrica,346019.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200517T234258_20200529T234259_VV_coh.png
+2020-05-30T09:57:02,Villarrica,435949.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200524T095725_20200530T095702_VV_coh.png
+2020-06-05T09:57:26,Villarrica,439645.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200530T095702_20200605T095725_VV_coh.png
+2020-06-10T23:43:00,Villarrica,536166.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200529T234259_20200610T234300_VV_coh.png
+2020-06-11T09:57:03,Villarrica,534043.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200605T095725_20200611T095702_VV_coh.png
+2020-06-16T23:42:19,Villarrica,528030.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200610T234300_20200616T234218_VV_coh.png
+2020-06-17T09:57:27,Villarrica,517851.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200611T095702_20200617T095726_VV_coh.png
+2020-06-22T23:43:01,Villarrica,524435.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200616T234218_20200622T234300_VV_coh.png
+2020-06-23T09:57:03,Villarrica,536683.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200617T095726_20200623T095703_VV_coh.png
+2020-06-28T23:42:19,Villarrica,537534.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200622T234300_20200628T234219_VV_coh.png
+2020-06-29T09:57:27,Villarrica,535013.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200623T095703_20200629T095727_VV_coh.png
+2020-07-04T23:43:01,Villarrica,536737.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200628T234219_20200704T234301_VV_coh.png
+2020-07-05T09:57:04,Villarrica,533129.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200629T095727_20200705T095704_VV_coh.png
+2020-07-10T23:42:20,Villarrica,536333.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200704T234301_20200710T234219_VV_coh.png
+2020-07-11T09:57:28,Villarrica,538026.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200705T095704_20200711T095727_VV_coh.png
+2020-07-16T23:43:02,Villarrica,537480.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200710T234219_20200716T234302_VV_coh.png
+2020-07-17T09:57:05,Villarrica,534815.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200711T095727_20200717T095704_VV_coh.png
+2020-07-22T23:42:21,Villarrica,536497.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200716T234302_20200722T234220_VV_coh.png
+2020-07-23T09:57:29,Villarrica,533728.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200717T095704_20200723T095728_VV_coh.png
+2020-07-29T09:57:06,Villarrica,534760.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200723T095728_20200729T095705_VV_coh.png
+2020-08-03T23:42:21,Villarrica,538813.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200722T234220_20200803T234221_VV_coh.png
+2020-08-04T09:57:29,Villarrica,536315.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200729T095705_20200804T095729_VV_coh.png
+2020-08-09T23:43:04,Villarrica,533733.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200803T234221_20200809T234303_VV_coh.png
+2020-08-10T09:57:06,Villarrica,534887.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200804T095729_20200810T095706_VV_coh.png
+2020-08-15T23:42:22,Villarrica,536854.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200809T234303_20200815T234222_VV_coh.png
+2020-08-16T09:57:30,Villarrica,535353.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200810T095706_20200816T095730_VV_coh.png
+2020-08-21T23:43:04,Villarrica,538203.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200815T234222_20200821T234304_VV_coh.png
+2020-08-22T09:57:07,Villarrica,536263.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200816T095730_20200822T095706_VV_coh.png
+2020-08-27T23:42:23,Villarrica,536650.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200821T234304_20200827T234222_VV_coh.png
+2020-08-28T09:57:31,Villarrica,535193.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200822T095706_20200828T095730_VV_coh.png
+2020-09-02T23:43:05,Villarrica,535682.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200827T234222_20200902T234304_VV_coh.png
+2020-09-03T09:57:08,Villarrica,534377.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200828T095730_20200903T095707_VV_coh.png
+2020-09-08T23:42:23,Villarrica,536688.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200902T234304_20200908T234223_VV_coh.png
+2020-09-14T23:43:05,Villarrica,536704.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200908T234223_20200914T234305_VV_coh.png
+2020-09-15T09:57:08,Villarrica,536923.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200903T095707_20200915T095708_VV_coh.png
+2020-09-20T23:42:24,Villarrica,523754.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200914T234305_20200920T234223_VV_coh.png
+2020-09-21T09:57:32,Villarrica,518542.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200915T095708_20200921T095731_VV_coh.png
+2020-09-26T23:43:06,Villarrica,513138.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200920T234223_20200926T234305_VV_coh.png
+2020-09-27T09:57:08,Villarrica,525282.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200921T095731_20200927T095708_VV_coh.png
+2020-10-02T23:42:24,Villarrica,523983.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200926T234305_20201002T234223_VV_coh.png
+2020-10-03T09:57:32,Villarrica,530274.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20200927T095708_20201003T095732_VV_coh.png
+2020-10-08T23:43:06,Villarrica,528265.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201002T234223_20201008T234306_VV_coh.png
+2020-10-09T09:57:09,Villarrica,532110.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201003T095732_20201009T095708_VV_coh.png
+2020-10-14T23:42:24,Villarrica,525861.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201008T234306_20201014T234224_VV_coh.png
+2020-10-15T09:57:32,Villarrica,530838.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201009T095708_20201015T095732_VV_coh.png
+2020-10-20T10:01:29,Lascar,107643.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201014T100042_20201020T100129_VV_coh.png
+2020-10-20T23:43:06,Villarrica,477558.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201014T234224_20201020T234305_VV_coh.png
+2020-10-21T09:56:19,Nevados de Chillan,437176.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201015T095707_20201021T095618_VV_coh.png
+2020-10-21T09:56:44,Copahue,271894.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201015T095732_20201021T095643_VV_coh.png
+2020-10-21T09:57:08,Villarrica,495179.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201015T095732_20201021T095708_VV_coh.png
+2020-10-22T23:27:37,Planchon-Peteroa,364818.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201016T232654_20201022T232736_VV_coh.png
+2020-10-26T10:00:43,Lascar,71366.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201020T100129_20201026T100042_VV_coh.png
+2020-10-27T09:57:07,Nevados de Chillan,451104.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201021T095618_20201027T095707_VV_coh.png
+2020-10-27T09:57:32,Copahue,504007.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201021T095643_20201027T095732_VV_coh.png
+2020-11-01T10:01:29,Lascar,36736.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201026T100042_20201101T100129_VV_coh.png
+2020-11-01T23:43:06,Villarrica,496184.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201026T234224_20201101T234305_VV_coh.png
+2020-11-02T09:56:19,Nevados de Chillan,413212.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201027T095707_20201102T095618_VV_coh.png
+2020-11-02T09:56:44,Copahue,504442.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201027T095732_20201102T095643_VV_coh.png
+2020-11-02T09:57:09,Villarrica,518144.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201027T095732_20201102T095708_VV_coh.png
+2020-11-03T23:27:37,Planchon-Peteroa,417292.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201022T232736_20201103T232736_VV_coh.png
+2020-11-07T10:00:43,Lascar,86365.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201101T100129_20201107T100042_VV_coh.png
+2020-11-07T23:42:24,Villarrica,430717.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201101T234305_20201107T234224_VV_coh.png
+2020-11-08T09:57:07,Nevados de Chillan,424582.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201102T095618_20201108T095707_VV_coh.png
+2020-11-08T09:57:32,Copahue,237421.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201102T095643_20201108T095732_VV_coh.png
+2020-11-08T09:57:32,Villarrica,460779.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201102T095708_20201108T095732_VV_coh.png
+2020-11-13T10:01:29,Lascar,59999.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201107T100042_20201113T100128_VV_coh.png
+2020-11-13T23:43:06,Villarrica,469146.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201107T234224_20201113T234305_VV_coh.png
+2020-11-15T23:27:37,Planchon-Peteroa,348765.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201103T232736_20201115T232736_VV_coh.png
+2020-11-19T10:00:42,Lascar,79302.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201113T100128_20201119T100042_VV_coh.png
+2020-11-19T23:42:24,Villarrica,467286.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201113T234305_20201119T234223_VV_coh.png
+2020-11-20T09:57:07,Nevados de Chillan,331676.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201108T095707_20201120T095706_VV_coh.png
+2020-11-20T09:57:32,Copahue,237629.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201108T095732_20201120T095731_VV_coh.png
+2020-11-20T09:57:32,Villarrica,465160.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201108T095732_20201120T095731_VV_coh.png
+2020-11-25T10:01:28,Lascar,146040.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201119T100042_20201125T100128_VV_coh.png
+2020-11-25T23:43:05,Villarrica,427945.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201119T234223_20201125T234305_VV_coh.png
+2020-11-26T09:56:18,Nevados de Chillan,281031.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201120T095706_20201126T095618_VV_coh.png
+2020-11-26T09:56:43,Copahue,264380.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201120T095731_20201126T095643_VV_coh.png
+2020-11-26T09:57:08,Villarrica,442419.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201120T095731_20201126T095708_VV_coh.png
+2020-11-27T23:27:36,Planchon-Peteroa,379865.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201115T232736_20201127T232736_VV_coh.png
+2020-12-01T10:00:42,Lascar,21064.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201125T100128_20201201T100042_VV_coh.png
+2020-12-01T23:42:23,Villarrica,428267.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201125T234305_20201201T234223_VV_coh.png
+2020-12-02T09:57:06,Nevados de Chillan,324189.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201126T095618_20201202T095706_VV_coh.png
+2020-12-02T09:57:31,Copahue,119623.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201126T095643_20201202T095731_VV_coh.png
+2020-12-02T09:57:31,Villarrica,427380.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201126T095708_20201202T095731_VV_coh.png
+2020-12-07T10:01:28,Lascar,38960.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201201T100042_20201207T100128_VV_coh.png
+2020-12-07T23:43:05,Villarrica,369593.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201201T234223_20201207T234304_VV_coh.png
+2020-12-08T09:56:18,Nevados de Chillan,205550.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201202T095706_20201208T095617_VV_coh.png
+2020-12-08T09:56:43,Copahue,109814.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201202T095731_20201208T095642_VV_coh.png
+2020-12-08T09:57:08,Villarrica,403463.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201202T095731_20201208T095707_VV_coh.png
+2020-12-09T23:27:36,Planchon-Peteroa,264042.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201127T232736_20201209T232735_VV_coh.png
+2020-12-13T10:00:42,Lascar,59786.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201207T100128_20201213T100041_VV_coh.png
+2020-12-13T23:42:23,Villarrica,378488.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201207T234304_20201213T234222_VV_coh.png
+2020-12-14T09:57:06,Nevados de Chillan,400664.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201208T095617_20201214T095706_VV_coh.png
+2020-12-14T09:57:31,Copahue,297505.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201208T095642_20201214T095730_VV_coh.png
+2020-12-14T09:57:31,Villarrica,377920.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201208T095707_20201214T095730_VV_coh.png
+2020-12-15T23:26:54,Planchon-Peteroa,311896.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201209T232735_20201215T232653_VV_coh.png
+2020-12-19T10:01:28,Lascar,75154.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201213T100041_20201219T100127_VV_coh.png
+2020-12-19T23:43:04,Villarrica,311697.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201213T234222_20201219T234304_VV_coh.png
+2020-12-20T09:56:17,Nevados de Chillan,290010.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201214T095706_20201220T095617_VV_coh.png
+2020-12-20T09:56:42,Copahue,256397.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201214T095730_20201220T095642_VV_coh.png
+2020-12-20T09:57:07,Villarrica,390986.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201214T095730_20201220T095707_VV_coh.png
+2020-12-21T23:27:35,Planchon-Peteroa,282131.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201215T232653_20201221T232735_VV_coh.png
+2020-12-25T10:00:41,Lascar,87864.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201219T100127_20201225T100040_VV_coh.png
+2020-12-25T23:42:22,Villarrica,355407.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201219T234304_20201225T234222_VV_coh.png
+2020-12-26T09:57:05,Nevados de Chillan,341597.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2020/nevadoschillan_20201220T095617_20201226T095705_VV_coh.png
+2020-12-26T09:57:30,Copahue,159470.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2020/copahue_20201220T095642_20201226T095730_VV_coh.png
+2020-12-26T09:57:30,Villarrica,373491.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201220T095707_20201226T095730_VV_coh.png
+2020-12-27T23:26:53,Planchon-Peteroa,159851.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2020/planchonpeteroa_20201221T232735_20201227T232652_VV_coh.png
+2020-12-31T10:01:27,Lascar,25991.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2020/lascar_20201225T100040_20201231T100127_VV_coh.png
+2020-12-31T23:43:04,Villarrica,310496.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2020/villarrica_20201225T234222_20201231T234303_VV_coh.png
+2021-01-01T09:56:17,Nevados de Chillan,112317.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20201226T095705_20210101T095616_VV_coh.png
+2021-01-01T09:56:42,Copahue,56319.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20201226T095730_20210101T095641_VV_coh.png
+2021-01-01T09:57:07,Villarrica,269192.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20201226T095730_20210101T095706_VV_coh.png
+2021-01-02T23:27:35,Planchon-Peteroa,153569.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20201227T232652_20210102T232734_VV_coh.png
+2021-01-06T10:00:40,Lascar,474864.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20201231T100127_20210106T100040_VV_coh.png
+2021-01-06T23:42:22,Villarrica,361460.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20201231T234303_20210106T234221_VV_coh.png
+2021-01-07T09:57:05,Nevados de Chillan,276084.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210101T095616_20210107T095704_VV_coh.png
+2021-01-07T09:57:30,Copahue,37619.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210101T095641_20210107T095729_VV_coh.png
+2021-01-07T09:57:30,Villarrica,350653.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210101T095706_20210107T095729_VV_coh.png
+2021-01-12T10:01:26,Lascar,475965.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210106T100040_20210112T100126_VV_coh.png
+2021-01-12T23:43:03,Villarrica,368731.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210106T234221_20210112T234303_VV_coh.png
+2021-01-13T09:56:16,Nevados de Chillan,117024.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210107T095704_20210113T095616_VV_coh.png
+2021-01-13T09:56:41,Copahue,50921.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210107T095729_20210113T095641_VV_coh.png
+2021-01-13T09:57:06,Villarrica,365833.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210107T095729_20210113T095705_VV_coh.png
+2021-01-14T23:27:34,Planchon-Peteroa,199896.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210102T232734_20210114T232733_VV_coh.png
+2021-01-18T10:00:40,Lascar,92966.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210112T100126_20210118T100039_VV_coh.png
+2021-01-18T23:42:21,Villarrica,275845.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210112T234303_20210118T234221_VV_coh.png
+2021-01-19T09:57:04,Nevados de Chillan,254546.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210113T095616_20210119T095704_VV_coh.png
+2021-01-19T09:57:29,Copahue,85042.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210113T095641_20210119T095729_VV_coh.png
+2021-01-19T09:57:29,Villarrica,268541.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210113T095705_20210119T095729_VV_coh.png
+2021-01-24T10:01:26,Lascar,86990.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210118T100039_20210124T100126_VV_coh.png
+2021-01-24T23:43:03,Villarrica,277482.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210118T234221_20210124T234302_VV_coh.png
+2021-01-25T09:56:16,Nevados de Chillan,82786.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210119T095704_20210125T095615_VV_coh.png
+2021-01-25T09:56:41,Copahue,66131.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210119T095729_20210125T095640_VV_coh.png
+2021-01-25T09:57:06,Villarrica,275350.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210119T095729_20210125T095705_VV_coh.png
+2021-01-26T23:27:34,Planchon-Peteroa,93277.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210114T232733_20210126T232733_VV_coh.png
+2021-01-30T10:00:39,Lascar,83604.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210124T100126_20210130T100039_VV_coh.png
+2021-01-31T09:57:04,Nevados de Chillan,336127.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210125T095615_20210131T095704_VV_coh.png
+2021-01-31T09:57:29,Copahue,221126.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210125T095640_20210131T095728_VV_coh.png
+2021-01-31T09:57:29,Villarrica,357642.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210125T095705_20210131T095728_VV_coh.png
+2021-02-01T23:26:51,Planchon-Peteroa,467607.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210126T232733_20210201T232651_VV_coh.png
+2021-02-05T10:01:26,Lascar,7850.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210130T100039_20210205T100125_VV_coh.png
+2021-02-05T23:43:02,Villarrica,289455.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210124T234302_20210205T234302_VV_coh.png
+2021-02-06T09:56:15,Nevados de Chillan,159725.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210131T095704_20210206T095615_VV_coh.png
+2021-02-06T09:56:40,Copahue,126798.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210131T095728_20210206T095640_VV_coh.png
+2021-02-06T09:57:05,Villarrica,325916.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210131T095728_20210206T095705_VV_coh.png
+2021-02-07T23:27:33,Planchon-Peteroa,449919.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210201T232651_20210207T232733_VV_coh.png
+2021-02-11T10:00:39,Lascar,53193.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210205T100125_20210211T100039_VV_coh.png
+2021-02-11T23:42:20,Villarrica,273843.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210205T234302_20210211T234220_VV_coh.png
+2021-02-12T09:57:04,Nevados de Chillan,224539.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210206T095615_20210212T095703_VV_coh.png
+2021-02-12T09:57:28,Copahue,38125.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210206T095640_20210212T095728_VV_coh.png
+2021-02-12T09:57:28,Villarrica,193738.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210206T095705_20210212T095728_VV_coh.png
+2021-02-13T23:26:51,Planchon-Peteroa,219219.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210207T232733_20210213T232651_VV_coh.png
+2021-02-17T10:01:25,Lascar,61213.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210211T100039_20210217T100125_VV_coh.png
+2021-02-17T23:43:02,Villarrica,272936.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210211T234220_20210217T234301_VV_coh.png
+2021-02-18T09:56:11,Nevados de Chillan,84870.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210212T095703_20210218T095611_VV_coh.png
+2021-02-18T09:56:39,Copahue,77264.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210212T095728_20210218T095638_VV_coh.png
+2021-02-18T09:57:05,Villarrica,220682.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210212T095728_20210218T095704_VV_coh.png
+2021-02-19T23:27:33,Planchon-Peteroa,313996.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210213T232651_20210219T232732_VV_coh.png
+2021-02-23T10:00:39,Lascar,1595.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210217T100125_20210223T100038_VV_coh.png
+2021-02-23T23:42:20,Villarrica,233063.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210217T234301_20210223T234220_VV_coh.png
+2021-02-24T09:57:03,Nevados de Chillan,85159.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210218T095611_20210224T095703_VV_coh.png
+2021-02-24T09:57:28,Copahue,69600.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210218T095638_20210224T095728_VV_coh.png
+2021-02-24T09:57:28,Villarrica,259673.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210218T095704_20210224T095728_VV_coh.png
+2021-02-25T23:26:51,Planchon-Peteroa,237809.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210219T232732_20210225T232650_VV_coh.png
+2021-03-01T10:01:25,Lascar,80482.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210223T100038_20210301T100125_VV_coh.png
+2021-03-01T23:43:02,Villarrica,216757.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210223T234220_20210301T234301_VV_coh.png
+2021-03-02T09:56:15,Nevados de Chillan,226645.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210224T095703_20210302T095614_VV_coh.png
+2021-03-02T09:56:40,Copahue,41230.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210224T095728_20210302T095639_VV_coh.png
+2021-03-02T09:57:05,Villarrica,223880.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210224T095728_20210302T095704_VV_coh.png
+2021-03-03T23:27:33,Planchon-Peteroa,514017.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210225T232650_20210303T232732_VV_coh.png
+2021-03-07T10:00:39,Lascar,71923.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210301T100125_20210307T100038_VV_coh.png
+2021-03-07T23:42:20,Villarrica,321951.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210301T234301_20210307T234220_VV_coh.png
+2021-03-08T09:57:03,Nevados de Chillan,219977.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210302T095614_20210308T095703_VV_coh.png
+2021-03-08T09:57:28,Copahue,34691.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210302T095639_20210308T095728_VV_coh.png
+2021-03-08T09:57:28,Villarrica,309614.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210302T095704_20210308T095728_VV_coh.png
+2021-03-09T23:26:51,Planchon-Peteroa,507061.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210303T232732_20210309T232650_VV_coh.png
+2021-03-13T10:01:25,Lascar,507064.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210307T100038_20210313T100125_VV_coh.png
+2021-03-13T23:43:02,Villarrica,322212.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210307T234220_20210313T234302_VV_coh.png
+2021-03-14T09:56:15,Nevados de Chillan,234088.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210308T095703_20210314T095615_VV_coh.png
+2021-03-14T09:56:40,Copahue,36540.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210308T095728_20210314T095639_VV_coh.png
+2021-03-14T09:57:05,Villarrica,288326.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210308T095728_20210314T095704_VV_coh.png
+2021-03-15T23:27:33,Planchon-Peteroa,88542.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210309T232650_20210315T232732_VV_coh.png
+2021-03-19T10:00:39,Lascar,506022.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210313T100125_20210319T100038_VV_coh.png
+2021-03-19T23:42:20,Villarrica,299621.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210313T234302_20210319T234220_VV_coh.png
+2021-03-20T09:57:03,Nevados de Chillan,245916.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210314T095615_20210320T095703_VV_coh.png
+2021-03-20T09:57:28,Copahue,96309.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210314T095639_20210320T095728_VV_coh.png
+2021-03-20T09:57:28,Villarrica,319582.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210314T095704_20210320T095728_VV_coh.png
+2021-03-21T23:26:51,Planchon-Peteroa,147211.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210315T232732_20210321T232651_VV_coh.png
+2021-03-25T10:01:25,Lascar,126016.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210319T100038_20210325T100125_VV_coh.png
+2021-03-25T23:43:02,Villarrica,372007.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210319T234220_20210325T234302_VV_coh.png
+2021-03-26T09:56:15,Nevados de Chillan,301688.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210320T095703_20210326T095615_VV_coh.png
+2021-03-26T09:56:40,Copahue,113487.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210320T095728_20210326T095640_VV_coh.png
+2021-03-26T09:57:05,Villarrica,290185.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210320T095728_20210326T095704_VV_coh.png
+2021-03-27T23:27:33,Planchon-Peteroa,278314.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210321T232651_20210327T232733_VV_coh.png
+2021-03-31T10:00:39,Lascar,196871.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210325T100125_20210331T100038_VV_coh.png
+2021-03-31T23:42:20,Villarrica,519917.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210325T234302_20210331T234220_VV_coh.png
+2021-04-01T09:57:04,Nevados de Chillan,317164.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210326T095615_20210401T095703_VV_coh.png
+2021-04-01T09:57:28,Copahue,139767.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210326T095640_20210401T095728_VV_coh.png
+2021-04-01T09:57:28,Villarrica,316322.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210326T095704_20210401T095728_VV_coh.png
+2021-04-02T23:26:51,Planchon-Peteroa,234611.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210327T232733_20210402T232651_VV_coh.png
+2021-04-06T10:01:26,Lascar,57274.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210331T100038_20210406T100125_VV_coh.png
+2021-04-06T23:43:03,Villarrica,505549.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210331T234220_20210406T234302_VV_coh.png
+2021-04-07T09:56:16,Nevados de Chillan,289717.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210401T095703_20210407T095615_VV_coh.png
+2021-04-07T09:56:40,Copahue,86826.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210401T095728_20210407T095640_VV_coh.png
+2021-04-07T09:57:05,Villarrica,330519.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210401T095728_20210407T095705_VV_coh.png
+2021-04-07T23:34:11,Villarrica,283064.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210326T233410_20210407T233410_VV_coh.png
+2021-04-08T23:27:34,Planchon-Peteroa,183448.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210402T232651_20210408T232733_VV_coh.png
+2021-04-12T10:00:39,Lascar,21258.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210406T100125_20210412T100039_VV_coh.png
+2021-04-12T23:42:21,Villarrica,447578.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210406T234302_20210412T234220_VV_coh.png
+2021-04-13T09:57:04,Nevados de Chillan,275146.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210407T095615_20210413T095704_VV_coh.png
+2021-04-13T09:57:29,Copahue,78233.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210407T095640_20210413T095729_VV_coh.png
+2021-04-13T09:57:29,Villarrica,294753.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210407T095705_20210413T095729_VV_coh.png
+2021-04-14T23:26:52,Planchon-Peteroa,146055.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210408T232733_20210414T232651_VV_coh.png
+2021-04-18T10:01:26,Lascar,210751.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210412T100039_20210418T100126_VV_coh.png
+2021-04-18T23:43:03,Villarrica,251100.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210412T234220_20210418T234303_VV_coh.png
+2021-04-19T09:56:16,Nevados de Chillan,236164.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210413T095704_20210419T095616_VV_coh.png
+2021-04-19T09:56:41,Copahue,49268.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210413T095729_20210419T095640_VV_coh.png
+2021-04-19T09:57:06,Villarrica,261805.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210413T095729_20210419T095705_VV_coh.png
+2021-04-19T23:34:11,Villarrica,519623.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210407T233410_20210419T233411_VV_coh.png
+2021-04-20T23:27:34,Planchon-Peteroa,60951.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210414T232651_20210420T232734_VV_coh.png
+2021-04-24T10:00:40,Lascar,497578.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210418T100126_20210424T100040_VV_coh.png
+2021-04-24T23:42:22,Villarrica,315620.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210418T234303_20210424T234221_VV_coh.png
+2021-04-25T09:57:05,Nevados de Chillan,421978.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210419T095616_20210425T095704_VV_coh.png
+2021-04-25T09:57:30,Copahue,112201.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210419T095640_20210425T095729_VV_coh.png
+2021-04-25T09:57:30,Villarrica,315144.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210419T095705_20210425T095729_VV_coh.png
+2021-04-26T23:26:52,Planchon-Peteroa,219366.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210420T232734_20210426T232652_VV_coh.png
+2021-04-30T10:01:27,Lascar,463646.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210424T100040_20210430T100126_VV_coh.png
+2021-04-30T23:43:03,Villarrica,401257.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210424T234221_20210430T234303_VV_coh.png
+2021-05-01T09:56:17,Nevados de Chillan,446308.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210425T095704_20210501T095616_VV_coh.png
+2021-05-01T09:56:41,Copahue,294302.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210425T095729_20210501T095641_VV_coh.png
+2021-05-01T09:57:06,Villarrica,418494.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210425T095729_20210501T095706_VV_coh.png
+2021-05-02T23:27:34,Planchon-Peteroa,267314.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210426T232652_20210502T232734_VV_coh.png
+2021-05-06T10:00:41,Lascar,477683.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210430T100126_20210506T100040_VV_coh.png
+2021-05-06T23:42:22,Villarrica,440628.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210430T234303_20210506T234222_VV_coh.png
+2021-05-07T09:57:05,Nevados de Chillan,512871.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210501T095616_20210507T095705_VV_coh.png
+2021-05-07T09:57:30,Copahue,489880.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210501T095641_20210507T095730_VV_coh.png
+2021-05-07T09:57:30,Villarrica,424486.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210501T095706_20210507T095730_VV_coh.png
+2021-05-12T10:01:27,Lascar,104885.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210506T100040_20210512T100127_VV_coh.png
+2021-05-12T23:43:04,Villarrica,224616.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210506T234222_20210512T234304_VV_coh.png
+2021-05-13T09:56:17,Nevados de Chillan,498153.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210507T095705_20210513T095617_VV_coh.png
+2021-05-13T09:56:42,Copahue,444528.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210507T095730_20210513T095642_VV_coh.png
+2021-05-13T09:57:07,Villarrica,266635.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210507T095730_20210513T095706_VV_coh.png
+2021-05-14T23:27:35,Planchon-Peteroa,218594.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210502T232734_20210514T232735_VV_coh.png
+2021-05-18T10:00:41,Lascar,41836.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210512T100127_20210518T100041_VV_coh.png
+2021-05-18T23:42:23,Villarrica,252840.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210512T234304_20210518T234222_VV_coh.png
+2021-05-24T10:01:28,Lascar,7009.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210518T100041_20210524T100127_VV_coh.png
+2021-05-25T09:56:18,Nevados de Chillan,526042.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210513T095617_20210525T095617_VV_coh.png
+2021-05-25T09:56:43,Copahue,456993.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210513T095642_20210525T095642_VV_coh.png
+2021-05-25T09:57:08,Villarrica,459676.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210513T095706_20210525T095707_VV_coh.png
+2021-05-26T23:27:36,Planchon-Peteroa,509491.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210514T232735_20210526T232735_VV_coh.png
+2021-05-30T10:00:42,Lascar,493995.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210524T100127_20210530T100041_VV_coh.png
+2021-05-30T23:42:23,Villarrica,512822.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210518T234222_20210530T234223_VV_coh.png
+2021-05-31T09:57:07,Nevados de Chillan,533208.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210525T095617_20210531T095706_VV_coh.png
+2021-05-31T09:57:31,Copahue,527873.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210525T095642_20210531T095731_VV_coh.png
+2021-05-31T09:57:31,Villarrica,507928.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210525T095707_20210531T095731_VV_coh.png
+2021-06-05T10:01:29,Lascar,380359.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210530T100041_20210605T100128_VV_coh.png
+2021-06-05T23:43:06,Villarrica,528112.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210530T234223_20210605T234305_VV_coh.png
+2021-06-06T09:56:19,Nevados de Chillan,530266.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210531T095706_20210606T095618_VV_coh.png
+2021-06-06T09:56:44,Copahue,529624.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210531T095731_20210606T095643_VV_coh.png
+2021-06-06T09:57:08,Villarrica,540103.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210531T095731_20210606T095708_VV_coh.png
+2021-06-07T23:27:37,Planchon-Peteroa,518833.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210526T232735_20210607T232736_VV_coh.png
+2021-06-11T10:00:43,Lascar,357586.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210605T100128_20210611T100042_VV_coh.png
+2021-06-12T09:57:07,Nevados de Chillan,517158.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210606T095618_20210612T095707_VV_coh.png
+2021-06-12T09:57:32,Copahue,491108.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210606T095643_20210612T095732_VV_coh.png
+2021-06-12T09:57:32,Villarrica,492119.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210606T095708_20210612T095732_VV_coh.png
+2021-06-17T10:01:30,Lascar,513907.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210611T100042_20210617T100129_VV_coh.png
+2021-06-17T23:43:06,Villarrica,472462.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210605T234305_20210617T234306_VV_coh.png
+2021-06-18T09:56:19,Nevados de Chillan,523510.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210612T095707_20210618T095619_VV_coh.png
+2021-06-18T09:56:44,Copahue,509843.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210612T095732_20210618T095644_VV_coh.png
+2021-06-18T09:57:09,Villarrica,496989.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210612T095732_20210618T095709_VV_coh.png
+2021-06-19T23:27:37,Planchon-Peteroa,511694.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210607T232736_20210619T232737_VV_coh.png
+2021-06-23T10:00:43,Lascar,514064.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210617T100129_20210623T100043_VV_coh.png
+2021-06-24T09:57:08,Nevados de Chillan,531663.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210618T095619_20210624T095707_VV_coh.png
+2021-06-24T09:57:33,Copahue,510507.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210618T095644_20210624T095732_VV_coh.png
+2021-06-24T09:57:33,Villarrica,535709.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210618T095709_20210624T095732_VV_coh.png
+2021-06-29T23:43:07,Villarrica,525901.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210617T234306_20210629T234307_VV_coh.png
+2021-07-01T23:27:38,Planchon-Peteroa,509577.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210619T232737_20210701T232738_VV_coh.png
+2021-07-05T10:00:44,Lascar,403881.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210623T100043_20210705T100043_VV_coh.png
+2021-07-11T10:01:31,Lascar,513283.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210705T100043_20210711T100130_VV_coh.png
+2021-07-11T23:43:08,Villarrica,539078.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210629T234307_20210711T234307_VV_coh.png
+2021-07-12T09:56:21,Nevados de Chillan,532671.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210624T095707_20210712T095620_VV_coh.png
+2021-07-12T09:56:46,Copahue,524681.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210624T095732_20210712T095645_VV_coh.png
+2021-07-12T09:57:10,Villarrica,540610.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210624T095732_20210712T095710_VV_coh.png
+2021-07-13T23:27:39,Planchon-Peteroa,510001.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210701T232738_20210713T232738_VV_coh.png
+2021-07-17T10:00:45,Lascar,265808.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210711T100130_20210717T100044_VV_coh.png
+2021-07-18T09:57:10,Nevados de Chillan,530814.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210712T095620_20210718T095709_VV_coh.png
+2021-07-18T09:57:34,Copahue,519366.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210712T095645_20210718T095734_VV_coh.png
+2021-07-18T09:57:34,Villarrica,537007.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210712T095710_20210718T095734_VV_coh.png
+2021-07-23T10:01:32,Lascar,134955.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210717T100044_20210723T100131_VV_coh.png
+2021-07-23T23:43:08,Villarrica,535055.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210711T234307_20210723T234308_VV_coh.png
+2021-07-24T09:56:22,Nevados de Chillan,527191.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210718T095709_20210724T095621_VV_coh.png
+2021-07-24T09:56:46,Copahue,503429.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210718T095734_20210724T095646_VV_coh.png
+2021-07-24T09:57:11,Villarrica,539128.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210718T095734_20210724T095711_VV_coh.png
+2021-07-25T23:27:39,Planchon-Peteroa,515001.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210713T232738_20210725T232739_VV_coh.png
+2021-07-29T10:00:46,Lascar,84349.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210723T100131_20210729T100045_VV_coh.png
+2021-07-30T09:57:10,Nevados de Chillan,527613.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210724T095621_20210730T095710_VV_coh.png
+2021-07-30T09:57:35,Copahue,473877.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210724T095646_20210730T095734_VV_coh.png
+2021-07-30T09:57:35,Villarrica,470782.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210724T095711_20210730T095734_VV_coh.png
+2021-08-04T10:01:32,Lascar,154098.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210729T100045_20210804T100132_VV_coh.png
+2021-08-04T23:43:09,Villarrica,491192.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210723T234308_20210804T234309_VV_coh.png
+2021-08-05T09:56:22,Nevados de Chillan,531410.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210730T095710_20210805T095622_VV_coh.png
+2021-08-05T09:56:47,Copahue,514033.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210730T095734_20210805T095646_VV_coh.png
+2021-08-05T09:57:12,Villarrica,521922.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210730T095734_20210805T095711_VV_coh.png
+2021-08-06T23:27:40,Planchon-Peteroa,518244.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210725T232739_20210806T232740_VV_coh.png
+2021-08-10T10:00:46,Lascar,218345.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210804T100132_20210810T100046_VV_coh.png
+2021-08-10T23:42:28,Villarrica,468954.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210804T234309_20210810T234227_VV_coh.png
+2021-08-11T09:57:11,Nevados de Chillan,524009.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210805T095622_20210811T095710_VV_coh.png
+2021-08-11T09:57:36,Copahue,519671.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210805T095646_20210811T095735_VV_coh.png
+2021-08-11T09:57:36,Villarrica,526583.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210805T095711_20210811T095735_VV_coh.png
+2021-08-12T23:26:59,Planchon-Peteroa,422163.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210806T232740_20210812T232658_VV_coh.png
+2021-08-16T10:01:33,Lascar,242744.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210810T100046_20210816T100132_VV_coh.png
+2021-08-16T23:43:10,Villarrica,522667.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210810T234227_20210816T234309_VV_coh.png
+2021-08-17T09:56:23,Nevados de Chillan,533499.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210811T095710_20210817T095622_VV_coh.png
+2021-08-17T09:56:48,Copahue,527749.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210811T095735_20210817T095647_VV_coh.png
+2021-08-17T09:57:12,Villarrica,527813.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210811T095735_20210817T095712_VV_coh.png
+2021-08-18T23:27:41,Planchon-Peteroa,518501.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210812T232658_20210818T232740_VV_coh.png
+2021-08-22T10:00:47,Lascar,463473.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210816T100132_20210822T100046_VV_coh.png
+2021-08-22T23:42:28,Villarrica,540191.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210816T234309_20210822T234228_VV_coh.png
+2021-08-23T09:57:12,Nevados de Chillan,532458.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210817T095622_20210823T095711_VV_coh.png
+2021-08-23T09:57:36,Copahue,526341.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210817T095647_20210823T095736_VV_coh.png
+2021-08-23T09:57:36,Villarrica,539367.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210817T095712_20210823T095736_VV_coh.png
+2021-08-28T10:01:34,Lascar,509955.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210822T100046_20210828T100133_VV_coh.png
+2021-08-28T23:43:10,Villarrica,537811.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210822T234228_20210828T234310_VV_coh.png
+2021-08-29T09:56:23,Nevados de Chillan,531763.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210823T095711_20210829T095623_VV_coh.png
+2021-08-29T09:56:48,Copahue,528492.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210823T095736_20210829T095648_VV_coh.png
+2021-08-29T09:57:13,Villarrica,540933.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210823T095736_20210829T095713_VV_coh.png
+2021-08-30T23:27:41,Planchon-Peteroa,517063.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210818T232740_20210830T232741_VV_coh.png
+2021-09-03T10:00:47,Lascar,505230.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210828T100133_20210903T100047_VV_coh.png
+2021-09-03T23:42:29,Villarrica,535290.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210828T234310_20210903T234228_VV_coh.png
+2021-09-04T09:57:12,Nevados de Chillan,531306.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210829T095623_20210904T095712_VV_coh.png
+2021-09-04T09:57:37,Copahue,521757.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210829T095648_20210904T095736_VV_coh.png
+2021-09-04T09:57:37,Villarrica,540932.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210829T095713_20210904T095736_VV_coh.png
+2021-09-05T23:27:00,Planchon-Peteroa,469712.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210830T232741_20210905T232659_VV_coh.png
+2021-09-09T10:01:34,Lascar,513950.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210903T100047_20210909T100134_VV_coh.png
+2021-09-09T23:43:11,Villarrica,487107.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210903T234228_20210909T234310_VV_coh.png
+2021-09-10T09:56:24,Nevados de Chillan,532401.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210904T095712_20210910T095623_VV_coh.png
+2021-09-10T09:56:49,Copahue,514132.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210904T095736_20210910T095648_VV_coh.png
+2021-09-10T09:57:14,Villarrica,542373.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210904T095736_20210910T095713_VV_coh.png
+2021-09-11T23:27:42,Planchon-Peteroa,473229.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210905T232659_20210911T232741_VV_coh.png
+2021-09-15T10:00:48,Lascar,513191.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210909T100134_20210915T100047_VV_coh.png
+2021-09-15T23:42:29,Villarrica,531358.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210909T234310_20210915T234229_VV_coh.png
+2021-09-16T09:57:13,Nevados de Chillan,532787.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210910T095623_20210916T095712_VV_coh.png
+2021-09-16T09:57:37,Copahue,528291.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210910T095648_20210916T095737_VV_coh.png
+2021-09-16T09:57:37,Villarrica,541543.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210910T095713_20210916T095737_VV_coh.png
+2021-09-17T23:27:00,Planchon-Peteroa,491613.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210911T232741_20210917T232700_VV_coh.png
+2021-09-21T10:01:35,Lascar,472933.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210915T100047_20210921T100134_VV_coh.png
+2021-09-21T23:43:11,Villarrica,535962.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210915T234229_20210921T234311_VV_coh.png
+2021-09-22T09:56:24,Nevados de Chillan,532672.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210916T095712_20210922T095624_VV_coh.png
+2021-09-22T09:56:49,Copahue,525422.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210916T095737_20210922T095649_VV_coh.png
+2021-09-22T09:57:14,Villarrica,540697.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210916T095737_20210922T095714_VV_coh.png
+2021-09-23T23:27:42,Planchon-Peteroa,486620.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210917T232700_20210923T232742_VV_coh.png
+2021-09-27T10:00:48,Lascar,155907.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210921T100134_20210927T100048_VV_coh.png
+2021-09-27T23:42:30,Villarrica,442915.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210921T234311_20210927T234229_VV_coh.png
+2021-09-28T09:57:13,Nevados de Chillan,518884.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210922T095624_20210928T095712_VV_coh.png
+2021-09-28T09:57:38,Copahue,475090.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210922T095649_20210928T095737_VV_coh.png
+2021-09-28T09:57:38,Villarrica,516383.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210922T095714_20210928T095737_VV_coh.png
+2021-10-03T10:01:35,Lascar,30493.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20210927T100048_20211003T100134_VV_coh.png
+2021-10-03T23:43:12,Villarrica,518972.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210927T234229_20211003T234311_VV_coh.png
+2021-10-04T09:56:25,Nevados de Chillan,532530.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20210928T095712_20211004T095624_VV_coh.png
+2021-10-04T09:56:50,Copahue,528177.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20210928T095737_20211004T095649_VV_coh.png
+2021-10-04T09:57:15,Villarrica,538298.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20210928T095737_20211004T095714_VV_coh.png
+2021-10-05T23:27:42,Planchon-Peteroa,463527.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20210923T232742_20211005T232742_VV_coh.png
+2021-10-09T10:00:48,Lascar,17179.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211003T100134_20211009T100048_VV_coh.png
+2021-10-09T23:42:30,Villarrica,527396.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211003T234311_20211009T234229_VV_coh.png
+2021-10-10T09:57:13,Nevados de Chillan,534237.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211004T095624_20211010T095713_VV_coh.png
+2021-10-10T09:57:38,Copahue,530946.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211004T095649_20211010T095737_VV_coh.png
+2021-10-10T09:57:38,Villarrica,542442.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211004T095714_20211010T095737_VV_coh.png
+2021-10-11T23:27:01,Planchon-Peteroa,444190.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211005T232742_20211011T232700_VV_coh.png
+2021-10-15T10:01:35,Lascar,32087.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211009T100048_20211015T100134_VV_coh.png
+2021-10-15T23:43:12,Villarrica,526877.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211009T234229_20211015T234311_VV_coh.png
+2021-10-16T09:56:25,Nevados de Chillan,535297.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211010T095713_20211016T095624_VV_coh.png
+2021-10-16T09:56:50,Copahue,530357.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211010T095737_20211016T095649_VV_coh.png
+2021-10-16T09:57:14,Villarrica,543147.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211010T095737_20211016T095714_VV_coh.png
+2021-10-17T23:27:43,Planchon-Peteroa,436343.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211011T232700_20211017T232742_VV_coh.png
+2021-10-21T10:00:49,Lascar,15112.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211015T100134_20211021T100048_VV_coh.png
+2021-10-21T23:42:30,Villarrica,514737.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211015T234311_20211021T234230_VV_coh.png
+2021-10-22T09:57:13,Nevados de Chillan,532487.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211016T095624_20211022T095713_VV_coh.png
+2021-10-22T09:57:38,Copahue,527844.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211016T095649_20211022T095738_VV_coh.png
+2021-10-22T09:57:38,Villarrica,540244.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211016T095714_20211022T095738_VV_coh.png
+2021-10-23T23:27:01,Planchon-Peteroa,437042.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211017T232742_20211023T232700_VV_coh.png
+2021-10-27T10:01:35,Lascar,162890.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211021T100048_20211027T100134_VV_coh.png
+2021-10-27T23:43:12,Villarrica,456154.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211021T234230_20211027T234311_VV_coh.png
+2021-10-28T09:56:25,Nevados de Chillan,459825.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211022T095713_20211028T095624_VV_coh.png
+2021-10-28T09:56:50,Copahue,394627.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211022T095738_20211028T095649_VV_coh.png
+2021-10-28T09:57:14,Villarrica,464548.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211022T095738_20211028T095714_VV_coh.png
+2021-10-29T23:27:43,Planchon-Peteroa,420814.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211023T232700_20211029T232742_VV_coh.png
+2021-11-02T10:00:48,Lascar,458686.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211027T100134_20211102T100048_VV_coh.png
+2021-11-02T23:42:30,Villarrica,388526.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211027T234311_20211102T234229_VV_coh.png
+2021-11-03T09:57:12,Nevados de Chillan,418555.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211028T095624_20211103T095711_VV_coh.png
+2021-11-03T09:57:38,Villarrica,473237.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211028T095714_20211103T095737_VV_coh.png
+2021-11-04T23:27:01,Planchon-Peteroa,254654.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211029T232742_20211104T232700_VV_coh.png
+2021-11-08T10:01:35,Lascar,513907.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211102T100048_20211108T100134_VV_coh.png
+2021-11-08T23:43:11,Villarrica,342306.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211102T234229_20211108T234311_VV_coh.png
+2021-11-09T09:56:24,Nevados de Chillan,408652.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211103T095711_20211109T095624_VV_coh.png
+2021-11-09T09:56:49,Copahue,338781.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211103T095737_20211109T095649_VV_coh.png
+2021-11-09T09:57:14,Villarrica,449647.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211103T095737_20211109T095714_VV_coh.png
+2021-11-14T10:00:48,Lascar,513293.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211108T100134_20211114T100048_VV_coh.png
+2021-11-15T09:57:13,Nevados de Chillan,340443.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211109T095624_20211115T095712_VV_coh.png
+2021-11-15T09:57:38,Copahue,335253.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211109T095649_20211115T095737_VV_coh.png
+2021-11-15T09:57:38,Villarrica,537232.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211109T095714_20211115T095737_VV_coh.png
+2021-11-20T10:01:35,Lascar,452226.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211114T100048_20211120T100134_VV_coh.png
+2021-11-21T09:56:24,Nevados de Chillan,342244.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211115T095712_20211121T095624_VV_coh.png
+2021-11-21T09:56:49,Copahue,356838.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211115T095737_20211121T095649_VV_coh.png
+2021-11-21T09:57:14,Villarrica,537789.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211115T095737_20211121T095713_VV_coh.png
+2021-11-22T23:27:42,Planchon-Peteroa,381963.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211104T232700_20211122T232742_VV_coh.png
+2021-11-26T10:00:48,Lascar,128366.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211120T100134_20211126T100047_VV_coh.png
+2021-11-27T09:57:12,Nevados de Chillan,289861.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211121T095624_20211127T095712_VV_coh.png
+2021-11-27T09:57:37,Copahue,152789.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211121T095649_20211127T095737_VV_coh.png
+2021-11-27T09:57:37,Villarrica,334997.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211121T095713_20211127T095737_VV_coh.png
+2021-11-28T23:27:00,Planchon-Peteroa,204486.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211122T232742_20211128T232659_VV_coh.png
+2021-12-03T09:56:24,Nevados de Chillan,308484.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211127T095712_20211203T095623_VV_coh.png
+2021-12-03T09:56:49,Copahue,169054.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211127T095737_20211203T095648_VV_coh.png
+2021-12-03T09:57:13,Villarrica,296087.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211127T095737_20211203T095713_VV_coh.png
+2021-12-04T23:27:41,Planchon-Peteroa,209879.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211128T232659_20211204T232741_VV_coh.png
+2021-12-08T10:00:47,Lascar,3817.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211126T100047_20211208T100047_VV_coh.png
+2021-12-09T09:57:12,Nevados de Chillan,331227.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211203T095623_20211209T095711_VV_coh.png
+2021-12-09T09:57:37,Copahue,196054.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211203T095648_20211209T095736_VV_coh.png
+2021-12-09T09:57:37,Villarrica,347274.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211203T095713_20211209T095736_VV_coh.png
+2021-12-10T23:26:59,Planchon-Peteroa,165475.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211204T232741_20211210T232659_VV_coh.png
+2021-12-14T10:01:34,Lascar,31492.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211208T100047_20211214T100133_VV_coh.png
+2021-12-15T09:56:23,Nevados de Chillan,327649.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211209T095711_20211215T095623_VV_coh.png
+2021-12-15T09:56:48,Copahue,220780.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211209T095736_20211215T095648_VV_coh.png
+2021-12-15T09:57:13,Villarrica,375480.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211209T095736_20211215T095713_VV_coh.png
+2021-12-16T23:27:41,Planchon-Peteroa,129744.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211210T232659_20211216T232741_VV_coh.png
+2021-12-20T10:00:47,Lascar,13519.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211214T100133_20211220T100046_VV_coh.png
+2021-12-21T09:57:10,Nevados de Chillan,280590.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2021/nevadoschillan_20211215T095623_20211221T095710_VV_coh.png
+2021-12-21T09:57:36,Copahue,112863.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2021/copahue_20211215T095648_20211221T095736_VV_coh.png
+2021-12-21T09:57:36,Villarrica,309084.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2021/villarrica_20211215T095713_20211221T095736_VV_coh.png
+2021-12-22T23:26:59,Planchon-Peteroa,188292.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211216T232741_20211222T232658_VV_coh.png
+2021-12-26T10:01:33,Lascar,161750.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2021/lascar_20211220T100046_20211226T100132_VV_coh.png
+2021-12-28T23:27:40,Planchon-Peteroa,104677.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2021/planchonpeteroa_20211222T232658_20211228T232740_VV_coh.png
+2022-01-02T09:57:11,Nevados de Chillan,302431.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20211221T095710_20220102T095710_VV_coh.png
+2022-01-02T09:57:35,Copahue,175933.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20211221T095736_20220102T095735_VV_coh.png
+2022-01-02T09:57:35,Villarrica,389759.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20211221T095736_20220102T095735_VV_coh.png
+2022-01-07T10:01:32,Lascar,134061.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20211226T100132_20220107T100132_VV_coh.png
+2022-01-09T23:27:40,Planchon-Peteroa,155642.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20211228T232740_20220109T232739_VV_coh.png
+2022-01-14T09:57:10,Nevados de Chillan,295927.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220102T095710_20220114T095710_VV_coh.png
+2022-01-14T09:57:35,Copahue,180881.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220102T095735_20220114T095735_VV_coh.png
+2022-01-14T09:57:35,Villarrica,365530.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220102T095735_20220114T095735_VV_coh.png
+2022-01-19T10:01:32,Lascar,417861.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220107T100132_20220119T100131_VV_coh.png
+2022-01-21T23:27:39,Planchon-Peteroa,115334.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220109T232739_20220121T232739_VV_coh.png
+2022-01-26T09:57:10,Nevados de Chillan,251338.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220114T095710_20220126T095709_VV_coh.png
+2022-01-26T09:57:35,Copahue,49705.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220114T095735_20220126T095734_VV_coh.png
+2022-01-26T09:57:35,Villarrica,269926.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220114T095735_20220126T095734_VV_coh.png
+2022-01-31T10:01:31,Lascar,340381.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220119T100131_20220131T100131_VV_coh.png
+2022-02-02T23:27:38,Planchon-Peteroa,134322.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220121T232739_20220202T232738_VV_coh.png
+2022-02-07T09:57:09,Nevados de Chillan,243827.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220126T095709_20220207T095709_VV_coh.png
+2022-02-07T09:57:34,Copahue,67045.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220126T095734_20220207T095734_VV_coh.png
+2022-02-07T09:57:34,Villarrica,250521.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220126T095734_20220207T095734_VV_coh.png
+2022-02-12T10:01:31,Lascar,80236.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220131T100131_20220212T100131_VV_coh.png
+2022-02-14T23:27:39,Planchon-Peteroa,143790.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220202T232738_20220214T232738_VV_coh.png
+2022-02-19T09:57:09,Nevados de Chillan,236763.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220207T095709_20220219T095709_VV_coh.png
+2022-02-19T09:57:34,Copahue,46567.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220207T095734_20220219T095733_VV_coh.png
+2022-02-19T09:57:34,Villarrica,222136.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220207T095734_20220219T095733_VV_coh.png
+2022-02-24T10:01:31,Lascar,16032.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220212T100131_20220224T100130_VV_coh.png
+2022-02-26T23:27:39,Planchon-Peteroa,99227.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220214T232738_20220226T232738_VV_coh.png
+2022-03-03T09:57:09,Nevados de Chillan,273440.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220219T095709_20220303T095708_VV_coh.png
+2022-03-03T09:57:34,Copahue,107938.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220219T095733_20220303T095733_VV_coh.png
+2022-03-03T09:57:34,Villarrica,344280.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220219T095733_20220303T095733_VV_coh.png
+2022-03-08T10:01:31,Lascar,6322.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220224T100130_20220308T100130_VV_coh.png
+2022-03-10T23:27:38,Planchon-Peteroa,168659.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220226T232738_20220310T232738_VV_coh.png
+2022-03-15T09:57:09,Nevados de Chillan,232960.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220303T095708_20220315T095708_VV_coh.png
+2022-03-15T09:57:34,Copahue,59354.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220303T095733_20220315T095733_VV_coh.png
+2022-03-15T09:57:34,Villarrica,314312.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220303T095733_20220315T095733_VV_coh.png
+2022-03-20T10:01:31,Lascar,336486.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220308T100130_20220320T100130_VV_coh.png
+2022-03-22T23:27:39,Planchon-Peteroa,139745.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220310T232738_20220322T232738_VV_coh.png
+2022-03-27T09:57:09,Nevados de Chillan,274033.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220315T095708_20220327T095709_VV_coh.png
+2022-03-27T09:57:34,Copahue,122701.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220315T095733_20220327T095734_VV_coh.png
+2022-03-27T09:57:34,Villarrica,385872.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220315T095733_20220327T095734_VV_coh.png
+2022-04-01T10:01:31,Lascar,352535.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220320T100130_20220401T100131_VV_coh.png
+2022-04-03T23:27:39,Planchon-Peteroa,109437.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220322T232738_20220403T232739_VV_coh.png
+2022-04-08T09:57:10,Nevados de Chillan,274117.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220327T095709_20220408T095709_VV_coh.png
+2022-04-08T09:57:34,Copahue,94072.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220327T095734_20220408T095734_VV_coh.png
+2022-04-08T09:57:59,Villarrica,318549.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220327T095734_20220408T095759_VV_coh.png
+2022-04-13T10:01:31,Lascar,79388.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220401T100131_20220413T100131_VV_coh.png
+2022-04-15T23:27:39,Planchon-Peteroa,87756.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220403T232739_20220415T232739_VV_coh.png
+2022-04-20T09:57:13,Nevados de Chillan,478406.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220408T095709_20220420T095712_VV_coh.png
+2022-04-20T09:57:38,Copahue,513784.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220408T095734_20220420T095737_VV_coh.png
+2022-04-20T09:58:02,Villarrica,373939.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220408T095759_20220420T095802_VV_coh.png
+2022-04-27T23:27:40,Planchon-Peteroa,515428.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220415T232739_20220427T232739_VV_coh.png
+2022-05-02T09:57:13,Nevados de Chillan,534091.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220420T095712_20220502T095713_VV_coh.png
+2022-05-02T09:57:38,Copahue,527838.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220420T095737_20220502T095738_VV_coh.png
+2022-05-02T09:58:03,Villarrica,538691.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220420T095802_20220502T095802_VV_coh.png
+2022-05-07T10:01:32,Lascar,28477.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220413T100131_20220507T100132_VV_coh.png
+2022-05-09T23:27:40,Planchon-Peteroa,512467.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220427T232739_20220509T232740_VV_coh.png
+2022-05-14T09:57:14,Nevados de Chillan,530784.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220502T095713_20220514T095714_VV_coh.png
+2022-05-14T09:57:39,Copahue,516465.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220502T095738_20220514T095739_VV_coh.png
+2022-05-14T09:58:04,Villarrica,525586.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220502T095802_20220514T095803_VV_coh.png
+2022-05-19T10:01:33,Lascar,4409.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220507T100132_20220519T100133_VV_coh.png
+2022-05-21T23:27:41,Planchon-Peteroa,495747.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220509T232740_20220521T232741_VV_coh.png
+2022-05-26T09:57:15,Nevados de Chillan,529514.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220514T095714_20220526T095714_VV_coh.png
+2022-05-26T09:57:40,Copahue,524859.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220514T095739_20220526T095739_VV_coh.png
+2022-05-26T09:58:04,Villarrica,539022.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220514T095803_20220526T095804_VV_coh.png
+2022-05-31T10:01:34,Lascar,110916.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220519T100133_20220531T100134_VV_coh.png
+2022-06-02T23:27:42,Planchon-Peteroa,511047.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220521T232741_20220602T232742_VV_coh.png
+2022-06-07T09:57:16,Nevados de Chillan,529600.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220526T095714_20220607T095716_VV_coh.png
+2022-06-07T09:57:41,Copahue,527456.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220526T095739_20220607T095740_VV_coh.png
+2022-06-07T09:58:06,Villarrica,536945.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220526T095804_20220607T095805_VV_coh.png
+2022-06-12T10:01:35,Lascar,330468.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220531T100134_20220612T100135_VV_coh.png
+2022-06-14T23:27:43,Planchon-Peteroa,501630.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220602T232742_20220614T232742_VV_coh.png
+2022-06-19T09:57:17,Nevados de Chillan,529893.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220607T095716_20220619T095716_VV_coh.png
+2022-06-19T09:57:41,Copahue,526138.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220607T095740_20220619T095741_VV_coh.png
+2022-06-19T09:58:06,Villarrica,518255.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220607T095805_20220619T095806_VV_coh.png
+2022-06-24T10:01:36,Lascar,325014.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220612T100135_20220624T100136_VV_coh.png
+2022-06-26T23:27:44,Planchon-Peteroa,504880.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220614T232742_20220626T232743_VV_coh.png
+2022-07-01T09:57:17,Nevados de Chillan,531919.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220619T095716_20220701T095717_VV_coh.png
+2022-07-01T09:57:42,Copahue,526826.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220619T095741_20220701T095742_VV_coh.png
+2022-07-01T09:58:07,Villarrica,536068.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220619T095806_20220701T095807_VV_coh.png
+2022-07-18T10:01:38,Lascar,192016.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220706T100136_20220718T100137_VV_coh.png
+2022-07-20T23:27:45,Planchon-Peteroa,501966.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220708T232744_20220720T232745_VV_coh.png
+2022-07-25T09:57:19,Nevados de Chillan,532579.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220713T095717_20220725T095718_VV_coh.png
+2022-07-25T09:57:44,Copahue,528762.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220713T095742_20220725T095743_VV_coh.png
+2022-07-25T09:58:09,Villarrica,539838.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220713T095807_20220725T095808_VV_coh.png
+2022-07-30T10:01:38,Lascar,105298.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220718T100137_20220730T100138_VV_coh.png
+2022-08-01T23:27:46,Planchon-Peteroa,503599.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220720T232745_20220801T232746_VV_coh.png
+2022-08-06T09:57:20,Nevados de Chillan,529927.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220725T095718_20220806T095719_VV_coh.png
+2022-08-06T09:57:45,Copahue,527485.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220725T095743_20220806T095744_VV_coh.png
+2022-08-06T09:58:09,Villarrica,536724.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220725T095808_20220806T095809_VV_coh.png
+2022-08-11T10:01:39,Lascar,34813.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220730T100138_20220811T100138_VV_coh.png
+2022-08-13T23:27:47,Planchon-Peteroa,485513.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220801T232746_20220813T232746_VV_coh.png
+2022-08-18T09:57:19,Nevados de Chillan,532492.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220806T095719_20220818T095719_VV_coh.png
+2022-08-18T09:57:45,Copahue,528375.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220806T095744_20220818T095745_VV_coh.png
+2022-08-18T09:58:10,Villarrica,537939.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220806T095809_20220818T095810_VV_coh.png
+2022-08-23T10:01:39,Lascar,40999.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220811T100138_20220823T100139_VV_coh.png
+2022-08-25T23:27:47,Planchon-Peteroa,490165.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220813T232746_20220825T232747_VV_coh.png
+2022-08-30T09:57:21,Nevados de Chillan,533156.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220818T095719_20220830T095720_VV_coh.png
+2022-08-30T09:57:46,Copahue,529242.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220818T095745_20220830T095745_VV_coh.png
+2022-08-30T09:58:10,Villarrica,538391.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220818T095810_20220830T095810_VV_coh.png
+2022-09-04T10:01:40,Lascar,218825.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220823T100139_20220904T100140_VV_coh.png
+2022-09-06T23:27:48,Planchon-Peteroa,491942.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220825T232747_20220906T232748_VV_coh.png
+2022-09-11T09:57:22,Nevados de Chillan,530284.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220830T095720_20220911T095721_VV_coh.png
+2022-09-11T09:57:46,Copahue,519144.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220830T095745_20220911T095746_VV_coh.png
+2022-09-11T09:58:11,Villarrica,532854.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220830T095810_20220911T095811_VV_coh.png
+2022-09-16T10:01:40,Lascar,160386.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220904T100140_20220916T100140_VV_coh.png
+2022-09-18T23:27:48,Planchon-Peteroa,505535.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220906T232748_20220918T232747_VV_coh.png
+2022-09-23T09:57:21,Nevados de Chillan,531578.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220911T095721_20220923T095720_VV_coh.png
+2022-09-23T09:57:46,Copahue,523314.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220911T095746_20220923T095745_VV_coh.png
+2022-09-23T09:58:11,Villarrica,535012.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220911T095811_20220923T095810_VV_coh.png
+2022-09-28T10:01:41,Lascar,31203.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220916T100140_20220928T100140_VV_coh.png
+2022-09-30T23:27:49,Planchon-Peteroa,497429.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220918T232747_20220930T232748_VV_coh.png
+2022-10-05T09:57:22,Nevados de Chillan,529133.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20220923T095720_20221005T095721_VV_coh.png
+2022-10-05T09:57:46,Copahue,510747.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20220923T095745_20221005T095746_VV_coh.png
+2022-10-05T09:58:11,Villarrica,533172.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20220923T095810_20221005T095811_VV_coh.png
+2022-10-10T10:01:41,Lascar,51378.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20220928T100140_20221010T100140_VV_coh.png
+2022-10-12T23:27:48,Planchon-Peteroa,486010.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20220930T232748_20221012T232748_VV_coh.png
+2022-10-17T09:57:22,Nevados de Chillan,508777.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20221005T095721_20221017T095721_VV_coh.png
+2022-10-17T09:57:47,Copahue,474890.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20221005T095746_20221017T095746_VV_coh.png
+2022-10-17T09:58:12,Villarrica,530661.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20221005T095811_20221017T095811_VV_coh.png
+2022-10-22T10:01:41,Lascar,5825.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20221010T100140_20221022T100140_VV_coh.png
+2022-10-24T23:27:49,Planchon-Peteroa,488741.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20221012T232748_20221024T232748_VV_coh.png
+2022-10-29T09:57:22,Nevados de Chillan,494229.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20221017T095721_20221029T095721_VV_coh.png
+2022-10-29T09:57:47,Copahue,425958.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20221017T095746_20221029T095746_VV_coh.png
+2022-10-29T09:58:12,Villarrica,522886.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20221017T095811_20221029T095811_VV_coh.png
+2022-11-03T10:01:40,Lascar,2581.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20221022T100140_20221103T100140_VV_coh.png
+2022-11-05T23:27:48,Planchon-Peteroa,438647.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20221024T232748_20221105T232748_VV_coh.png
+2022-11-10T09:57:21,Nevados de Chillan,506739.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20221029T095721_20221110T095721_VV_coh.png
+2022-11-10T09:57:46,Copahue,459194.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20221029T095746_20221110T095746_VV_coh.png
+2022-11-10T09:58:11,Villarrica,511405.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20221029T095811_20221110T095810_VV_coh.png
+2022-11-15T10:01:40,Lascar,26264.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20221103T100140_20221115T100140_VV_coh.png
+2022-11-17T23:27:48,Planchon-Peteroa,285824.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20221105T232748_20221117T232748_VV_coh.png
+2022-11-22T09:57:22,Nevados de Chillan,491073.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20221110T095721_20221122T095721_VV_coh.png
+2022-11-22T09:57:46,Copahue,384748.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20221110T095746_20221122T095746_VV_coh.png
+2022-11-22T09:58:11,Villarrica,464385.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20221110T095810_20221122T095811_VV_coh.png
+2022-11-27T10:01:40,Lascar,111621.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20221115T100140_20221127T100140_VV_coh.png
+2022-11-29T23:27:48,Planchon-Peteroa,309853.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20221117T232748_20221129T232747_VV_coh.png
+2022-12-04T09:57:21,Nevados de Chillan,372414.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20221122T095721_20221204T095720_VV_coh.png
+2022-12-04T09:57:46,Copahue,251225.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20221122T095746_20221204T095745_VV_coh.png
+2022-12-04T09:58:11,Villarrica,383556.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20221122T095811_20221204T095810_VV_coh.png
+2022-12-09T10:01:40,Lascar,56169.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20221127T100140_20221209T100139_VV_coh.png
+2022-12-11T23:27:47,Planchon-Peteroa,243902.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20221129T232747_20221211T232747_VV_coh.png
+2022-12-16T09:57:20,Nevados de Chillan,306206.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20221204T095720_20221216T095720_VV_coh.png
+2022-12-16T09:57:45,Copahue,170888.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20221204T095745_20221216T095744_VV_coh.png
+2022-12-16T09:58:10,Villarrica,340846.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20221204T095810_20221216T095809_VV_coh.png
+2022-12-21T10:01:39,Lascar,234857.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2022/lascar_20221209T100139_20221221T100138_VV_coh.png
+2022-12-23T23:27:46,Planchon-Peteroa,142499.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2022/planchonpeteroa_20221211T232747_20221223T232746_VV_coh.png
+2022-12-28T09:57:19,Nevados de Chillan,280552.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2022/nevadoschillan_20221216T095720_20221228T095719_VV_coh.png
+2022-12-28T09:57:44,Copahue,137975.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2022/copahue_20221216T095744_20221228T095744_VV_coh.png
+2022-12-28T09:58:09,Villarrica,318150.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2022/villarrica_20221216T095809_20221228T095809_VV_coh.png
+2023-01-02T10:01:38,Lascar,157480.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20221221T100138_20230102T100138_VV_coh.png
+2023-01-04T23:27:46,Planchon-Peteroa,173781.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20221223T232746_20230104T232745_VV_coh.png
+2023-01-09T09:57:19,Nevados de Chillan,271523.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20221228T095719_20230109T095718_VV_coh.png
+2023-01-09T09:57:44,Copahue,153618.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20221228T095744_20230109T095743_VV_coh.png
+2023-01-09T09:58:08,Villarrica,325478.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20221228T095809_20230109T095808_VV_coh.png
+2023-01-14T10:01:38,Lascar,44783.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230102T100138_20230114T100137_VV_coh.png
+2023-01-16T23:27:45,Planchon-Peteroa,291361.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230104T232745_20230116T232744_VV_coh.png
+2023-01-21T09:57:17,Nevados de Chillan,222905.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230109T095718_20230121T095717_VV_coh.png
+2023-01-21T09:57:43,Copahue,73355.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230109T095743_20230121T095743_VV_coh.png
+2023-01-21T09:58:08,Villarrica,231495.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230109T095808_20230121T095808_VV_coh.png
+2023-01-26T10:01:37,Lascar,95676.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230114T100137_20230126T100137_VV_coh.png
+2023-01-28T23:27:45,Planchon-Peteroa,342430.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230116T232744_20230128T232745_VV_coh.png
+2023-02-07T10:01:37,Lascar,424772.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230126T100137_20230207T100136_VV_coh.png
+2023-02-09T23:27:44,Planchon-Peteroa,209313.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230128T232745_20230209T232744_VV_coh.png
+2023-02-19T10:01:36,Lascar,488623.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230207T100136_20230219T100136_VV_coh.png
+2023-02-21T23:27:44,Planchon-Peteroa,88678.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230209T232744_20230221T232743_VV_coh.png
+2023-02-26T09:57:17,Nevados de Chillan,228267.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230214T095716_20230226T095716_VV_coh.png
+2023-02-26T09:57:43,Copahue,105317.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230214T095742_20230226T095742_VV_coh.png
+2023-02-26T09:57:43,Llaima,192297.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230214T095742_20230226T095742_VV_coh.png
+2023-02-26T09:58:07,Villarrica,263173.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230214T095807_20230226T095807_VV_coh.png
+2023-03-03T10:01:37,Lascar,506257.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230219T100136_20230303T100136_VV_coh.png
+2023-03-05T23:27:44,Planchon-Peteroa,281981.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230221T232743_20230305T232744_VV_coh.png
+2023-03-10T09:57:17,Nevados de Chillan,234951.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230226T095716_20230310T095717_VV_coh.png
+2023-03-10T09:57:42,Copahue,89958.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230226T095742_20230310T095742_VV_coh.png
+2023-03-10T09:57:42,Llaima,242179.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230226T095742_20230310T095742_VV_coh.png
+2023-03-10T09:58:07,Villarrica,253633.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230226T095807_20230310T095807_VV_coh.png
+2023-03-15T10:01:36,Lascar,465916.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230303T100136_20230315T100136_VV_coh.png
+2023-03-17T23:27:44,Planchon-Peteroa,304716.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230305T232744_20230317T232744_VV_coh.png
+2023-03-22T09:57:17,Nevados de Chillan,235112.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230310T095717_20230322T095716_VV_coh.png
+2023-03-22T09:57:42,Copahue,69857.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230310T095742_20230322T095742_VV_coh.png
+2023-03-22T09:57:42,Llaima,272748.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230310T095742_20230322T095742_VV_coh.png
+2023-03-22T09:58:07,Villarrica,273138.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230310T095807_20230322T095807_VV_coh.png
+2023-03-27T10:01:37,Lascar,436809.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230315T100136_20230327T100136_VV_coh.png
+2023-03-29T23:27:44,Planchon-Peteroa,79168.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230317T232744_20230329T232744_VV_coh.png
+2023-04-03T09:57:14,Nevados de Chillan,297166.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230322T095716_20230403T095714_VV_coh.png
+2023-04-03T09:57:40,Copahue,126541.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230322T095742_20230403T095740_VV_coh.png
+2023-04-03T09:57:40,Llaima,170453.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230322T095742_20230403T095740_VV_coh.png
+2023-04-03T09:58:05,Villarrica,264938.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230322T095807_20230403T095804_VV_coh.png
+2023-04-08T10:01:37,Lascar,449247.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230327T100136_20230408T100137_VV_coh.png
+2023-04-10T23:27:45,Planchon-Peteroa,279669.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230329T232744_20230410T232745_VV_coh.png
+2023-04-15T09:57:19,Nevados de Chillan,274718.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230403T095714_20230415T095718_VV_coh.png
+2023-04-15T09:57:43,Copahue,147658.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230403T095740_20230415T095743_VV_coh.png
+2023-04-15T09:57:43,Llaima,239653.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230403T095740_20230415T095743_VV_coh.png
+2023-04-15T09:58:08,Villarrica,284375.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230403T095804_20230415T095808_VV_coh.png
+2023-04-20T10:01:37,Lascar,491411.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230408T100137_20230420T100136_VV_coh.png
+2023-04-22T23:27:45,Planchon-Peteroa,108840.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230410T232745_20230422T232745_VV_coh.png
+2023-04-27T09:57:19,Nevados de Chillan,239085.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230415T095718_20230427T095718_VV_coh.png
+2023-04-27T09:57:44,Copahue,68795.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230415T095743_20230427T095743_VV_coh.png
+2023-04-27T09:57:44,Llaima,197659.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230415T095743_20230427T095743_VV_coh.png
+2023-04-27T09:58:08,Villarrica,286019.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230415T095808_20230427T095808_VV_coh.png
+2023-05-02T10:01:38,Lascar,286610.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230420T100136_20230502T100138_VV_coh.png
+2023-05-04T23:27:46,Planchon-Peteroa,501363.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230422T232745_20230504T232745_VV_coh.png
+2023-05-09T09:57:19,Nevados de Chillan,502052.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230427T095718_20230509T095719_VV_coh.png
+2023-05-09T09:57:44,Copahue,403063.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230427T095743_20230509T095744_VV_coh.png
+2023-05-09T09:57:44,Llaima,360957.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230427T095743_20230509T095744_VV_coh.png
+2023-05-09T09:58:09,Villarrica,384938.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230427T095808_20230509T095809_VV_coh.png
+2023-05-14T10:01:39,Lascar,109651.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230502T100138_20230514T100138_VV_coh.png
+2023-05-16T23:27:47,Planchon-Peteroa,461480.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230504T232745_20230516T232746_VV_coh.png
+2023-05-26T10:01:39,Lascar,143826.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230514T100138_20230526T100139_VV_coh.png
+2023-05-28T23:27:47,Planchon-Peteroa,472029.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230516T232746_20230528T232747_VV_coh.png
+2023-06-02T09:57:45,Llaima,497567.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230509T095744_20230602T095745_VV_coh.png
+2023-06-07T10:01:39,Lascar,163901.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230526T100139_20230607T100139_VV_coh.png
+2023-06-09T23:27:48,Planchon-Peteroa,511133.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230528T232747_20230609T232747_VV_coh.png
+2023-06-14T09:57:21,Nevados de Chillan,523985.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230602T095720_20230614T095721_VV_coh.png
+2023-06-14T09:57:46,Copahue,522292.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230602T095745_20230614T095746_VV_coh.png
+2023-06-14T09:57:46,Llaima,535740.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230602T095745_20230614T095746_VV_coh.png
+2023-06-14T09:58:11,Villarrica,536905.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230602T095810_20230614T095810_VV_coh.png
+2023-06-19T10:01:41,Lascar,129647.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230607T100139_20230619T100140_VV_coh.png
+2023-06-21T23:27:48,Planchon-Peteroa,495537.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230609T232747_20230621T232748_VV_coh.png
+2023-06-26T09:57:21,Nevados de Chillan,530619.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230614T095721_20230626T095721_VV_coh.png
+2023-06-26T09:57:46,Copahue,526229.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230614T095746_20230626T095746_VV_coh.png
+2023-06-26T09:57:46,Llaima,537842.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230614T095746_20230626T095746_VV_coh.png
+2023-06-26T09:58:11,Villarrica,538093.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230614T095810_20230626T095811_VV_coh.png
+2023-07-01T10:01:41,Lascar,23816.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230619T100140_20230701T100141_VV_coh.png
+2023-07-03T23:27:49,Planchon-Peteroa,515540.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230621T232748_20230703T232749_VV_coh.png
+2023-07-08T09:57:23,Nevados de Chillan,529915.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230626T095721_20230708T095722_VV_coh.png
+2023-07-08T09:57:48,Copahue,526472.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230626T095746_20230708T095747_VV_coh.png
+2023-07-08T09:57:48,Llaima,535678.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230626T095746_20230708T095747_VV_coh.png
+2023-07-08T09:58:13,Villarrica,539105.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230626T095811_20230708T095812_VV_coh.png
+2023-07-13T10:01:42,Lascar,123776.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230701T100141_20230713T100142_VV_coh.png
+2023-07-15T23:27:50,Planchon-Peteroa,511015.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230703T232749_20230715T232750_VV_coh.png
+2023-07-20T09:57:23,Nevados de Chillan,530196.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230708T095722_20230720T095723_VV_coh.png
+2023-07-20T09:57:48,Copahue,526824.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230708T095747_20230720T095748_VV_coh.png
+2023-07-20T09:57:48,Llaima,535078.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230708T095747_20230720T095748_VV_coh.png
+2023-07-20T09:58:13,Villarrica,536278.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230708T095812_20230720T095813_VV_coh.png
+2023-07-25T10:01:43,Lascar,19339.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230713T100142_20230725T100142_VV_coh.png
+2023-07-27T23:27:51,Planchon-Peteroa,509676.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230715T232750_20230727T232750_VV_coh.png
+2023-08-01T09:57:24,Nevados de Chillan,530587.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230720T095723_20230801T095723_VV_coh.png
+2023-08-01T09:57:49,Copahue,509500.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230720T095748_20230801T095748_VV_coh.png
+2023-08-01T09:57:49,Llaima,475874.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230720T095748_20230801T095748_VV_coh.png
+2023-08-01T09:58:14,Villarrica,527910.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230720T095813_20230801T095813_VV_coh.png
+2023-08-06T10:01:44,Lascar,20441.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230725T100142_20230806T100143_VV_coh.png
+2023-08-08T23:27:51,Planchon-Peteroa,514098.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230727T232750_20230808T232750_VV_coh.png
+2023-08-13T09:57:25,Nevados de Chillan,528145.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230801T095723_20230813T095724_VV_coh.png
+2023-08-13T09:57:49,Copahue,506858.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230801T095748_20230813T095749_VV_coh.png
+2023-08-13T09:57:49,Llaima,528564.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230801T095748_20230813T095749_VV_coh.png
+2023-08-13T09:58:14,Villarrica,530731.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230801T095813_20230813T095814_VV_coh.png
+2023-08-18T10:01:44,Lascar,50187.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230806T100143_20230818T100144_VV_coh.png
+2023-08-25T09:57:26,Nevados de Chillan,531542.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230813T095724_20230825T095725_VV_coh.png
+2023-08-25T09:57:50,Copahue,528389.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230813T095749_20230825T095750_VV_coh.png
+2023-08-25T09:57:50,Llaima,538725.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230813T095749_20230825T095750_VV_coh.png
+2023-08-25T09:58:15,Villarrica,537104.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230813T095814_20230825T095815_VV_coh.png
+2023-08-30T10:01:45,Lascar,12832.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230818T100144_20230830T100144_VV_coh.png
+2023-09-06T09:57:26,Nevados de Chillan,529298.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230825T095725_20230906T095726_VV_coh.png
+2023-09-06T09:57:51,Copahue,527406.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230825T095750_20230906T095750_VV_coh.png
+2023-09-06T09:57:51,Llaima,538485.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230825T095750_20230906T095750_VV_coh.png
+2023-09-06T09:58:16,Villarrica,539805.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230825T095815_20230906T095815_VV_coh.png
+2023-09-11T10:01:45,Lascar,84545.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230830T100144_20230911T100145_VV_coh.png
+2023-09-13T23:27:53,Planchon-Peteroa,510796.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230901T232752_20230913T232752_VV_coh.png
+2023-09-18T09:57:27,Nevados de Chillan,530444.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230906T095726_20230918T095726_VV_coh.png
+2023-09-18T09:57:51,Copahue,527850.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230906T095750_20230918T095751_VV_coh.png
+2023-09-18T09:57:51,Llaima,538702.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230906T095750_20230918T095751_VV_coh.png
+2023-09-18T09:58:16,Villarrica,538820.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230906T095815_20230918T095816_VV_coh.png
+2023-09-23T10:01:46,Lascar,48187.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230911T100145_20230923T100145_VV_coh.png
+2023-09-25T23:27:54,Planchon-Peteroa,512667.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230913T232752_20230925T232753_VV_coh.png
+2023-09-30T09:57:27,Nevados de Chillan,531047.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230918T095726_20230930T095726_VV_coh.png
+2023-09-30T09:57:52,Copahue,526643.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230918T095751_20230930T095751_VV_coh.png
+2023-09-30T09:57:52,Llaima,538438.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230918T095751_20230930T095751_VV_coh.png
+2023-09-30T09:58:17,Villarrica,537812.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230918T095816_20230930T095816_VV_coh.png
+2023-10-05T10:01:46,Lascar,132707.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20230923T100145_20231005T100145_VV_coh.png
+2023-10-07T23:27:54,Planchon-Peteroa,513088.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20230925T232753_20231007T232753_VV_coh.png
+2023-10-12T09:57:26,Nevados de Chillan,532148.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20230930T095726_20231012T095726_VV_coh.png
+2023-10-12T09:57:51,Copahue,526688.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20230930T095751_20231012T095751_VV_coh.png
+2023-10-12T09:57:51,Llaima,513298.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20230930T095751_20231012T095751_VV_coh.png
+2023-10-12T09:58:16,Villarrica,501832.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20230930T095816_20231012T095816_VV_coh.png
+2023-10-17T10:01:46,Lascar,6891.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20231005T100145_20231017T100145_VV_coh.png
+2023-10-19T23:27:54,Planchon-Peteroa,495155.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20231007T232753_20231019T232753_VV_coh.png
+2023-10-24T09:57:27,Nevados de Chillan,528206.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20231012T095726_20231024T095726_VV_coh.png
+2023-10-24T09:57:52,Copahue,518771.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20231012T095751_20231024T095751_VV_coh.png
+2023-10-24T09:57:52,Llaima,506208.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20231012T095751_20231024T095751_VV_coh.png
+2023-10-24T09:58:17,Villarrica,513505.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20231012T095816_20231024T095816_VV_coh.png
+2023-10-31T23:27:53,Planchon-Peteroa,492968.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20231019T232753_20231031T232753_VV_coh.png
+2023-11-05T09:57:51,Copahue,423612.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20231024T095751_20231105T095751_VV_coh.png
+2023-11-05T09:57:51,Llaima,454698.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20231024T095751_20231105T095751_VV_coh.png
+2023-11-05T09:58:16,Villarrica,485885.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20231024T095816_20231105T095816_VV_coh.png
+2023-11-12T23:27:53,Planchon-Peteroa,503476.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20231031T232753_20231112T232753_VV_coh.png
+2023-11-17T09:57:26,Nevados de Chillan,523370.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20231105T095726_20231117T095726_VV_coh.png
+2023-11-17T09:57:51,Copahue,510465.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20231105T095751_20231117T095751_VV_coh.png
+2023-11-17T09:57:51,Llaima,496456.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20231105T095751_20231117T095751_VV_coh.png
+2023-11-17T09:58:16,Villarrica,500879.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20231105T095816_20231117T095816_VV_coh.png
+2023-11-22T10:01:45,Lascar,128512.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20231110T100145_20231122T100145_VV_coh.png
+2023-11-24T23:27:52,Planchon-Peteroa,510931.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20231112T232753_20231124T232752_VV_coh.png
+2023-11-29T09:57:25,Nevados de Chillan,526176.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20231117T095726_20231129T095724_VV_coh.png
+2023-11-29T09:57:50,Copahue,519726.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20231117T095751_20231129T095750_VV_coh.png
+2023-11-29T09:57:50,Llaima,515478.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20231117T095751_20231129T095750_VV_coh.png
+2023-11-29T09:58:15,Villarrica,514941.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20231117T095816_20231129T095815_VV_coh.png
+2023-12-04T10:01:45,Lascar,51948.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20231122T100145_20231204T100144_VV_coh.png
+2023-12-06T23:27:52,Planchon-Peteroa,462211.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20231124T232752_20231206T232752_VV_coh.png
+2023-12-11T09:57:26,Nevados de Chillan,457220.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20231129T095724_20231211T095725_VV_coh.png
+2023-12-11T09:57:50,Copahue,360821.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20231129T095750_20231211T095750_VV_coh.png
+2023-12-11T09:57:50,Llaima,409595.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20231129T095750_20231211T095750_VV_coh.png
+2023-12-11T09:58:15,Villarrica,444940.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20231129T095815_20231211T095815_VV_coh.png
+2023-12-16T10:01:44,Lascar,2422.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20231204T100144_20231216T100144_VV_coh.png
+2023-12-18T23:27:51,Planchon-Peteroa,395349.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20231206T232752_20231218T232751_VV_coh.png
+2023-12-23T09:57:24,Nevados de Chillan,430627.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2023/nevadoschillan_20231211T095725_20231223T095724_VV_coh.png
+2023-12-23T09:57:49,Copahue,323193.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2023/copahue_20231211T095750_20231223T095749_VV_coh.png
+2023-12-23T09:57:49,Llaima,397464.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2023/llaima_20231211T095750_20231223T095749_VV_coh.png
+2023-12-23T09:58:14,Villarrica,383993.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2023/villarrica_20231211T095815_20231223T095814_VV_coh.png
+2023-12-28T10:01:43,Lascar,159459.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2023/lascar_20231216T100144_20231228T100143_VV_coh.png
+2023-12-30T23:27:51,Planchon-Peteroa,407517.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2023/planchonpeteroa_20231218T232751_20231230T232750_VV_coh.png
+2024-01-04T09:57:24,Nevados de Chillan,412378.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20231223T095724_20240104T095724_VV_coh.png
+2024-01-04T09:57:49,Copahue,305075.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20231223T095749_20240104T095748_VV_coh.png
+2024-01-04T09:57:49,Llaima,384664.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20231223T095749_20240104T095748_VV_coh.png
+2024-01-04T09:58:14,Villarrica,382052.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20231223T095814_20240104T095813_VV_coh.png
+2024-01-09T10:01:43,Lascar,11214.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20231228T100143_20240109T100142_VV_coh.png
+2024-01-11T23:27:50,Planchon-Peteroa,320211.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20231230T232750_20240111T232750_VV_coh.png
+2024-01-16T09:57:23,Nevados de Chillan,342137.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240104T095724_20240116T095723_VV_coh.png
+2024-01-16T09:57:48,Copahue,197135.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240104T095748_20240116T095747_VV_coh.png
+2024-01-16T09:57:48,Llaima,278016.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240104T095748_20240116T095747_VV_coh.png
+2024-01-16T09:58:13,Villarrica,280005.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240104T095813_20240116T095812_VV_coh.png
+2024-01-21T10:01:42,Lascar,44410.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240109T100142_20240121T100142_VV_coh.png
+2024-01-23T23:27:50,Planchon-Peteroa,290736.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240111T232750_20240123T232749_VV_coh.png
+2024-01-28T09:57:23,Nevados de Chillan,360978.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240116T095723_20240128T095723_VV_coh.png
+2024-01-28T09:57:48,Copahue,229610.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240116T095747_20240128T095747_VV_coh.png
+2024-01-28T09:57:48,Llaima,299839.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240116T095747_20240128T095747_VV_coh.png
+2024-01-28T09:58:13,Villarrica,317162.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240116T095812_20240128T095812_VV_coh.png
+2024-02-02T10:01:42,Lascar,3371.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240121T100142_20240202T100141_VV_coh.png
+2024-02-04T23:27:50,Planchon-Peteroa,253278.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240123T232749_20240204T232749_VV_coh.png
+2024-02-09T09:57:23,Nevados de Chillan,325958.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240128T095723_20240209T095722_VV_coh.png
+2024-02-09T09:57:47,Copahue,198863.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240128T095747_20240209T095747_VV_coh.png
+2024-02-09T09:57:47,Llaima,337058.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240128T095747_20240209T095747_VV_coh.png
+2024-02-09T09:58:12,Villarrica,354051.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240128T095812_20240209T095812_VV_coh.png
+2024-02-14T10:01:42,Lascar,180400.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240202T100141_20240214T100141_VV_coh.png
+2024-02-16T23:27:49,Planchon-Peteroa,167913.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240204T232749_20240216T232749_VV_coh.png
+2024-02-21T09:57:22,Nevados de Chillan,276479.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240209T095722_20240221T095721_VV_coh.png
+2024-02-21T09:57:47,Copahue,122600.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240209T095747_20240221T095747_VV_coh.png
+2024-02-21T09:57:47,Llaima,288718.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240209T095747_20240221T095747_VV_coh.png
+2024-02-21T09:58:12,Villarrica,330142.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240209T095812_20240221T095812_VV_coh.png
+2024-02-26T10:01:42,Lascar,117401.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240214T100141_20240226T100141_VV_coh.png
+2024-02-28T23:27:49,Planchon-Peteroa,185494.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240216T232749_20240228T232749_VV_coh.png
+2024-03-04T09:57:23,Nevados de Chillan,281846.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240221T095721_20240304T095722_VV_coh.png
+2024-03-04T09:57:48,Copahue,142546.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240221T095747_20240304T095747_VV_coh.png
+2024-03-04T09:57:48,Llaima,195844.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240221T095747_20240304T095747_VV_coh.png
+2024-03-04T09:58:12,Villarrica,342875.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240221T095812_20240304T095812_VV_coh.png
+2024-03-09T10:01:41,Lascar,196784.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240226T100141_20240309T100141_VV_coh.png
+2024-03-11T23:27:49,Planchon-Peteroa,136985.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240228T232749_20240311T232749_VV_coh.png
+2024-03-16T09:57:23,Nevados de Chillan,254443.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240304T095722_20240316T095722_VV_coh.png
+2024-03-16T09:57:48,Copahue,109813.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240304T095747_20240316T095747_VV_coh.png
+2024-03-16T09:57:48,Llaima,321365.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240304T095747_20240316T095747_VV_coh.png
+2024-03-16T09:58:12,Villarrica,353167.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240304T095812_20240316T095812_VV_coh.png
+2024-03-21T10:01:42,Lascar,90855.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240309T100141_20240321T100142_VV_coh.png
+2024-03-23T23:27:50,Planchon-Peteroa,127321.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240311T232749_20240323T232749_VV_coh.png
+2024-03-28T09:57:23,Nevados de Chillan,279708.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240316T095722_20240328T095723_VV_coh.png
+2024-03-28T09:57:48,Copahue,117015.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240316T095747_20240328T095747_VV_coh.png
+2024-03-28T09:57:48,Llaima,273083.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240316T095747_20240328T095747_VV_coh.png
+2024-03-28T09:58:13,Villarrica,359627.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240316T095812_20240328T095812_VV_coh.png
+2024-04-02T10:01:43,Lascar,157619.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240321T100142_20240402T100142_VV_coh.png
+2024-04-04T23:27:50,Planchon-Peteroa,284153.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240323T232749_20240404T232750_VV_coh.png
+2024-04-14T10:01:42,Lascar,400596.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240402T100142_20240414T100141_VV_coh.png
+2024-04-16T23:27:50,Planchon-Peteroa,329426.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240404T232750_20240416T232750_VV_coh.png
+2024-04-21T09:57:49,Copahue,139232.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240328T095747_20240421T095748_VV_coh.png
+2024-04-21T09:57:49,Llaima,288272.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240328T095747_20240421T095748_VV_coh.png
+2024-04-21T09:58:14,Villarrica,338724.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240328T095812_20240421T095813_VV_coh.png
+2024-04-26T10:01:43,Lascar,394803.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240414T100141_20240426T100143_VV_coh.png
+2024-04-28T23:27:51,Planchon-Peteroa,452536.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240416T232750_20240428T232750_VV_coh.png
+2024-05-03T09:57:24,Nevados de Chillan,533113.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240421T095723_20240503T095724_VV_coh.png
+2024-05-03T09:57:49,Copahue,526194.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240421T095748_20240503T095748_VV_coh.png
+2024-05-03T09:57:49,Llaima,540464.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240421T095748_20240503T095748_VV_coh.png
+2024-05-03T09:58:14,Villarrica,541862.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240421T095813_20240503T095813_VV_coh.png
+2024-05-08T10:01:43,Lascar,115067.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240426T100143_20240508T100143_VV_coh.png
+2024-05-10T23:27:51,Planchon-Peteroa,519119.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240428T232750_20240510T232750_VV_coh.png
+2024-05-15T09:57:24,Nevados de Chillan,532628.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240503T095724_20240515T095723_VV_coh.png
+2024-05-15T09:57:48,Copahue,527011.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240503T095748_20240515T095748_VV_coh.png
+2024-05-15T09:57:48,Llaima,539535.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240503T095748_20240515T095748_VV_coh.png
+2024-05-15T09:58:13,Villarrica,539824.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240503T095813_20240515T095813_VV_coh.png
+2024-05-20T10:01:43,Lascar,160983.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240508T100143_20240520T100142_VV_coh.png
+2024-05-22T23:27:50,Planchon-Peteroa,519818.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240510T232750_20240522T232750_VV_coh.png
+2024-05-27T09:57:24,Nevados de Chillan,530590.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240515T095723_20240527T095724_VV_coh.png
+2024-05-27T09:57:49,Copahue,526892.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240515T095748_20240527T095748_VV_coh.png
+2024-05-27T09:57:49,Llaima,537805.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240515T095748_20240527T095748_VV_coh.png
+2024-05-27T09:58:14,Villarrica,536672.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240515T095813_20240527T095813_VV_coh.png
+2024-06-01T10:01:43,Lascar,62714.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240520T100142_20240601T100142_VV_coh.png
+2024-06-03T23:27:50,Planchon-Peteroa,514311.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240522T232750_20240603T232750_VV_coh.png
+2024-06-08T09:57:23,Nevados de Chillan,532292.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240527T095724_20240608T095723_VV_coh.png
+2024-06-08T09:57:48,Copahue,528044.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240527T095748_20240608T095748_VV_coh.png
+2024-06-08T09:57:48,Llaima,539640.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240527T095748_20240608T095748_VV_coh.png
+2024-06-08T09:58:13,Villarrica,537845.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240527T095813_20240608T095812_VV_coh.png
+2024-06-13T10:01:42,Lascar,28047.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240601T100142_20240613T100142_VV_coh.png
+2024-06-15T23:27:50,Planchon-Peteroa,502574.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240603T232750_20240615T232749_VV_coh.png
+2024-06-20T09:57:23,Nevados de Chillan,530436.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240608T095723_20240620T095722_VV_coh.png
+2024-06-20T09:57:48,Copahue,527036.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240608T095748_20240620T095747_VV_coh.png
+2024-06-20T09:57:48,Llaima,538596.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240608T095748_20240620T095747_VV_coh.png
+2024-06-20T09:58:13,Villarrica,538422.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240608T095812_20240620T095812_VV_coh.png
+2024-06-25T10:01:42,Lascar,50649.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240613T100142_20240625T100141_VV_coh.png
+2024-07-07T10:01:41,Lascar,13271.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240625T100141_20240707T100141_VV_coh.png
+2024-07-09T23:27:49,Planchon-Peteroa,512817.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240615T232749_20240709T232748_VV_coh.png
+2024-07-14T09:57:22,Nevados de Chillan,530798.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240620T095722_20240714T095721_VV_coh.png
+2024-07-14T09:57:47,Copahue,528582.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240620T095747_20240714T095746_VV_coh.png
+2024-07-14T09:57:47,Llaima,539321.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240620T095747_20240714T095746_VV_coh.png
+2024-07-14T09:58:12,Villarrica,539358.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240620T095812_20240714T095811_VV_coh.png
+2024-07-19T10:01:41,Lascar,23342.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240707T100141_20240719T100140_VV_coh.png
+2024-07-21T23:27:48,Planchon-Peteroa,504689.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240709T232748_20240721T232748_VV_coh.png
+2024-07-26T09:57:21,Nevados de Chillan,531608.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240714T095721_20240726T095721_VV_coh.png
+2024-07-26T09:57:46,Copahue,527089.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240714T095746_20240726T095746_VV_coh.png
+2024-07-26T09:57:46,Llaima,537818.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240714T095746_20240726T095746_VV_coh.png
+2024-07-26T09:58:11,Villarrica,537769.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240714T095811_20240726T095810_VV_coh.png
+2024-07-31T10:01:41,Lascar,130632.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240719T100140_20240731T100140_VV_coh.png
+2024-08-02T23:27:48,Planchon-Peteroa,515816.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240721T232748_20240802T232748_VV_coh.png
+2024-08-07T09:57:21,Nevados de Chillan,532176.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240726T095721_20240807T095721_VV_coh.png
+2024-08-07T09:57:46,Copahue,528529.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240726T095746_20240807T095746_VV_coh.png
+2024-08-07T09:57:46,Llaima,536767.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240726T095746_20240807T095746_VV_coh.png
+2024-08-07T09:58:11,Villarrica,534855.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240726T095810_20240807T095811_VV_coh.png
+2024-08-12T10:01:40,Lascar,6666.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240731T100140_20240812T100140_VV_coh.png
+2024-08-14T23:27:48,Planchon-Peteroa,517697.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240802T232748_20240814T232747_VV_coh.png
+2024-08-19T09:57:22,Nevados de Chillan,532086.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240807T095721_20240819T095721_VV_coh.png
+2024-08-19T09:57:47,Copahue,527895.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240807T095746_20240819T095746_VV_coh.png
+2024-08-19T09:57:47,Llaima,537334.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240807T095746_20240819T095746_VV_coh.png
+2024-08-19T09:58:11,Villarrica,534945.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240807T095811_20240819T095811_VV_coh.png
+2024-08-24T10:01:41,Lascar,13813.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240812T100140_20240824T100140_VV_coh.png
+2024-08-26T23:27:49,Planchon-Peteroa,506781.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240814T232747_20240826T232748_VV_coh.png
+2024-08-31T09:57:22,Nevados de Chillan,529918.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240819T095721_20240831T095721_VV_coh.png
+2024-08-31T09:57:47,Copahue,519140.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240819T095746_20240831T095746_VV_coh.png
+2024-08-31T09:57:47,Llaima,515497.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240819T095746_20240831T095746_VV_coh.png
+2024-08-31T09:58:11,Villarrica,519564.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240819T095811_20240831T095811_VV_coh.png
+2024-09-05T10:01:41,Lascar,23976.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240824T100140_20240905T100140_VV_coh.png
+2024-09-07T23:27:49,Planchon-Peteroa,509233.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240826T232748_20240907T232748_VV_coh.png
+2024-09-12T09:57:22,Nevados de Chillan,532299.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240831T095721_20240912T095722_VV_coh.png
+2024-09-12T09:57:47,Copahue,527903.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240831T095746_20240912T095747_VV_coh.png
+2024-09-12T09:57:47,Llaima,526885.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240831T095746_20240912T095747_VV_coh.png
+2024-09-12T09:58:12,Villarrica,532424.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240831T095811_20240912T095811_VV_coh.png
+2024-09-17T10:01:42,Lascar,106656.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240905T100140_20240917T100141_VV_coh.png
+2024-09-19T23:27:49,Planchon-Peteroa,503025.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240907T232748_20240919T232749_VV_coh.png
+2024-09-24T09:57:23,Nevados de Chillan,533128.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240912T095722_20240924T095722_VV_coh.png
+2024-09-24T09:57:47,Copahue,527675.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240912T095747_20240924T095747_VV_coh.png
+2024-09-24T09:57:47,Llaima,539014.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240912T095747_20240924T095747_VV_coh.png
+2024-09-24T09:58:12,Villarrica,538312.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240912T095811_20240924T095812_VV_coh.png
+2024-09-29T10:01:42,Lascar,30695.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240917T100141_20240929T100141_VV_coh.png
+2024-10-01T23:27:49,Planchon-Peteroa,511592.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20240919T232749_20241001T232749_VV_coh.png
+2024-10-06T09:57:23,Nevados de Chillan,532179.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20240924T095722_20241006T095723_VV_coh.png
+2024-10-06T09:57:48,Copahue,527240.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20240924T095747_20241006T095748_VV_coh.png
+2024-10-06T09:57:48,Llaima,539632.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20240924T095747_20241006T095748_VV_coh.png
+2024-10-06T09:58:13,Villarrica,538411.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20240924T095812_20241006T095812_VV_coh.png
+2024-10-11T10:01:42,Lascar,131872.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20240929T100141_20241011T100142_VV_coh.png
+2024-10-13T23:27:50,Planchon-Peteroa,509758.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20241001T232749_20241013T232749_VV_coh.png
+2024-10-18T09:57:23,Nevados de Chillan,524949.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20241006T095723_20241018T095723_VV_coh.png
+2024-10-18T09:57:48,Copahue,504130.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20241006T095748_20241018T095748_VV_coh.png
+2024-10-18T09:57:48,Llaima,510113.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20241006T095748_20241018T095748_VV_coh.png
+2024-10-18T09:58:13,Villarrica,516610.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20241006T095812_20241018T095812_VV_coh.png
+2024-10-25T23:27:49,Planchon-Peteroa,485736.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20241013T232749_20241025T232749_VV_coh.png
+2024-10-30T09:57:23,Nevados de Chillan,486879.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20241018T095723_20241030T095723_VV_coh.png
+2024-10-30T09:57:48,Copahue,427505.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20241018T095748_20241030T095747_VV_coh.png
+2024-10-30T09:57:48,Llaima,470445.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20241018T095748_20241030T095747_VV_coh.png
+2024-10-30T09:58:13,Villarrica,491630.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20241018T095812_20241030T095812_VV_coh.png
+2024-11-04T10:01:42,Lascar,96816.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20241011T100142_20241104T100142_VV_coh.png
+2024-11-06T23:27:49,Planchon-Peteroa,480158.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20241025T232749_20241106T232749_VV_coh.png
+2024-11-11T09:57:23,Nevados de Chillan,511873.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20241030T095723_20241111T095722_VV_coh.png
+2024-11-11T09:57:48,Copahue,505415.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20241030T095747_20241111T095747_VV_coh.png
+2024-11-11T09:57:48,Llaima,500694.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20241030T095747_20241111T095747_VV_coh.png
+2024-11-11T09:58:12,Villarrica,510614.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20241030T095812_20241111T095812_VV_coh.png
+2024-11-16T10:01:42,Lascar,1493.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20241104T100142_20241116T100141_VV_coh.png
+2024-11-18T23:27:49,Planchon-Peteroa,453050.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20241106T232749_20241118T232749_VV_coh.png
+2024-11-23T09:57:22,Nevados de Chillan,515546.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20241111T095722_20241123T095721_VV_coh.png
+2024-11-23T09:57:47,Copahue,506547.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20241111T095747_20241123T095746_VV_coh.png
+2024-11-23T09:57:47,Llaima,500494.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20241111T095747_20241123T095746_VV_coh.png
+2024-11-23T09:58:11,Villarrica,505682.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20241111T095812_20241123T095811_VV_coh.png
+2024-11-28T10:01:41,Lascar,40476.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20241116T100141_20241128T100140_VV_coh.png
+2024-12-05T09:57:21,Nevados de Chillan,394334.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20241123T095721_20241205T095720_VV_coh.png
+2024-12-05T09:57:46,Copahue,268027.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20241123T095746_20241205T095745_VV_coh.png
+2024-12-05T09:57:46,Llaima,418497.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20241123T095746_20241205T095745_VV_coh.png
+2024-12-05T09:58:11,Villarrica,416853.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20241123T095811_20241205T095810_VV_coh.png
+2024-12-10T10:01:40,Lascar,17419.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20241128T100140_20241210T100139_VV_coh.png
+2024-12-12T23:27:47,Planchon-Peteroa,382000.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20241118T232749_20241212T232747_VV_coh.png
+2024-12-17T09:57:20,Nevados de Chillan,406202.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20241205T095720_20241217T095719_VV_coh.png
+2024-12-17T09:57:45,Copahue,301064.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20241205T095745_20241217T095744_VV_coh.png
+2024-12-17T09:57:45,Llaima,440203.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20241205T095745_20241217T095744_VV_coh.png
+2024-12-17T09:58:09,Villarrica,455979.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20241205T095810_20241217T095809_VV_coh.png
+2024-12-22T10:01:39,Lascar,839.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2024/lascar_20241210T100139_20241222T100138_VV_coh.png
+2024-12-24T23:27:46,Planchon-Peteroa,364564.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2024/planchonpeteroa_20241212T232747_20241224T232745_VV_coh.png
+2024-12-29T09:57:19,Nevados de Chillan,364887.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2024/nevadoschillan_20241217T095719_20241229T095719_VV_coh.png
+2024-12-29T09:57:44,Copahue,249895.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2024/copahue_20241217T095744_20241229T095743_VV_coh.png
+2024-12-29T09:57:44,Llaima,344343.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2024/llaima_20241217T095744_20241229T095743_VV_coh.png
+2024-12-29T09:58:09,Villarrica,341903.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2024/villarrica_20241217T095809_20241229T095808_VV_coh.png
+2025-01-03T10:01:37,Lascar,31416.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20241222T100138_20250103T100137_VV_coh.png
+2025-01-05T23:27:45,Planchon-Peteroa,216585.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20241224T232745_20250105T232744_VV_coh.png
+2025-01-10T09:57:43,Copahue,141604.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20241229T095743_20250110T095742_VV_coh.png
+2025-01-10T09:57:43,Llaima,293166.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20241229T095743_20250110T095742_VV_coh.png
+2025-01-10T09:58:08,Villarrica,305388.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20241229T095808_20250110T095807_VV_coh.png
+2025-01-15T10:01:36,Lascar,1245.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250103T100137_20250115T100136_VV_coh.png
+2025-01-17T23:27:44,Planchon-Peteroa,158997.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250105T232744_20250117T232743_VV_coh.png
+2025-01-22T09:57:41,Copahue,114830.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250110T095742_20250122T095740_VV_coh.png
+2025-01-22T09:57:41,Llaima,284569.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250110T095742_20250122T095740_VV_coh.png
+2025-01-22T09:58:06,Villarrica,296696.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250110T095807_20250122T095805_VV_coh.png
+2025-01-27T10:01:36,Lascar,53870.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250115T100136_20250127T100135_VV_coh.png
+2025-01-29T23:27:43,Planchon-Peteroa,214979.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250117T232743_20250129T232743_VV_coh.png
+2025-02-03T09:57:41,Copahue,168950.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250122T095740_20250203T095741_VV_coh.png
+2025-02-03T09:57:41,Llaima,263192.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250122T095740_20250203T095741_VV_coh.png
+2025-02-03T09:58:06,Villarrica,331662.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250122T095805_20250203T095805_VV_coh.png
+2025-02-08T10:01:35,Lascar,56985.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250127T100135_20250208T100135_VV_coh.png
+2025-02-10T23:27:43,Planchon-Peteroa,99806.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250129T232743_20250210T232742_VV_coh.png
+2025-02-15T09:57:41,Copahue,86947.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250203T095741_20250215T095740_VV_coh.png
+2025-02-15T09:57:41,Llaima,296252.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250203T095741_20250215T095740_VV_coh.png
+2025-02-15T09:58:05,Villarrica,320197.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250203T095805_20250215T095805_VV_coh.png
+2025-02-20T10:01:35,Lascar,197597.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250208T100135_20250220T100134_VV_coh.png
+2025-02-22T23:27:42,Planchon-Peteroa,264281.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250210T232742_20250222T232742_VV_coh.png
+2025-02-27T09:57:41,Copahue,53655.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250215T095740_20250227T095741_VV_coh.png
+2025-02-27T09:57:41,Llaima,169914.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250215T095740_20250227T095741_VV_coh.png
+2025-02-27T09:58:07,Villarrica,207376.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250215T095805_20250227T095807_VV_coh.png
+2025-03-04T10:01:35,Lascar,69363.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250220T100134_20250304T100134_VV_coh.png
+2025-03-06T23:27:43,Planchon-Peteroa,80795.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250222T232742_20250306T232742_VV_coh.png
+2025-03-11T09:57:41,Copahue,123306.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250227T095741_20250311T095740_VV_coh.png
+2025-03-11T09:57:41,Llaima,302715.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250227T095741_20250311T095740_VV_coh.png
+2025-03-11T09:58:05,Villarrica,292588.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250227T095807_20250311T095805_VV_coh.png
+2025-03-16T10:01:35,Lascar,89249.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250304T100134_20250316T100134_VV_coh.png
+2025-03-18T23:27:43,Planchon-Peteroa,94447.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250306T232742_20250318T232742_VV_coh.png
+2025-03-23T09:57:41,Copahue,151776.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250311T095740_20250323T095740_VV_coh.png
+2025-03-23T09:57:41,Llaima,297242.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250311T095740_20250323T095740_VV_coh.png
+2025-03-23T09:58:06,Villarrica,328681.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250311T095805_20250323T095805_VV_coh.png
+2025-03-28T10:01:35,Lascar,18183.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250316T100134_20250328T100135_VV_coh.png
+2025-03-30T23:27:43,Planchon-Peteroa,512434.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250318T232742_20250330T232743_VV_coh.png
+2025-04-03T10:00:11,Lascar,369572.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250328T100135_20250403T100010_VV_coh.png
+2025-04-04T09:57:41,Llaima,349229.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250323T095740_20250404T095741_VV_coh.png
+2025-04-04T09:58:06,Villarrica,336198.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250323T095805_20250404T095806_VV_coh.png
+2025-04-09T10:01:35,Lascar,296368.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250403T100010_20250409T100135_VV_coh.png
+2025-04-10T09:56:25,Copahue,463761.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250404T095741_20250410T095624_VV_coh.png
+2025-04-11T23:27:43,Planchon-Peteroa,509454.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250330T232743_20250411T232742_VV_coh.png
+2025-04-15T10:00:26,Lascar,320293.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250409T100135_20250415T100026_VV_coh.png
+2025-04-21T10:01:35,Lascar,367977.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250415T100026_20250421T100135_VV_coh.png
+2025-04-23T23:27:43,Planchon-Peteroa,360470.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250411T232742_20250423T232743_VV_coh.png
+2025-04-27T10:00:27,Lascar,353419.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250421T100135_20250427T100027_VV_coh.png
+2025-04-28T09:57:42,Copahue,522786.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250410T095624_20250428T095741_VV_coh.png
+2025-04-28T09:57:42,Llaima,421209.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250404T095741_20250428T095741_VV_coh.png
+2025-04-28T09:58:06,Villarrica,481707.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250404T095806_20250428T095806_VV_coh.png
+2025-05-03T10:01:35,Lascar,290936.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250427T100027_20250503T100135_VV_coh.png
+2025-05-05T23:27:43,Planchon-Peteroa,407016.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250423T232743_20250505T232743_VV_coh.png
+2025-05-09T10:00:17,Lascar,263689.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250503T100135_20250509T100016_VV_coh.png
+2025-05-10T09:57:41,Copahue,509853.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250428T095741_20250510T095741_VV_coh.png
+2025-05-10T09:57:41,Llaima,443140.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250428T095741_20250510T095741_VV_coh.png
+2025-05-10T09:58:06,Villarrica,472806.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250428T095806_20250510T095806_VV_coh.png
+2025-05-11T23:26:43,Planchon-Peteroa,509278.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250505T232743_20250511T232643_VV_coh.png
+2025-05-15T10:01:35,Lascar,238175.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250509T100016_20250515T100135_VV_coh.png
+2025-05-17T23:27:43,Planchon-Peteroa,518561.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250511T232643_20250517T232742_VV_coh.png
+2025-05-21T10:00:18,Lascar,158706.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250515T100135_20250521T100017_VV_coh.png
+2025-05-23T23:26:45,Planchon-Peteroa,515167.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250517T232742_20250523T232644_VV_coh.png
+2025-05-27T10:01:35,Lascar,87050.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250521T100017_20250527T100134_VV_coh.png
+2025-05-29T23:27:42,Planchon-Peteroa,515890.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250523T232644_20250529T232742_VV_coh.png
+2025-06-02T10:00:19,Lascar,161861.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250527T100134_20250602T100019_VV_coh.png
+2025-06-04T23:26:45,Planchon-Peteroa,515060.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250529T232742_20250604T232645_VV_coh.png
+2025-06-08T10:01:34,Lascar,162230.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250602T100019_20250608T100134_VV_coh.png
+2025-06-10T23:27:42,Planchon-Peteroa,505165.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250604T232645_20250610T232741_VV_coh.png
+2025-06-14T10:00:20,Lascar,145140.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250608T100134_20250614T100019_VV_coh.png
+2025-06-16T23:26:46,Planchon-Peteroa,517990.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250610T232741_20250616T232646_VV_coh.png
+2025-06-20T10:01:33,Lascar,137513.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250614T100019_20250620T100133_VV_coh.png
+2025-06-22T23:27:41,Planchon-Peteroa,518862.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250616T232646_20250622T232741_VV_coh.png
+2025-06-26T10:00:21,Lascar,478212.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250620T100133_20250626T100020_VV_coh.png
+2025-06-28T23:26:46,Planchon-Peteroa,517256.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250622T232741_20250628T232646_VV_coh.png
+2025-07-02T10:01:33,Lascar,468347.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250626T100020_20250702T100132_VV_coh.png
+2025-07-04T23:27:40,Planchon-Peteroa,511176.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250628T232646_20250704T232740_VV_coh.png
+2025-07-08T10:00:21,Lascar,324806.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250702T100132_20250708T100021_VV_coh.png
+2025-07-09T09:57:38,Copahue,525366.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250627T095738_20250709T095738_VV_coh.png
+2025-07-09T09:57:38,Llaima,536658.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250627T095738_20250709T095738_VV_coh.png
+2025-07-09T09:58:03,Villarrica,537178.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250627T095803_20250709T095803_VV_coh.png
+2025-07-10T23:26:48,Planchon-Peteroa,505526.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250704T232740_20250710T232647_VV_coh.png
+2025-07-14T10:01:32,Lascar,294674.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250708T100021_20250714T100132_VV_coh.png
+2025-07-16T23:27:40,Planchon-Peteroa,513836.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250710T232647_20250716T232739_VV_coh.png
+2025-07-20T10:00:22,Lascar,281941.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250714T100132_20250720T100022_VV_coh.png
+2025-07-21T09:57:38,Copahue,516704.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250709T095738_20250721T095737_VV_coh.png
+2025-07-21T09:57:38,Llaima,528412.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250709T095738_20250721T095737_VV_coh.png
+2025-07-21T09:58:03,Villarrica,529490.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250709T095803_20250721T095802_VV_coh.png
+2025-07-22T23:26:48,Planchon-Peteroa,506708.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250716T232739_20250722T232648_VV_coh.png
+2025-07-26T10:01:32,Lascar,274574.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250720T100022_20250726T100131_VV_coh.png
+2025-07-28T23:27:40,Planchon-Peteroa,501335.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250722T232648_20250728T232739_VV_coh.png
+2025-08-01T10:00:23,Lascar,487104.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250726T100131_20250801T100022_VV_coh.png
+2025-08-03T23:26:49,Planchon-Peteroa,511094.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250728T232739_20250803T232648_VV_coh.png
+2025-08-07T10:01:32,Lascar,449607.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250801T100022_20250807T100131_VV_coh.png
+2025-08-09T23:27:39,Planchon-Peteroa,506580.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250803T232648_20250809T232739_VV_coh.png
+2025-08-13T10:00:23,Lascar,286372.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250807T100131_20250813T100023_VV_coh.png
+2025-08-15T23:26:49,Planchon-Peteroa,503632.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250809T232739_20250815T232649_VV_coh.png
+2025-08-19T10:01:32,Lascar,300782.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250813T100023_20250819T100131_VV_coh.png
+2025-08-21T23:27:39,Planchon-Peteroa,511348.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250815T232649_20250821T232739_VV_coh.png
+2025-08-25T10:00:24,Lascar,198114.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250819T100131_20250825T100023_VV_coh.png
+2025-08-27T23:26:50,Planchon-Peteroa,510995.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250821T232739_20250827T232649_VV_coh.png
+2025-08-31T10:01:32,Lascar,116366.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250825T100023_20250831T100131_VV_coh.png
+2025-09-01T09:56:31,Copahue,524125.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250826T095737_20250901T095630_VV_coh.png
+2025-09-01T09:56:31,Llaima,536877.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250826T095737_20250901T095630_VV_coh.png
+2025-09-01T09:56:55,Villarrica,536778.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250826T095802_20250901T095655_VV_coh.png
+2025-09-02T23:27:39,Planchon-Peteroa,508299.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250827T232649_20250902T232739_VV_coh.png
+2025-09-06T10:00:43,Lascar,402894.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250831T100131_20250906T100043_VV_coh.png
+2025-09-07T09:57:38,Copahue,521055.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250901T095630_20250907T095737_VV_coh.png
+2025-09-07T09:57:38,Llaima,483611.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250901T095630_20250907T095737_VV_coh.png
+2025-09-07T09:58:03,Villarrica,478224.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250901T095655_20250907T095802_VV_coh.png
+2025-09-08T23:26:51,Planchon-Peteroa,505040.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250902T232739_20250908T232650_VV_coh.png
+2025-09-12T10:01:32,Lascar,416333.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250906T100043_20250912T100132_VV_coh.png
+2025-09-13T09:56:34,Copahue,518211.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250907T095737_20250913T095633_VV_coh.png
+2025-09-13T09:56:34,Llaima,519590.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250907T095737_20250913T095633_VV_coh.png
+2025-09-13T09:56:59,Villarrica,529184.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250907T095802_20250913T095658_VV_coh.png
+2025-09-14T23:27:40,Planchon-Peteroa,470141.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250908T232650_20250914T232739_VV_coh.png
+2025-09-18T10:00:41,Lascar,208266.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250912T100132_20250918T100041_VV_coh.png
+2025-09-19T09:57:38,Copahue,504411.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250913T095633_20250919T095738_VV_coh.png
+2025-09-19T09:57:38,Llaima,501780.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250913T095633_20250919T095738_VV_coh.png
+2025-09-19T09:58:03,Villarrica,521903.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250913T095658_20250919T095803_VV_coh.png
+2025-09-20T23:26:51,Planchon-Peteroa,505616.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250914T232739_20250920T232650_VV_coh.png
+2025-09-24T10:01:32,Lascar,101427.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250918T100041_20250924T100132_VV_coh.png
+2025-09-25T09:56:34,Copahue,421276.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250919T095738_20250925T095634_VV_coh.png
+2025-09-25T09:56:34,Llaima,482557.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250919T095738_20250925T095634_VV_coh.png
+2025-09-25T09:56:59,Villarrica,496542.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250919T095803_20250925T095658_VV_coh.png
+2025-09-26T23:27:40,Planchon-Peteroa,512484.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250920T232650_20250926T232739_VV_coh.png
+2025-09-30T10:00:41,Lascar,70275.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250924T100132_20250930T100041_VV_coh.png
+2025-10-01T09:57:38,Copahue,416646.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20250925T095634_20251001T095738_VV_coh.png
+2025-10-01T09:57:38,Llaima,460453.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20250925T095634_20251001T095738_VV_coh.png
+2025-10-01T09:58:03,Villarrica,480523.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20250925T095658_20251001T095802_VV_coh.png
+2025-10-02T23:26:51,Planchon-Peteroa,504920.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20250926T232739_20251002T232650_VV_coh.png
+2025-10-06T10:01:33,Lascar,48581.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20250930T100041_20251006T100132_VV_coh.png
+2025-10-07T09:56:35,Copahue,463036.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251001T095738_20251007T095634_VV_coh.png
+2025-10-07T09:56:35,Llaima,502795.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251001T095738_20251007T095634_VV_coh.png
+2025-10-07T09:56:59,Villarrica,506056.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251001T095802_20251007T095659_VV_coh.png
+2025-10-08T23:27:41,Planchon-Peteroa,493961.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251002T232650_20251008T232740_VV_coh.png
+2025-10-12T10:00:42,Lascar,43417.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251006T100132_20251012T100041_VV_coh.png
+2025-10-13T09:57:39,Copahue,480961.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251007T095634_20251013T095738_VV_coh.png
+2025-10-13T09:57:39,Llaima,501406.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251007T095634_20251013T095738_VV_coh.png
+2025-10-13T09:58:04,Villarrica,499146.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251007T095659_20251013T095803_VV_coh.png
+2025-10-14T23:26:51,Planchon-Peteroa,497296.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251008T232740_20251014T232650_VV_coh.png
+2025-10-18T10:01:33,Lascar,27373.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251012T100041_20251018T100132_VV_coh.png
+2025-10-19T09:56:35,Copahue,427996.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251013T095738_20251019T095634_VV_coh.png
+2025-10-19T09:56:35,Llaima,473548.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251013T095738_20251019T095634_VV_coh.png
+2025-10-19T09:56:59,Villarrica,473722.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251013T095803_20251019T095659_VV_coh.png
+2025-10-20T23:27:40,Planchon-Peteroa,454319.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251014T232650_20251020T232740_VV_coh.png
+2025-10-24T10:00:41,Lascar,23406.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251018T100132_20251024T100041_VV_coh.png
+2025-10-25T09:57:38,Copahue,357467.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251019T095634_20251025T095738_VV_coh.png
+2025-10-25T09:57:38,Llaima,418736.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251019T095634_20251025T095738_VV_coh.png
+2025-10-25T09:58:03,Villarrica,388799.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251019T095659_20251025T095803_VV_coh.png
+2025-10-26T23:26:51,Planchon-Peteroa,338101.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251020T232740_20251026T232650_VV_coh.png
+2025-10-30T10:01:32,Lascar,54204.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251024T100041_20251030T100132_VV_coh.png
+2025-10-31T09:56:34,Copahue,378473.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251025T095738_20251031T095634_VV_coh.png
+2025-10-31T09:56:34,Llaima,418849.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251025T095738_20251031T095634_VV_coh.png
+2025-10-31T09:56:59,Villarrica,472059.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251025T095803_20251031T095659_VV_coh.png
+2025-11-01T23:27:40,Planchon-Peteroa,303135.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251026T232650_20251101T232740_VV_coh.png
+2025-11-05T10:00:41,Lascar,57605.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251030T100132_20251105T100041_VV_coh.png
+2025-11-06T09:57:38,Copahue,298142.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251031T095634_20251106T095737_VV_coh.png
+2025-11-06T09:57:38,Llaima,375967.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251031T095634_20251106T095737_VV_coh.png
+2025-11-06T09:58:03,Villarrica,472163.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251031T095659_20251106T095802_VV_coh.png
+2025-11-07T23:26:50,Planchon-Peteroa,289712.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251101T232740_20251107T232650_VV_coh.png
+2025-11-11T10:01:32,Lascar,18341.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251105T100041_20251111T100131_VV_coh.png
+2025-11-12T09:56:34,Llaima,418711.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251106T095737_20251112T095633_VV_coh.png
+2025-11-12T09:56:58,Villarrica,409117.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251106T095802_20251112T095658_VV_coh.png
+2025-11-13T23:27:39,Planchon-Peteroa,271571.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251107T232650_20251113T232739_VV_coh.png
+2025-11-17T10:00:41,Lascar,7199.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251111T100131_20251117T100040_VV_coh.png
+2025-11-18T09:57:37,Copahue,328526.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251031T095634_20251118T095737_VV_coh.png
+2025-11-18T09:57:37,Llaima,398357.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251112T095633_20251118T095737_VV_coh.png
+2025-11-18T09:58:02,Villarrica,362593.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251112T095658_20251118T095802_VV_coh.png
+2025-11-19T23:26:50,Planchon-Peteroa,303503.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251113T232739_20251119T232650_VV_coh.png
+2025-11-23T10:01:31,Lascar,37554.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251117T100040_20251123T100131_VV_coh.png
+2025-11-24T09:56:33,Copahue,171635.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251118T095737_20251124T095633_VV_coh.png
+2025-11-24T09:56:33,Llaima,356984.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251118T095737_20251124T095633_VV_coh.png
+2025-11-24T09:56:58,Villarrica,359467.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251118T095802_20251124T095658_VV_coh.png
+2025-11-25T23:27:38,Planchon-Peteroa,163694.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251119T232650_20251125T232738_VV_coh.png
+2025-11-29T10:00:40,Lascar,17222.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251123T100131_20251129T100040_VV_coh.png
+2025-11-30T09:57:36,Copahue,164665.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251124T095633_20251130T095736_VV_coh.png
+2025-11-30T09:57:36,Llaima,400893.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251124T095633_20251130T095736_VV_coh.png
+2025-11-30T09:58:01,Villarrica,344801.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251124T095658_20251130T095801_VV_coh.png
+2025-12-05T10:01:30,Lascar,100013.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251129T100040_20251205T100129_VV_coh.png
+2025-12-06T09:56:33,Copahue,75837.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251130T095736_20251206T095632_VV_coh.png
+2025-12-06T09:56:33,Llaima,357162.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251130T095736_20251206T095632_VV_coh.png
+2025-12-06T09:56:57,Villarrica,297677.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251130T095801_20251206T095657_VV_coh.png
+2025-12-07T23:27:37,Planchon-Peteroa,312655.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251125T232738_20251207T232737_VV_coh.png
+2025-12-11T10:00:40,Lascar,163951.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251205T100129_20251211T100039_VV_coh.png
+2025-12-12T09:57:35,Copahue,138587.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251206T095632_20251212T095735_VV_coh.png
+2025-12-12T09:57:35,Llaima,309360.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251206T095632_20251212T095735_VV_coh.png
+2025-12-12T09:58:00,Villarrica,372035.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251206T095657_20251212T095800_VV_coh.png
+2025-12-13T23:26:49,Planchon-Peteroa,475276.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251207T232737_20251213T232649_VV_coh.png
+2025-12-17T10:01:29,Lascar,103131.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251211T100039_20251217T100128_VV_coh.png
+2025-12-18T09:56:32,Copahue,79050.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251212T095735_20251218T095632_VV_coh.png
+2025-12-18T09:56:32,Llaima,216768.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251212T095735_20251218T095632_VV_coh.png
+2025-12-18T09:56:57,Villarrica,302246.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251212T095800_20251218T095657_VV_coh.png
+2025-12-19T23:27:36,Planchon-Peteroa,481036.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251213T232649_20251219T232736_VV_coh.png
+2025-12-23T10:00:39,Lascar,3777.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251217T100128_20251223T100038_VV_coh.png
+2025-12-24T09:57:34,Copahue,140184.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251218T095632_20251224T095733_VV_coh.png
+2025-12-24T09:57:34,Llaima,252368.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251218T095632_20251224T095733_VV_coh.png
+2025-12-24T09:57:58,Villarrica,272436.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251218T095657_20251224T095758_VV_coh.png
+2025-12-25T23:26:48,Planchon-Peteroa,399142.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251219T232736_20251225T232648_VV_coh.png
+2025-12-29T10:01:28,Lascar,9271.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2025/lascar_20251223T100038_20251229T100127_VV_coh.png
+2025-12-30T09:56:31,Copahue,123871.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2025/copahue_20251224T095733_20251230T095631_VV_coh.png
+2025-12-30T09:56:31,Llaima,277837.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2025/llaima_20251224T095733_20251230T095631_VV_coh.png
+2025-12-30T09:56:56,Villarrica,298815.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2025/villarrica_20251224T095758_20251230T095656_VV_coh.png
+2025-12-31T23:27:35,Planchon-Peteroa,331900.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2025/planchonpeteroa_20251225T232648_20251231T232734_VV_coh.png
+2026-01-04T10:00:38,Lascar,30776.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20251229T100127_20260104T100038_VV_coh.png
+2026-01-05T09:57:33,Copahue,93836.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20251230T095631_20260105T095732_VV_coh.png
+2026-01-05T09:57:33,Llaima,238777.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20251230T095631_20260105T095732_VV_coh.png
+2026-01-05T09:57:57,Villarrica,276945.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20251230T095656_20260105T095757_VV_coh.png
+2026-01-06T23:26:48,Planchon-Peteroa,177215.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20251231T232734_20260106T232647_VV_coh.png
+2026-01-10T10:01:26,Lascar,17609.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260104T100038_20260110T100126_VV_coh.png
+2026-01-11T09:56:31,Copahue,146896.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260105T095732_20260111T095630_VV_coh.png
+2026-01-11T09:56:31,Llaima,221201.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260105T095732_20260111T095630_VV_coh.png
+2026-01-11T09:56:56,Villarrica,253536.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260105T095757_20260111T095655_VV_coh.png
+2026-01-12T23:27:34,Planchon-Peteroa,132865.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260106T232647_20260112T232733_VV_coh.png
+2026-01-16T10:00:38,Lascar,53309.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260110T100126_20260116T100038_VV_coh.png
+2026-01-17T09:57:32,Copahue,179196.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260111T095630_20260117T095731_VV_coh.png
+2026-01-17T09:57:32,Llaima,207230.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260111T095630_20260117T095731_VV_coh.png
+2026-01-17T09:57:56,Villarrica,298714.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260111T095655_20260117T095756_VV_coh.png
+2026-01-18T23:26:47,Planchon-Peteroa,65213.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260112T232733_20260118T232647_VV_coh.png
+2026-01-22T10:01:25,Lascar,157492.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260116T100038_20260122T100124_VV_coh.png
+2026-01-23T09:56:30,Copahue,51936.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260117T095731_20260123T095629_VV_coh.png
+2026-01-23T09:56:30,Llaima,195376.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260117T095731_20260123T095629_VV_coh.png
+2026-01-23T09:56:55,Villarrica,241320.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260117T095756_20260123T095654_VV_coh.png
+2026-01-24T23:27:32,Planchon-Peteroa,254315.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260118T232647_20260124T232732_VV_coh.png
+2026-01-29T09:57:31,Copahue,212357.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260123T095629_20260129T095731_VV_coh.png
+2026-01-29T09:57:31,Llaima,230531.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260123T095629_20260129T095731_VV_coh.png
+2026-01-29T09:57:56,Villarrica,264049.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260123T095654_20260129T095755_VV_coh.png
+2026-01-30T23:26:47,Planchon-Peteroa,369891.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260124T232732_20260130T232647_VV_coh.png
+2026-02-03T10:01:25,Lascar,482057.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260122T100124_20260203T100124_VV_coh.png
+2026-02-04T09:56:29,Copahue,301528.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260129T095731_20260204T095629_VV_coh.png
+2026-02-04T09:56:29,Llaima,430801.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260129T095731_20260204T095629_VV_coh.png
+2026-02-04T09:56:54,Villarrica,425717.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260129T095755_20260204T095654_VV_coh.png
+2026-02-05T23:27:32,Planchon-Peteroa,211695.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260130T232647_20260205T232732_VV_coh.png
+2026-02-09T10:00:37,Lascar,456596.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260203T100124_20260209T100036_VV_coh.png
+2026-02-11T23:26:46,Planchon-Peteroa,196278.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260205T232732_20260211T232646_VV_coh.png
+2026-02-15T10:01:24,Lascar,121397.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260209T100036_20260215T100124_VV_coh.png
+2026-02-16T09:56:30,Copahue,181648.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260204T095629_20260216T095629_VV_coh.png
+2026-02-16T09:56:30,Llaima,367512.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260204T095629_20260216T095629_VV_coh.png
+2026-02-16T09:56:54,Villarrica,346977.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260204T095654_20260216T095654_VV_coh.png
+2026-02-17T23:27:31,Planchon-Peteroa,164416.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260211T232646_20260217T232731_VV_coh.png
+2026-02-21T10:00:37,Lascar,415738.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260215T100124_20260221T100036_VV_coh.png
+2026-02-23T23:26:46,Planchon-Peteroa,201288.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260217T232731_20260223T232646_VV_coh.png
+2026-02-27T10:01:24,Lascar,411645.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260221T100036_20260227T100123_VV_coh.png
+2026-02-28T09:56:30,Copahue,121045.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260216T095629_20260228T095629_VV_coh.png
+2026-02-28T09:56:30,Llaima,329029.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260216T095629_20260228T095629_VV_coh.png
+2026-02-28T09:56:54,Villarrica,313406.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260216T095654_20260228T095654_VV_coh.png
+2026-03-01T23:27:31,Planchon-Peteroa,208413.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260223T232646_20260301T232731_VV_coh.png
+2026-03-05T10:00:36,Lascar,112505.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260227T100123_20260305T100036_VV_coh.png
+2026-03-07T23:26:46,Planchon-Peteroa,152120.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260301T232731_20260307T232646_VV_coh.png
+2026-03-11T10:01:23,Lascar,60491.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260305T100036_20260311T100123_VV_coh.png
+2026-03-12T09:56:29,Copahue,104715.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260228T095629_20260312T095629_VV_coh.png
+2026-03-12T09:56:29,Llaima,247692.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260228T095629_20260312T095629_VV_coh.png
+2026-03-12T09:56:54,Villarrica,292043.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260228T095654_20260312T095654_VV_coh.png
+2026-03-13T23:27:31,Planchon-Peteroa,85709.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260307T232646_20260313T232731_VV_coh.png
+2026-03-23T10:01:23,Lascar,29101.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260311T100123_20260323T100123_VV_coh.png
+2026-03-24T09:56:30,Copahue,373046.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260312T095629_20260324T095630_VV_coh.png
+2026-03-24T09:56:30,Llaima,430361.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260312T095629_20260324T095630_VV_coh.png
+2026-03-24T09:56:54,Villarrica,405763.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260312T095654_20260324T095654_VV_coh.png
+2026-03-25T23:27:31,Planchon-Peteroa,426653.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260313T232731_20260325T232731_VV_coh.png
+2026-03-29T10:00:37,Lascar,7302.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260323T100123_20260329T100037_VV_coh.png
+2026-03-30T09:57:29,Copahue,424478.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260324T095630_20260330T095729_VV_coh.png
+2026-03-30T09:57:29,Llaima,468562.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260324T095630_20260330T095729_VV_coh.png
+2026-03-30T09:57:54,Villarrica,450788.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260324T095654_20260330T095754_VV_coh.png
+2026-03-31T23:26:46,Planchon-Peteroa,381896.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260325T232731_20260331T232646_VV_coh.png
+2026-04-04T10:01:23,Lascar,7264.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260329T100037_20260404T100123_VV_coh.png
+2026-04-05T09:56:30,Copahue,177443.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260330T095729_20260405T095630_VV_coh.png
+2026-04-05T09:56:30,Llaima,212273.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260330T095729_20260405T095630_VV_coh.png
+2026-04-05T09:56:55,Villarrica,278558.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260330T095754_20260405T095655_VV_coh.png
+2026-04-06T23:27:31,Planchon-Peteroa,216578.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260331T232646_20260406T232731_VV_coh.png
+2026-04-10T10:00:37,Lascar,27358.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260404T100123_20260410T100037_VV_coh.png
+2026-04-11T09:57:29,Copahue,96024.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260405T095630_20260411T095729_VV_coh.png
+2026-04-11T09:57:29,Llaima,168349.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260405T095630_20260411T095729_VV_coh.png
+2026-04-11T09:57:54,Villarrica,245039.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260405T095655_20260411T095754_VV_coh.png
+2026-04-12T23:26:39,Planchon-Peteroa,190794.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260406T232731_20260412T232639_VV_coh.png
+2026-04-16T10:01:23,Lascar,23922.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260410T100037_20260416T100123_VV_coh.png
+2026-04-17T09:56:27,Copahue,161378.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260411T095729_20260417T095627_VV_coh.png
+2026-04-17T09:56:27,Llaima,310899.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260411T095729_20260417T095627_VV_coh.png
+2026-04-18T23:27:31,Planchon-Peteroa,333839.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260412T232639_20260418T232731_VV_coh.png
+2026-04-22T10:00:34,Lascar,69160.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260416T100123_20260422T100034_VV_coh.png
+2026-04-24T23:26:39,Planchon-Peteroa,514147.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260418T232731_20260424T232639_VV_coh.png
