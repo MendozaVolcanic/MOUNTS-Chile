@@ -1,0 +1,80 @@
+name: Update MOUNTS-Chile data
+
+on:
+  # Cada 6 horas
+  schedule:
+    - cron: '17 */6 * * *'
+  # Manual desde la UI de Actions
+  workflow_dispatch:
+    inputs:
+      skip_fetch:
+        description: 'Saltar fetch (usar datos existentes)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write   # necesario para commit + push
+
+concurrency:
+  group: mounts-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pipeline (full)
+        if: ${{ github.event.inputs.skip_fetch != 'true' }}
+        run: python update.py
+
+      - name: Run pipeline (skip fetch)
+        if: ${{ github.event.inputs.skip_fetch == 'true' }}
+        run: python update.py --skip-fetch
+
+      - name: Show git status
+        run: git status --short
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Sin cambios. Skipping commit."
+            exit 0
+          fi
+          # Resumen del cambio
+          NEW_DIFFS=$(git diff --staged --stat | grep -c "diff/" || true)
+          TS=$(date -u +'%Y-%m-%d %H:%M UTC')
+          git commit -m "auto: update $TS · $NEW_DIFFS diffs nuevos
+
+          Pipeline ejecutado por GitHub Actions cron.
+          - fetch_latest.py: timeseries + imágenes
+          - anomalies.py: status + alertas (z-score MAD-robusto, persistence)
+          - image_diff.py: diffs SWIR antes/después (+ retention 30d)
+          - db.py: ingesta SQLite + multi-product alerts
+          - export_csv.py + generar_html.py
+
+          [skip ci]"
+
+      - name: Push
+        run: git push origin main

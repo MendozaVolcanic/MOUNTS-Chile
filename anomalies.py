@@ -107,24 +107,53 @@ def robust_baseline(xs, ys, window_days=ROLLING_WINDOW_DAYS):
 
 def detect_anomalies(xs, ys, threshold=ANOMALY_THRESHOLD):
     """
-    Devuelve lista de dicts {date, value, zscore, baseline} para puntos
-    que exceden mediana + threshold*MAD del baseline rolling.
+    Devuelve lista de dicts para puntos que exceden mediana + threshold*MAD
+    del baseline rolling. Cada anomalia incluye:
+        date, value, baseline, zscore
+        run_length    — cantidad de anomalias consecutivas hasta esta (>=1)
+        persistent    — True si run_length >= 3 (anomalia sostenida)
+
+    La distincion outlier-aislado vs persistente es util para reducir falsos
+    positivos: un solo punto >3sigma puede ser una nube/ruido, pero 3
+    consecutivos es una senal real (Coppola+ 2016 hacen esta distincion para
+    VRP MIROVA).
     """
     medians, mads = robust_baseline(xs, ys)
-    anomalies = []
+    raw_flags = []   # True/False por punto: ¿supera threshold?
+    raw_data  = []   # (i, z) para los flagged
+
     for i, (x, y) in enumerate(zip(xs, ys)):
         if y is None or np.isnan(medians[i]) or np.isnan(mads[i]):
+            raw_flags.append(False)
             continue
         if y <= medians[i]:
+            raw_flags.append(False)
             continue
         z = (y - medians[i]) / mads[i]
         if z >= threshold:
+            raw_flags.append(True)
+            raw_data.append((i, z))
+        else:
+            raw_flags.append(False)
+
+    # Calcular run_length para cada anomalia: cuantas consecutivas hasta i
+    anomalies = []
+    run_length = 0
+    for i, flag in enumerate(raw_flags):
+        if flag:
+            run_length += 1
+            z = (ys[i] - medians[i]) / mads[i]
             anomalies.append({
-                "date":     x,
-                "value":    float(y),
-                "baseline": float(medians[i]),
-                "zscore":   float(z),
+                "date":       xs[i],
+                "value":      float(ys[i]),
+                "baseline":   float(medians[i]),
+                "zscore":     float(z),
+                "run_length": int(run_length),
+                "persistent": run_length >= 3,
             })
+        else:
+            run_length = 0
+
     return anomalies
 
 

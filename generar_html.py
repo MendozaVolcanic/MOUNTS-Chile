@@ -63,32 +63,28 @@ IMG_PRODUCTS = [
 # Mapa de trazas: nombre -> (yaxis_id, color, mode, dash, symbol, fill)
 # Replicando exactamente el layout de mounts-project.com
 TRACES_CFG = {
-    # Panel 1 (top): SO2 mass [tons] - log  - y3 domain [0.80-1.00]
+    # Panel 1 (top): SO2 mass [tons] - log
     "so2":       ("y3", "#9467bd", "markers",       None,   None,          None),
     "tbar_so2":  ("y3", "red",     "lines+markers", None,   None,          None),
-    # Panel 2: Thermal anomalies [N pix] - log - y2 domain [0.60-0.795]
+    # Panel 2: Thermal anomalies [N pix S2Pix] - log
     "swir":      ("y2", "#ff7f0e", "markers",       None,   None,          None),
     "tbar_nir":  ("y2", "red",     "lines+markers", None,   None,          None),
-    # Panel 3: SAR placeholders - linear - y4 domain [0.40-0.595]
-    "int_asc":   ("y4", "#d3d3d3", "markers",       None,   "circle-open", None),
-    "int_desc":  ("y4", "#808080", "markers",       None,   "circle",      None),
-    "tbar_int":  ("y4", "red",     "lines+markers", None,   None,          None),
-    # Panel 4: Deformation st.dev [m] - linear - y5 domain [0.20-0.395]
+    # Panel 3: Deformation st.dev [m LOS] - linear
     "def_asc":   ("y5", "#ea898a", "lines+markers", None,   "circle-open", None),
     "def_desc":  ("y5", "#c0392b", "lines+markers", None,   "circle",      None),
     "tbar_disp": ("y5", "red",     "lines+markers", None,   None,          None),
-    # Panel 5 (bottom): Coherence (N pix<0.5) - linear - y domain [0.01-0.195]
+    # Panel 4: Coherence (N pix<0.5) - linear
     "coh_asc":   ("y1", "#aed6f1", "lines+markers", None,   "circle-open", None),
     "coh_desc":  ("y1", "#2980b9", "lines+markers", None,   "circle",      None),
     "tbar_coh":  ("y1", "red",     "lines+markers", None,   None,          None),
 }
 
+# 4 paneles compactos (saco SAR placeholders int_*: eran y=0 sin valor numerico real)
 YAXES_CFG = {
-    "y3": {"title": "SO2 [tons]",           "type": "log",    "domain": [0.80, 1.00], "color": "#9467bd"},
-    "y2": {"title": "Thermal [N pix]",      "type": "log",    "domain": [0.60, 0.795],"color": "#ff7f0e"},
-    "y4": {"title": "SAR placeholders",     "type": "linear", "domain": [0.40, 0.595],"color": "#d3d3d3"},
-    "y5": {"title": "Deform st.dev [m]",    "type": "linear", "domain": [0.20, 0.395],"color": "#ea898a"},
-    "y1": {"title": "Coherence (N<0.5)",    "type": "linear", "domain": [0.01, 0.195],"color": "#2980b9"},
+    "y3": {"title": "SO2 [tons]",           "type": "log",    "domain": [0.78, 1.00], "color": "#9467bd"},
+    "y2": {"title": "Thermal [S2Pix]",      "type": "log",    "domain": [0.52, 0.76], "color": "#ff7f0e"},
+    "y5": {"title": "Deform st.dev [m]",    "type": "linear", "domain": [0.26, 0.50], "color": "#ea898a"},
+    "y1": {"title": "Coherence (N<0.5)",    "type": "linear", "domain": [0.00, 0.24], "color": "#2980b9"},
 }
 
 
@@ -300,7 +296,7 @@ def build_plotly_call(div_id, ts_by_name):
             yaxes_layout[plotly_key]["rangemode"] = "tozero"
 
     layout = {
-        "height": 500,
+        "height": 440,
         "margin": {"l": 60, "r": 10, "t": 10, "b": 35},
         "paper_bgcolor": "#161b22",
         "plot_bgcolor": "#161b22",
@@ -616,6 +612,160 @@ def build_status_matrix(status):
 '''
 
 
+def build_streamgraph(product_trace="so2", title="SO2 multi-volcan",
+                       unit="tons", height=320):
+    """
+    Streamgraph: 7 trazas stacked (una por volcan) del producto especificado.
+    Util para detectar eventos regionales (ej. multiples volcanes con SO2
+    elevado simultaneo).
+
+    Resamplea a binning mensual para suavizar y reducir size del payload.
+    """
+    from collections import defaultdict
+    from datetime import datetime as _dt
+
+    # Bin mensual: para cada volcan, sumar values dentro del mes
+    series = {}    # vol_key -> {YYYY-MM: sum}
+    for key, name, sid in VOLCANES:
+        f = TS_DIR / f"{key}.json"
+        if not f.exists():
+            continue
+        data = json.loads(f.read_text(encoding="utf-8"))
+        traces = {t.get("name"): t for t in data.get("traces", [])}
+        t = traces.get(product_trace)
+        if not t or not t.get("y"):
+            continue
+        bins = defaultdict(float)
+        for x, y in zip(t.get("x", []), t.get("y", [])):
+            if y is None or y <= 0.5:   # ignorar no-detecciones (=0.1)
+                continue
+            try:
+                dt = _dt.fromisoformat(str(x).replace("Z", "+00:00"))
+                ym = dt.strftime("%Y-%m")
+                bins[ym] += y
+            except (ValueError, AttributeError):
+                continue
+        if bins:
+            series[key] = (name, dict(bins))
+
+    if not series:
+        return ""
+
+    # Eje X comun: todos los meses entre min y max
+    all_months = sorted({m for _, b in series.values() for m in b.keys()})
+    if len(all_months) < 6:
+        return ""
+
+    # Colores por volcan
+    palette = ["#e74c3c", "#e67e22", "#f1c40f", "#2ecc71",
+               "#3498db", "#9b59b6", "#1abc9c"]
+    traces_js = []
+    for i, (key, (name, bins)) in enumerate(series.items()):
+        ys = [bins.get(m, 0) for m in all_months]
+        color = palette[i % len(palette)]
+        traces_js.append(f"""{{
+  name: {json.dumps(name)},
+  x: {json.dumps(all_months)},
+  y: {json.dumps(ys)},
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {{width: 0.5, color: {json.dumps(color)}}},
+  fillcolor: {json.dumps(color + 'cc')},
+  hovertemplate: '%{{x}}<br>{name}: %{{y:.0f}} {unit}<extra></extra>'
+}}""")
+
+    layout = {
+        "height": height,
+        "margin": {"l": 50, "r": 10, "t": 10, "b": 35},
+        "paper_bgcolor": "#161b22",
+        "plot_bgcolor": "#161b22",
+        "font": {"color": "#8b949e", "size": 9},
+        "legend": {"orientation": "h", "y": -0.2, "font": {"size": 9}},
+        "xaxis": {"gridcolor": "#21262d", "tickfont": {"size": 8}, "color": "#8b949e"},
+        "yaxis": {"title": f"{title} [{unit}]", "gridcolor": "#21262d",
+                  "tickfont": {"size": 8}, "color": "#8b949e",
+                  "type": "linear"},
+        "hovermode": "x unified",
+    }
+
+    traces_str = "[\n" + ",\n".join(traces_js) + "\n]"
+    layout_str = json.dumps(layout)
+    div_id = f"streamgraph-{product_trace}"
+    chart_call = (f"Plotly.newPlot({json.dumps(div_id)},{traces_str},{layout_str},"
+                  f"{{responsive:true,displayModeBar:false}});")
+
+    return f'''
+<div class="streamgraph-section">
+  <h2>{esc(title)} — vista regional</h2>
+  <p class="stream-help">
+    Suma mensual por volcán (apilada). Detecta eventos regionales sincrónicos
+    o transferencias entre volcanes vecinos. Excluye no-detecciones (y≤0.5).
+  </p>
+  <div id="{div_id}" class="streamgraph"></div>
+</div>
+<script>window.addEventListener("load",function(){{ {chart_call} }});</script>'''
+
+
+def build_multi_alerts_panel(top_n=15):
+    """
+    Panel de alertas multi-producto: cuando >=2 productos del mismo volcan
+    muestran anomalia dentro de ventana 14d. Mas confiable que single-product.
+    """
+    db_path = Path(__file__).parent / "mounts.db"
+    if not db_path.exists():
+        return ""
+    import sqlite3
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.execute("""
+        SELECT mc.date_center, v.name, v.key, mc.products, mc.n_products,
+               mc.zscore_max, mc.confidence
+        FROM multi_alerts mc JOIN volcanoes v ON v.key = mc.volcano_key
+        ORDER BY mc.n_products DESC, mc.zscore_max DESC LIMIT ?
+    """, (top_n,))
+    rows = cur.fetchall()
+    n_total = conn.execute("SELECT COUNT(*) FROM multi_alerts").fetchone()[0]
+    conn.close()
+
+    if not rows:
+        return ""
+
+    rows_html = ""
+    for date, name, key, products_json, n_prods, z_max, conf in rows:
+        try:
+            products = json.loads(products_json)
+            prods_str = ", ".join(p.upper() for p in products)
+        except (ValueError, TypeError):
+            prods_str = products_json
+        # color por confianza
+        color = "#e74c3c" if conf == "high" else "#e67e22"
+        # clippear z para display
+        z_str = f">{50}σ" if z_max > 50 else f"+{z_max:.1f}σ"
+        rows_html += (
+            f'<tr style="border-left:3px solid {color}">'
+            f'<td>{esc(date[:10])}</td>'
+            f'<td><a href="#v-{esc(key)}">{esc(name)}</a></td>'
+            f'<td><b>{n_prods}</b></td>'
+            f'<td style="font-family:monospace;font-size:.7rem">{esc(prods_str)}</td>'
+            f'<td style="color:{color};font-weight:600">{z_str}</td>'
+            f'<td><span style="background:{color};color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">{conf}</span></td>'
+            f'</tr>'
+        )
+
+    return f'''
+<div class="multi-section">
+  <h2>Alertas multi-producto (cross-sensor)</h2>
+  <p class="multi-help">
+    Cuando ≥2 productos satelitales del mismo volcán muestran anomalía dentro de 14 días.
+    Mucho más confiable que single-product (descarta nubes/incendios).
+    <b>{n_total}</b> alertas totales en histórico.
+  </p>
+  <table class="multi-table">
+    <thead><tr><th>Fecha</th><th>Volcán</th><th>N</th><th>Productos</th><th>Z máx</th><th>Conf</th></tr></thead>
+    <tbody>{rows_html}</tbody>
+  </table>
+</div>'''
+
+
 def build_history_panel(top_n=20):
     """
     Lee mounts.db y construye una tabla con el catalogo historico de
@@ -734,6 +884,9 @@ def main():
     status_html = build_status_matrix(status)
     alerts_html = build_alerts_panel(alerts)
     history_html = build_history_panel(top_n=20)
+    multi_html = build_multi_alerts_panel(top_n=15)
+    stream_so2 = build_streamgraph("so2", "SO2 multi-volcán", "tons")
+    stream_swir = build_streamgraph("swir", "Térmico SWIR multi-volcán", "S2Pix")
     map_html = build_map(status)
     sections = "\n".join(build_section(k, n, s) for k, n, s in VOLCANES)
 
@@ -759,6 +912,11 @@ a:hover{{text-decoration:underline}}
 .upd{{font-size:.7rem;padding:3px 9px;background:#21262d;border:1px solid #30363d;
       border-radius:5px;cursor:pointer;color:#58a6ff}}
 .upd:hover{{background:#30363d}}
+.time-filter{{display:flex;gap:3px;align-items:center}}
+.time-filter button{{font-size:.7rem;padding:3px 8px;background:#21262d;
+                     border:1px solid #30363d;border-radius:4px;color:#8b949e;cursor:pointer}}
+.time-filter button:hover{{background:#30363d;color:#e6edf3}}
+.time-filter button.active{{background:#1f6feb;color:#fff;border-color:#1f6feb}}
 
 .vsec{{border-bottom:2px solid #21262d;padding:12px 14px}}
 .vhdr{{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}}
@@ -778,7 +936,7 @@ a:hover{{text-decoration:underline}}
 .ic img:hover{{border-color:#58a6ff}}
 .id{{font-size:.6rem;color:#6e7681;margin-top:1px}}
 
-.vchart{{width:100%;min-height:500px}}
+.vchart{{width:100%;min-height:440px}}
 
 /* === Status board === */
 .status-section{{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}}
@@ -811,6 +969,24 @@ a:hover{{text-decoration:underline}}
                   border-bottom:1px solid #30363d}}
 .alerts-table td{{padding:5px 8px;border-bottom:1px solid #21262d}}
 .alerts-table tr:hover{{background:#161b22}}
+
+/* === Streamgraph === */
+.streamgraph-section{{padding:14px;border-bottom:2px solid #21262d}}
+.streamgraph-section h2{{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:6px}}
+.stream-help{{font-size:.72rem;color:#8b949e;margin-bottom:10px}}
+.streamgraph{{width:100%;min-height:320px}}
+
+/* === Multi-product alerts === */
+.multi-section{{padding:14px;border-bottom:2px solid #21262d;background:#10141a}}
+.multi-section h2{{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:6px}}
+.multi-help{{font-size:.72rem;color:#8b949e;margin-bottom:10px}}
+.multi-help b{{color:#e6edf3}}
+.multi-table{{width:100%;border-collapse:collapse;font-size:.78rem}}
+.multi-table th{{text-align:left;padding:5px 8px;color:#8b949e;font-weight:500;
+                 font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
+                 border-bottom:1px solid #30363d}}
+.multi-table td{{padding:5px 8px;border-bottom:1px solid #21262d}}
+.multi-table tr:hover{{background:#161b22}}
 
 /* === Historico === */
 .history-section{{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}}
@@ -853,11 +1029,42 @@ a:hover{{text-decoration:underline}}
   <h1>&#127755; MOUNTS-Chile</h1>
   <div class="nav">{nav}</div>
   <span class="meta">{esc(generated)}</span>
+  <span class="time-filter">
+    <span style="font-size:.65rem;color:#6e7681">Rango:</span>
+    <button onclick="setTimeRange(30)">30d</button>
+    <button onclick="setTimeRange(90)">90d</button>
+    <button onclick="setTimeRange(365)">1a</button>
+    <button onclick="setTimeRange(0)" class="active">todo</button>
+  </span>
   <button class="upd" onclick="location.reload()">&#8635; Actualizar</button>
 </div>
+
+<script>
+// Filtro temporal global: ajusta el rango X de todos los Plotly charts
+function setTimeRange(days) {{
+  document.querySelectorAll('.time-filter button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  const charts = document.querySelectorAll('.vchart');
+  let xrange = null;
+  if (days > 0) {{
+    const now = new Date();
+    const past = new Date(now.getTime() - days * 86400000);
+    const fmt = d => d.toISOString().slice(0,19);
+    xrange = [fmt(past), fmt(now)];
+  }}
+  charts.forEach(div => {{
+    if (div.data) {{   // ya inicializado por Plotly
+      Plotly.relayout(div, {{ 'xaxis.range': xrange, 'xaxis.autorange': xrange === null }});
+    }}
+  }});
+}}
+</script>
 {status_html}
 {alerts_html}
+{multi_html}
 {history_html}
+{stream_so2}
+{stream_swir}
 {map_html}
 {sections}
 <div class="foot">

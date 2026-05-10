@@ -20,6 +20,11 @@ a:hover{text-decoration:underline}
 .upd{font-size:.7rem;padding:3px 9px;background:#21262d;border:1px solid #30363d;
       border-radius:5px;cursor:pointer;color:#58a6ff}
 .upd:hover{background:#30363d}
+.time-filter{display:flex;gap:3px;align-items:center}
+.time-filter button{font-size:.7rem;padding:3px 8px;background:#21262d;
+                     border:1px solid #30363d;border-radius:4px;color:#8b949e;cursor:pointer}
+.time-filter button:hover{background:#30363d;color:#e6edf3}
+.time-filter button.active{background:#1f6feb;color:#fff;border-color:#1f6feb}
 
 .vsec{border-bottom:2px solid #21262d;padding:12px 14px}
 .vhdr{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
@@ -39,7 +44,7 @@ a:hover{text-decoration:underline}
 .ic img:hover{border-color:#58a6ff}
 .id{font-size:.6rem;color:#6e7681;margin-top:1px}
 
-.vchart{width:100%;min-height:500px}
+.vchart{width:100%;min-height:440px}
 
 /* === Status board === */
 .status-section{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}
@@ -72,6 +77,24 @@ a:hover{text-decoration:underline}
                   border-bottom:1px solid #30363d}
 .alerts-table td{padding:5px 8px;border-bottom:1px solid #21262d}
 .alerts-table tr:hover{background:#161b22}
+
+/* === Streamgraph === */
+.streamgraph-section{padding:14px;border-bottom:2px solid #21262d}
+.streamgraph-section h2{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:6px}
+.stream-help{font-size:.72rem;color:#8b949e;margin-bottom:10px}
+.streamgraph{width:100%;min-height:320px}
+
+/* === Multi-product alerts === */
+.multi-section{padding:14px;border-bottom:2px solid #21262d;background:#10141a}
+.multi-section h2{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:6px}
+.multi-help{font-size:.72rem;color:#8b949e;margin-bottom:10px}
+.multi-help b{color:#e6edf3}
+.multi-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.multi-table th{text-align:left;padding:5px 8px;color:#8b949e;font-weight:500;
+                 font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;
+                 border-bottom:1px solid #30363d}
+.multi-table td{padding:5px 8px;border-bottom:1px solid #21262d}
+.multi-table tr:hover{background:#161b22}
 
 /* === Historico === */
 .history-section{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}
@@ -113,9 +136,37 @@ a:hover{text-decoration:underline}
 <div class="topbar">
   <h1>&#127755; MOUNTS-Chile</h1>
   <div class="nav"><a href="#v-lascar">Lascar</a> &middot; <a href="#v-planchon-peteroa">Planchon-Peteroa</a> &middot; <a href="#v-laguna-del-maule">Laguna del Maule</a> &middot; <a href="#v-nevados-de-chillan">Nevados de Chillan</a> &middot; <a href="#v-copahue">Copahue</a> &middot; <a href="#v-llaima">Llaima</a> &middot; <a href="#v-villarrica">Villarrica</a></div>
-  <span class="meta">2026-05-10 07:36 UTC</span>
+  <span class="meta">2026-05-10 07:53 UTC</span>
+  <span class="time-filter">
+    <span style="font-size:.65rem;color:#6e7681">Rango:</span>
+    <button onclick="setTimeRange(30)">30d</button>
+    <button onclick="setTimeRange(90)">90d</button>
+    <button onclick="setTimeRange(365)">1a</button>
+    <button onclick="setTimeRange(0)" class="active">todo</button>
+  </span>
   <button class="upd" onclick="location.reload()">&#8635; Actualizar</button>
 </div>
+
+<script>
+// Filtro temporal global: ajusta el rango X de todos los Plotly charts
+function setTimeRange(days) {
+  document.querySelectorAll('.time-filter button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  const charts = document.querySelectorAll('.vchart');
+  let xrange = null;
+  if (days > 0) {
+    const now = new Date();
+    const past = new Date(now.getTime() - days * 86400000);
+    const fmt = d => d.toISOString().slice(0,19);
+    xrange = [fmt(past), fmt(now)];
+  }
+  charts.forEach(div => {
+    if (div.data) {   // ya inicializado por Plotly
+      Plotly.relayout(div, { 'xaxis.range': xrange, 'xaxis.autorange': xrange === null });
+    }
+  });
+}
+</script>
 
 <div class="status-section">
   <h2>Status board</h2>
@@ -142,13 +193,26 @@ a:hover{text-decoration:underline}
   </table>
 </div>
 
+<div class="multi-section">
+  <h2>Alertas multi-producto (cross-sensor)</h2>
+  <p class="multi-help">
+    Cuando ≥2 productos satelitales del mismo volcán muestran anomalía dentro de 14 días.
+    Mucho más confiable que single-product (descarta nubes/incendios).
+    <b>37</b> alertas totales en histórico.
+  </p>
+  <table class="multi-table">
+    <thead><tr><th>Fecha</th><th>Volcán</th><th>N</th><th>Productos</th><th>Z máx</th><th>Conf</th></tr></thead>
+    <tbody><tr style="border-left:3px solid #e74c3c"><td>2021-04-19</td><td><a href="#v-villarrica">Villarrica</a></td><td><b>4</b></td><td style="font-family:monospace;font-size:.7rem">COH_ASC, COH_DESC, SO2, SWIR</td><td style="color:#e74c3c;font-weight:600">>50σ</td><td><span style="background:#e74c3c;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">high</span></td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-03-06</td><td><a href="#v-lascar">Lascar</a></td><td><b>3</b></td><td style="font-family:monospace;font-size:.7rem">COH_DESC, SO2, SWIR</td><td style="color:#e74c3c;font-weight:600">>50σ</td><td><span style="background:#e74c3c;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">high</span></td></tr><tr style="border-left:3px solid #e74c3c"><td>2022-01-27</td><td><a href="#v-lascar">Lascar</a></td><td><b>3</b></td><td style="font-family:monospace;font-size:.7rem">COH_DESC, SO2, SWIR</td><td style="color:#e74c3c;font-weight:600">>50σ</td><td><span style="background:#e74c3c;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">high</span></td></tr><tr style="border-left:3px solid #e74c3c"><td>2026-03-01</td><td><a href="#v-lascar">Lascar</a></td><td><b>3</b></td><td style="font-family:monospace;font-size:.7rem">COH_DESC, SO2, SWIR</td><td style="color:#e74c3c;font-weight:600">>50σ</td><td><span style="background:#e74c3c;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">high</span></td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-12-18</td><td><a href="#v-lascar">Lascar</a></td><td><b>3</b></td><td style="font-family:monospace;font-size:.7rem">COH_DESC, SO2, SWIR</td><td style="color:#e74c3c;font-weight:600">>50σ</td><td><span style="background:#e74c3c;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">high</span></td></tr><tr style="border-left:3px solid #e74c3c"><td>2020-06-14</td><td><a href="#v-villarrica">Villarrica</a></td><td><b>3</b></td><td style="font-family:monospace;font-size:.7rem">COH_ASC, COH_DESC, SWIR</td><td style="color:#e74c3c;font-weight:600">+25.8σ</td><td><span style="background:#e74c3c;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">high</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2021-09-08</td><td><a href="#v-copahue">Copahue</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">SO2, SWIR</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2024-10-18</td><td><a href="#v-copahue">Copahue</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">SO2, SWIR</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2025-10-18</td><td><a href="#v-planchon-peteroa">Planchon-Peteroa</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">SO2, SWIR</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2022-12-09</td><td><a href="#v-lascar">Lascar</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">COH_DESC, SO2</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2021-07-29</td><td><a href="#v-nevados-de-chillan">Nevados de Chillan</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">SO2, SWIR</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2023-11-29</td><td><a href="#v-villarrica">Villarrica</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">SO2, SWIR</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2022-11-16</td><td><a href="#v-copahue">Copahue</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">SO2, SWIR</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2023-02-07</td><td><a href="#v-lascar">Lascar</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">COH_DESC, SO2</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr><tr style="border-left:3px solid #e67e22"><td>2020-10-05</td><td><a href="#v-villarrica">Villarrica</a></td><td><b>2</b></td><td style="font-family:monospace;font-size:.7rem">SO2, SWIR</td><td style="color:#e67e22;font-weight:600">>50σ</td><td><span style="background:#e67e22;color:#fff;padding:1px 5px;border-radius:3px;font-size:.6rem">medium</span></td></tr></tbody>
+  </table>
+</div>
+
 <div class="history-section">
   <h2>Catálogo histórico de anomalías</h2>
   <div class="history-stats">
-    <span><b>5</b> anomalías</span>
+    <span><b>724</b> anomalías</span>
     <span><b>22,315</b> observaciones</span>
     <span><b>30</b> eventos GVP</span>
-    <span>Validación detector vs GVP (±7 d): <b style="color:#2ecc71">80%</b> precisión</span>
+    <span>Validación detector vs GVP (±7 d): <b style="color:#2ecc71">1%</b> precisión</span>
     <span><a href="anomalies.csv">📄 anomalies.csv</a></span>
     <span><a href="mounts.db">💾 mounts.db</a></span>
   </div>
@@ -156,10 +220,152 @@ a:hover{text-decoration:underline}
     <summary>Top 20 por z-score (click para expandir)</summary>
     <table class="history-table">
       <thead><tr><th>Fecha</th><th>Volcán</th><th>Producto</th><th>Valor</th><th>Z</th><th>Detectado</th></tr></thead>
-      <tbody><tr style="border-left:3px solid #e74c3c"><td>2026-04-12</td><td><a href="#v-lascar">Lascar</a></td><td>SWIR</td><td style="font-family:monospace">11</td><td style="color:#e74c3c;font-weight:600">+20.9σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e74c3c"><td>2026-04-17</td><td><a href="#v-lascar">Lascar</a></td><td>SWIR</td><td style="font-family:monospace">9</td><td style="color:#e74c3c;font-weight:600">+8.9σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e74c3c"><td>2026-04-17</td><td><a href="#v-copahue">Copahue</a></td><td>SWIR</td><td style="font-family:monospace">4</td><td style="color:#e74c3c;font-weight:600">+7.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e67e22"><td>2026-04-22</td><td><a href="#v-nevados-de-chillan">Nevados de Chillan</a></td><td>SWIR</td><td style="font-family:monospace">3</td><td style="color:#e67e22;font-weight:600">+5.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e67e22"><td>2026-04-29</td><td><a href="#v-llaima">Llaima</a></td><td>SWIR</td><td style="font-family:monospace">3</td><td style="color:#e67e22;font-weight:600">+5.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr></tbody>
+      <tbody><tr style="border-left:3px solid #e74c3c"><td>2021-08-09</td><td><a href="#v-copahue">Copahue</a></td><td>SO2</td><td style="font-family:monospace">4.72e+03</td><td style="color:#e74c3c;font-weight:600">+9445.0σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2024-10-17</td><td><a href="#v-copahue">Copahue</a></td><td>SO2</td><td style="font-family:monospace">2.94e+03</td><td style="color:#e74c3c;font-weight:600">+5875.2σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2024-10-19</td><td><a href="#v-copahue">Copahue</a></td><td>SO2</td><td style="font-family:monospace">2.63e+03</td><td style="color:#e74c3c;font-weight:600">+5265.2σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2024-10-16</td><td><a href="#v-copahue">Copahue</a></td><td>SO2</td><td style="font-family:monospace">2.34e+03</td><td style="color:#e74c3c;font-weight:600">+4683.6σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-10-26</td><td><a href="#v-planchon-peteroa">Planchon-Peteroa</a></td><td>SO2</td><td style="font-family:monospace">1.97e+03</td><td style="color:#e74c3c;font-weight:600">+3939.4σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2024-10-18</td><td><a href="#v-copahue">Copahue</a></td><td>SO2</td><td style="font-family:monospace">1.79e+03</td><td style="color:#e74c3c;font-weight:600">+3572.4σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-02-25</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">1.44e+03</td><td style="color:#e74c3c;font-weight:600">+2884.2σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-11-06</td><td><a href="#v-planchon-peteroa">Planchon-Peteroa</a></td><td>SO2</td><td style="font-family:monospace">1.44e+03</td><td style="color:#e74c3c;font-weight:600">+2874.6σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-02-17</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">1.24e+03</td><td style="color:#e74c3c;font-weight:600">+2470.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-02-20</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">1.19e+03</td><td style="color:#e74c3c;font-weight:600">+2381.4σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-02-21</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">1.18e+03</td><td style="color:#e74c3c;font-weight:600">+2360.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-02-12</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">1.09e+03</td><td style="color:#e74c3c;font-weight:600">+2182.6σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-03-04</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">936</td><td style="color:#e74c3c;font-weight:600">+1871.2σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-02-19</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">926</td><td style="color:#e74c3c;font-weight:600">+1851.6σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2022-12-10</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">910</td><td style="color:#e74c3c;font-weight:600">+1819.4σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-02-26</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">908</td><td style="color:#e74c3c;font-weight:600">+1815.0σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2025-03-05</td><td><a href="#v-lascar">Lascar</a></td><td>SO2</td><td style="font-family:monospace">896</td><td style="color:#e74c3c;font-weight:600">+1792.4σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2024-10-18</td><td><a href="#v-copahue">Copahue</a></td><td>SO2</td><td style="font-family:monospace">879</td><td style="color:#e74c3c;font-weight:600">+1757.2σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2024-10-15</td><td><a href="#v-copahue">Copahue</a></td><td>SO2</td><td style="font-family:monospace">819</td><td style="color:#e74c3c;font-weight:600">+1638.6σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr><tr style="border-left:3px solid #e74c3c"><td>2024-10-15</td><td><a href="#v-llaima">Llaima</a></td><td>SO2</td><td style="font-family:monospace">819</td><td style="color:#e74c3c;font-weight:600">+1638.6σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:50</td></tr></tbody>
     </table>
   </details>
 </div>
+
+<div class="streamgraph-section">
+  <h2>SO2 multi-volcán — vista regional</h2>
+  <p class="stream-help">
+    Suma mensual por volcán (apilada). Detecta eventos regionales sincrónicos
+    o transferencias entre volcanes vecinos. Excluye no-detecciones (y≤0.5).
+  </p>
+  <div id="streamgraph-so2" class="streamgraph"></div>
+</div>
+<script>window.addEventListener("load",function(){ Plotly.newPlot("streamgraph-so2",[
+{
+  name: "Lascar",
+  x: ["2020-01", "2020-09", "2020-10", "2020-11", "2021-04", "2021-07", "2021-08", "2021-09", "2021-10", "2022-01", "2022-02", "2022-03", "2022-04", "2022-06", "2022-10", "2022-11", "2022-12", "2023-01", "2023-03", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-05", "2024-10", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-02", "2026-03", "2026-04"],
+  y: [160.3, 0, 0, 0, 0, 71.7, 0, 0, 0, 5683.0, 1502.1, 79.5, 59.6, 135.6, 207.8, 172.8, 1839.5, 371.59999999999997, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15194.599999999999, 7930.4, 646.5, 389.9, 19.7, 783.3000000000001, 406.7, 97.0, 144.0, 0, 75.1, 1843.6999999999998, 703.5, 90.5],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#e74c3c"},
+  fillcolor: "#e74c3ccc",
+  hovertemplate: '%{x}<br>Lascar: %{y:.0f} tons<extra></extra>'
+},
+{
+  name: "Planchon-Peteroa",
+  x: ["2020-01", "2020-09", "2020-10", "2020-11", "2021-04", "2021-07", "2021-08", "2021-09", "2021-10", "2022-01", "2022-02", "2022-03", "2022-04", "2022-06", "2022-10", "2022-11", "2022-12", "2023-01", "2023-03", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-05", "2024-10", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 181.60000000000002, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 181.60000000000002, 2546.3999999999996, 1774.3000000000002, 0, 0, 0, 0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#e67e22"},
+  fillcolor: "#e67e22cc",
+  hovertemplate: '%{x}<br>Planchon-Peteroa: %{y:.0f} tons<extra></extra>'
+},
+{
+  name: "Nevados de Chillan",
+  x: ["2020-01", "2020-09", "2020-10", "2020-11", "2021-04", "2021-07", "2021-08", "2021-09", "2021-10", "2022-01", "2022-02", "2022-03", "2022-04", "2022-06", "2022-10", "2022-11", "2022-12", "2023-01", "2023-03", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-05", "2024-10", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 0, 0, 0, 0, 669.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#f1c40f"},
+  fillcolor: "#f1c40fcc",
+  hovertemplate: '%{x}<br>Nevados de Chillan: %{y:.0f} tons<extra></extra>'
+},
+{
+  name: "Copahue",
+  x: ["2020-01", "2020-09", "2020-10", "2020-11", "2021-04", "2021-07", "2021-08", "2021-09", "2021-10", "2022-01", "2022-02", "2022-03", "2022-04", "2022-06", "2022-10", "2022-11", "2022-12", "2023-01", "2023-03", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-05", "2024-10", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 582.6, 147.3, 0, 0, 6063.700000000001, 524.5, 205.7, 0, 0, 0, 0, 0, 0, 445.5, 0, 0, 0, 0, 0, 0, 0, 128.6, 0, 0, 0, 11838.899999999998, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#2ecc71"},
+  fillcolor: "#2ecc71cc",
+  hovertemplate: '%{x}<br>Copahue: %{y:.0f} tons<extra></extra>'
+},
+{
+  name: "Llaima",
+  x: ["2020-01", "2020-09", "2020-10", "2020-11", "2021-04", "2021-07", "2021-08", "2021-09", "2021-10", "2022-01", "2022-02", "2022-03", "2022-04", "2022-06", "2022-10", "2022-11", "2022-12", "2023-01", "2023-03", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-05", "2024-10", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100.0, 0, 142.7, 178.9, 0, 0, 819.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#3498db"},
+  fillcolor: "#3498dbcc",
+  hovertemplate: '%{x}<br>Llaima: %{y:.0f} tons<extra></extra>'
+},
+{
+  name: "Villarrica",
+  x: ["2020-01", "2020-09", "2020-10", "2020-11", "2021-04", "2021-07", "2021-08", "2021-09", "2021-10", "2022-01", "2022-02", "2022-03", "2022-04", "2022-06", "2022-10", "2022-11", "2022-12", "2023-01", "2023-03", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-05", "2024-10", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-02", "2026-03", "2026-04"],
+  y: [0, 213.5, 0, 0, 42.8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 163.2, 78.2, 158.8, 117.19999999999999, 65.4, 24.3, 263.1, 220.39999999999998, 1069.3, 1126.2, 378.1, 61.9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#9b59b6"},
+  fillcolor: "#9b59b6cc",
+  hovertemplate: '%{x}<br>Villarrica: %{y:.0f} tons<extra></extra>'
+}
+],{"height": 320, "margin": {"l": 50, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"orientation": "h", "y": -0.2, "font": {"size": 9}}, "xaxis": {"gridcolor": "#21262d", "tickfont": {"size": 8}, "color": "#8b949e"}, "yaxis": {"title": "SO2 multi-volc\u00e1n [tons]", "gridcolor": "#21262d", "tickfont": {"size": 8}, "color": "#8b949e", "type": "linear"}, "hovermode": "x unified"},{responsive:true,displayModeBar:false}); });</script>
+
+<div class="streamgraph-section">
+  <h2>Térmico SWIR multi-volcán — vista regional</h2>
+  <p class="stream-help">
+    Suma mensual por volcán (apilada). Detecta eventos regionales sincrónicos
+    o transferencias entre volcanes vecinos. Excluye no-detecciones (y≤0.5).
+  </p>
+  <div id="streamgraph-swir" class="streamgraph"></div>
+</div>
+<script>window.addEventListener("load",function(){ Plotly.newPlot("streamgraph-swir",[
+{
+  name: "Lascar",
+  x: ["2018-08", "2018-09", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 43.0, 9.0, 0, 0, 0, 0, 0, 0, 0, 22.0, 25.0, 15.0, 23.0, 34.0, 32.0, 36.0, 24.0, 12.0, 23.0, 20.0, 28.0, 30.0, 18.0, 15.0, 75.0, 85.0, 53.0, 59.0, 65.0, 65.0, 52.0, 72.0, 51.0, 70.0, 54.0, 27.0, 34.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.0, 0, 0, 0, 0, 0, 0, 42.0, 133.0, 139.0, 93.0, 65.0, 82.0, 60.0, 49.0, 44.0, 0, 4.0, 0, 39.0, 53.0, 51.0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#e74c3c"},
+  fillcolor: "#e74c3ccc",
+  hovertemplate: '%{x}<br>Lascar: %{y:.0f} S2Pix<extra></extra>'
+},
+{
+  name: "Planchon-Peteroa",
+  x: ["2018-08", "2018-09", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.0, 8.0, 19.0, 4.0, 0, 48.0, 6.0, 48.0, 0, 0, 0, 0, 0, 0, 3.0, 0, 2.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.0, 0, 0, 5.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5.0, 0, 0, 0, 0, 0, 1.0, 31.0, 7.0, 0, 0, 9.0, 0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#e67e22"},
+  fillcolor: "#e67e22cc",
+  hovertemplate: '%{x}<br>Planchon-Peteroa: %{y:.0f} S2Pix<extra></extra>'
+},
+{
+  name: "Nevados de Chillan",
+  x: ["2018-08", "2018-09", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+  y: [17.0, 31.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127.0, 100.0, 112.0, 124.0, 196.0, 141.0, 104.0, 583.0, 496.0, 843.0, 345.0, 59.0, 333.0, 114.0, 90.0, 54.0, 53.0, 62.0, 48.0, 61.0, 84.0, 8.0, 17.0, 112.0, 9.0, 0, 19.0, 0, 0, 1.0, 1.0, 0, 86.0, 79.0, 12.0, 0, 60.0, 0, 0, 0, 17.0, 5.0, 2.0, 22.0, 44.0, 7.0, 0, 2.0, 7.0, 1.0, 0, 1.0, 10.0, 11.0, 0, 5.0, 19.0, 0, 0, 2.0, 0, 0, 9.0, 1.0, 1.0, 14.0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#f1c40f"},
+  fillcolor: "#f1c40fcc",
+  hovertemplate: '%{x}<br>Nevados de Chillan: %{y:.0f} S2Pix<extra></extra>'
+},
+{
+  name: "Copahue",
+  x: ["2018-08", "2018-09", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8.0, 0, 0, 1.0, 1.0, 0, 0, 2.0, 2.0, 34.0, 11.0, 9.0, 24.0, 11.0, 0, 1.0, 15.0, 0, 0, 0, 0, 0, 0, 0, 0, 21.0, 0, 10.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16.0, 0, 3.0, 4.0, 10.0, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 9.0, 0, 9.0, 0, 4.0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#2ecc71"},
+  fillcolor: "#2ecc71cc",
+  hovertemplate: '%{x}<br>Copahue: %{y:.0f} S2Pix<extra></extra>'
+},
+{
+  name: "Llaima",
+  x: ["2018-08", "2018-09", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 3.0, 19.0, 0, 15.0, 0, 0, 0, 0, 0, 0, 4.0, 0, 1.0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 0, 0, 12.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3.0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#3498db"},
+  fillcolor: "#3498dbcc",
+  hovertemplate: '%{x}<br>Llaima: %{y:.0f} S2Pix<extra></extra>'
+},
+{
+  name: "Villarrica",
+  x: ["2018-08", "2018-09", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+  y: [0, 0, 87.0, 88.0, 108.0, 79.0, 99.0, 29.0, 23.0, 27.0, 40.0, 58.0, 49.0, 90.0, 133.0, 65.0, 65.0, 56.0, 34.0, 26.0, 41.0, 38.0, 22.0, 51.0, 41.0, 53.0, 52.0, 78.0, 46.0, 41.0, 78.0, 22.0, 17.0, 58.0, 74.0, 87.0, 212.0, 251.0, 326.0, 372.0, 291.0, 101.0, 76.0, 104.0, 57.0, 73.0, 114.0, 336.0, 508.0, 1230.0, 979.0, 1357.0, 529.0, 474.0, 349.0, 16.0, 71.0, 6.0, 0, 0, 19.0, 13.0, 27.0, 25.0, 9.0, 1.0, 1.0, 0, 1.0, 0, 7.0, 2.0, 1.0, 0, 6.0, 10.0, 1.0],
+  stackgroup: 'one',
+  mode: 'lines',
+  line: {width: 0.5, color: "#9b59b6"},
+  fillcolor: "#9b59b6cc",
+  hovertemplate: '%{x}<br>Villarrica: %{y:.0f} S2Pix<extra></extra>'
+}
+],{"height": 320, "margin": {"l": 50, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"orientation": "h", "y": -0.2, "font": {"size": 9}}, "xaxis": {"gridcolor": "#21262d", "tickfont": {"size": 8}, "color": "#8b949e"}, "yaxis": {"title": "T\u00e9rmico SWIR multi-volc\u00e1n [S2Pix]", "gridcolor": "#21262d", "tickfont": {"size": 8}, "color": "#8b949e", "type": "linear"}, "hovermode": "x unified"},{responsive:true,displayModeBar:false}); });</script>
 
 <div class="map-section">
   <h2>Mapa de actividad</h2>
@@ -169,7 +375,7 @@ a:hover{text-decoration:underline}
 <div class="vsec" id="v-lascar">
   <div class="vhdr">
     <span class="vname">Lascar</span>
-    <span class="vmeta">ID 355100 &middot; 13 trazas &middot; 4 productos</span>
+    <span class="vmeta">ID 355100 &middot; 10 trazas &middot; 4 productos</span>
     <a class="vlink" href="https://www.mounts-project.com/timeseries/355100" target="_blank">MOUNTS &nearr;</a>
   </div>
   <div class="vcontent">
@@ -245,42 +451,6 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_nir</extra>'
 },
 {
-  name:"Int asc",
-  x:["2020-01-05T23:06:06", "2020-01-11T23:05:19", "2020-01-17T23:06:06", "2020-01-23T23:05:19", "2020-01-29T23:06:05"],
-  y:[0.1, 0.1, 0.1, 0.1, 0.1],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#d3d3d3",size:4,symbol:"circle-open"},
-  line:{color:"#d3d3d3",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int asc</extra>'
-},
-{
-  name:"Int desc",
-  x:["2020-01-06T10:01:21", "2020-01-07T09:52:25", "2020-01-12T10:00:34", "2020-01-18T10:01:20", "2020-01-19T09:52:25", "2020-01-24T10:00:34", "2020-01-30T10:01:20", "2020-01-31T09:52:24", "2020-02-05T10:00:33", "2020-10-14T10:00:43", "2020-10-20T10:01:29", "2020-10-26T10:00:43", "2020-11-01T10:01:29", "2020-11-07T10:00:43", "2020-11-13T10:01:29", "2020-11-19T10:00:42", "2020-11-25T10:01:28", "2020-12-01T10:00:42", "2020-12-07T10:01:28", "2020-12-13T10:00:42", "2020-12-19T10:01:28", "2020-12-25T10:00:41", "2020-12-31T10:01:27", "2021-01-06T10:00:40", "2021-01-12T10:01:26", "2021-01-18T10:00:40", "2021-01-24T10:01:26", "2021-01-30T10:00:39", "2021-02-05T10:01:26", "2021-02-11T10:00:39", "2021-02-17T10:01:25", "2021-02-23T10:00:39", "2021-03-01T10:01:25", "2021-03-07T10:00:39", "2021-03-13T10:01:25", "2021-03-19T10:00:39", "2021-03-25T10:01:25", "2021-03-31T10:00:39", "2021-04-06T10:01:26", "2021-04-12T10:00:39", "2021-04-18T10:01:26", "2021-04-24T10:00:40", "2021-04-30T10:01:27", "2021-05-06T10:00:41", "2021-05-12T10:01:27", "2021-05-18T10:00:41", "2021-05-24T10:01:28", "2021-05-30T10:00:42", "2021-06-05T10:01:29", "2021-06-11T10:00:43", "2021-06-17T10:01:30", "2021-07-05T10:00:44", "2021-07-11T10:01:31", "2021-07-17T10:00:45", "2021-07-23T10:01:32", "2021-07-29T10:00:46", "2021-08-04T10:01:32", "2021-08-10T10:00:46", "2021-08-16T10:01:33", "2021-08-22T10:00:47", "2021-08-28T10:01:34", "2021-09-03T10:00:47", "2021-09-09T10:01:34", "2021-09-15T10:00:48", "2021-09-21T10:01:35", "2021-09-27T10:00:48", "2021-10-03T10:01:35", "2021-10-09T10:00:48", "2021-10-15T10:01:35", "2021-10-21T10:00:49", "2021-10-27T10:01:35", "2021-11-02T10:00:48", "2021-11-08T10:01:35", "2021-11-14T10:00:48", "2021-11-20T10:01:35", "2021-11-26T10:00:48", "2021-12-08T10:00:47", "2021-12-14T10:01:34", "2021-12-20T10:00:47", "2021-12-26T10:01:33", "2022-01-07T10:01:32", "2022-01-19T10:01:32", "2022-01-31T10:01:31", "2022-02-12T10:01:31", "2022-02-24T10:01:31", "2022-03-08T10:01:31", "2022-03-20T10:01:31", "2022-04-01T10:01:31", "2022-04-13T10:01:31", "2022-05-07T10:01:32", "2022-05-19T10:01:33", "2022-05-31T10:01:34", "2022-06-12T10:01:35", "2022-06-24T10:01:36", "2022-07-06T10:01:37", "2022-07-18T10:01:38", "2022-07-30T10:01:38", "2022-08-11T10:01:39", "2022-08-23T10:01:39", "2022-09-04T10:01:40", "2022-09-16T10:01:40", "2022-09-28T10:01:41", "2022-10-10T10:01:41", "2022-10-22T10:01:41", "2022-11-03T10:01:40", "2022-11-15T10:01:40", "2022-11-27T10:01:40", "2022-12-09T10:01:40", "2022-12-21T10:01:39", "2023-01-02T10:01:38", "2023-01-14T10:01:38", "2023-01-26T10:01:37", "2023-02-07T10:01:37", "2023-02-19T10:01:36", "2023-03-03T10:01:37", "2023-03-15T10:01:36", "2023-03-27T10:01:37", "2023-04-08T10:01:37", "2023-04-20T10:01:37", "2023-05-02T10:01:38", "2023-05-14T10:01:39", "2023-05-26T10:01:39", "2023-06-07T10:01:39", "2023-06-19T10:01:41", "2023-07-01T10:01:41", "2023-07-13T10:01:42", "2023-07-25T10:01:43", "2023-08-06T10:01:44", "2023-08-18T10:01:44", "2023-08-30T10:01:45", "2023-09-11T10:01:45", "2023-09-23T10:01:46", "2023-10-05T10:01:46", "2023-10-17T10:01:46", "2023-11-10T10:01:45", "2023-11-22T10:01:45", "2023-12-04T10:01:45", "2023-12-16T10:01:44", "2023-12-28T10:01:43", "2024-01-09T10:01:43", "2024-01-21T10:01:42", "2024-02-02T10:01:42", "2024-02-14T10:01:42", "2024-02-26T10:01:42", "2024-03-09T10:01:41", "2024-03-21T10:01:42", "2024-04-02T10:01:43", "2024-04-14T10:01:42", "2024-04-26T10:01:43", "2024-05-08T10:01:43", "2024-05-20T10:01:43", "2024-06-01T10:01:43", "2024-06-13T10:01:42", "2024-06-25T10:01:42", "2024-07-07T10:01:41", "2024-07-19T10:01:41", "2024-07-31T10:01:41", "2024-08-12T10:01:40", "2024-08-24T10:01:41", "2024-09-05T10:01:41", "2024-09-17T10:01:42", "2024-09-29T10:01:42", "2024-10-11T10:01:42", "2024-11-04T10:01:42", "2024-11-16T10:01:42", "2024-11-28T10:01:41", "2024-12-10T10:01:40", "2024-12-22T10:01:39", "2025-01-03T10:01:37", "2025-01-15T10:01:36", "2025-01-27T10:01:36", "2025-02-08T10:01:35", "2025-02-20T10:01:35", "2025-03-04T10:01:35", "2025-03-16T10:01:35", "2025-03-28T10:01:35", "2025-04-03T10:00:11", "2025-04-09T10:01:35", "2025-04-15T10:00:26", "2025-04-21T10:01:35", "2025-04-27T10:00:27", "2025-05-03T10:01:35", "2025-05-09T10:00:17", "2025-05-15T10:01:35", "2025-05-21T10:00:18", "2025-05-27T10:01:35", "2025-06-02T10:00:19", "2025-06-08T10:01:34", "2025-06-14T10:00:20", "2025-06-20T10:01:33", "2025-06-26T10:00:21", "2025-07-02T10:01:33", "2025-07-08T10:00:21", "2025-07-14T10:01:32", "2025-07-20T10:00:22", "2025-07-26T10:01:32", "2025-08-01T10:00:23", "2025-08-07T10:01:32", "2025-08-13T10:00:23", "2025-08-19T10:01:32", "2025-08-25T10:00:24", "2025-08-31T10:01:32", "2025-09-06T10:00:43", "2025-09-12T10:01:32", "2025-09-18T10:00:41", "2025-09-24T10:01:32", "2025-09-30T10:00:41", "2025-10-06T10:01:33", "2025-10-12T10:00:42", "2025-10-18T10:01:33", "2025-10-24T10:00:41", "2025-10-30T10:01:32", "2025-11-05T10:00:41", "2025-11-11T10:01:32", "2025-11-17T10:00:41", "2025-11-23T10:01:31", "2025-11-29T10:00:40", "2025-12-05T10:01:30", "2025-12-11T10:00:40", "2025-12-17T10:01:29", "2025-12-23T10:00:39", "2025-12-29T10:01:28", "2026-01-04T10:00:38", "2026-01-10T10:01:26", "2026-01-16T10:00:38", "2026-01-22T10:01:25", "2026-02-03T10:01:25", "2026-02-09T10:00:37", "2026-02-15T10:01:24", "2026-02-21T10:00:37", "2026-02-27T10:01:24", "2026-03-05T10:00:36", "2026-03-11T10:01:23", "2026-03-23T10:01:23", "2026-03-29T10:00:37", "2026-04-04T10:01:23", "2026-04-10T10:00:37", "2026-04-16T10:01:23", "2026-04-22T10:00:34", "2026-04-28T10:01:33"],
-  y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#808080",size:4,symbol:"circle"},
-  line:{color:"#808080",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int desc</extra>'
-},
-{
-  name:"tbar_int",
-  x:["2026-04-28T10:01:33", "2026-04-28T10:01:33", "2026-04-28T10:01:33"],
-  y:[0, 0.0, 1],
-  mode:"lines+markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"red",size:3},
-  line:{color:"red",width:1},
-  showlegend:false,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_int</extra>'
-},
-{
   name:"Def asc",
   x:["2020-01-11T23:05:19", "2020-01-17T23:06:06", "2020-01-23T23:05:19", "2020-01-29T23:06:05"],
   y:[0.0, 0.0, 0.0, 0.0],
@@ -353,7 +523,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:36:16','2026-05-10T07:36:16'],y:[0.001,1e9],
+  x:['2026-05-10T07:53:56','2026-05-10T07:53:56'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -400,13 +570,13 @@ a:hover{text-decoration:underline}
   name:'anomalia',showlegend:false,
   hovertemplate:'<b>ANOMALIA</b><br>%{x}<br>%{y:.3g}<extra></extra>'
 }
-],{"height": 500, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.8, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [N pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.6, 0.795], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis4": {"title": {"text": "SAR placeholders", "font": {"size": 9, "color": "#d3d3d3"}}, "type": "linear", "domain": [0.4, 0.595], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#d3d3d3"}, "color": "#d3d3d3"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.2, 0.395], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.01, 0.195], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
+],{"height": 440, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.78, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [S2Pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.52, 0.76], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.26, 0.5], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.0, 0.24], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
 
 
 <div class="vsec" id="v-planchon-peteroa">
   <div class="vhdr">
     <span class="vname">Planchon-Peteroa</span>
-    <span class="vmeta">ID 357040 &middot; 13 trazas &middot; 4 productos</span>
+    <span class="vmeta">ID 357040 &middot; 10 trazas &middot; 4 productos</span>
     <a class="vlink" href="https://www.mounts-project.com/timeseries/357040" target="_blank">MOUNTS &nearr;</a>
   </div>
   <div class="vcontent">
@@ -482,30 +652,6 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_nir</extra>'
 },
 {
-  name:"Int asc",
-  x:["2020-10-16T23:26:55", "2020-10-22T23:27:37", "2020-11-03T23:27:37", "2020-11-15T23:27:37", "2020-11-27T23:27:36", "2020-12-09T23:27:36", "2020-12-15T23:26:54", "2020-12-21T23:27:35", "2020-12-27T23:26:53", "2021-01-02T23:27:35", "2021-01-14T23:27:34", "2021-01-26T23:27:34", "2021-02-01T23:26:51", "2021-02-07T23:27:33", "2021-02-13T23:26:51", "2021-02-19T23:27:33", "2021-02-25T23:26:51", "2021-03-03T23:27:33", "2021-03-09T23:26:51", "2021-03-15T23:27:33", "2021-03-21T23:26:51", "2021-03-21T23:26:51", "2021-03-27T23:27:33", "2021-04-02T23:26:51", "2021-04-08T23:27:34", "2021-04-14T23:26:52", "2021-04-20T23:27:34", "2021-04-26T23:26:52", "2021-05-02T23:27:34", "2021-05-14T23:27:35", "2021-05-26T23:27:36", "2021-06-07T23:27:37", "2021-06-19T23:27:37", "2021-07-01T23:27:38", "2021-07-13T23:27:39", "2021-07-25T23:27:39", "2021-08-06T23:27:40", "2021-08-12T23:26:59", "2021-08-18T23:27:41", "2021-08-30T23:27:41", "2021-09-05T23:27:00", "2021-09-11T23:27:42", "2021-09-17T23:27:00", "2021-09-23T23:27:42", "2021-10-05T23:27:42", "2021-10-11T23:27:01", "2021-10-17T23:27:43", "2021-10-23T23:27:01", "2021-10-29T23:27:43", "2021-11-04T23:27:01", "2021-11-22T23:27:42", "2021-11-28T23:27:00", "2021-12-04T23:27:41", "2021-12-10T23:26:59", "2021-12-16T23:27:41", "2021-12-22T23:26:59", "2021-12-28T23:27:40", "2022-01-09T23:27:40", "2022-01-21T23:27:39", "2022-02-02T23:27:38", "2022-02-14T23:27:39", "2022-02-26T23:27:39", "2022-03-10T23:27:38", "2022-03-22T23:27:39", "2022-04-03T23:27:39", "2022-04-15T23:27:39", "2022-04-27T23:27:40", "2022-05-09T23:27:40", "2022-05-21T23:27:41", "2022-06-02T23:27:42", "2022-06-14T23:27:43", "2022-06-26T23:27:44", "2022-07-08T23:27:45", "2022-07-20T23:27:45", "2022-08-01T23:27:46", "2022-08-13T23:27:47", "2022-08-25T23:27:47", "2022-09-06T23:27:48", "2022-09-18T23:27:48", "2022-09-30T23:27:49", "2022-10-12T23:27:48", "2022-10-24T23:27:49", "2022-11-05T23:27:48", "2022-11-17T23:27:48", "2022-11-29T23:27:48", "2022-12-11T23:27:47", "2022-12-23T23:27:46", "2023-01-04T23:27:46", "2023-01-16T23:27:45", "2023-01-28T23:27:45", "2023-02-09T23:27:44", "2023-02-21T23:27:44", "2023-03-05T23:27:44", "2023-03-17T23:27:44", "2023-03-29T23:27:44", "2023-04-10T23:27:45", "2023-04-22T23:27:45", "2023-05-04T23:27:46", "2023-05-16T23:27:47", "2023-05-28T23:27:47", "2023-06-09T23:27:48", "2023-06-21T23:27:48", "2023-07-03T23:27:49", "2023-07-15T23:27:50", "2023-07-27T23:27:51", "2023-08-08T23:27:51", "2023-09-01T23:27:53", "2023-09-13T23:27:53", "2023-09-25T23:27:54", "2023-10-07T23:27:54", "2023-10-19T23:27:54", "2023-10-31T23:27:53", "2023-11-12T23:27:53", "2023-11-24T23:27:52", "2023-12-06T23:27:52", "2023-12-18T23:27:51", "2023-12-30T23:27:51", "2024-01-11T23:27:50", "2024-01-23T23:27:50", "2024-02-04T23:27:50", "2024-02-16T23:27:49", "2024-02-28T23:27:49", "2024-03-11T23:27:49", "2024-03-23T23:27:50", "2024-04-04T23:27:50", "2024-04-16T23:27:50", "2024-04-28T23:27:51", "2024-05-10T23:27:51", "2024-05-22T23:27:50", "2024-06-03T23:27:50", "2024-06-15T23:27:50", "2024-07-09T23:27:49", "2024-07-21T23:27:48", "2024-08-02T23:27:48", "2024-08-14T23:27:48", "2024-08-26T23:27:49", "2024-09-07T23:27:49", "2024-09-19T23:27:49", "2024-10-01T23:27:49", "2024-10-13T23:27:50", "2024-10-25T23:27:49", "2024-11-06T23:27:49", "2024-11-18T23:27:49", "2024-12-12T23:27:47", "2024-12-24T23:27:46", "2025-01-05T23:27:45", "2025-01-17T23:27:44", "2025-01-29T23:27:43", "2025-02-10T23:27:43", "2025-02-22T23:27:42", "2025-03-06T23:27:43", "2025-03-18T23:27:43", "2025-03-30T23:27:43", "2025-04-11T23:27:43", "2025-04-23T23:27:43", "2025-05-05T23:27:43", "2025-05-11T23:26:43", "2025-05-17T23:27:43", "2025-05-23T23:26:45", "2025-05-29T23:27:42", "2025-06-04T23:26:45", "2025-06-10T23:27:42", "2025-06-16T23:26:46", "2025-06-22T23:27:41", "2025-06-28T23:26:46", "2025-07-04T23:27:40", "2025-07-10T23:26:48", "2025-07-16T23:27:40", "2025-07-22T23:26:48", "2025-07-28T23:27:40", "2025-08-03T23:26:49", "2025-08-09T23:27:39", "2025-08-15T23:26:49", "2025-08-21T23:27:39", "2025-08-27T23:26:50", "2025-09-02T23:27:39", "2025-09-08T23:26:51", "2025-09-14T23:27:40", "2025-09-20T23:26:51", "2025-09-26T23:27:40", "2025-10-02T23:26:51", "2025-10-08T23:27:41", "2025-10-14T23:26:51", "2025-10-20T23:27:40", "2025-10-26T23:26:51", "2025-11-01T23:27:40", "2025-11-07T23:26:50", "2025-11-13T23:27:39", "2025-11-19T23:26:50", "2025-11-25T23:27:38", "2025-12-07T23:27:37", "2025-12-13T23:26:49", "2025-12-19T23:27:36", "2025-12-25T23:26:48", "2025-12-31T23:27:35", "2026-01-06T23:26:48", "2026-01-12T23:27:34", "2026-01-18T23:26:47", "2026-01-24T23:27:32", "2026-01-30T23:26:47", "2026-02-05T23:27:32", "2026-02-11T23:26:46", "2026-02-17T23:27:31", "2026-02-23T23:26:46", "2026-03-01T23:27:31", "2026-03-07T23:26:46", "2026-03-13T23:27:31", "2026-03-25T23:27:31", "2026-03-31T23:26:46", "2026-04-06T23:27:31", "2026-04-12T23:26:39", "2026-04-18T23:27:31", "2026-04-24T23:26:39"],
-  y:[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#d3d3d3",size:4,symbol:"circle-open"},
-  line:{color:"#d3d3d3",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int asc</extra>'
-},
-{
-  name:"tbar_int",
-  x:["2026-04-24T23:26:39", "2026-04-24T23:26:39", "2026-04-24T23:26:39"],
-  y:[0, 0.1, 1],
-  mode:"lines+markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"red",size:3},
-  line:{color:"red",width:1},
-  showlegend:false,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_int</extra>'
-},
-{
   name:"Def asc",
   x:["2020-10-22T23:27:37", "2020-11-03T23:27:37", "2020-11-15T23:27:37", "2020-11-27T23:27:36", "2020-12-09T23:27:36", "2020-12-15T23:26:54", "2020-12-21T23:27:35", "2020-12-27T23:26:53", "2021-01-02T23:27:35", "2021-01-14T23:27:34", "2021-01-26T23:27:34", "2021-02-01T23:26:51", "2021-02-07T23:27:33", "2021-02-13T23:26:51", "2021-02-19T23:27:33", "2021-02-25T23:26:51", "2021-03-03T23:27:33", "2021-03-09T23:26:51", "2021-03-15T23:27:33", "2021-03-21T23:26:51", "2021-03-27T23:27:33", "2021-04-02T23:26:51", "2021-04-08T23:27:34", "2021-04-14T23:26:52", "2021-04-20T23:27:34", "2021-04-26T23:26:52", "2021-05-02T23:27:34", "2021-05-14T23:27:35", "2021-05-26T23:27:36", "2021-06-07T23:27:37", "2021-06-19T23:27:37", "2021-07-01T23:27:38", "2021-07-13T23:27:39", "2021-07-25T23:27:39", "2021-08-06T23:27:40", "2021-08-12T23:26:59", "2021-08-18T23:27:41", "2021-08-30T23:27:41", "2021-09-05T23:27:00", "2021-09-11T23:27:42", "2021-09-17T23:27:00", "2021-09-23T23:27:42", "2021-10-05T23:27:42", "2021-10-11T23:27:01", "2021-10-17T23:27:43", "2021-10-23T23:27:01", "2021-10-29T23:27:43", "2021-11-04T23:27:01", "2021-11-22T23:27:42", "2021-11-28T23:27:00", "2021-12-04T23:27:41", "2021-12-10T23:26:59", "2021-12-16T23:27:41", "2021-12-22T23:26:59", "2021-12-28T23:27:40", "2022-01-09T23:27:40", "2022-01-21T23:27:39", "2022-02-02T23:27:38", "2022-02-14T23:27:39", "2022-02-26T23:27:39", "2022-03-10T23:27:38", "2022-03-22T23:27:39", "2022-04-03T23:27:39", "2022-04-15T23:27:39", "2022-04-27T23:27:40", "2022-05-09T23:27:40", "2022-05-21T23:27:41", "2022-06-02T23:27:42", "2022-06-14T23:27:43", "2022-06-26T23:27:44", "2022-07-20T23:27:45", "2022-08-01T23:27:46", "2022-08-13T23:27:47", "2022-08-25T23:27:47", "2022-09-06T23:27:48", "2022-09-18T23:27:48", "2022-09-30T23:27:49", "2022-10-12T23:27:48", "2022-10-24T23:27:49", "2022-11-05T23:27:48", "2022-11-17T23:27:48", "2022-11-29T23:27:48", "2022-12-11T23:27:47", "2022-12-23T23:27:46", "2023-01-04T23:27:46", "2023-01-16T23:27:45", "2023-01-28T23:27:45", "2023-02-09T23:27:44", "2023-02-21T23:27:44", "2023-03-05T23:27:44", "2023-03-17T23:27:44", "2023-03-29T23:27:44", "2023-04-10T23:27:45", "2023-04-22T23:27:45", "2023-05-04T23:27:46", "2023-05-16T23:27:47", "2023-05-28T23:27:47", "2023-06-09T23:27:48", "2023-06-21T23:27:48", "2023-07-03T23:27:49", "2023-07-15T23:27:50", "2023-07-27T23:27:51", "2023-08-08T23:27:51", "2023-09-13T23:27:53", "2023-09-25T23:27:54", "2023-10-07T23:27:54", "2023-10-19T23:27:54", "2023-10-31T23:27:53", "2023-11-12T23:27:53", "2023-11-24T23:27:52", "2023-12-06T23:27:52", "2023-12-18T23:27:51", "2023-12-30T23:27:51", "2024-01-11T23:27:50", "2024-01-23T23:27:50", "2024-02-04T23:27:50", "2024-02-16T23:27:49", "2024-02-28T23:27:49", "2024-03-11T23:27:49", "2024-03-23T23:27:50", "2024-04-04T23:27:50", "2024-04-16T23:27:50", "2024-04-28T23:27:51", "2024-05-10T23:27:51", "2024-05-22T23:27:50", "2024-06-03T23:27:50", "2024-06-15T23:27:50", "2024-07-09T23:27:49", "2024-07-21T23:27:48", "2024-08-02T23:27:48", "2024-08-14T23:27:48", "2024-08-26T23:27:49", "2024-09-07T23:27:49", "2024-09-19T23:27:49", "2024-10-01T23:27:49", "2024-10-13T23:27:50", "2024-10-25T23:27:49", "2024-11-06T23:27:49", "2024-11-18T23:27:49", "2024-12-12T23:27:47", "2024-12-24T23:27:46", "2025-01-05T23:27:45", "2025-01-17T23:27:44", "2025-01-29T23:27:43", "2025-02-10T23:27:43", "2025-02-22T23:27:42", "2025-03-06T23:27:43", "2025-03-18T23:27:43", "2025-03-30T23:27:43", "2025-04-11T23:27:43", "2025-04-23T23:27:43", "2025-05-05T23:27:43", "2025-05-11T23:26:43", "2025-05-17T23:27:43", "2025-05-23T23:26:45", "2025-05-29T23:27:42", "2025-06-04T23:26:45", "2025-06-10T23:27:42", "2025-06-16T23:26:46", "2025-06-22T23:27:41", "2025-06-28T23:26:46", "2025-07-04T23:27:40", "2025-07-10T23:26:48", "2025-07-16T23:27:40", "2025-07-22T23:26:48", "2025-07-28T23:27:40", "2025-08-03T23:26:49", "2025-08-09T23:27:39", "2025-08-15T23:26:49", "2025-08-21T23:27:39", "2025-08-27T23:26:50", "2025-09-02T23:27:39", "2025-09-08T23:26:51", "2025-09-14T23:27:40", "2025-09-20T23:26:51", "2025-09-26T23:27:40", "2025-10-02T23:26:51", "2025-10-08T23:27:41", "2025-10-14T23:26:51", "2025-10-20T23:27:40", "2025-10-26T23:26:51", "2025-11-01T23:27:40", "2025-11-07T23:26:50", "2025-11-13T23:27:39", "2025-11-19T23:26:50", "2025-11-25T23:27:38", "2025-12-07T23:27:37", "2025-12-13T23:26:49", "2025-12-19T23:27:36", "2025-12-25T23:26:48", "2025-12-31T23:27:35", "2026-01-06T23:26:48", "2026-01-12T23:27:34", "2026-01-18T23:26:47", "2026-01-24T23:27:32", "2026-01-30T23:26:47", "2026-02-05T23:27:32", "2026-02-11T23:26:46", "2026-02-17T23:27:31", "2026-02-23T23:26:46", "2026-03-01T23:27:31", "2026-03-07T23:26:46", "2026-03-13T23:27:31", "2026-03-25T23:27:31", "2026-03-31T23:26:46", "2026-04-06T23:27:31", "2026-04-12T23:26:39", "2026-04-18T23:27:31", "2026-04-24T23:26:39"],
   y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000125, 0.000367, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000884, 0.000321, 0.000336, 6.3e-06, 0.000243, 0.0, 0.0, 2.81e-05, 0.000457, 4.96e-05, 0.0, 0.000165, 0.000759, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000274, 0.0, 3.59e-05, 0.000196, 0.000463, 9.6e-05, 0.0, 0.000183, 0.0, 0.00012, 0.0, 5.66e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.72e-06, 0.0, 0.0, 4.69e-05, 0.0, 0.000258, 0.000248, 1.39e-05, 0.000624, 7.72e-05, 0.000115, 6.21e-05, 0.000251, 0.0, 0.000144, 5.64e-05, 0.00015, 0.000198, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.52e-05, 0.000148, 0.000411, 0.000323, 0.000181, 0.000535, 0.000954, 0.000276, 0.000185, 0.000284, 0.000137, 5.32e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.89e-05, 0.0, 0.0, 0.000309, 0.0, 0.0, 0.0, 2.27e-05, 0.000372, 0.000327, 7.64e-05, 0.000101, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.00023, 0.000861, 6.12e-05, 0.0, 0.000223, 0.0, 9.4e-05, 4.17e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9.34e-06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
@@ -554,7 +700,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:36:17','2026-05-10T07:36:17'],y:[0.001,1e9],
+  x:['2026-05-10T07:53:57','2026-05-10T07:53:57'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -601,7 +747,7 @@ a:hover{text-decoration:underline}
   name:'anomalia',showlegend:false,
   hovertemplate:'<b>ANOMALIA</b><br>%{x}<br>%{y:.3g}<extra></extra>'
 }
-],{"height": 500, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.8, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [N pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.6, 0.795], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis4": {"title": {"text": "SAR placeholders", "font": {"size": 9, "color": "#d3d3d3"}}, "type": "linear", "domain": [0.4, 0.595], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#d3d3d3"}, "color": "#d3d3d3"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.2, 0.395], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.01, 0.195], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
+],{"height": 440, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.78, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [S2Pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.52, 0.76], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.26, 0.5], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.0, 0.24], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
 
 
 <div class="vsec" id="v-laguna-del-maule">
@@ -622,7 +768,7 @@ a:hover{text-decoration:underline}
 <div class="vsec" id="v-nevados-de-chillan">
   <div class="vhdr">
     <span class="vname">Nevados de Chillan</span>
-    <span class="vmeta">ID 357070 &middot; 13 trazas &middot; 4 productos</span>
+    <span class="vmeta">ID 357070 &middot; 10 trazas &middot; 4 productos</span>
     <a class="vlink" href="https://www.mounts-project.com/timeseries/357070" target="_blank">MOUNTS &nearr;</a>
   </div>
   <div class="vcontent">
@@ -698,30 +844,6 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_nir</extra>'
 },
 {
-  name:"Int desc",
-  x:["2018-08-21T09:56:15", "2018-08-26T10:04:27", "2018-09-02T09:56:15", "2018-09-07T10:04:08", "2020-10-15T09:57:07", "2020-10-21T09:56:19", "2020-10-27T09:57:07", "2020-11-02T09:56:19", "2020-11-08T09:57:07", "2020-11-20T09:57:07", "2020-11-26T09:56:18", "2020-12-02T09:57:06", "2020-12-08T09:56:18", "2020-12-14T09:57:06", "2020-12-20T09:56:17", "2020-12-26T09:57:05", "2021-01-01T09:56:17", "2021-01-07T09:57:05", "2021-01-13T09:56:16", "2021-01-19T09:57:04", "2021-01-25T09:56:16", "2021-01-31T09:57:04", "2021-02-06T09:56:15", "2021-02-12T09:57:04", "2021-02-18T09:56:11", "2021-02-24T09:57:03", "2021-03-02T09:56:15", "2021-03-08T09:57:03", "2021-03-14T09:56:15", "2021-03-20T09:57:03", "2021-03-26T09:56:15", "2021-04-01T09:57:04", "2021-04-07T09:56:16", "2021-04-13T09:57:04", "2021-04-19T09:56:16", "2021-04-25T09:57:05", "2021-05-01T09:56:17", "2021-05-07T09:57:05", "2021-05-13T09:56:17", "2021-05-25T09:56:18", "2021-05-31T09:57:07", "2021-06-06T09:56:19", "2021-06-12T09:57:07", "2021-06-18T09:56:19", "2021-06-24T09:57:08", "2021-07-12T09:56:21", "2021-07-18T09:57:10", "2021-07-24T09:56:22", "2021-07-30T09:57:10", "2021-08-05T09:56:22", "2021-08-11T09:57:11", "2021-08-17T09:56:23", "2021-08-23T09:57:12", "2021-08-29T09:56:23", "2021-09-04T09:57:12", "2021-09-10T09:56:24", "2021-09-16T09:57:13", "2021-09-22T09:56:24", "2021-09-28T09:57:13", "2021-10-04T09:56:25", "2021-10-10T09:57:13", "2021-10-16T09:56:25", "2021-10-22T09:57:13", "2021-10-28T09:56:25", "2021-11-03T09:57:12", "2021-11-09T09:56:24", "2021-11-15T09:57:13", "2021-11-21T09:56:24", "2021-11-27T09:57:12", "2021-12-03T09:56:24", "2021-12-09T09:57:12", "2021-12-15T09:56:23", "2021-12-21T09:57:10", "2022-01-02T09:57:11", "2022-01-14T09:57:10", "2022-01-26T09:57:10", "2022-02-07T09:57:09", "2022-02-19T09:57:09", "2022-03-03T09:57:09", "2022-03-15T09:57:09", "2022-03-27T09:57:09", "2022-04-08T09:57:10", "2022-04-20T09:57:13", "2022-05-02T09:57:13", "2022-05-14T09:57:14", "2022-05-26T09:57:15", "2022-06-07T09:57:16", "2022-06-19T09:57:17", "2022-07-01T09:57:17", "2022-07-13T09:57:18", "2022-07-25T09:57:19", "2022-08-06T09:57:20", "2022-08-18T09:57:19", "2022-08-30T09:57:21", "2022-09-11T09:57:22", "2022-09-23T09:57:21", "2022-10-05T09:57:22", "2022-10-17T09:57:22", "2022-10-29T09:57:22", "2022-11-10T09:57:21", "2022-11-22T09:57:22", "2022-12-04T09:57:21", "2022-12-16T09:57:20", "2022-12-28T09:57:19", "2023-01-09T09:57:19", "2023-01-21T09:57:17", "2023-02-14T09:57:17", "2023-02-26T09:57:17", "2023-03-10T09:57:17", "2023-03-22T09:57:17", "2023-04-03T09:57:14", "2023-04-15T09:57:19", "2023-04-27T09:57:19", "2023-05-09T09:57:19", "2023-06-02T09:57:21", "2023-06-14T09:57:21", "2023-06-26T09:57:21", "2023-07-08T09:57:23", "2023-07-20T09:57:23", "2023-08-01T09:57:24", "2023-08-13T09:57:25", "2023-08-25T09:57:26", "2023-09-06T09:57:26", "2023-09-18T09:57:27", "2023-09-30T09:57:27", "2023-10-12T09:57:26", "2023-10-24T09:57:27", "2023-11-05T09:57:27", "2023-11-17T09:57:26", "2023-11-29T09:57:25", "2023-12-11T09:57:26", "2023-12-23T09:57:24", "2024-01-04T09:57:24", "2024-01-16T09:57:23", "2024-01-28T09:57:23", "2024-02-09T09:57:23", "2024-02-21T09:57:22", "2024-03-04T09:57:23", "2024-03-16T09:57:23", "2024-03-28T09:57:23", "2024-04-21T09:57:24", "2024-05-03T09:57:24", "2024-05-15T09:57:24", "2024-05-27T09:57:24", "2024-06-08T09:57:23", "2024-06-20T09:57:23", "2024-07-14T09:57:22", "2024-07-26T09:57:21", "2024-08-07T09:57:21", "2024-08-19T09:57:22", "2024-08-31T09:57:22", "2024-09-12T09:57:22", "2024-09-24T09:57:23", "2024-10-06T09:57:23", "2024-10-18T09:57:23", "2024-10-30T09:57:23", "2024-11-11T09:57:23", "2024-11-23T09:57:22", "2024-12-05T09:57:21", "2024-12-17T09:57:20", "2024-12-29T09:57:19", "2025-10-25T09:57:13"],
-  y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#808080",size:4,symbol:"circle"},
-  line:{color:"#808080",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int desc</extra>'
-},
-{
-  name:"tbar_int",
-  x:["2025-10-25T09:57:13", "2025-10-25T09:57:13", "2025-10-25T09:57:13"],
-  y:[0, 0.0, 1],
-  mode:"lines+markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"red",size:3},
-  line:{color:"red",width:1},
-  showlegend:false,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_int</extra>'
-},
-{
   name:"Def desc",
   x:["2018-09-02T09:56:15", "2018-09-07T10:04:08", "2020-10-21T09:56:19", "2020-10-27T09:57:07", "2020-11-02T09:56:19", "2020-11-08T09:57:07", "2020-11-20T09:57:07", "2020-11-26T09:56:18", "2020-12-02T09:57:06", "2020-12-08T09:56:18", "2020-12-14T09:57:06", "2020-12-20T09:56:17", "2020-12-26T09:57:05", "2021-01-01T09:56:17", "2021-01-07T09:57:05", "2021-01-13T09:56:16", "2021-01-19T09:57:04", "2021-01-25T09:56:16", "2021-01-31T09:57:04", "2021-02-06T09:56:15", "2021-02-12T09:57:04", "2021-02-18T09:56:11", "2021-02-24T09:57:03", "2021-03-02T09:56:15", "2021-03-08T09:57:03", "2021-03-14T09:56:15", "2021-03-20T09:57:03", "2021-03-26T09:56:15", "2021-04-01T09:57:04", "2021-04-07T09:56:16", "2021-04-13T09:57:04", "2021-04-19T09:56:16", "2021-04-25T09:57:05", "2021-05-01T09:56:17", "2021-05-07T09:57:05", "2021-05-13T09:56:17", "2021-05-25T09:56:18", "2021-05-31T09:57:07", "2021-06-06T09:56:19", "2021-06-12T09:57:07", "2021-06-18T09:56:19", "2021-06-24T09:57:08", "2021-07-12T09:56:21", "2021-07-18T09:57:10", "2021-07-24T09:56:22", "2021-07-30T09:57:10", "2021-08-05T09:56:22", "2021-08-11T09:57:11", "2021-08-17T09:56:23", "2021-08-23T09:57:12", "2021-08-29T09:56:23", "2021-09-04T09:57:12", "2021-09-10T09:56:24", "2021-09-16T09:57:13", "2021-09-22T09:56:24", "2021-09-28T09:57:13", "2021-10-04T09:56:25", "2021-10-10T09:57:13", "2021-10-16T09:56:25", "2021-10-22T09:57:13", "2021-10-28T09:56:25", "2021-11-03T09:57:12", "2021-11-09T09:56:24", "2021-11-15T09:57:13", "2021-11-21T09:56:24", "2021-11-27T09:57:12", "2021-12-03T09:56:24", "2021-12-09T09:57:12", "2021-12-15T09:56:23", "2021-12-21T09:57:10", "2022-01-02T09:57:11", "2022-01-14T09:57:10", "2022-01-26T09:57:10", "2022-02-07T09:57:09", "2022-02-19T09:57:09", "2022-03-03T09:57:09", "2022-03-15T09:57:09", "2022-03-27T09:57:09", "2022-04-08T09:57:10", "2022-04-20T09:57:13", "2022-05-02T09:57:13", "2022-05-14T09:57:14", "2022-05-26T09:57:15", "2022-06-07T09:57:16", "2022-06-19T09:57:17", "2022-07-01T09:57:17", "2022-07-25T09:57:19", "2022-08-06T09:57:20", "2022-08-18T09:57:19", "2022-08-30T09:57:21", "2022-09-11T09:57:22", "2022-09-23T09:57:21", "2022-10-05T09:57:22", "2022-10-17T09:57:22", "2022-10-29T09:57:22", "2022-11-10T09:57:21", "2022-11-22T09:57:22", "2022-12-04T09:57:21", "2022-12-16T09:57:20", "2022-12-28T09:57:19", "2023-01-09T09:57:19", "2023-01-21T09:57:17", "2023-02-26T09:57:17", "2023-03-10T09:57:17", "2023-03-22T09:57:17", "2023-04-03T09:57:14", "2023-04-15T09:57:19", "2023-04-27T09:57:19", "2023-05-09T09:57:19", "2023-06-14T09:57:21", "2023-06-26T09:57:21", "2023-07-08T09:57:23", "2023-07-20T09:57:23", "2023-08-01T09:57:24", "2023-08-13T09:57:25", "2023-08-25T09:57:26", "2023-09-06T09:57:26", "2023-09-18T09:57:27", "2023-09-30T09:57:27", "2023-10-12T09:57:26", "2023-10-24T09:57:27", "2023-11-17T09:57:26", "2023-11-29T09:57:25", "2023-12-11T09:57:26", "2023-12-23T09:57:24", "2024-01-04T09:57:24", "2024-01-16T09:57:23", "2024-01-28T09:57:23", "2024-02-09T09:57:23", "2024-02-21T09:57:22", "2024-03-04T09:57:23", "2024-03-16T09:57:23", "2024-03-28T09:57:23", "2024-05-03T09:57:24", "2024-05-15T09:57:24", "2024-05-27T09:57:24", "2024-06-08T09:57:23", "2024-06-20T09:57:23", "2024-07-14T09:57:22", "2024-07-26T09:57:21", "2024-08-07T09:57:21", "2024-08-19T09:57:22", "2024-08-31T09:57:22", "2024-09-12T09:57:22", "2024-09-24T09:57:23", "2024-10-06T09:57:23", "2024-10-18T09:57:23", "2024-10-30T09:57:23", "2024-11-11T09:57:23", "2024-11-23T09:57:22", "2024-12-05T09:57:21", "2024-12-17T09:57:20", "2024-12-29T09:57:19"],
   y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000224, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 8.55e-05, 0.000114, 0.0, 0.0, 0.0, 9.19e-06, 0.0, 0.0, 0.0, 0.000264, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.36e-05, 0.000195, 0.0, 6.84e-06, 0.0, 0.0, 0.0, 0.0, 4.63e-05, 0.000303, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7.35e-05, 1.32e-05, 0.0, 0.0, 0.0, 7.11e-05, 0.000329, 0.000162, 0.000241, 0.0, 0.0, 0.0, 7.35e-05, 1.42e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.28e-05, 0.0, 2.55e-05, 0.0, 2.81e-05, 3.99e-05, 0.000131, 4.78e-06, 0.0, 0.0, 0.0, 0.0, 8.1e-06, 0.0, 0.000169, 0.0, 0.0, 0.0, 0.0],
@@ -770,7 +892,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:36:17','2026-05-10T07:36:17'],y:[0.001,1e9],
+  x:['2026-05-10T07:53:57','2026-05-10T07:53:57'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -817,13 +939,13 @@ a:hover{text-decoration:underline}
   name:'anomalia',showlegend:false,
   hovertemplate:'<b>ANOMALIA</b><br>%{x}<br>%{y:.3g}<extra></extra>'
 }
-],{"height": 500, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.8, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [N pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.6, 0.795], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis4": {"title": {"text": "SAR placeholders", "font": {"size": 9, "color": "#d3d3d3"}}, "type": "linear", "domain": [0.4, 0.595], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#d3d3d3"}, "color": "#d3d3d3"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.2, 0.395], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.01, 0.195], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
+],{"height": 440, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.78, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [S2Pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.52, 0.76], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.26, 0.5], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.0, 0.24], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
 
 
 <div class="vsec" id="v-copahue">
   <div class="vhdr">
     <span class="vname">Copahue</span>
-    <span class="vmeta">ID 357090 &middot; 13 trazas &middot; 4 productos</span>
+    <span class="vmeta">ID 357090 &middot; 10 trazas &middot; 4 productos</span>
     <a class="vlink" href="https://www.mounts-project.com/timeseries/357090" target="_blank">MOUNTS &nearr;</a>
   </div>
   <div class="vcontent">
@@ -899,30 +1021,6 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_nir</extra>'
 },
 {
-  name:"Int desc",
-  x:["2020-10-15T09:57:32", "2020-10-21T09:56:44", "2020-10-27T09:57:32", "2020-11-02T09:56:44", "2020-11-08T09:57:32", "2020-11-20T09:57:32", "2020-11-26T09:56:43", "2020-12-02T09:57:31", "2020-12-08T09:56:43", "2020-12-14T09:57:31", "2020-12-20T09:56:42", "2020-12-26T09:57:30", "2021-01-01T09:56:42", "2021-01-07T09:57:30", "2021-01-13T09:56:41", "2021-01-19T09:57:29", "2021-01-25T09:56:41", "2021-01-31T09:57:29", "2021-02-06T09:56:40", "2021-02-12T09:57:28", "2021-02-18T09:56:39", "2021-02-24T09:57:28", "2021-03-02T09:56:40", "2021-03-08T09:57:28", "2021-03-14T09:56:40", "2021-03-20T09:57:28", "2021-03-26T09:56:40", "2021-04-01T09:57:28", "2021-04-07T09:56:40", "2021-04-13T09:57:29", "2021-04-19T09:56:41", "2021-04-25T09:57:30", "2021-05-01T09:56:41", "2021-05-07T09:57:30", "2021-05-13T09:56:42", "2021-05-25T09:56:43", "2021-05-31T09:57:31", "2021-06-06T09:56:44", "2021-06-12T09:57:32", "2021-06-18T09:56:44", "2021-06-24T09:57:33", "2021-07-12T09:56:46", "2021-07-18T09:57:34", "2021-07-24T09:56:46", "2021-07-30T09:57:35", "2021-08-05T09:56:47", "2021-08-11T09:57:36", "2021-08-17T09:56:48", "2021-08-23T09:57:36", "2021-08-29T09:56:48", "2021-09-04T09:57:37", "2021-09-10T09:56:49", "2021-09-16T09:57:37", "2021-09-22T09:56:49", "2021-09-28T09:57:38", "2021-10-04T09:56:50", "2021-10-10T09:57:38", "2021-10-16T09:56:50", "2021-10-22T09:57:38", "2021-10-28T09:56:50", "2021-11-03T09:57:38", "2021-11-09T09:56:49", "2021-11-15T09:57:38", "2021-11-21T09:56:49", "2021-11-27T09:57:37", "2021-12-03T09:56:49", "2021-12-09T09:57:37", "2021-12-15T09:56:48", "2021-12-21T09:57:36", "2022-01-02T09:57:35", "2022-01-14T09:57:35", "2022-01-26T09:57:35", "2022-02-07T09:57:34", "2022-02-19T09:57:34", "2022-03-03T09:57:34", "2022-03-15T09:57:34", "2022-03-27T09:57:34", "2022-04-08T09:57:34", "2022-04-20T09:57:38", "2022-05-02T09:57:38", "2022-05-14T09:57:39", "2022-05-26T09:57:40", "2022-06-07T09:57:41", "2022-06-19T09:57:41", "2022-07-01T09:57:42", "2022-07-13T09:57:43", "2022-07-25T09:57:44", "2022-08-06T09:57:45", "2022-08-18T09:57:45", "2022-08-30T09:57:46", "2022-09-11T09:57:46", "2022-09-23T09:57:46", "2022-10-05T09:57:46", "2022-10-17T09:57:47", "2022-10-29T09:57:47", "2022-11-10T09:57:46", "2022-11-22T09:57:46", "2022-12-04T09:57:46", "2022-12-16T09:57:45", "2022-12-28T09:57:44", "2023-01-09T09:57:44", "2023-01-21T09:57:43", "2023-02-14T09:57:42", "2023-02-26T09:57:43", "2023-03-10T09:57:42", "2023-03-22T09:57:42", "2023-04-03T09:57:40", "2023-04-15T09:57:43", "2023-04-27T09:57:44", "2023-05-09T09:57:44", "2023-06-02T09:57:45", "2023-06-14T09:57:46", "2023-06-26T09:57:46", "2023-07-08T09:57:48", "2023-07-20T09:57:48", "2023-08-01T09:57:49", "2023-08-13T09:57:49", "2023-08-25T09:57:50", "2023-09-06T09:57:51", "2023-09-18T09:57:51", "2023-09-30T09:57:52", "2023-10-12T09:57:51", "2023-10-24T09:57:52", "2023-11-05T09:57:51", "2023-11-17T09:57:51", "2023-11-29T09:57:50", "2023-12-11T09:57:50", "2023-12-23T09:57:49", "2024-01-04T09:57:49", "2024-01-16T09:57:48", "2024-01-28T09:57:48", "2024-02-09T09:57:47", "2024-02-21T09:57:47", "2024-03-04T09:57:48", "2024-03-16T09:57:48", "2024-03-28T09:57:48", "2024-04-21T09:57:49", "2024-05-03T09:57:49", "2024-05-15T09:57:48", "2024-05-27T09:57:49", "2024-06-08T09:57:48", "2024-06-20T09:57:48", "2024-07-14T09:57:47", "2024-07-26T09:57:46", "2024-08-07T09:57:46", "2024-08-19T09:57:47", "2024-08-31T09:57:47", "2024-09-12T09:57:47", "2024-09-24T09:57:47", "2024-10-06T09:57:48", "2024-10-18T09:57:48", "2024-10-30T09:57:48", "2024-11-11T09:57:48", "2024-11-23T09:57:47", "2024-12-05T09:57:46", "2024-12-17T09:57:45", "2024-12-29T09:57:44", "2025-01-10T09:57:43", "2025-01-22T09:57:41", "2025-02-03T09:57:41", "2025-02-15T09:57:41", "2025-02-27T09:57:41", "2025-03-11T09:57:41", "2025-03-23T09:57:41", "2025-04-04T09:57:41", "2025-04-10T09:56:25", "2025-04-28T09:57:42", "2025-05-10T09:57:41", "2025-06-03T09:57:40", "2025-06-15T09:57:40", "2025-06-27T09:57:39", "2025-07-09T09:57:38", "2025-07-21T09:57:38", "2025-08-02T09:57:37", "2025-08-14T09:57:37", "2025-08-26T09:57:38", "2025-09-01T09:56:31", "2025-09-07T09:57:38", "2025-09-13T09:56:34", "2025-09-19T09:57:38", "2025-09-25T09:56:34", "2025-10-01T09:57:38", "2025-10-07T09:56:35", "2025-10-13T09:57:39", "2025-10-19T09:56:35", "2025-10-25T09:57:38", "2025-10-31T09:56:34", "2025-11-06T09:57:38", "2025-11-12T09:56:34", "2025-11-18T09:57:37", "2025-11-24T09:56:33", "2025-11-30T09:57:36", "2025-12-06T09:56:33", "2025-12-12T09:57:35", "2025-12-18T09:56:32", "2025-12-24T09:57:34", "2025-12-30T09:56:31", "2026-01-05T09:57:33", "2026-01-11T09:56:31", "2026-01-17T09:57:32", "2026-01-23T09:56:30", "2026-01-29T09:57:31", "2026-02-04T09:56:29", "2026-02-16T09:56:30", "2026-02-28T09:56:30", "2026-03-12T09:56:29", "2026-03-24T09:56:30", "2026-03-30T09:57:29", "2026-04-05T09:56:30", "2026-04-11T09:57:29", "2026-04-17T09:56:27", "2026-04-29T09:56:27"],
-  y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#808080",size:4,symbol:"circle"},
-  line:{color:"#808080",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int desc</extra>'
-},
-{
-  name:"tbar_int",
-  x:["2026-04-29T09:56:27", "2026-04-29T09:56:27", "2026-04-29T09:56:27"],
-  y:[0, 0.0, 1],
-  mode:"lines+markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"red",size:3},
-  line:{color:"red",width:1},
-  showlegend:false,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_int</extra>'
-},
-{
   name:"Def desc",
   x:["2020-10-21T09:56:44", "2020-10-27T09:57:32", "2020-11-02T09:56:44", "2020-11-08T09:57:32", "2020-11-20T09:57:32", "2020-11-26T09:56:43", "2020-12-02T09:57:31", "2020-12-08T09:56:43", "2020-12-14T09:57:31", "2020-12-20T09:56:42", "2020-12-26T09:57:30", "2021-01-01T09:56:42", "2021-01-07T09:57:30", "2021-01-13T09:56:41", "2021-01-19T09:57:29", "2021-01-25T09:56:41", "2021-01-31T09:57:29", "2021-02-06T09:56:40", "2021-02-12T09:57:28", "2021-02-18T09:56:39", "2021-02-24T09:57:28", "2021-03-02T09:56:40", "2021-03-08T09:57:28", "2021-03-14T09:56:40", "2021-03-20T09:57:28", "2021-03-26T09:56:40", "2021-04-01T09:57:28", "2021-04-07T09:56:40", "2021-04-13T09:57:29", "2021-04-19T09:56:41", "2021-04-25T09:57:30", "2021-05-01T09:56:41", "2021-05-07T09:57:30", "2021-05-13T09:56:42", "2021-05-25T09:56:43", "2021-05-31T09:57:31", "2021-06-06T09:56:44", "2021-06-12T09:57:32", "2021-06-18T09:56:44", "2021-06-24T09:57:33", "2021-07-12T09:56:46", "2021-07-18T09:57:34", "2021-07-24T09:56:46", "2021-07-30T09:57:35", "2021-08-05T09:56:47", "2021-08-11T09:57:36", "2021-08-17T09:56:48", "2021-08-23T09:57:36", "2021-08-29T09:56:48", "2021-09-04T09:57:37", "2021-09-10T09:56:49", "2021-09-16T09:57:37", "2021-09-22T09:56:49", "2021-09-28T09:57:38", "2021-10-04T09:56:50", "2021-10-10T09:57:38", "2021-10-16T09:56:50", "2021-10-22T09:57:38", "2021-10-28T09:56:50", "2021-11-09T09:56:49", "2021-11-15T09:57:38", "2021-11-21T09:56:49", "2021-11-27T09:57:37", "2021-12-03T09:56:49", "2021-12-09T09:57:37", "2021-12-15T09:56:48", "2021-12-21T09:57:36", "2022-01-02T09:57:35", "2022-01-14T09:57:35", "2022-01-26T09:57:35", "2022-02-07T09:57:34", "2022-02-19T09:57:34", "2022-03-03T09:57:34", "2022-03-15T09:57:34", "2022-03-27T09:57:34", "2022-04-08T09:57:34", "2022-04-20T09:57:38", "2022-05-02T09:57:38", "2022-05-14T09:57:39", "2022-05-26T09:57:40", "2022-06-07T09:57:41", "2022-06-19T09:57:41", "2022-07-01T09:57:42", "2022-07-25T09:57:44", "2022-08-06T09:57:45", "2022-08-18T09:57:45", "2022-08-30T09:57:46", "2022-09-11T09:57:46", "2022-09-23T09:57:46", "2022-10-05T09:57:46", "2022-10-17T09:57:47", "2022-10-29T09:57:47", "2022-11-10T09:57:46", "2022-11-22T09:57:46", "2022-12-04T09:57:46", "2022-12-16T09:57:45", "2022-12-28T09:57:44", "2023-01-09T09:57:44", "2023-01-21T09:57:43", "2023-02-26T09:57:43", "2023-03-10T09:57:42", "2023-03-22T09:57:42", "2023-04-03T09:57:40", "2023-04-15T09:57:43", "2023-04-27T09:57:44", "2023-05-09T09:57:44", "2023-06-14T09:57:46", "2023-06-26T09:57:46", "2023-07-08T09:57:48", "2023-07-20T09:57:48", "2023-08-01T09:57:49", "2023-08-13T09:57:49", "2023-08-25T09:57:50", "2023-09-06T09:57:51", "2023-09-18T09:57:51", "2023-09-30T09:57:52", "2023-10-12T09:57:51", "2023-10-24T09:57:52", "2023-11-05T09:57:51", "2023-11-17T09:57:51", "2023-11-29T09:57:50", "2023-12-11T09:57:50", "2023-12-23T09:57:49", "2024-01-04T09:57:49", "2024-01-16T09:57:48", "2024-01-28T09:57:48", "2024-02-09T09:57:47", "2024-02-21T09:57:47", "2024-03-04T09:57:48", "2024-03-28T09:57:48", "2024-04-21T09:57:49", "2024-05-03T09:57:49", "2024-05-15T09:57:48", "2024-05-27T09:57:49", "2024-06-08T09:57:48", "2024-06-20T09:57:48", "2024-07-14T09:57:47", "2024-07-26T09:57:46", "2024-08-07T09:57:46", "2024-08-19T09:57:47", "2024-08-31T09:57:47", "2024-09-12T09:57:47", "2024-09-24T09:57:47", "2024-10-06T09:57:48", "2024-10-18T09:57:48", "2024-10-30T09:57:48", "2024-11-11T09:57:48", "2024-11-23T09:57:47", "2024-12-05T09:57:46", "2024-12-17T09:57:45", "2024-12-29T09:57:44", "2025-01-10T09:57:43", "2025-01-22T09:57:41", "2025-02-03T09:57:41", "2025-02-15T09:57:41", "2025-02-27T09:57:41", "2025-03-11T09:57:41", "2025-03-23T09:57:41", "2025-04-10T09:56:25", "2025-04-28T09:57:42", "2025-05-10T09:57:41", "2025-07-09T09:57:38", "2025-07-21T09:57:38", "2025-09-01T09:56:31", "2025-09-07T09:57:38", "2025-09-13T09:56:34", "2025-09-19T09:57:38", "2025-09-25T09:56:34", "2025-10-01T09:57:38", "2025-10-07T09:56:35", "2025-10-13T09:57:39", "2025-10-19T09:56:35", "2025-10-25T09:57:38", "2025-10-31T09:56:34", "2025-11-06T09:57:38", "2025-11-18T09:57:37", "2025-11-24T09:56:33", "2025-11-30T09:57:36", "2025-12-06T09:56:33", "2025-12-12T09:57:35", "2025-12-18T09:56:32", "2025-12-24T09:57:34", "2025-12-30T09:56:31", "2026-01-05T09:57:33", "2026-01-11T09:56:31", "2026-01-17T09:57:32", "2026-01-23T09:56:30", "2026-01-29T09:57:31", "2026-02-04T09:56:29", "2026-02-16T09:56:30", "2026-02-28T09:56:30", "2026-03-12T09:56:29", "2026-03-24T09:56:30", "2026-03-30T09:57:29", "2026-04-05T09:56:30", "2026-04-11T09:57:29", "2026-04-17T09:56:27"],
   y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.21e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000266, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000277, 0.0, 1.08e-05, 0.0, 0.0, 0.000517, 0.000369, 0.000229, 0.0, 0.0, 0.0, 6.25e-06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000155, 0.0, 0.0, 0.000295, 0.000275, 0.0, 0.000265, 0.0, 0.0, 1.01e-05, 6.66e-06, 7.85e-05, 0.0, 0.0, 1.56e-05, 0.000155, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000143, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
@@ -971,7 +1069,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:36:18','2026-05-10T07:36:18'],y:[0.001,1e9],
+  x:['2026-05-10T07:53:58','2026-05-10T07:53:58'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1018,13 +1116,13 @@ a:hover{text-decoration:underline}
   name:'anomalia',showlegend:false,
   hovertemplate:'<b>ANOMALIA</b><br>%{x}<br>%{y:.3g}<extra></extra>'
 }
-],{"height": 500, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.8, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [N pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.6, 0.795], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis4": {"title": {"text": "SAR placeholders", "font": {"size": 9, "color": "#d3d3d3"}}, "type": "linear", "domain": [0.4, 0.595], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#d3d3d3"}, "color": "#d3d3d3"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.2, 0.395], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.01, 0.195], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
+],{"height": 440, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.78, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [S2Pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.52, 0.76], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.26, 0.5], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.0, 0.24], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
 
 
 <div class="vsec" id="v-llaima">
   <div class="vhdr">
     <span class="vname">Llaima</span>
-    <span class="vmeta">ID 357110 &middot; 13 trazas &middot; 4 productos</span>
+    <span class="vmeta">ID 357110 &middot; 10 trazas &middot; 4 productos</span>
     <a class="vlink" href="https://www.mounts-project.com/timeseries/357110" target="_blank">MOUNTS &nearr;</a>
   </div>
   <div class="vcontent">
@@ -1100,30 +1198,6 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_nir</extra>'
 },
 {
-  name:"Int desc",
-  x:["2023-01-21T09:57:43", "2023-02-14T09:57:42", "2023-02-26T09:57:43", "2023-03-10T09:57:42", "2023-03-22T09:57:42", "2023-04-03T09:57:40", "2023-04-15T09:57:43", "2023-04-27T09:57:44", "2023-05-09T09:57:44", "2023-06-02T09:57:45", "2023-06-14T09:57:46", "2023-06-26T09:57:46", "2023-07-08T09:57:48", "2023-07-20T09:57:48", "2023-08-01T09:57:49", "2023-08-13T09:57:49", "2023-08-25T09:57:50", "2023-09-06T09:57:51", "2023-09-18T09:57:51", "2023-09-30T09:57:52", "2023-10-12T09:57:51", "2023-10-24T09:57:52", "2023-11-05T09:57:51", "2023-11-17T09:57:51", "2023-11-29T09:57:50", "2023-12-11T09:57:50", "2023-12-23T09:57:49", "2024-01-04T09:57:49", "2024-01-16T09:57:48", "2024-01-28T09:57:48", "2024-02-09T09:57:47", "2024-02-21T09:57:47", "2024-03-04T09:57:48", "2024-03-16T09:57:48", "2024-03-28T09:57:48", "2024-04-21T09:57:49", "2024-05-03T09:57:49", "2024-05-15T09:57:48", "2024-05-27T09:57:49", "2024-06-08T09:57:48", "2024-06-20T09:57:48", "2024-07-14T09:57:47", "2024-07-26T09:57:46", "2024-08-07T09:57:46", "2024-08-19T09:57:47", "2024-08-31T09:57:47", "2024-09-12T09:57:47", "2024-09-24T09:57:47", "2024-10-06T09:57:48", "2024-10-18T09:57:48", "2024-10-30T09:57:48", "2024-11-11T09:57:48", "2024-11-23T09:57:47", "2024-12-05T09:57:46", "2024-12-17T09:57:45", "2024-12-29T09:57:44", "2025-01-10T09:57:43", "2025-01-22T09:57:41", "2025-02-03T09:57:41", "2025-02-15T09:57:41", "2025-02-27T09:57:41", "2025-03-11T09:57:41", "2025-03-23T09:57:41", "2025-04-04T09:57:41", "2025-04-28T09:57:42", "2025-05-10T09:57:41", "2025-06-03T09:57:40", "2025-06-15T09:57:40", "2025-06-27T09:57:39", "2025-07-09T09:57:38", "2025-07-21T09:57:38", "2025-08-02T09:57:37", "2025-08-14T09:57:37", "2025-08-26T09:57:38", "2025-09-01T09:56:31", "2025-09-07T09:57:38", "2025-09-13T09:56:34", "2025-09-19T09:57:38", "2025-09-25T09:56:34", "2025-10-01T09:57:38", "2025-10-07T09:56:35", "2025-10-13T09:57:39", "2025-10-19T09:56:35", "2025-10-25T09:57:38", "2025-10-31T09:56:34", "2025-11-06T09:57:38", "2025-11-12T09:56:34", "2025-11-18T09:57:37", "2025-11-24T09:56:33", "2025-11-30T09:57:36", "2025-12-06T09:56:33", "2025-12-12T09:57:35", "2025-12-18T09:56:32", "2025-12-24T09:57:34", "2025-12-30T09:56:31", "2026-01-05T09:57:33", "2026-01-11T09:56:31", "2026-01-17T09:57:32", "2026-01-23T09:56:30", "2026-01-29T09:57:31", "2026-02-04T09:56:29", "2026-02-16T09:56:30", "2026-02-28T09:56:30", "2026-03-12T09:56:29", "2026-03-24T09:56:30", "2026-03-30T09:57:29", "2026-04-05T09:56:30", "2026-04-11T09:57:29", "2026-04-17T09:56:27", "2026-04-29T09:56:27"],
-  y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#808080",size:4,symbol:"circle"},
-  line:{color:"#808080",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int desc</extra>'
-},
-{
-  name:"tbar_int",
-  x:["2026-04-29T09:56:27", "2026-04-29T09:56:27", "2026-04-29T09:56:27"],
-  y:[0, 0.0, 1],
-  mode:"lines+markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"red",size:3},
-  line:{color:"red",width:1},
-  showlegend:false,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_int</extra>'
-},
-{
   name:"Def desc",
   x:["2023-02-26T09:57:43", "2023-03-10T09:57:42", "2023-03-22T09:57:42", "2023-04-03T09:57:40", "2023-04-15T09:57:43", "2023-04-27T09:57:44", "2023-05-09T09:57:44", "2023-06-02T09:57:45", "2023-06-14T09:57:46", "2023-06-26T09:57:46", "2023-07-08T09:57:48", "2023-07-20T09:57:48", "2023-08-01T09:57:49", "2023-08-13T09:57:49", "2023-08-25T09:57:50", "2023-09-06T09:57:51", "2023-09-18T09:57:51", "2023-09-30T09:57:52", "2023-10-12T09:57:51", "2023-10-24T09:57:52", "2023-11-05T09:57:51", "2023-11-17T09:57:51", "2023-11-29T09:57:50", "2023-12-11T09:57:50", "2023-12-23T09:57:49", "2024-01-04T09:57:49", "2024-01-16T09:57:48", "2024-01-28T09:57:48", "2024-02-09T09:57:47", "2024-02-21T09:57:47", "2024-03-04T09:57:48", "2024-03-16T09:57:48", "2024-03-28T09:57:48", "2024-04-21T09:57:49", "2024-05-03T09:57:49", "2024-05-15T09:57:48", "2024-05-27T09:57:49", "2024-06-08T09:57:48", "2024-06-20T09:57:48", "2024-07-14T09:57:47", "2024-07-26T09:57:46", "2024-08-07T09:57:46", "2024-08-19T09:57:47", "2024-08-31T09:57:47", "2024-09-12T09:57:47", "2024-09-24T09:57:47", "2024-10-06T09:57:48", "2024-10-18T09:57:48", "2024-10-30T09:57:48", "2024-11-11T09:57:48", "2024-11-23T09:57:47", "2024-12-05T09:57:46", "2024-12-17T09:57:45", "2024-12-29T09:57:44", "2025-01-10T09:57:43", "2025-01-22T09:57:41", "2025-02-03T09:57:41", "2025-02-15T09:57:41", "2025-02-27T09:57:41", "2025-03-11T09:57:41", "2025-03-23T09:57:41", "2025-04-04T09:57:41", "2025-04-28T09:57:42", "2025-05-10T09:57:41", "2025-07-09T09:57:38", "2025-07-21T09:57:38", "2025-09-01T09:56:31", "2025-09-07T09:57:38", "2025-09-13T09:56:34", "2025-09-19T09:57:38", "2025-09-25T09:56:34", "2025-10-01T09:57:38", "2025-10-07T09:56:35", "2025-10-13T09:57:39", "2025-10-19T09:56:35", "2025-10-25T09:57:38", "2025-10-31T09:56:34", "2025-11-06T09:57:38", "2025-11-12T09:56:34", "2025-11-18T09:57:37", "2025-11-24T09:56:33", "2025-11-30T09:57:36", "2025-12-06T09:56:33", "2025-12-12T09:57:35", "2025-12-18T09:56:32", "2025-12-24T09:57:34", "2025-12-30T09:56:31", "2026-01-05T09:57:33", "2026-01-11T09:56:31", "2026-01-17T09:57:32", "2026-01-23T09:56:30", "2026-01-29T09:57:31", "2026-02-04T09:56:29", "2026-02-16T09:56:30", "2026-02-28T09:56:30", "2026-03-12T09:56:29", "2026-03-24T09:56:30", "2026-03-30T09:57:29", "2026-04-05T09:56:30", "2026-04-11T09:57:29", "2026-04-17T09:56:27"],
   y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 8.8e-05, 0.0, 0.0, 0.0, 0.000127, 0.0, 0.0, 0.0, 0.000101, 0.000166, 0.0, 0.0, 0.0, 0.0, 0.000108, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000587, 0.0, 0.0, 0.0, 0.0, 0.000435, 0.000244, 0.0, 0.0, 0.0, 0.000233, 0.0, 0.0, 0.0, 0.0, 0.0, 5.7e-05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.00062, 0.0, 0.0, 0.0, 0.0, 0.000709, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
@@ -1172,7 +1246,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:36:18','2026-05-10T07:36:18'],y:[0.001,1e9],
+  x:['2026-05-10T07:53:59','2026-05-10T07:53:59'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1219,13 +1293,13 @@ a:hover{text-decoration:underline}
   name:'anomalia',showlegend:false,
   hovertemplate:'<b>ANOMALIA</b><br>%{x}<br>%{y:.3g}<extra></extra>'
 }
-],{"height": 500, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.8, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [N pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.6, 0.795], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis4": {"title": {"text": "SAR placeholders", "font": {"size": 9, "color": "#d3d3d3"}}, "type": "linear", "domain": [0.4, 0.595], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#d3d3d3"}, "color": "#d3d3d3"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.2, 0.395], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.01, 0.195], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
+],{"height": 440, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.78, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [S2Pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.52, 0.76], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.26, 0.5], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.0, 0.24], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
 
 
 <div class="vsec" id="v-villarrica">
   <div class="vhdr">
     <span class="vname">Villarrica</span>
-    <span class="vmeta">ID 357120 &middot; 13 trazas &middot; 4 productos</span>
+    <span class="vmeta">ID 357120 &middot; 10 trazas &middot; 4 productos</span>
     <a class="vlink" href="https://www.mounts-project.com/timeseries/357120" target="_blank">MOUNTS &nearr;</a>
   </div>
   <div class="vcontent">
@@ -1301,42 +1375,6 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_nir</extra>'
 },
 {
-  name:"Int asc",
-  x:["2020-01-18T23:42:57", "2020-01-30T23:42:57", "2020-02-11T23:42:56", "2020-02-23T23:42:56", "2020-03-06T23:42:56", "2020-03-07T23:34:04", "2020-03-18T23:42:56", "2020-03-19T23:34:05", "2020-03-30T23:42:57", "2020-03-31T23:34:05", "2020-04-11T23:42:57", "2020-04-12T23:34:05", "2020-04-23T23:42:57", "2020-04-24T23:34:06", "2020-05-05T23:42:58", "2020-05-17T23:42:59", "2020-05-29T23:42:59", "2020-06-10T23:43:00", "2020-06-16T23:42:19", "2020-06-22T23:43:01", "2020-06-28T23:42:19", "2020-07-04T23:43:01", "2020-07-10T23:42:20", "2020-07-16T23:43:02", "2020-07-22T23:42:21", "2020-08-03T23:42:21", "2020-08-09T23:43:04", "2020-08-15T23:42:22", "2020-08-21T23:43:04", "2020-08-27T23:42:23", "2020-09-02T23:43:05", "2020-09-08T23:42:23", "2020-09-14T23:43:05", "2020-09-20T23:42:24", "2020-09-26T23:43:06", "2020-10-02T23:42:24", "2020-10-08T23:43:06", "2020-10-14T23:42:24", "2020-10-20T23:43:06", "2020-10-26T23:42:24", "2020-11-01T23:43:06", "2020-11-07T23:42:24", "2020-11-13T23:43:06", "2020-11-19T23:42:24", "2020-11-25T23:43:05", "2020-12-01T23:42:23", "2020-12-07T23:43:05", "2020-12-13T23:42:23", "2020-12-19T23:43:04", "2020-12-25T23:42:22", "2020-12-31T23:43:04", "2021-01-06T23:42:22", "2021-01-12T23:43:03", "2021-01-18T23:42:21", "2021-01-24T23:43:03", "2021-02-05T23:43:02", "2021-02-11T23:42:20", "2021-02-17T23:43:02", "2021-02-23T23:42:20", "2021-03-01T23:43:02", "2021-03-07T23:42:20", "2021-03-13T23:43:02", "2021-03-19T23:42:20", "2021-03-25T23:43:02", "2021-03-26T23:34:11", "2021-03-31T23:42:20", "2021-04-06T23:43:03", "2021-04-07T23:34:11", "2021-04-12T23:42:21", "2021-04-18T23:43:03", "2021-04-19T23:34:11", "2021-04-24T23:42:22", "2021-04-30T23:43:03", "2021-05-06T23:42:22", "2021-05-12T23:43:04", "2021-05-18T23:42:23", "2021-05-30T23:42:23", "2021-06-05T23:43:06", "2021-06-17T23:43:06", "2021-06-29T23:43:07", "2021-07-11T23:43:08", "2021-07-23T23:43:08", "2021-08-04T23:43:09", "2021-08-10T23:42:28", "2021-08-16T23:43:10", "2021-08-22T23:42:28", "2021-08-28T23:43:10", "2021-09-03T23:42:29", "2021-09-09T23:43:11", "2021-09-15T23:42:29", "2021-09-21T23:43:11", "2021-09-27T23:42:30", "2021-10-03T23:43:12", "2021-10-09T23:42:30", "2021-10-15T23:43:12", "2021-10-21T23:42:30", "2021-10-27T23:43:12", "2021-11-02T23:42:30", "2021-11-08T23:43:11"],
-  y:[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#d3d3d3",size:4,symbol:"circle-open"},
-  line:{color:"#d3d3d3",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int asc</extra>'
-},
-{
-  name:"Int desc",
-  x:["2020-01-19T09:57:00", "2020-01-25T09:57:23", "2020-02-12T09:56:59", "2020-02-18T09:57:22", "2020-02-24T09:56:59", "2020-03-01T09:57:22", "2020-03-07T09:56:59", "2020-03-13T09:57:22", "2020-03-19T09:56:59", "2020-03-25T09:57:23", "2020-03-31T09:56:59", "2020-04-06T09:57:23", "2020-04-12T09:57:00", "2020-04-18T09:57:23", "2020-04-24T09:57:00", "2020-04-30T09:57:24", "2020-05-06T09:57:01", "2020-05-12T09:57:24", "2020-05-18T09:57:01", "2020-05-24T09:57:25", "2020-05-30T09:57:02", "2020-06-05T09:57:26", "2020-06-11T09:57:03", "2020-06-17T09:57:27", "2020-06-23T09:57:03", "2020-06-29T09:57:27", "2020-07-05T09:57:04", "2020-07-11T09:57:28", "2020-07-17T09:57:05", "2020-07-23T09:57:29", "2020-07-29T09:57:06", "2020-08-04T09:57:29", "2020-08-10T09:57:06", "2020-08-16T09:57:30", "2020-08-22T09:57:07", "2020-08-28T09:57:31", "2020-09-03T09:57:08", "2020-09-15T09:57:08", "2020-09-21T09:57:32", "2020-09-27T09:57:08", "2020-10-03T09:57:32", "2020-10-09T09:57:09", "2020-10-15T09:57:32", "2020-10-21T09:57:08", "2020-10-27T09:57:32", "2020-11-02T09:57:09", "2020-11-08T09:57:32", "2020-11-20T09:57:32", "2020-11-26T09:57:08", "2020-12-02T09:57:31", "2020-12-08T09:57:08", "2020-12-14T09:57:31", "2020-12-20T09:57:07", "2020-12-26T09:57:30", "2021-01-01T09:57:07", "2021-01-07T09:57:30", "2021-01-13T09:57:06", "2021-01-19T09:57:29", "2021-01-25T09:57:06", "2021-01-31T09:57:29", "2021-02-06T09:57:05", "2021-02-12T09:57:28", "2021-02-18T09:57:05", "2021-02-24T09:57:28", "2021-03-02T09:57:05", "2021-03-08T09:57:28", "2021-03-14T09:57:05", "2021-03-20T09:57:28", "2021-03-26T09:57:05", "2021-04-01T09:57:28", "2021-04-07T09:57:05", "2021-04-13T09:57:29", "2021-04-19T09:57:06", "2021-04-25T09:57:30", "2021-05-01T09:57:06", "2021-05-07T09:57:30", "2021-05-13T09:57:07", "2021-05-25T09:57:08", "2021-05-31T09:57:31", "2021-06-06T09:57:08", "2021-06-12T09:57:32", "2021-06-18T09:57:09", "2021-06-24T09:57:33", "2021-07-12T09:57:10", "2021-07-18T09:57:34", "2021-07-24T09:57:11", "2021-07-30T09:57:35", "2021-08-05T09:57:12", "2021-08-11T09:57:36", "2021-08-17T09:57:12", "2021-08-23T09:57:36", "2021-08-29T09:57:13", "2021-09-04T09:57:37", "2021-09-10T09:57:14", "2021-09-16T09:57:37", "2021-09-22T09:57:14", "2021-09-28T09:57:38", "2021-10-04T09:57:15", "2021-10-10T09:57:38", "2021-10-16T09:57:14", "2021-10-22T09:57:38", "2021-10-28T09:57:14", "2021-11-09T09:57:14", "2021-11-15T09:57:38", "2021-11-21T09:57:14", "2021-11-27T09:57:37", "2021-12-03T09:57:13", "2021-12-09T09:57:37", "2021-12-15T09:57:13", "2021-12-21T09:57:36", "2022-01-02T09:57:35", "2022-01-14T09:57:35", "2022-01-26T09:57:35", "2022-02-07T09:57:34", "2022-02-19T09:57:34", "2022-03-03T09:57:34", "2022-03-15T09:57:34", "2022-03-27T09:57:34", "2022-04-08T09:57:59", "2022-04-20T09:58:02", "2022-05-02T09:58:03", "2022-05-14T09:58:04", "2022-05-26T09:58:04", "2022-06-07T09:58:06", "2022-06-19T09:58:06", "2022-07-01T09:58:07", "2022-07-13T09:58:08", "2022-07-25T09:58:09", "2022-08-06T09:58:09", "2022-08-18T09:58:10", "2022-08-30T09:58:10", "2022-09-11T09:58:11", "2022-09-23T09:58:11", "2022-10-05T09:58:11", "2022-10-17T09:58:12", "2022-10-29T09:58:12", "2022-11-10T09:58:11", "2022-11-22T09:58:11", "2022-12-04T09:58:11", "2022-12-16T09:58:10", "2022-12-28T09:58:09", "2023-01-09T09:58:08", "2023-01-21T09:58:08", "2023-02-14T09:58:07", "2023-02-26T09:58:07", "2023-03-10T09:58:07", "2023-03-22T09:58:07", "2023-04-03T09:58:05", "2023-04-15T09:58:08", "2023-04-27T09:58:08", "2023-05-09T09:58:09", "2023-06-02T09:58:10", "2023-06-14T09:58:11", "2023-06-26T09:58:11", "2023-07-08T09:58:13", "2023-07-20T09:58:13", "2023-08-01T09:58:14", "2023-08-13T09:58:14", "2023-08-25T09:58:15", "2023-09-06T09:58:16", "2023-09-18T09:58:16", "2023-09-30T09:58:17", "2023-10-12T09:58:16", "2023-10-24T09:58:17", "2023-11-05T09:58:16", "2023-11-17T09:58:16", "2023-11-29T09:58:15", "2023-12-11T09:58:15", "2023-12-23T09:58:14", "2024-01-04T09:58:14", "2024-01-16T09:58:13", "2024-01-28T09:58:13", "2024-02-09T09:58:12", "2024-02-21T09:58:12", "2024-03-04T09:58:12", "2024-03-16T09:58:12", "2024-03-28T09:58:13", "2024-04-21T09:58:14", "2024-05-03T09:58:14", "2024-05-15T09:58:13", "2024-05-27T09:58:14", "2024-06-08T09:58:13", "2024-06-20T09:58:13", "2024-07-14T09:58:12", "2024-07-26T09:58:11", "2024-08-07T09:58:11", "2024-08-19T09:58:11", "2024-08-31T09:58:11", "2024-09-12T09:58:12", "2024-09-24T09:58:12", "2024-10-06T09:58:13", "2024-10-18T09:58:13", "2024-10-30T09:58:13", "2024-11-11T09:58:12", "2024-11-23T09:58:11", "2024-12-05T09:58:11", "2024-12-17T09:58:09", "2024-12-29T09:58:09", "2025-01-10T09:58:08", "2025-01-22T09:58:06", "2025-02-03T09:58:06", "2025-02-15T09:58:05", "2025-02-27T09:58:07", "2025-03-11T09:58:05", "2025-03-23T09:58:06", "2025-04-04T09:58:06", "2025-04-28T09:58:06", "2025-05-10T09:58:06", "2025-06-03T09:58:05", "2025-06-15T09:58:04", "2025-06-27T09:58:04", "2025-07-09T09:58:03", "2025-07-21T09:58:03", "2025-08-02T09:58:02", "2025-08-14T09:58:02", "2025-08-26T09:58:02", "2025-09-01T09:56:55", "2025-09-07T09:58:03", "2025-09-13T09:56:59", "2025-09-19T09:58:03", "2025-09-25T09:56:59", "2025-10-01T09:58:03", "2025-10-07T09:56:59", "2025-10-13T09:58:04", "2025-10-19T09:56:59", "2025-10-25T09:58:03", "2025-10-31T09:56:59", "2025-11-06T09:58:03", "2025-11-12T09:56:58", "2025-11-18T09:58:02", "2025-11-24T09:56:58", "2025-11-30T09:58:01", "2025-12-06T09:56:57", "2025-12-12T09:58:00", "2025-12-18T09:56:57", "2025-12-24T09:57:58", "2025-12-30T09:56:56", "2026-01-05T09:57:57", "2026-01-11T09:56:56", "2026-01-17T09:57:56", "2026-01-23T09:56:55", "2026-01-29T09:57:56", "2026-02-04T09:56:54", "2026-02-16T09:56:54", "2026-02-28T09:56:54", "2026-03-12T09:56:54", "2026-03-24T09:56:54", "2026-03-30T09:57:54", "2026-04-05T09:56:55", "2026-04-11T09:57:54"],
-  y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-  mode:"markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"#808080",size:4,symbol:"circle"},
-  line:{color:"#808080",width:1},
-  showlegend:true,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>Int desc</extra>'
-},
-{
-  name:"tbar_int",
-  x:["2026-04-11T09:57:54", "2026-04-11T09:57:54", "2026-04-11T09:57:54"],
-  y:[0, 0.0, 1],
-  mode:"lines+markers",
-  type:'scatter',
-  yaxis:"y4",
-  marker:{color:"red",size:3},
-  line:{color:"red",width:1},
-  showlegend:false,
-  hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_int</extra>'
-},
-{
   name:"Def asc",
   x:["2020-01-30T23:42:57", "2020-02-11T23:42:56", "2020-02-23T23:42:56", "2020-03-06T23:42:56", "2020-03-18T23:42:56", "2020-03-19T23:34:05", "2020-03-30T23:42:57", "2020-03-31T23:34:05", "2020-04-11T23:42:57", "2020-04-12T23:34:05", "2020-04-23T23:42:57", "2020-04-24T23:34:06", "2020-05-05T23:42:58", "2020-05-17T23:42:59", "2020-05-29T23:42:59", "2020-06-10T23:43:00", "2020-06-16T23:42:19", "2020-06-22T23:43:01", "2020-06-28T23:42:19", "2020-07-04T23:43:01", "2020-07-10T23:42:20", "2020-07-16T23:43:02", "2020-07-22T23:42:21", "2020-08-03T23:42:21", "2020-08-09T23:43:04", "2020-08-15T23:42:22", "2020-08-21T23:43:04", "2020-08-27T23:42:23", "2020-09-02T23:43:05", "2020-09-08T23:42:23", "2020-09-14T23:43:05", "2020-09-20T23:42:24", "2020-09-26T23:43:06", "2020-10-02T23:42:24", "2020-10-08T23:43:06", "2020-10-14T23:42:24", "2020-10-20T23:43:06", "2020-11-01T23:43:06", "2020-11-07T23:42:24", "2020-11-13T23:43:06", "2020-11-19T23:42:24", "2020-11-25T23:43:05", "2020-12-01T23:42:23", "2020-12-07T23:43:05", "2020-12-13T23:42:23", "2020-12-19T23:43:04", "2020-12-25T23:42:22", "2020-12-31T23:43:04", "2021-01-06T23:42:22", "2021-01-12T23:43:03", "2021-01-18T23:42:21", "2021-01-24T23:43:03", "2021-02-05T23:43:02", "2021-02-11T23:42:20", "2021-02-17T23:43:02", "2021-02-23T23:42:20", "2021-03-01T23:43:02", "2021-03-07T23:42:20", "2021-03-13T23:43:02", "2021-03-19T23:42:20", "2021-03-25T23:43:02", "2021-03-31T23:42:20", "2021-04-06T23:43:03", "2021-04-07T23:34:11", "2021-04-12T23:42:21", "2021-04-18T23:43:03", "2021-04-19T23:34:11", "2021-04-24T23:42:22", "2021-04-30T23:43:03", "2021-05-06T23:42:22", "2021-05-12T23:43:04", "2021-05-18T23:42:23", "2021-05-30T23:42:23", "2021-06-05T23:43:06", "2021-06-17T23:43:06", "2021-06-29T23:43:07", "2021-07-11T23:43:08", "2021-07-23T23:43:08", "2021-08-04T23:43:09", "2021-08-10T23:42:28", "2021-08-16T23:43:10", "2021-08-22T23:42:28", "2021-08-28T23:43:10", "2021-09-03T23:42:29", "2021-09-09T23:43:11", "2021-09-15T23:42:29", "2021-09-21T23:43:11", "2021-09-27T23:42:30", "2021-10-03T23:43:12", "2021-10-09T23:42:30", "2021-10-15T23:43:12", "2021-10-21T23:42:30", "2021-10-27T23:43:12", "2021-11-02T23:42:30", "2021-11-08T23:43:11"],
   y:[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6.57e-05, 0.0, 9.24e-06, 0.000288, 0.0, 0.0, 0.000242, 5.37e-05, 0.0, 0.000239, 8.97e-06, 0.0, 0.0, 0.0, 2.17e-05, 0.00031, 0.0, 0.0, 9.95e-05, 0.0, 0.0, 5.11e-06, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000348, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000268, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000299, 0.0, 0.0, 0.0, 0.0, 0.0],
@@ -1409,7 +1447,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:36:19','2026-05-10T07:36:19'],y:[0.001,1e9],
+  x:['2026-05-10T07:53:59','2026-05-10T07:53:59'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1456,7 +1494,7 @@ a:hover{text-decoration:underline}
   name:'anomalia',showlegend:false,
   hovertemplate:'<b>ANOMALIA</b><br>%{x}<br>%{y:.3g}<extra></extra>'
 }
-],{"height": 500, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.8, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [N pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.6, 0.795], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis4": {"title": {"text": "SAR placeholders", "font": {"size": 9, "color": "#d3d3d3"}}, "type": "linear", "domain": [0.4, 0.595], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#d3d3d3"}, "color": "#d3d3d3"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.2, 0.395], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.01, 0.195], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
+],{"height": 440, "margin": {"l": 60, "r": 10, "t": 10, "b": 35}, "paper_bgcolor": "#161b22", "plot_bgcolor": "#161b22", "font": {"color": "#8b949e", "size": 9}, "legend": {"x": 1.01, "y": 1, "font": {"size": 8}, "bgcolor": "rgba(0,0,0,0)", "xanchor": "left"}, "xaxis": {"gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8}, "color": "#8b949e"}, "hovermode": "x unified", "yaxis3": {"title": {"text": "SO2 [tons]", "font": {"size": 9, "color": "#9467bd"}}, "type": "log", "domain": [0.78, 1.0], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#9467bd"}, "color": "#9467bd", "rangemode": "tozero"}, "yaxis2": {"title": {"text": "Thermal [S2Pix]", "font": {"size": 9, "color": "#ff7f0e"}}, "type": "log", "domain": [0.52, 0.76], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ff7f0e"}, "color": "#ff7f0e", "rangemode": "tozero"}, "yaxis5": {"title": {"text": "Deform st.dev [m]", "font": {"size": 9, "color": "#ea898a"}}, "type": "linear", "domain": [0.26, 0.5], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#ea898a"}, "color": "#ea898a"}, "yaxis": {"title": {"text": "Coherence (N<0.5)", "font": {"size": 9, "color": "#2980b9"}}, "type": "linear", "domain": [0.0, 0.24], "gridcolor": "#21262d", "zeroline": false, "tickfont": {"size": 8, "color": "#2980b9"}, "color": "#2980b9"}},{responsive:true,displayModeBar:false}); });</script>
 
 <div class="foot">
   Fuente: <a href="https://www.mounts-project.com" target="_blank">mounts-project.com</a>

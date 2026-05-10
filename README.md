@@ -68,12 +68,31 @@ streamlit run dashboard.py
 
 ## Qué muestra el dashboard
 
-1. **Status board** (arriba): matriz 7×4 (volcanes × productos) con z-score MAD-robusto vs baseline 90 d, sparklines y código de color (verde→amarillo→naranja→rojo).
-2. **Alertas recientes** (últimos 30 d): tabla de anomalías ordenadas por severidad.
-3. **Histórico de anomalías**: catálogo completo persistido en `mounts.db` (SQLite), con stats globales y validación detector-vs-eventos-GVP.
-4. **Mapa de Chile**: los 7 volcanes geolocalizados, coloreados por severidad agregada, con popup de detalle.
-5. **Vista por volcán**: 5 paneles Plotly (SO₂, SWIR, SAR placeholders, Deformación, Coherencia) con bandas baseline ±3σ y marcadores rojos en anomalías; columna lateral con últimas imágenes.
-6. **Comparación temporal SWIR** (antes/después/diff): por volcán, las 2 imágenes S2 SWIR más recientes + su diferencia absoluta — resalta puntos calientes nuevos.
+1. **Status board**: matriz 7×4 (volcanes × productos SWIR/SO₂/DEF/COH) con z-score MAD-robusto vs baseline 90 d, sparklines SVG y código de color.
+2. **Filtro temporal global** (header): 30 d / 90 d / 1 a / todo — ajusta el rango X de todos los charts simultáneamente.
+3. **Alertas recientes** (últimos 30 d): tabla ordenada por severidad. Distingue **anomalías persistentes** (≥3 detecciones consecutivas, alta confianza) de **transientes** (1 punto aislado, podría ser nube/incendio).
+4. **Multi-product alerts (cross-sensor)**: tabla con eventos donde ≥2 productos del mismo volcán muestran anomalía dentro de 14 d. Filtra falsos positivos drásticamente — un evento SO₂ + SWIR simultáneo es casi siempre real.
+5. **Histórico de anomalías**: catálogo completo persistido en `mounts.db` con stats globales y validación detector-vs-eventos-GVP.
+6. **Streamgraph SO₂ y SWIR multi-volcán**: serie regional apilada (suma mensual por volcán). Detecta eventos sincrónicos o transferencias entre volcanes vecinos.
+7. **Mapa de Chile**: los 7 volcanes geolocalizados (Folium dark theme), coloreados por severidad agregada, popup con detalle de productos.
+8. **Vista por volcán**: 4 paneles Plotly (SO₂, SWIR, Deformación, Coherencia) con bandas baseline ±3σ sombreadas y estrellas rojas en anomalías; columna lateral con últimas imágenes.
+9. **Comparación temporal SWIR** (antes/después/diff): por volcán, las 2 imágenes S2 SWIR más recientes + su diferencia absoluta — resalta puntos calientes nuevos.
+
+## Auto-update
+
+GitHub Actions corre el pipeline cada 6 h ([`.github/workflows/update.yml`](.github/workflows/update.yml)):
+- cron: `17 */6 * * *` (UTC)
+- workflow_dispatch para trigger manual
+- commitea solo si hay cambios (con `[skip ci]` para no triggerear builds)
+
+## Endpoints estables
+
+Ver [API.md](API.md) — JSON/SQLite/CSV consumibles por máquinas:
+- `status.json` — estado actual (status board)
+- `alerts.json` — anomalías últimos 30 d
+- `multi_alerts` (en `mounts.db`) — eventos cross-sensor
+- `mounts.db` — base de datos completa
+- `csv/*.csv` — series temporales VRP-style
 
 ## Base de datos histórica
 

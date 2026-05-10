@@ -120,6 +120,25 @@ CREATE TABLE IF NOT EXISTS metadata (
     key TEXT PRIMARY KEY,
     value TEXT
 );
+
+-- Alertas multi-producto: cuando 2+ productos del mismo volcan muestran
+-- anomalia dentro de una ventana temporal corta (ventana_days=14 default).
+-- Mas confiable que anomalia single-product (reduce falsos positivos por
+-- nubes, fuegos forestales, etc).
+CREATE TABLE IF NOT EXISTS multi_alerts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    volcano_key TEXT NOT NULL REFERENCES volcanoes(key),
+    date_center TEXT NOT NULL,
+    products TEXT NOT NULL,       -- JSON list de productos
+    n_products INTEGER NOT NULL,
+    zscore_max REAL,
+    zscore_sum REAL,
+    confidence TEXT,              -- 'medium' (n=2) | 'high' (n>=3)
+    detected_at TEXT NOT NULL,
+    UNIQUE(volcano_key, date_center)
+);
+CREATE INDEX IF NOT EXISTS idx_multi_date    ON multi_alerts(date_center);
+CREATE INDEX IF NOT EXISTS idx_multi_volcano ON multi_alerts(volcano_key);
 """
 
 
@@ -207,32 +226,48 @@ def ingest_timeseries(conn: sqlite3.Connection) -> tuple[int, int]:
 
 def ingest_anomalies(conn: sqlite3.Connection) -> int:
     """
-    Lee alerts.json y status.json (productos con baseline) e inserta en anomalies.
-    Solo agrega anomalias nuevas (UPSERT por (vol, prod, date)).
+    Corre el detector z-score MAD-robusto sobre TODA la historia (no solo
+    ultimos 30d). Garantiza catalogo historico completo en la DB.
+
+    UPSERT por (volcano, product, date): re-correr es idempotente y solo
+    agrega anomalias nuevas con detected_at = ahora.
     """
-    alerts_f = BASE_DIR / "alerts.json"
-    if not alerts_f.exists():
-        return 0
-    alerts = json.loads(alerts_f.read_text(encoding="utf-8"))
+    from anomalies import detect_anomalies
     detected_at = datetime.now(timezone.utc).isoformat()
 
     rows = []
-    for a in alerts.get("alerts", []):
-        z = a.get("zscore", 0)
-        sev = "red" if z >= 6 else ("orange" if z >= 3 else "yellow")
-        rows.append((
-            a["volcano_key"],
-            a["product"].lower() if a["product"] not in ("DEF", "COH") else (
-                "def_desc" if a["product"] == "DEF" else "coh_desc"
-            ),
-            a["date"],
-            a["value"],
-            a.get("baseline"),
-            None,                         # mad no esta en alerts.json (esta en status.json)
-            z,
-            sev,
-            detected_at,
-        ))
+    for vol_key, _, _, _, _ in VOLCANES_META:
+        f = TS_DIR / f"{vol_key}.json"
+        if not f.exists():
+            continue
+        data = json.loads(f.read_text(encoding="utf-8"))
+        traces = {t["name"]: t for t in data.get("traces", []) if t.get("name")}
+
+        for tname in ["swir", "so2", "def_asc", "def_desc",
+                      "coh_asc", "coh_desc"]:
+            t = traces.get(tname)
+            if not t or not t.get("y"):
+                continue
+            xs = t.get("x") or []
+            ys = t.get("y") or []
+
+            # Limpiar None/NaN y ordenar
+            pairs = [(x, y) for x, y in zip(xs, ys) if y is not None]
+            if len(pairs) < 5:
+                continue
+            from anomalies import parse_iso
+            pairs.sort(key=lambda p: parse_iso(p[0]) or p[0])
+            xs_clean = [p[0] for p in pairs]
+            ys_clean = [p[1] for p in pairs]
+
+            anoms = detect_anomalies(xs_clean, ys_clean)
+            for a in anoms:
+                z = a["zscore"]
+                sev = "red" if z >= 6 else ("orange" if z >= 3 else "yellow")
+                rows.append((
+                    vol_key, tname, a["date"], a["value"],
+                    a["baseline"], None, z, sev, detected_at,
+                ))
 
     cur = conn.executemany(
         """INSERT OR IGNORE INTO anomalies
@@ -243,6 +278,79 @@ def ingest_anomalies(conn: sqlite3.Connection) -> int:
     )
     conn.commit()
     return cur.rowcount
+
+
+def detect_multi_product_alerts(conn: sqlite3.Connection, window_days: int = 14) -> int:
+    """
+    Para cada volcan, agrupa anomalias en clusters dentro de ventana_days.
+    Si un cluster tiene >=2 productos distintos, lo registra en multi_alerts.
+
+    Logica: cuando SO2 sube + SWIR sube en la misma semana, mucho mas probable
+    que sea actividad volcanica real (vs nube/incendio que solo afectaria SWIR).
+    """
+    detected_at = datetime.now(timezone.utc).isoformat()
+
+    # Por volcan, traer anomalias ordenadas por fecha
+    cur = conn.execute("""
+        SELECT volcano_key, date, product, value, zscore
+        FROM anomalies ORDER BY volcano_key, date
+    """)
+    by_vol = {}
+    for vol, date, product, value, z in cur:
+        by_vol.setdefault(vol, []).append({
+            "date": date, "product": product, "value": value, "zscore": z
+        })
+
+    n_inserted = 0
+    for vol, anoms in by_vol.items():
+        # Cluster por proximidad temporal
+        clusters = []
+        current = []
+        for a in anoms:
+            if not current:
+                current = [a]
+                continue
+            # Calcular dt en dias entre a y el ultimo del cluster
+            dt = abs(_julian(a["date"]) - _julian(current[-1]["date"]))
+            if dt <= window_days:
+                current.append(a)
+            else:
+                clusters.append(current)
+                current = [a]
+        if current:
+            clusters.append(current)
+
+        for cluster in clusters:
+            products = sorted(set(a["product"] for a in cluster))
+            if len(products) < 2:
+                continue
+            zs = [a["zscore"] for a in cluster]
+            n = len(products)
+            confidence = "high" if n >= 3 else "medium"
+            # date_center = mediana de fechas
+            dates = sorted(a["date"] for a in cluster)
+            date_center = dates[len(dates)//2]
+            cur = conn.execute(
+                """INSERT OR IGNORE INTO multi_alerts
+                   (volcano_key, date_center, products, n_products,
+                    zscore_max, zscore_sum, confidence, detected_at)
+                   VALUES (?,?,?,?,?,?,?,?)""",
+                (vol, date_center, json.dumps(products), n,
+                 max(zs), sum(zs), confidence, detected_at),
+            )
+            n_inserted += cur.rowcount
+
+    conn.commit()
+    return n_inserted
+
+
+def _julian(date_str: str) -> float:
+    """ISO date -> julian day approx para diff temporal."""
+    try:
+        dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+        return dt.toordinal() + dt.hour / 24
+    except (ValueError, AttributeError):
+        return 0
 
 
 def ingest_status(conn: sqlite3.Connection) -> int:
@@ -395,6 +503,7 @@ def update_all(verbose=True) -> dict:
     n_obs, n_evt = ingest_timeseries(conn)
     n_anom = ingest_anomalies(conn)
     n_stat = ingest_status(conn)
+    n_multi = detect_multi_product_alerts(conn)
 
     # Marca timestamp ultima actualizacion
     conn.execute(
@@ -405,12 +514,14 @@ def update_all(verbose=True) -> dict:
     conn.close()
 
     result = {"observations": n_obs, "events": n_evt,
-              "anomalies": n_anom, "status_snapshots": n_stat}
+              "anomalies": n_anom, "status_snapshots": n_stat,
+              "multi_alerts": n_multi}
     if verbose:
         print(f"  observations new:  {n_obs}")
         print(f"  events new:        {n_evt}")
         print(f"  anomalies new:     {n_anom}")
         print(f"  status snapshots:  {n_stat}")
+        print(f"  multi alerts new:  {n_multi}")
     return result
 
 

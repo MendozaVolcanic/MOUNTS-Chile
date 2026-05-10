@@ -5,11 +5,16 @@ Para cada volcan, busca las 2 imagenes SWIR (_B12B11B8A_nir) mas recientes en
 data/, computa la diferencia absoluta y guarda un PNG en latest/<vol>/diff/.
 Tambien copia las 2 originales a latest/<vol>/diff/ para slider antes/despues.
 
+Aplica retention policy: borra PNGs en latest/<vol>/diff/ con mtime >30 dias
+para mantener el repo liviano.
+
 Uso:
     python image_diff.py
+    python image_diff.py --retention-days 60
 """
 
 import shutil
+import time
 from pathlib import Path
 
 import numpy as np
@@ -91,8 +96,38 @@ def process_volcano(key: str) -> dict | None:
     }
 
 
+def cleanup_old(retention_days: int = 30) -> int:
+    """
+    Borra archivos en latest/<vol>/diff/ con mtime > retention_days.
+    Devuelve numero de archivos borrados.
+    """
+    cutoff = time.time() - retention_days * 86400
+    n = 0
+    for key in VOLCANES:
+        diff_dir = LATEST / key / "diff"
+        if not diff_dir.exists():
+            continue
+        for f in diff_dir.iterdir():
+            if not f.is_file():
+                continue
+            if f.stat().st_mtime < cutoff:
+                f.unlink()
+                n += 1
+    return n
+
+
 def main():
-    import json
+    import argparse, json
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--retention-days", type=int, default=30,
+                        help="Borrar diffs PNGs con mtime mayor a N dias (default: 30)")
+    args = parser.parse_args()
+
+    # Retention policy
+    n_deleted = cleanup_old(args.retention_days)
+    if n_deleted:
+        print(f"  Retention: borrados {n_deleted} PNGs >{args.retention_days}d")
+
     results = {}
     for key in VOLCANES:
         res = process_volcano(key)

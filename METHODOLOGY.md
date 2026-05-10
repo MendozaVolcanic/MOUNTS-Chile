@@ -34,6 +34,30 @@ Cada `timeseries/<volcan>.json` tiene 13 trazas Plotly. Su mapeo físico:
 | `int_asc`, `int_desc` | Sentinel-1 GRD VV-pol | (sin uso numérico claro — placeholder) | Backscatter intensity sobre AOI; el `_VV_int_fcnn` aplica una FCNN para localizar anomalías |
 | `tbar_*` (so2, nir, int, disp, coh) | — | banderas verticales rojas | **Eventos de erupción/actividad** ingestados de catálogos Smithsonian GVP semanales + USGS/GEOFON sismológicos. **Curados manual/semi-automáticamente, no derivados de las trazas satelitales.** |
 
+### Nivel de procesamiento Sentinel-2: **L1C (TOA)** — confirmado
+
+MOUNTS usa **Sentinel-2 Level-1C (Top-of-Atmosphere reflectance)**, no L2A:
+
+- **Massimetti+ 2020** lo declara explícitamente: el algoritmo SWIR opera sobre
+  L1C TOA reflectance. Los umbrales de los índices NHI (Normalized Hot-spot
+  Index) y los ratios B12/B11, B12/B8A están calibrados sobre ρ_TOA.
+- **Valade+ 2019** describe el pipeline MOUNTS con SNAP/snappy aplicando
+  Massimetti directamente sobre L1C. **No hay paso Sen2Cor en MOUNTS.**
+
+**¿Por qué L1C y no L2A?**
+- Sen2Cor (corrector atmosférico de L1C → L2A) **enmascara o satura píxeles
+  muy calientes** clasificándolos como nubes/defectuosos — borra justamente la
+  firma térmica intensa que querés detectar.
+- Los umbrales de Massimetti son **relativos** (ratios entre bandas SWIR) y
+  **contextuales** (estadística sobre el cluster), lo que mitiga el efecto
+  atmosférico sin necesidad de corrección.
+- L1C preserva la señal cruda en SWIR, incluso saturada → mejor para
+  monitoreo operacional.
+
+**Implicancia**: la serie S2Pix de MOUNTS es directamente comparable con VRP
+MIROVA siguiendo la metodología validada en Massimetti+ 2020 (que cruza ambas
+series para varios volcanes). No hace falta re-procesar a L2A.
+
 ### `swir` no es VRP MIROVA
 
 Esta es la confusión más común y por qué importa: **MIROVA reporta VRP en
