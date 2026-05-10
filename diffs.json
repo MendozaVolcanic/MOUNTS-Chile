@@ -1,0 +1,44 @@
+{
+  "lascar": {
+    "new": "latest/lascar/diff/new_lascar_20260427T143739_B12B11B8A_nir.png",
+    "old": "latest/lascar/diff/old_lascar_20260422T143741_B12B11B8A_nir.png",
+    "diff": "latest/lascar/diff/diff.png",
+    "new_date": "20260427",
+    "old_date": "20260422"
+  },
+  "planchon-peteroa": {
+    "new": "latest/planchon-peteroa/diff/new_planchonpeteroa_20260429T142751_B12B11B8A_nir.png",
+    "old": "latest/planchon-peteroa/diff/old_planchonpeteroa_20260427T143739_B12B11B8A_nir.png",
+    "diff": "latest/planchon-peteroa/diff/diff.png",
+    "new_date": "20260429",
+    "old_date": "20260427"
+  },
+  "nevados-de-chillan": {
+    "new": "latest/nevados-de-chillan/diff/new_nevadoschillan_20260429T142751_B12B11B8A_nir.png",
+    "old": "latest/nevados-de-chillan/diff/old_nevadoschillan_20260427T143739_B12B11B8A_nir.png",
+    "diff": "latest/nevados-de-chillan/diff/diff.png",
+    "new_date": "20260429",
+    "old_date": "20260427"
+  },
+  "copahue": {
+    "new": "latest/copahue/diff/new_copahue_20260429T142751_B12B11B8A_nir.png",
+    "old": "latest/copahue/diff/old_copahue_20260427T143739_B12B11B8A_nir.png",
+    "diff": "latest/copahue/diff/diff.png",
+    "new_date": "20260429",
+    "old_date": "20260427"
+  },
+  "llaima": {
+    "new": "latest/llaima/diff/new_llaima_20260429T142751_B12B11B8A_nir.png",
+    "old": "latest/llaima/diff/old_llaima_20260424T142709_B12B11B8A_nir.png",
+    "diff": "latest/llaima/diff/diff.png",
+    "new_date": "20260429",
+    "old_date": "20260424"
+  },
+  "villarrica": {
+    "new": "latest/villarrica/diff/new_villarrica_20260429T142751_B12B11B8A_nir.png",
+    "old": "latest/villarrica/diff/old_villarrica_20260427T143739_B12B11B8A_nir.png",
+    "diff": "latest/villarrica/diff/diff.png",
+    "new_date": "20260429",
+    "old_date": "20260427"
+  }
+}

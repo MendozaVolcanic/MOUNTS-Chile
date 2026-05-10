@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-05-10T07:26:25.058500+00:00",
+  "lookback_days": 30,
+  "threshold": 3.0,
+  "count": 5,
+  "alerts": [
+    {
+      "date": "2026-04-12T14:37:41",
+      "value": 11.0,
+      "baseline": 0.55,
+      "zscore": 20.9,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-04-17T14:37:39",
+      "value": 9.0,
+      "baseline": 1.0,
+      "zscore": 8.88888888888889,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-04-17T14:37:39",
+      "value": 4.0,
+      "baseline": 0.1,
+      "zscore": 7.8,
+      "volcano": "Copahue",
+      "volcano_key": "copahue",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-04-22T14:37:41",
+      "value": 3.0,
+      "baseline": 0.1,
+      "zscore": 5.8,
+      "volcano": "Nevados de Chillan",
+      "volcano_key": "nevados-de-chillan",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-04-29T14:27:51",
+      "value": 3.0,
+      "baseline": 0.1,
+      "zscore": 5.8,
+      "volcano": "Llaima",
+      "volcano_key": "llaima",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    }
+  ]
+}

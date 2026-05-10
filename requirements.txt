@@ -1,2 +1,17 @@
+# Core scraping
 requests>=2.31
 beautifulsoup4>=4.12
+
+# Análisis y detección de anomalías
+numpy>=1.26
+
+# Mapa
+folium>=0.15
+
+# Image diffs
+Pillow>=10.0
+
+# Dashboard interactivo (opcional)
+streamlit>=1.30
+plotly>=5.18
+pandas>=2.1

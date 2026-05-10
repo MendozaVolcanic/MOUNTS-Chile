@@ -49,18 +49,30 @@ visible de un solo scroll.
 # Instalar deps
 pip install -r requirements.txt
 
-# Bajar últimos datos (7 volcanes, ~1 min)
-python fetch_latest.py
+# Pipeline completo (fetch + anomalies + diffs + csv + html), ~1 min
+python update.py
 
-# Exportar a CSVs
-python export_csv.py
+# O paso por paso:
+python fetch_latest.py    # bajar timeseries + imágenes (~1 min)
+python anomalies.py       # status board + alertas
+python image_diff.py      # diffs antes/después SWIR
+python export_csv.py      # CSVs estilo VRP
+python generar_html.py    # dashboard HTML (index.html + map.html)
 
-# Regenerar dashboard estático (index.html para GitHub Pages)
-python generar_html.py
+# Si ya bajaste antes y solo querés regenerar:
+python update.py --skip-fetch
 
-# O lanzar dashboard interactivo Streamlit
+# Dashboard interactivo Streamlit (alternativa local)
 streamlit run dashboard.py
 ```
+
+## Qué muestra el dashboard
+
+1. **Status board** (arriba): matriz 7×4 (volcanes × productos) con z-score MAD-robusto vs baseline 90 d, sparklines y código de color (verde→amarillo→naranja→rojo).
+2. **Alertas recientes** (últimos 30 d): tabla de anomalías ordenadas por severidad.
+3. **Mapa de Chile**: los 7 volcanes geolocalizados, coloreados por severidad agregada, con popup de detalle.
+4. **Vista por volcán**: 5 paneles Plotly (SO₂, SWIR, SAR placeholders, Deformación, Coherencia) con bandas baseline ±3σ y marcadores rojos en anomalías; columna lateral con últimas imágenes.
+5. **Comparación temporal SWIR** (antes/después/diff): por volcán, las 2 imágenes S2 SWIR más recientes + su diferencia absoluta — resalta puntos calientes nuevos.
 
 ## Estructura
 
@@ -70,18 +82,25 @@ MOUNTS-Chile/
 ├── METHODOLOGY.md         ← procedencia de los datos (papers, algoritmos, unidades)
 ├── MEJORAS.md             ← roadmap de 14 mejoras priorizadas
 │
+├── update.py              ← orquestador pipeline completo
 ├── scraper.py             ← scraper completo (archivo histórico)
 ├── fetch_latest.py        ← scraper rápido (últimas N imágenes)
+├── anomalies.py           ← detector z-score robusto + status board
+├── image_diff.py          ← genera diffs antes/después SWIR
 ├── export_csv.py          ← JSONs → CSVs estilo VRP
-├── generar_html.py        ← genera index.html (dashboard estático)
+├── generar_html.py        ← genera index.html + map.html (dashboard)
 ├── dashboard.py           ← dashboard Streamlit interactivo
 │
 ├── timeseries/            ← JSONs Plotly por volcán (numérico)
 ├── csv/                   ← CSVs exportados (per-volcán + consolidados)
-├── latest/                ← imágenes más recientes (servidas por GitHub Pages)
+├── latest/                ← imágenes más recientes + diffs (GitHub Pages)
 ├── data/                  ← archivo histórico de imágenes (gitignored)
 │
+├── status.json            ← estado actual por volcán/producto
+├── alerts.json            ← anomalías últimos 30 d
+├── diffs.json             ← índice de imágenes diff
 ├── index.html             ← dashboard estático (GitHub Pages)
+├── map.html               ← mapa Folium embebido en dashboard
 └── catalog.csv            ← índice de imágenes descargadas
 ```
 
