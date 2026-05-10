@@ -504,6 +504,8 @@ def update_all(verbose=True) -> dict:
     n_anom = ingest_anomalies(conn)
     n_stat = ingest_status(conn)
     n_multi = detect_multi_product_alerts(conn)
+    # exportar anomalies.csv automaticamente
+    cmd_export_anomalies(conn)
 
     # Marca timestamp ultima actualizacion
     conn.execute(
