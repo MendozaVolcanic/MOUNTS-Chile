@@ -73,6 +73,22 @@ a:hover{text-decoration:underline}
 .alerts-table td{padding:5px 8px;border-bottom:1px solid #21262d}
 .alerts-table tr:hover{background:#161b22}
 
+/* === Historico === */
+.history-section{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}
+.history-section h2{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:8px}
+.history-stats{display:flex;flex-wrap:wrap;gap:14px;font-size:.75rem;color:#8b949e;
+                margin-bottom:8px;align-items:center}
+.history-stats b{color:#e6edf3;font-weight:600}
+.history-section details{margin-top:6px}
+.history-section summary{font-size:.78rem;color:#58a6ff;cursor:pointer;padding:4px 0}
+.history-section summary:hover{text-decoration:underline}
+.history-table{width:100%;border-collapse:collapse;font-size:.76rem;margin-top:6px}
+.history-table th{text-align:left;padding:5px 8px;color:#8b949e;font-weight:500;
+                   font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;
+                   border-bottom:1px solid #30363d}
+.history-table td{padding:5px 8px;border-bottom:1px solid #21262d}
+.history-table tr:hover{background:#161b22}
+
 /* === Map === */
 .map-section{padding:14px;border-bottom:2px solid #21262d}
 .map-section h2{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:8px}
@@ -97,7 +113,7 @@ a:hover{text-decoration:underline}
 <div class="topbar">
   <h1>&#127755; MOUNTS-Chile</h1>
   <div class="nav"><a href="#v-lascar">Lascar</a> &middot; <a href="#v-planchon-peteroa">Planchon-Peteroa</a> &middot; <a href="#v-laguna-del-maule">Laguna del Maule</a> &middot; <a href="#v-nevados-de-chillan">Nevados de Chillan</a> &middot; <a href="#v-copahue">Copahue</a> &middot; <a href="#v-llaima">Llaima</a> &middot; <a href="#v-villarrica">Villarrica</a></div>
-  <span class="meta">2026-05-10 07:26 UTC</span>
+  <span class="meta">2026-05-10 07:36 UTC</span>
   <button class="upd" onclick="location.reload()">&#8635; Actualizar</button>
 </div>
 
@@ -124,6 +140,25 @@ a:hover{text-decoration:underline}
     <thead><tr><th>Fecha</th><th>Volcán</th><th>Producto</th><th>Valor</th><th>Z-score</th></tr></thead>
     <tbody><tr style="border-left:3px solid #e74c3c"><td>2026-04-12T14:37</td><td><a href="#v-lascar">Lascar</a></td><td>SWIR</td><td>11 S2Pix</td><td style="color:#e74c3c;font-weight:600">+20.9σ</td></tr><tr style="border-left:3px solid #e74c3c"><td>2026-04-17T14:37</td><td><a href="#v-lascar">Lascar</a></td><td>SWIR</td><td>9 S2Pix</td><td style="color:#e74c3c;font-weight:600">+8.9σ</td></tr><tr style="border-left:3px solid #e74c3c"><td>2026-04-17T14:37</td><td><a href="#v-copahue">Copahue</a></td><td>SWIR</td><td>4 S2Pix</td><td style="color:#e74c3c;font-weight:600">+7.8σ</td></tr><tr style="border-left:3px solid #e67e22"><td>2026-04-22T14:37</td><td><a href="#v-nevados-de-chillan">Nevados de Chillan</a></td><td>SWIR</td><td>3 S2Pix</td><td style="color:#e67e22;font-weight:600">+5.8σ</td></tr><tr style="border-left:3px solid #e67e22"><td>2026-04-29T14:27</td><td><a href="#v-llaima">Llaima</a></td><td>SWIR</td><td>3 S2Pix</td><td style="color:#e67e22;font-weight:600">+5.8σ</td></tr></tbody>
   </table>
+</div>
+
+<div class="history-section">
+  <h2>Catálogo histórico de anomalías</h2>
+  <div class="history-stats">
+    <span><b>5</b> anomalías</span>
+    <span><b>22,315</b> observaciones</span>
+    <span><b>30</b> eventos GVP</span>
+    <span>Validación detector vs GVP (±7 d): <b style="color:#2ecc71">80%</b> precisión</span>
+    <span><a href="anomalies.csv">📄 anomalies.csv</a></span>
+    <span><a href="mounts.db">💾 mounts.db</a></span>
+  </div>
+  <details>
+    <summary>Top 20 por z-score (click para expandir)</summary>
+    <table class="history-table">
+      <thead><tr><th>Fecha</th><th>Volcán</th><th>Producto</th><th>Valor</th><th>Z</th><th>Detectado</th></tr></thead>
+      <tbody><tr style="border-left:3px solid #e74c3c"><td>2026-04-12</td><td><a href="#v-lascar">Lascar</a></td><td>SWIR</td><td style="font-family:monospace">11</td><td style="color:#e74c3c;font-weight:600">+20.9σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e74c3c"><td>2026-04-17</td><td><a href="#v-lascar">Lascar</a></td><td>SWIR</td><td style="font-family:monospace">9</td><td style="color:#e74c3c;font-weight:600">+8.9σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e74c3c"><td>2026-04-17</td><td><a href="#v-copahue">Copahue</a></td><td>SWIR</td><td style="font-family:monospace">4</td><td style="color:#e74c3c;font-weight:600">+7.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e67e22"><td>2026-04-22</td><td><a href="#v-nevados-de-chillan">Nevados de Chillan</a></td><td>SWIR</td><td style="font-family:monospace">3</td><td style="color:#e67e22;font-weight:600">+5.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr><tr style="border-left:3px solid #e67e22"><td>2026-04-29</td><td><a href="#v-llaima">Llaima</a></td><td>SWIR</td><td style="font-family:monospace">3</td><td style="color:#e67e22;font-weight:600">+5.8σ</td><td style="font-size:.65rem;color:#6e7681">2026-05-10T07:35</td></tr></tbody>
+    </table>
+  </details>
 </div>
 
 <div class="map-section">
@@ -318,7 +353,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:26:32','2026-05-10T07:26:32'],y:[0.001,1e9],
+  x:['2026-05-10T07:36:16','2026-05-10T07:36:16'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -519,7 +554,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:26:32','2026-05-10T07:26:32'],y:[0.001,1e9],
+  x:['2026-05-10T07:36:17','2026-05-10T07:36:17'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -735,7 +770,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:26:33','2026-05-10T07:26:33'],y:[0.001,1e9],
+  x:['2026-05-10T07:36:17','2026-05-10T07:36:17'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -936,7 +971,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:26:33','2026-05-10T07:26:33'],y:[0.001,1e9],
+  x:['2026-05-10T07:36:18','2026-05-10T07:36:18'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1137,7 +1172,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:26:34','2026-05-10T07:26:34'],y:[0.001,1e9],
+  x:['2026-05-10T07:36:18','2026-05-10T07:36:18'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1374,7 +1409,7 @@ a:hover{text-decoration:underline}
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-05-10T07:26:34','2026-05-10T07:26:34'],y:[0.001,1e9],
+  x:['2026-05-10T07:36:19','2026-05-10T07:36:19'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'

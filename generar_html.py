@@ -616,6 +616,79 @@ def build_status_matrix(status):
 '''
 
 
+def build_history_panel(top_n=20):
+    """
+    Lee mounts.db y construye una tabla con el catalogo historico de
+    anomalias (top N por z-score, todas las fechas).
+    """
+    db_path = Path(__file__).parent / "mounts.db"
+    if not db_path.exists():
+        return ""
+    import sqlite3
+    conn = sqlite3.connect(str(db_path))
+    cur = conn.execute("""
+        SELECT a.date, v.name, v.key, a.product, a.value, a.zscore, a.severity, a.detected_at
+        FROM anomalies a JOIN volcanoes v ON v.key = a.volcano_key
+        ORDER BY a.zscore DESC LIMIT ?
+    """, (top_n,))
+    rows_data = cur.fetchall()
+
+    # Stats globales
+    n_total = conn.execute("SELECT COUNT(*) FROM anomalies").fetchone()[0]
+    n_obs   = conn.execute("SELECT COUNT(*) FROM observations").fetchone()[0]
+    n_evt   = conn.execute("SELECT COUNT(*) FROM events").fetchone()[0]
+
+    # Validacion vs eventos GVP (ventana 7d)
+    tp = conn.execute("""
+        SELECT COUNT(DISTINCT a.id) FROM anomalies a
+        WHERE EXISTS (
+          SELECT 1 FROM events e
+          WHERE e.volcano_key = a.volcano_key
+            AND ABS(julianday(e.date) - julianday(a.date)) <= 7
+        )
+    """).fetchone()[0]
+    precision = f"{tp/n_total:.0%}" if n_total else "—"
+
+    conn.close()
+
+    if not rows_data:
+        return ""
+
+    rows_html = ""
+    for dt, name, key, prod, val, z, sev, det in rows_data:
+        color = SEV_COLOR.get(sev, "#888")
+        rows_html += (
+            f'<tr style="border-left:3px solid {color}">'
+            f'<td>{esc(dt[:10])}</td>'
+            f'<td><a href="#v-{esc(key)}">{esc(name)}</a></td>'
+            f'<td>{esc(prod.upper())}</td>'
+            f'<td style="font-family:monospace">{val:.3g}</td>'
+            f'<td style="color:{color};font-weight:600">+{z:.1f}σ</td>'
+            f'<td style="font-size:.65rem;color:#6e7681">{esc(det[:16])}</td>'
+            f'</tr>'
+        )
+
+    return f'''
+<div class="history-section">
+  <h2>Catálogo histórico de anomalías</h2>
+  <div class="history-stats">
+    <span><b>{n_total}</b> anomalías</span>
+    <span><b>{n_obs:,}</b> observaciones</span>
+    <span><b>{n_evt}</b> eventos GVP</span>
+    <span>Validación detector vs GVP (±7 d): <b style="color:{SEV_COLOR['green']}">{precision}</b> precisión</span>
+    <span><a href="anomalies.csv">📄 anomalies.csv</a></span>
+    <span><a href="mounts.db">💾 mounts.db</a></span>
+  </div>
+  <details>
+    <summary>Top {top_n} por z-score (click para expandir)</summary>
+    <table class="history-table">
+      <thead><tr><th>Fecha</th><th>Volcán</th><th>Producto</th><th>Valor</th><th>Z</th><th>Detectado</th></tr></thead>
+      <tbody>{rows_html}</tbody>
+    </table>
+  </details>
+</div>'''
+
+
 def build_alerts_panel(alerts_obj):
     """Lista de las top alertas recientes."""
     alerts = alerts_obj.get("alerts", [])[:8]
@@ -660,6 +733,7 @@ def main():
     alerts = load_alerts()
     status_html = build_status_matrix(status)
     alerts_html = build_alerts_panel(alerts)
+    history_html = build_history_panel(top_n=20)
     map_html = build_map(status)
     sections = "\n".join(build_section(k, n, s) for k, n, s in VOLCANES)
 
@@ -738,6 +812,22 @@ a:hover{{text-decoration:underline}}
 .alerts-table td{{padding:5px 8px;border-bottom:1px solid #21262d}}
 .alerts-table tr:hover{{background:#161b22}}
 
+/* === Historico === */
+.history-section{{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}}
+.history-section h2{{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:8px}}
+.history-stats{{display:flex;flex-wrap:wrap;gap:14px;font-size:.75rem;color:#8b949e;
+                margin-bottom:8px;align-items:center}}
+.history-stats b{{color:#e6edf3;font-weight:600}}
+.history-section details{{margin-top:6px}}
+.history-section summary{{font-size:.78rem;color:#58a6ff;cursor:pointer;padding:4px 0}}
+.history-section summary:hover{{text-decoration:underline}}
+.history-table{{width:100%;border-collapse:collapse;font-size:.76rem;margin-top:6px}}
+.history-table th{{text-align:left;padding:5px 8px;color:#8b949e;font-weight:500;
+                   font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;
+                   border-bottom:1px solid #30363d}}
+.history-table td{{padding:5px 8px;border-bottom:1px solid #21262d}}
+.history-table tr:hover{{background:#161b22}}
+
 /* === Map === */
 .map-section{{padding:14px;border-bottom:2px solid #21262d}}
 .map-section h2{{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:8px}}
@@ -767,6 +857,7 @@ a:hover{{text-decoration:underline}}
 </div>
 {status_html}
 {alerts_html}
+{history_html}
 {map_html}
 {sections}
 <div class="foot">

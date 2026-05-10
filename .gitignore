@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .env
 # latest/ NO ignorado — se commitea para GitHub Pages
+# mounts.db SI se commitea para que esté disponible via Pages
+# Pero los archivos auxiliares de SQLite no:
+mounts.db-wal
+mounts.db-shm
+mounts.db-journal

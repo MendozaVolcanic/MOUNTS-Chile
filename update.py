@@ -25,6 +25,7 @@ STEPS = [
     ("fetch_latest.py", "Descargar timeseries + imagenes",   True),
     ("anomalies.py",    "Calcular status y alertas",         False),
     ("image_diff.py",   "Generar imagen diffs",              False),
+    ("db.py",           "Persistir en base de datos SQLite", False),
     ("export_csv.py",   "Exportar CSVs",                     False),
     ("generar_html.py", "Regenerar dashboard HTML",          False),
 ]

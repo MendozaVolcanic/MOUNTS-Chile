@@ -70,9 +70,35 @@ streamlit run dashboard.py
 
 1. **Status board** (arriba): matriz 7×4 (volcanes × productos) con z-score MAD-robusto vs baseline 90 d, sparklines y código de color (verde→amarillo→naranja→rojo).
 2. **Alertas recientes** (últimos 30 d): tabla de anomalías ordenadas por severidad.
-3. **Mapa de Chile**: los 7 volcanes geolocalizados, coloreados por severidad agregada, con popup de detalle.
-4. **Vista por volcán**: 5 paneles Plotly (SO₂, SWIR, SAR placeholders, Deformación, Coherencia) con bandas baseline ±3σ y marcadores rojos en anomalías; columna lateral con últimas imágenes.
-5. **Comparación temporal SWIR** (antes/después/diff): por volcán, las 2 imágenes S2 SWIR más recientes + su diferencia absoluta — resalta puntos calientes nuevos.
+3. **Histórico de anomalías**: catálogo completo persistido en `mounts.db` (SQLite), con stats globales y validación detector-vs-eventos-GVP.
+4. **Mapa de Chile**: los 7 volcanes geolocalizados, coloreados por severidad agregada, con popup de detalle.
+5. **Vista por volcán**: 5 paneles Plotly (SO₂, SWIR, SAR placeholders, Deformación, Coherencia) con bandas baseline ±3σ y marcadores rojos en anomalías; columna lateral con últimas imágenes.
+6. **Comparación temporal SWIR** (antes/después/diff): por volcán, las 2 imágenes S2 SWIR más recientes + su diferencia absoluta — resalta puntos calientes nuevos.
+
+## Base de datos histórica
+
+`mounts.db` (SQLite) se actualiza en cada `update.py`. Esquema:
+
+| Tabla | Propósito |
+|---|---|
+| `volcanoes` | 7 volcanes con coordenadas + Smithsonian ID |
+| `observations` | todas las muestras numéricas (22 K filas, idempotente por `(volcano, product, date)`) |
+| `anomalies` | anomalías detectadas por z-score MAD-robusto, con `detected_at` para auditoría |
+| `events` | flags `tbar_*` ingestados de GVP/USGS — usados como ground truth |
+| `status_history` | snapshot del status board en cada update |
+| `metadata` | timestamp del último update |
+
+Queries directas:
+
+```bash
+python db.py summary              # estadísticas globales
+python db.py recent --n 20        # últimas 20 anomalías detectadas
+python db.py top --n 30           # top 30 históricas por z-score
+python db.py validate --days 7    # TPR del detector vs GVP (ventana ±N días)
+python db.py export               # anomalies.csv
+```
+
+Disponible para descarga vía GitHub Pages: [`mounts.db`](https://mendozavolcanic.github.io/MOUNTS-Chile/mounts.db).
 
 ## Estructura
 
@@ -87,6 +113,7 @@ MOUNTS-Chile/
 ├── fetch_latest.py        ← scraper rápido (últimas N imágenes)
 ├── anomalies.py           ← detector z-score robusto + status board
 ├── image_diff.py          ← genera diffs antes/después SWIR
+├── db.py                  ← base de datos SQLite (histórico)
 ├── export_csv.py          ← JSONs → CSVs estilo VRP
 ├── generar_html.py        ← genera index.html + map.html (dashboard)
 ├── dashboard.py           ← dashboard Streamlit interactivo
@@ -99,6 +126,8 @@ MOUNTS-Chile/
 ├── status.json            ← estado actual por volcán/producto
 ├── alerts.json            ← anomalías últimos 30 d
 ├── diffs.json             ← índice de imágenes diff
+├── mounts.db              ← base de datos SQLite (histórico completo)
+├── anomalies.csv          ← export del catálogo histórico
 ├── index.html             ← dashboard estático (GitHub Pages)
 ├── map.html               ← mapa Folium embebido en dashboard
 └── catalog.csv            ← índice de imágenes descargadas
