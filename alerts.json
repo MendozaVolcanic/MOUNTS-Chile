@@ -1,21 +1,9 @@
 {
-  "generated_at": "2026-05-12T09:14:29.189945+00:00",
+  "generated_at": "2026-05-12T15:12:30.384293+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 5,
+  "count": 4,
   "alerts": [
-    {
-      "date": "2026-04-12T14:37:41",
-      "value": 11.0,
-      "baseline": 0.55,
-      "zscore": 20.9,
-      "run_length": 3,
-      "persistent": true,
-      "volcano": "Lascar",
-      "volcano_key": "lascar",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
     {
       "date": "2026-04-17T14:37:39",
       "value": 9.0,
