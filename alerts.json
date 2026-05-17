@@ -1,33 +1,9 @@
 {
-  "generated_at": "2026-05-17T14:00:46.335281+00:00",
+  "generated_at": "2026-05-17T19:40:16.577168+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 4,
+  "count": 2,
   "alerts": [
-    {
-      "date": "2026-04-17T14:37:39",
-      "value": 9.0,
-      "baseline": 1.0,
-      "zscore": 8.88888888888889,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Lascar",
-      "volcano_key": "lascar",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
-    {
-      "date": "2026-04-17T14:37:39",
-      "value": 4.0,
-      "baseline": 0.1,
-      "zscore": 7.8,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Copahue",
-      "volcano_key": "copahue",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
     {
       "date": "2026-04-22T14:37:41",
       "value": 3.0,
