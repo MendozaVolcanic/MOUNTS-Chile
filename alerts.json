@@ -1,20 +1,7 @@
 {
-  "generated_at": "2026-05-29T10:16:03.162854+00:00",
+  "generated_at": "2026-05-29T16:10:20.833717+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 1,
-  "alerts": [
-    {
-      "date": "2026-04-29T14:27:51",
-      "value": 3.0,
-      "baseline": 0.1,
-      "zscore": 5.8,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Llaima",
-      "volcano_key": "llaima",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    }
-  ]
+  "count": 0,
+  "alerts": []
 }
