@@ -1,0 +1,575 @@
+{
+  "generated_at": "2026-06-07T10:30:54.024579+00:00",
+  "gaps": {
+    "lascar": {
+      "swir": {
+        "n_observations": 436,
+        "first_date": "2020-01-04T14:37:21",
+        "last_date": "2026-06-06T14:37:39",
+        "total_span_days": 2345,
+        "coverage_pct": 93.0,
+        "n_gaps": 1,
+        "largest_gap_days": 250,
+        "gaps_top5": [
+          {
+            "from": "2020-02-03T14:36:51",
+            "to": "2020-10-10T14:37:31",
+            "days": 250
+          }
+        ]
+      },
+      "so2": {
+        "n_observations": 2346,
+        "first_date": "2020-01-01T18:36:02",
+        "last_date": "2026-06-06T18:19:35",
+        "total_span_days": 2347,
+        "coverage_pct": 100.0,
+        "n_gaps": 6,
+        "largest_gap_days": 250,
+        "gaps_top5": [
+          {
+            "from": "2020-01-30T17:51:35",
+            "to": "2020-10-06T18:04:31",
+            "days": 250
+          },
+          {
+            "from": "2023-08-06T18:18:56",
+            "to": "2023-08-17T18:09:43",
+            "days": 10
+          },
+          {
+            "from": "2025-12-18T18:01:54",
+            "to": "2025-12-24T17:48:07",
+            "days": 5
+          },
+          {
+            "from": "2020-12-14T18:10:05",
+            "to": "2020-12-17T18:55:05",
+            "days": 3
+          },
+          {
+            "from": "2021-01-15T18:08:27",
+            "to": "2021-01-18T18:54:30",
+            "days": 3
+          }
+        ]
+      },
+      "def_asc": {
+        "n_observations": 4,
+        "first_date": "2020-01-11T23:05:19",
+        "last_date": "2020-01-29T23:06:05",
+        "total_span_days": 18,
+        "coverage_pct": 266.7,
+        "n_gaps": 0,
+        "largest_gap_days": 0,
+        "gaps_top5": []
+      },
+      "def_desc": {
+        "n_observations": 242,
+        "first_date": "2020-01-12T10:00:34",
+        "last_date": "2026-06-03T10:01:34",
+        "total_span_days": 2334,
+        "coverage_pct": 124.4,
+        "n_gaps": 1,
+        "largest_gap_days": 258,
+        "gaps_top5": [
+          {
+            "from": "2020-02-05T10:00:33",
+            "to": "2020-10-20T10:01:29",
+            "days": 258
+          }
+        ]
+      },
+      "coh_asc": {
+        "n_observations": 4,
+        "first_date": "2020-01-11T23:05:19",
+        "last_date": "2020-01-29T23:06:05",
+        "total_span_days": 18,
+        "coverage_pct": 266.7,
+        "n_gaps": 0,
+        "largest_gap_days": 0,
+        "gaps_top5": []
+      },
+      "coh_desc": {
+        "n_observations": 242,
+        "first_date": "2020-01-12T10:00:34",
+        "last_date": "2026-06-03T10:01:34",
+        "total_span_days": 2334,
+        "coverage_pct": 124.4,
+        "n_gaps": 1,
+        "largest_gap_days": 258,
+        "gaps_top5": [
+          {
+            "from": "2020-02-05T10:00:33",
+            "to": "2020-10-20T10:01:29",
+            "days": 258
+          }
+        ]
+      }
+    },
+    "planchon-peteroa": {
+      "swir": {
+        "n_observations": 860,
+        "first_date": "2020-10-07T14:27:41",
+        "last_date": "2026-06-06T14:37:39",
+        "total_span_days": 2068,
+        "coverage_pct": 207.9,
+        "n_gaps": 0,
+        "largest_gap_days": 0,
+        "gaps_top5": []
+      },
+      "so2": {
+        "n_observations": 2565,
+        "first_date": "2020-10-06T17:59:31",
+        "last_date": "2026-06-06T18:14:35",
+        "total_span_days": 2069,
+        "coverage_pct": 124.0,
+        "n_gaps": 3,
+        "largest_gap_days": 10,
+        "gaps_top5": [
+          {
+            "from": "2023-08-06T18:13:56",
+            "to": "2023-08-17T18:09:43",
+            "days": 10
+          },
+          {
+            "from": "2025-12-18T19:41:53",
+            "to": "2025-12-24T17:48:07",
+            "days": 5
+          },
+          {
+            "from": "2024-05-10T18:02:09",
+            "to": "2024-05-13T18:42:23",
+            "days": 3
+          }
+        ]
+      },
+      "def_asc": {
+        "n_observations": 215,
+        "first_date": "2020-10-22T23:27:37",
+        "last_date": "2026-06-05T23:27:29",
+        "total_span_days": 2051,
+        "coverage_pct": 125.8,
+        "n_gaps": 1,
+        "largest_gap_days": 36,
+        "gaps_top5": [
+          {
+            "from": "2023-08-08T23:27:51",
+            "to": "2023-09-13T23:27:53",
+            "days": 36
+          }
+        ]
+      },
+      "coh_asc": {
+        "n_observations": 215,
+        "first_date": "2020-10-22T23:27:37",
+        "last_date": "2026-06-05T23:27:29",
+        "total_span_days": 2051,
+        "coverage_pct": 125.8,
+        "n_gaps": 1,
+        "largest_gap_days": 36,
+        "gaps_top5": [
+          {
+            "from": "2023-08-08T23:27:51",
+            "to": "2023-09-13T23:27:53",
+            "days": 36
+          }
+        ]
+      }
+    },
+    "laguna-del-maule": {},
+    "nevados-de-chillan": {
+      "swir": {
+        "n_observations": 721,
+        "first_date": "2018-08-17T14:37:39",
+        "last_date": "2026-06-06T14:37:39",
+        "total_span_days": 2850,
+        "coverage_pct": 126.5,
+        "n_gaps": 3,
+        "largest_gap_days": 754,
+        "gaps_top5": [
+          {
+            "from": "2018-09-13T14:27:49",
+            "to": "2020-10-07T14:27:41",
+            "days": 754
+          },
+          {
+            "from": "2025-08-20T14:37:49",
+            "to": "2025-10-21T14:27:21",
+            "days": 61
+          },
+          {
+            "from": "2025-05-12T14:37:49",
+            "to": "2025-06-23T14:27:31",
+            "days": 41
+          }
+        ]
+      },
+      "so2": {
+        "n_observations": 2632,
+        "first_date": "2020-10-06T17:59:31",
+        "last_date": "2026-06-06T18:14:35",
+        "total_span_days": 2069,
+        "coverage_pct": 127.2,
+        "n_gaps": 2,
+        "largest_gap_days": 10,
+        "gaps_top5": [
+          {
+            "from": "2023-08-06T18:13:56",
+            "to": "2023-08-17T18:09:43",
+            "days": 10
+          },
+          {
+            "from": "2025-12-18T19:41:53",
+            "to": "2025-12-24T17:48:07",
+            "days": 5
+          }
+        ]
+      },
+      "def_desc": {
+        "n_observations": 158,
+        "first_date": "2018-09-02T09:56:15",
+        "last_date": "2026-06-04T09:56:05",
+        "total_span_days": 2831,
+        "coverage_pct": 67.0,
+        "n_gaps": 4,
+        "largest_gap_days": 774,
+        "gaps_top5": [
+          {
+            "from": "2018-09-07T10:04:08",
+            "to": "2020-10-21T09:56:19",
+            "days": 774
+          },
+          {
+            "from": "2024-12-29T09:57:19",
+            "to": "2026-05-11T09:56:03",
+            "days": 497
+          },
+          {
+            "from": "2023-05-09T09:57:19",
+            "to": "2023-06-14T09:57:21",
+            "days": 36
+          },
+          {
+            "from": "2024-03-28T09:57:23",
+            "to": "2024-05-03T09:57:24",
+            "days": 36
+          }
+        ]
+      },
+      "coh_desc": {
+        "n_observations": 158,
+        "first_date": "2018-09-02T09:56:15",
+        "last_date": "2026-06-04T09:56:05",
+        "total_span_days": 2831,
+        "coverage_pct": 67.0,
+        "n_gaps": 4,
+        "largest_gap_days": 774,
+        "gaps_top5": [
+          {
+            "from": "2018-09-07T10:04:08",
+            "to": "2020-10-21T09:56:19",
+            "days": 774
+          },
+          {
+            "from": "2024-12-29T09:57:19",
+            "to": "2026-05-11T09:56:03",
+            "days": 497
+          },
+          {
+            "from": "2023-05-09T09:57:19",
+            "to": "2023-06-14T09:57:21",
+            "days": 36
+          },
+          {
+            "from": "2024-03-28T09:57:23",
+            "to": "2024-05-03T09:57:24",
+            "days": 36
+          }
+        ]
+      }
+    },
+    "copahue": {
+      "swir": {
+        "n_observations": 860,
+        "first_date": "2020-10-07T14:27:41",
+        "last_date": "2026-06-06T14:37:39",
+        "total_span_days": 2068,
+        "coverage_pct": 207.9,
+        "n_gaps": 0,
+        "largest_gap_days": 0,
+        "gaps_top5": []
+      },
+      "so2": {
+        "n_observations": 2621,
+        "first_date": "2020-10-06T17:59:31",
+        "last_date": "2026-06-06T18:14:35",
+        "total_span_days": 2069,
+        "coverage_pct": 126.7,
+        "n_gaps": 2,
+        "largest_gap_days": 10,
+        "gaps_top5": [
+          {
+            "from": "2023-08-06T18:13:56",
+            "to": "2023-08-17T18:04:43",
+            "days": 10
+          },
+          {
+            "from": "2025-12-18T19:36:53",
+            "to": "2025-12-24T17:48:07",
+            "days": 5
+          }
+        ]
+      },
+      "def_desc": {
+        "n_observations": 204,
+        "first_date": "2020-10-21T09:56:44",
+        "last_date": "2026-06-04T09:56:30",
+        "total_span_days": 2051,
+        "coverage_pct": 119.4,
+        "n_gaps": 3,
+        "largest_gap_days": 59,
+        "gaps_top5": [
+          {
+            "from": "2025-05-10T09:57:41",
+            "to": "2025-07-09T09:57:38",
+            "days": 59
+          },
+          {
+            "from": "2025-07-21T09:57:38",
+            "to": "2025-09-01T09:56:31",
+            "days": 41
+          },
+          {
+            "from": "2023-05-09T09:57:44",
+            "to": "2023-06-14T09:57:46",
+            "days": 36
+          }
+        ]
+      },
+      "coh_desc": {
+        "n_observations": 205,
+        "first_date": "2020-10-21T09:56:44",
+        "last_date": "2026-06-04T09:56:30",
+        "total_span_days": 2051,
+        "coverage_pct": 119.9,
+        "n_gaps": 3,
+        "largest_gap_days": 59,
+        "gaps_top5": [
+          {
+            "from": "2025-05-10T09:57:41",
+            "to": "2025-07-09T09:57:38",
+            "days": 59
+          },
+          {
+            "from": "2025-07-21T09:57:38",
+            "to": "2025-09-01T09:56:31",
+            "days": 41
+          },
+          {
+            "from": "2023-05-09T09:57:44",
+            "to": "2023-06-14T09:57:46",
+            "days": 36
+          }
+        ]
+      }
+    },
+    "llaima": {
+      "swir": {
+        "n_observations": 228,
+        "first_date": "2023-01-25T14:27:11",
+        "last_date": "2026-06-03T14:27:09",
+        "total_span_days": 1224,
+        "coverage_pct": 93.1,
+        "n_gaps": 1,
+        "largest_gap_days": 174,
+        "gaps_top5": [
+          {
+            "from": "2024-07-18T14:27:11",
+            "to": "2025-01-09T14:27:09",
+            "days": 174
+          }
+        ]
+      },
+      "so2": {
+        "n_observations": 1625,
+        "first_date": "2023-01-21T18:08:00",
+        "last_date": "2026-06-06T19:54:35",
+        "total_span_days": 1232,
+        "coverage_pct": 131.9,
+        "n_gaps": 2,
+        "largest_gap_days": 10,
+        "gaps_top5": [
+          {
+            "from": "2023-08-06T18:13:56",
+            "to": "2023-08-17T18:04:43",
+            "days": 10
+          },
+          {
+            "from": "2025-12-18T19:36:53",
+            "to": "2025-12-24T17:48:07",
+            "days": 5
+          }
+        ]
+      },
+      "def_desc": {
+        "n_observations": 107,
+        "first_date": "2023-02-26T09:57:43",
+        "last_date": "2026-06-04T09:56:30",
+        "total_span_days": 1193,
+        "coverage_pct": 107.6,
+        "n_gaps": 2,
+        "largest_gap_days": 59,
+        "gaps_top5": [
+          {
+            "from": "2025-05-10T09:57:41",
+            "to": "2025-07-09T09:57:38",
+            "days": 59
+          },
+          {
+            "from": "2025-07-21T09:57:38",
+            "to": "2025-09-01T09:56:31",
+            "days": 41
+          }
+        ]
+      },
+      "coh_desc": {
+        "n_observations": 107,
+        "first_date": "2023-02-26T09:57:43",
+        "last_date": "2026-06-04T09:56:30",
+        "total_span_days": 1193,
+        "coverage_pct": 107.6,
+        "n_gaps": 2,
+        "largest_gap_days": 59,
+        "gaps_top5": [
+          {
+            "from": "2025-05-10T09:57:41",
+            "to": "2025-07-09T09:57:38",
+            "days": 59
+          },
+          {
+            "from": "2025-07-21T09:57:38",
+            "to": "2025-09-01T09:56:31",
+            "days": 41
+          }
+        ]
+      }
+    },
+    "villarrica": {
+      "swir": {
+        "n_observations": 951,
+        "first_date": "2020-01-19T14:36:59",
+        "last_date": "2026-06-06T14:37:39",
+        "total_span_days": 2330,
+        "coverage_pct": 204.1,
+        "n_gaps": 0,
+        "largest_gap_days": 0,
+        "gaps_top5": []
+      },
+      "so2": {
+        "n_observations": 3093,
+        "first_date": "2020-01-01T18:31:02",
+        "last_date": "2026-06-06T19:54:35",
+        "total_span_days": 2348,
+        "coverage_pct": 131.7,
+        "n_gaps": 3,
+        "largest_gap_days": 10,
+        "gaps_top5": [
+          {
+            "from": "2023-08-06T18:13:56",
+            "to": "2023-08-17T18:04:43",
+            "days": 10
+          },
+          {
+            "from": "2020-01-30T19:26:34",
+            "to": "2020-02-09T18:01:53",
+            "days": 9
+          },
+          {
+            "from": "2025-12-18T19:36:53",
+            "to": "2025-12-24T17:48:07",
+            "days": 5
+          }
+        ]
+      },
+      "def_asc": {
+        "n_observations": 95,
+        "first_date": "2020-01-30T23:42:57",
+        "last_date": "2021-11-08T23:43:11",
+        "total_span_days": 648,
+        "coverage_pct": 175.9,
+        "n_gaps": 0,
+        "largest_gap_days": 0,
+        "gaps_top5": []
+      },
+      "def_desc": {
+        "n_observations": 240,
+        "first_date": "2020-01-25T09:57:23",
+        "last_date": "2026-04-11T09:57:54",
+        "total_span_days": 2268,
+        "coverage_pct": 127.0,
+        "n_gaps": 3,
+        "largest_gap_days": 59,
+        "gaps_top5": [
+          {
+            "from": "2025-05-10T09:58:06",
+            "to": "2025-07-09T09:58:03",
+            "days": 59
+          },
+          {
+            "from": "2025-07-21T09:58:03",
+            "to": "2025-09-01T09:56:55",
+            "days": 41
+          },
+          {
+            "from": "2023-05-09T09:58:09",
+            "to": "2023-06-14T09:58:11",
+            "days": 36
+          }
+        ]
+      },
+      "coh_asc": {
+        "n_observations": 95,
+        "first_date": "2020-01-30T23:42:57",
+        "last_date": "2021-11-08T23:43:11",
+        "total_span_days": 648,
+        "coverage_pct": 175.9,
+        "n_gaps": 0,
+        "largest_gap_days": 0,
+        "gaps_top5": []
+      },
+      "coh_desc": {
+        "n_observations": 240,
+        "first_date": "2020-01-25T09:57:23",
+        "last_date": "2026-04-11T09:57:54",
+        "total_span_days": 2268,
+        "coverage_pct": 127.0,
+        "n_gaps": 3,
+        "largest_gap_days": 59,
+        "gaps_top5": [
+          {
+            "from": "2025-05-10T09:58:06",
+            "to": "2025-07-09T09:58:03",
+            "days": 59
+          },
+          {
+            "from": "2025-07-21T09:58:03",
+            "to": "2025-09-01T09:56:55",
+            "days": 41
+          },
+          {
+            "from": "2023-05-09T09:58:09",
+            "to": "2023-06-14T09:58:11",
+            "days": 36
+          }
+        ]
+      }
+    }
+  },
+  "drift": [],
+  "summary": {
+    "volcanoes_analyzed": 7,
+    "drift_events": 0,
+    "products_with_low_coverage": 0
+  }
+}

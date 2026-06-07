@@ -430,7 +430,17 @@
         "2026-04-14T14:38:01",
         "2026-04-17T14:37:39",
         "2026-04-22T14:37:41",
-        "2026-04-27T14:37:39"
+        "2026-04-27T14:37:39",
+        "2026-05-02T14:37:41",
+        "2026-05-04T14:38:01",
+        "2026-05-07T14:37:39",
+        "2026-05-12T14:37:41",
+        "2026-05-17T14:37:39",
+        "2026-05-22T14:37:41",
+        "2026-05-24T14:38:01",
+        "2026-05-27T14:37:39",
+        "2026-06-01T14:37:41",
+        "2026-06-06T14:37:39"
       ],
       "y": [
         8.0,
@@ -858,7 +868,17 @@
         0.1,
         9.0,
         0.1,
-        10.0
+        10.0,
+        10.0,
+        3.0,
+        2.0,
+        3.0,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        13.0,
+        0.1
       ],
       "text": [
         "data_mounts/lascar/2020/lascar_20200104T143721_B12B11B8A_nir.png",
@@ -1286,19 +1306,29 @@
         "data_mounts/lascar/2026/lascar_20260414T143801_B12B11B8A_nir.png",
         "data_mounts/lascar/2026/lascar_20260417T143739_B12B11B8A_nir.png",
         "data_mounts/lascar/2026/lascar_20260422T143741_B12B11B8A_nir.png",
-        "data_mounts/lascar/2026/lascar_20260427T143739_B12B11B8A_nir.png"
+        "data_mounts/lascar/2026/lascar_20260427T143739_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260502T143741_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260504T143801_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260507T143739_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260512T143741_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260517T143739_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260522T143741_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260524T143801_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260527T143739_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260601T143741_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260606T143739_B12B11B8A_nir.png"
       ]
     },
     {
       "name": "tbar_nir",
       "x": [
-        "2026-04-27T14:37:39",
-        "2026-04-27T14:37:39",
-        "2026-04-27T14:37:39"
+        "2026-06-06T14:37:39",
+        "2026-06-06T14:37:39",
+        "2026-06-06T14:37:39"
       ],
       "y": [
         0.1,
-        10.0,
+        0.1,
         100000.0
       ],
       "text": ""
@@ -3604,10 +3634,54 @@
         "2026-04-23T18:43:09",
         "2026-04-24T18:23:08",
         "2026-04-25T18:03:08",
+        "2026-04-25T18:08:09",
         "2026-04-26T17:48:09",
         "2026-04-27T17:28:08",
         "2026-04-27T19:08:09",
-        "2026-04-28T18:48:09"
+        "2026-04-28T18:48:09",
+        "2026-04-30T18:11:03",
+        "2026-05-01T17:51:03",
+        "2026-05-02T17:36:03",
+        "2026-05-02T19:16:04",
+        "2026-05-03T18:56:03",
+        "2026-05-04T18:36:03",
+        "2026-05-05T18:16:03",
+        "2026-05-06T18:01:03",
+        "2026-05-07T17:41:03",
+        "2026-05-08T19:01:03",
+        "2026-05-09T18:41:04",
+        "2026-05-09T18:46:04",
+        "2026-05-10T18:26:03",
+        "2026-05-11T18:06:03",
+        "2026-05-12T17:46:04",
+        "2026-05-13T17:31:03",
+        "2026-05-13T19:11:04",
+        "2026-05-14T18:51:03",
+        "2026-05-15T18:31:03",
+        "2026-05-16T18:11:04",
+        "2026-05-17T17:56:04",
+        "2026-05-18T17:36:04",
+        "2026-05-18T19:16:04",
+        "2026-05-19T18:56:04",
+        "2026-05-20T18:36:04",
+        "2026-05-21T18:21:04",
+        "2026-05-22T18:01:04",
+        "2026-05-24T19:02:14",
+        "2026-05-25T18:42:14",
+        "2026-05-26T18:27:14",
+        "2026-05-27T18:07:14",
+        "2026-05-28T17:47:15",
+        "2026-05-29T17:27:14",
+        "2026-05-29T19:07:15",
+        "2026-05-30T18:52:15",
+        "2026-05-31T18:32:15",
+        "2026-06-01T18:12:15",
+        "2026-06-02T17:52:14",
+        "2026-06-03T17:37:14",
+        "2026-06-03T19:17:14",
+        "2026-06-04T18:57:14",
+        "2026-06-05T18:39:36",
+        "2026-06-06T18:19:35"
       ],
       "y": [
         0.1,
@@ -5890,6 +5964,50 @@
         0.1,
         0.1,
         0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        175.3,
         0.1,
         0.1,
         0.1,
@@ -8212,18 +8330,62 @@
         "data_mounts/lascar/2026/lascar_20260423T1843_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20260424T1823_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20260425T1803_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260425T1808_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20260426T1748_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20260427T1728_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20260427T1908_SO2_PBL.png",
-        "data_mounts/lascar/2026/lascar_20260428T1848_SO2_PBL.png"
+        "data_mounts/lascar/2026/lascar_20260428T1848_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260430T1811_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260501T1751_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260502T1736_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260502T1916_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260503T1856_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260504T1836_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260505T1816_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260506T1801_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260507T1741_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260508T1901_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260509T1841_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260509T1846_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260510T1826_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260511T1806_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260512T1746_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260513T1731_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260513T1911_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260514T1851_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260515T1831_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260516T1811_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260517T1756_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260518T1736_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260518T1916_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260519T1856_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260520T1836_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260521T1821_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260522T1801_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260524T1902_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260525T1842_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260526T1827_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260527T1807_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260528T1747_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260529T1727_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260529T1907_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260530T1852_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260531T1832_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260601T1812_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260602T1752_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260603T1737_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260603T1917_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260604T1857_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260605T1839_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260606T1819_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-04-28T18:48:09",
-        "2026-04-28T18:48:09",
-        "2026-04-28T18:48:09"
+        "2026-06-06T18:19:35",
+        "2026-06-06T18:19:35",
+        "2026-06-06T18:19:35"
       ],
       "y": [
         0.1,
@@ -8256,9 +8418,9 @@
     {
       "name": "tbar_disp",
       "x": [
-        "2026-04-22T10:00:34",
-        "2026-04-22T10:00:34",
-        "2026-04-22T10:00:34"
+        "2026-06-03T10:01:34",
+        "2026-06-03T10:01:34",
+        "2026-06-03T10:01:34"
       ],
       "y": [
         0,
@@ -8294,9 +8456,9 @@
     {
       "name": "tbar_int",
       "x": [
-        "2026-04-28T10:01:33",
-        "2026-04-28T10:01:33",
-        "2026-04-28T10:01:33"
+        "2026-06-03T10:01:34",
+        "2026-06-03T10:01:34",
+        "2026-06-03T10:01:34"
       ],
       "y": [
         0,
@@ -8329,13 +8491,13 @@
     {
       "name": "tbar_coh",
       "x": [
-        "2026-04-22T10:00:34",
-        "2026-04-22T10:00:34",
-        "2026-04-22T10:00:34"
+        "2026-06-03T10:01:34",
+        "2026-06-03T10:01:34",
+        "2026-06-03T10:01:34"
       ],
       "y": [
         0,
-        69160.0,
+        168749.0,
         565493.5
       ],
       "text": ""
@@ -8582,9 +8744,21 @@
         "2026-04-10T10:00:37",
         "2026-04-16T10:01:23",
         "2026-04-22T10:00:34",
-        "2026-04-28T10:01:33"
+        "2026-04-28T10:01:33",
+        "2026-05-04T10:00:35",
+        "2026-05-10T10:01:35",
+        "2026-05-16T10:00:36",
+        "2026-05-22T10:01:35",
+        "2026-05-28T10:00:36",
+        "2026-06-03T10:01:34"
       ],
       "y": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -9066,7 +9240,13 @@
         "data_mounts/lascar/2026/lascar_20260410T100037_VV_int.png",
         "data_mounts/lascar/2026/lascar_20260416T100123_VV_int.png",
         "data_mounts/lascar/2026/lascar_20260422T100034_VV_int.png",
-        "data_mounts/lascar/2026/lascar_20260428T100133_VV_int.png"
+        "data_mounts/lascar/2026/lascar_20260428T100133_VV_int.png",
+        "data_mounts/lascar/2026/lascar_20260504T100035_VV_int.png",
+        "data_mounts/lascar/2026/lascar_20260510T100135_VV_int.png",
+        "data_mounts/lascar/2026/lascar_20260516T100036_VV_int.png",
+        "data_mounts/lascar/2026/lascar_20260522T100135_VV_int.png",
+        "data_mounts/lascar/2026/lascar_20260528T100036_VV_int.png",
+        "data_mounts/lascar/2026/lascar_20260603T100134_VV_int.png"
       ]
     },
     {
@@ -9306,7 +9486,14 @@
         "2026-04-04T10:01:23",
         "2026-04-10T10:00:37",
         "2026-04-16T10:01:23",
-        "2026-04-22T10:00:34"
+        "2026-04-22T10:00:34",
+        "2026-04-28T10:01:33",
+        "2026-05-04T10:00:35",
+        "2026-05-10T10:01:35",
+        "2026-05-16T10:00:36",
+        "2026-05-22T10:01:35",
+        "2026-05-28T10:00:36",
+        "2026-06-03T10:01:34"
       ],
       "y": [
         497370.0,
@@ -9543,7 +9730,14 @@
         7264.0,
         27358.0,
         23922.0,
-        69160.0
+        69160.0,
+        134041.0,
+        37445.0,
+        38660.0,
+        38613.0,
+        120193.0,
+        120961.0,
+        168749.0
       ],
       "text": [
         "data_mounts/lascar/2020/lascar_20200106T100120_20200112T100033_VV_coh.png",
@@ -9780,7 +9974,14 @@
         "data_mounts/lascar/2026/lascar_20260329T100037_20260404T100123_VV_coh.png",
         "data_mounts/lascar/2026/lascar_20260404T100123_20260410T100037_VV_coh.png",
         "data_mounts/lascar/2026/lascar_20260410T100037_20260416T100123_VV_coh.png",
-        "data_mounts/lascar/2026/lascar_20260416T100123_20260422T100034_VV_coh.png"
+        "data_mounts/lascar/2026/lascar_20260416T100123_20260422T100034_VV_coh.png",
+        "data_mounts/lascar/2026/lascar_20260422T100034_20260428T100133_VV_coh.png",
+        "data_mounts/lascar/2026/lascar_20260428T100133_20260504T100035_VV_coh.png",
+        "data_mounts/lascar/2026/lascar_20260504T100035_20260510T100135_VV_coh.png",
+        "data_mounts/lascar/2026/lascar_20260510T100135_20260516T100036_VV_coh.png",
+        "data_mounts/lascar/2026/lascar_20260516T100036_20260522T100135_VV_coh.png",
+        "data_mounts/lascar/2026/lascar_20260522T100135_20260528T100036_VV_coh.png",
+        "data_mounts/lascar/2026/lascar_20260528T100036_20260603T100134_VV_coh.png"
       ]
     },
     {
@@ -10020,7 +10221,14 @@
         "2026-04-04T10:01:23",
         "2026-04-10T10:00:37",
         "2026-04-16T10:01:23",
-        "2026-04-22T10:00:34"
+        "2026-04-22T10:00:34",
+        "2026-04-28T10:01:33",
+        "2026-05-04T10:00:35",
+        "2026-05-10T10:01:35",
+        "2026-05-16T10:00:36",
+        "2026-05-22T10:01:35",
+        "2026-05-28T10:00:36",
+        "2026-06-03T10:01:34"
       ],
       "y": [
         0.0,
@@ -10249,6 +10457,13 @@
         0.0,
         0.0,
         0.000138,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -10494,9 +10709,16 @@
         "data_mounts/lascar/2026/lascar_20260329T100037_20260404T100123_VV_disp.png",
         "data_mounts/lascar/2026/lascar_20260404T100123_20260410T100037_VV_disp.png",
         "data_mounts/lascar/2026/lascar_20260410T100037_20260416T100123_VV_disp.png",
-        "data_mounts/lascar/2026/lascar_20260416T100123_20260422T100034_VV_disp.png"
+        "data_mounts/lascar/2026/lascar_20260416T100123_20260422T100034_VV_disp.png",
+        "data_mounts/lascar/2026/lascar_20260422T100034_20260428T100133_VV_disp.png",
+        "data_mounts/lascar/2026/lascar_20260428T100133_20260504T100035_VV_disp.png",
+        "data_mounts/lascar/2026/lascar_20260504T100035_20260510T100135_VV_disp.png",
+        "data_mounts/lascar/2026/lascar_20260510T100135_20260516T100036_VV_disp.png",
+        "data_mounts/lascar/2026/lascar_20260516T100036_20260522T100135_VV_disp.png",
+        "data_mounts/lascar/2026/lascar_20260522T100135_20260528T100036_VV_disp.png",
+        "data_mounts/lascar/2026/lascar_20260528T100036_20260603T100134_VV_disp.png"
       ]
     }
   ],
-  "fetched_at": "2026-04-30T15:46:33.009121+00:00"
+  "fetched_at": "2026-06-07T10:27:31.791832+00:00"
 }

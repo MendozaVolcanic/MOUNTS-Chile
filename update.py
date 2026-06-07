@@ -22,12 +22,15 @@ from pathlib import Path
 BASE = Path(__file__).parent
 
 STEPS = [
-    ("fetch_latest.py", "Descargar timeseries + imagenes",   True),
-    ("anomalies.py",    "Calcular status y alertas",         False),
-    ("image_diff.py",   "Generar imagen diffs",              False),
-    ("db.py",           "Persistir en base de datos SQLite", False),
-    ("export_csv.py",   "Exportar CSVs",                     False),
-    ("generar_html.py", "Regenerar dashboard HTML",          False),
+    ("fetch_latest.py",     "Descargar timeseries + imagenes",            True),
+    ("monitor_upstream.py", "Monitor /news + /about + schema upstream",   False),
+    ("anomalies.py",        "Calcular status y alertas",                  False),
+    ("sync_latest.py",      "Sincronizar latest/ con ultimas imagenes",   False),
+    ("image_diff.py",       "Generar imagen diffs",                       False),
+    ("quality.py",          "Gap analysis + drift detection",             False),
+    ("db.py",               "Persistir en base de datos SQLite",          False),
+    ("export_csv.py",       "Exportar CSVs",                              False),
+    ("generar_html.py",     "Regenerar dashboard HTML",                   False),
 ]
 
 

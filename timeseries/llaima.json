@@ -223,7 +223,16 @@
         "2026-04-14T14:27:09",
         "2026-04-19T14:27:51",
         "2026-04-24T14:27:09",
-        "2026-04-29T14:27:51"
+        "2026-04-29T14:27:51",
+        "2026-05-01T14:28:11",
+        "2026-05-04T14:27:09",
+        "2026-05-09T14:27:11",
+        "2026-05-14T14:27:09",
+        "2026-05-19T14:27:11",
+        "2026-05-21T14:28:11",
+        "2026-05-24T14:27:09",
+        "2026-05-29T14:27:11",
+        "2026-06-03T14:27:09"
       ],
       "y": [
         0.1,
@@ -444,7 +453,16 @@
         0.1,
         0.1,
         0.1,
-        3.0
+        3.0,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
       ],
       "text": [
         "data_mounts/llaima/2023/llaima_20230125T142711_B12B11B8A_nir.png",
@@ -665,19 +683,28 @@
         "data_mounts/llaima/2026/llaima_20260414T142709_B12B11B8A_nir.png",
         "data_mounts/llaima/2026/llaima_20260419T142751_B12B11B8A_nir.png",
         "data_mounts/llaima/2026/llaima_20260424T142709_B12B11B8A_nir.png",
-        "data_mounts/llaima/2026/llaima_20260429T142751_B12B11B8A_nir.png"
+        "data_mounts/llaima/2026/llaima_20260429T142751_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260501T142811_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260504T142709_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260509T142711_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260514T142709_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260519T142711_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260521T142811_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260524T142709_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260529T142711_B12B11B8A_nir.png",
+        "data_mounts/llaima/2026/llaima_20260603T142709_B12B11B8A_nir.png"
       ]
     },
     {
       "name": "tbar_nir",
       "x": [
-        "2026-04-29T14:27:51",
-        "2026-04-29T14:27:51",
-        "2026-04-29T14:27:51"
+        "2026-06-03T14:27:09",
+        "2026-06-03T14:27:09",
+        "2026-06-03T14:27:09"
       ],
       "y": [
         0.1,
-        3.0,
+        0.1,
         100000.0
       ],
       "text": ""
@@ -2258,7 +2285,58 @@
         "2026-04-25T19:43:08",
         "2026-04-26T19:23:08",
         "2026-04-27T19:03:09",
-        "2026-04-28T18:43:08"
+        "2026-04-28T18:43:08",
+        "2026-04-30T18:06:03",
+        "2026-04-30T19:46:04",
+        "2026-05-01T17:51:03",
+        "2026-05-01T19:31:04",
+        "2026-05-02T19:11:04",
+        "2026-05-03T18:51:03",
+        "2026-05-04T18:31:03",
+        "2026-05-05T18:16:03",
+        "2026-05-05T19:56:04",
+        "2026-05-06T17:56:03",
+        "2026-05-06T19:36:04",
+        "2026-05-07T19:16:03",
+        "2026-05-08T18:56:03",
+        "2026-05-09T18:41:04",
+        "2026-05-10T18:21:04",
+        "2026-05-11T18:01:03",
+        "2026-05-11T19:41:04",
+        "2026-05-12T19:21:03",
+        "2026-05-13T19:06:04",
+        "2026-05-14T18:46:03",
+        "2026-05-15T18:26:03",
+        "2026-05-16T18:11:04",
+        "2026-05-16T19:51:04",
+        "2026-05-17T17:51:04",
+        "2026-05-17T19:31:05",
+        "2026-05-18T19:11:04",
+        "2026-05-19T18:51:04",
+        "2026-05-20T18:36:04",
+        "2026-05-21T18:16:04",
+        "2026-05-21T19:56:05",
+        "2026-05-22T17:56:04",
+        "2026-05-22T19:36:05",
+        "2026-05-23T19:17:14",
+        "2026-05-24T18:57:14",
+        "2026-05-25T18:42:14",
+        "2026-05-26T18:22:14",
+        "2026-05-27T18:02:14",
+        "2026-05-27T19:42:14",
+        "2026-05-28T19:22:14",
+        "2026-05-29T19:07:15",
+        "2026-05-30T18:47:15",
+        "2026-05-31T18:27:15",
+        "2026-06-01T18:07:14",
+        "2026-06-01T19:47:14",
+        "2026-06-02T17:52:14",
+        "2026-06-02T19:32:15",
+        "2026-06-03T19:12:14",
+        "2026-06-04T18:52:14",
+        "2026-06-05T18:34:35",
+        "2026-06-06T18:14:35",
+        "2026-06-06T19:54:35"
       ],
       "y": [
         0.1,
@@ -3088,6 +3166,57 @@
         0.1,
         0.1,
         819.4,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -5410,15 +5539,66 @@
         "data_mounts/llaima/2026/llaima_20260425T1943_SO2_PBL.png",
         "data_mounts/llaima/2026/llaima_20260426T1923_SO2_PBL.png",
         "data_mounts/llaima/2026/llaima_20260427T1903_SO2_PBL.png",
-        "data_mounts/llaima/2026/llaima_20260428T1843_SO2_PBL.png"
+        "data_mounts/llaima/2026/llaima_20260428T1843_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260430T1806_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260430T1946_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260501T1751_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260501T1931_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260502T1911_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260503T1851_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260504T1831_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260505T1816_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260505T1956_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260506T1756_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260506T1936_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260507T1916_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260508T1856_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260509T1841_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260510T1821_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260511T1801_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260511T1941_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260512T1921_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260513T1906_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260514T1846_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260515T1826_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260516T1811_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260516T1951_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260517T1751_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260517T1931_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260518T1911_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260519T1851_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260520T1836_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260521T1816_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260521T1956_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260522T1756_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260522T1936_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260523T1917_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260524T1857_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260525T1842_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260526T1822_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260527T1802_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260527T1942_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260528T1922_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260529T1907_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260530T1847_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260531T1827_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260601T1807_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260601T1947_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260602T1752_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260602T1932_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260603T1912_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260604T1852_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260605T1834_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260606T1814_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260606T1954_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-04-28T18:43:08",
-        "2026-04-28T18:43:08",
-        "2026-04-28T18:43:08"
+        "2026-06-06T19:54:35",
+        "2026-06-06T19:54:35",
+        "2026-06-06T19:54:35"
       ],
       "y": [
         0.1,
@@ -5436,9 +5616,9 @@
     {
       "name": "tbar_disp",
       "x": [
-        "2026-04-17T09:56:27",
-        "2026-04-17T09:56:27",
-        "2026-04-17T09:56:27"
+        "2026-06-04T09:56:30",
+        "2026-06-04T09:56:30",
+        "2026-06-04T09:56:30"
       ],
       "y": [
         0,
@@ -5456,9 +5636,9 @@
     {
       "name": "tbar_int",
       "x": [
-        "2026-04-29T09:56:27",
-        "2026-04-29T09:56:27",
-        "2026-04-29T09:56:27"
+        "2026-06-04T09:56:30",
+        "2026-06-04T09:56:30",
+        "2026-06-04T09:56:30"
       ],
       "y": [
         0,
@@ -5476,13 +5656,13 @@
     {
       "name": "tbar_coh",
       "x": [
-        "2026-04-17T09:56:27",
-        "2026-04-17T09:56:27",
-        "2026-04-17T09:56:27"
+        "2026-06-04T09:56:30",
+        "2026-06-04T09:56:30",
+        "2026-06-04T09:56:30"
       ],
       "y": [
         0,
-        310899.0,
+        367921.0,
         594510.4
       ],
       "text": ""
@@ -5599,9 +5779,21 @@
         "2026-04-05T09:56:30",
         "2026-04-11T09:57:29",
         "2026-04-17T09:56:27",
-        "2026-04-29T09:56:27"
+        "2026-04-29T09:56:27",
+        "2026-05-05T09:57:29",
+        "2026-05-11T09:56:28",
+        "2026-05-17T09:57:29",
+        "2026-05-23T09:56:29",
+        "2026-05-29T09:57:28",
+        "2026-06-04T09:56:30"
       ],
       "y": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -5823,7 +6015,13 @@
         "data_mounts/llaima/2026/llaima_20260405T095630_VV_int.png",
         "data_mounts/llaima/2026/llaima_20260411T095729_VV_int.png",
         "data_mounts/llaima/2026/llaima_20260417T095627_VV_int.png",
-        "data_mounts/llaima/2026/llaima_20260429T095627_VV_int.png"
+        "data_mounts/llaima/2026/llaima_20260429T095627_VV_int.png",
+        "data_mounts/llaima/2026/llaima_20260505T095729_VV_int.png",
+        "data_mounts/llaima/2026/llaima_20260511T095628_VV_int.png",
+        "data_mounts/llaima/2026/llaima_20260517T095729_VV_int.png",
+        "data_mounts/llaima/2026/llaima_20260523T095629_VV_int.png",
+        "data_mounts/llaima/2026/llaima_20260529T095728_VV_int.png",
+        "data_mounts/llaima/2026/llaima_20260604T095630_VV_int.png"
       ]
     },
     {
@@ -5929,7 +6127,13 @@
         "2026-03-30T09:57:29",
         "2026-04-05T09:56:30",
         "2026-04-11T09:57:29",
-        "2026-04-17T09:56:27"
+        "2026-04-17T09:56:27",
+        "2026-05-05T09:57:29",
+        "2026-05-11T09:56:28",
+        "2026-05-17T09:57:29",
+        "2026-05-23T09:56:29",
+        "2026-05-29T09:57:28",
+        "2026-06-04T09:56:30"
       ],
       "y": [
         192297.0,
@@ -6032,7 +6236,13 @@
         468562.0,
         212273.0,
         168349.0,
-        310899.0
+        310899.0,
+        348554.0,
+        461775.0,
+        485530.0,
+        392880.0,
+        431788.0,
+        367921.0
       ],
       "text": [
         "data_mounts/llaima/2023/llaima_20230214T095742_20230226T095742_VV_coh.png",
@@ -6135,7 +6345,13 @@
         "data_mounts/llaima/2026/llaima_20260324T095630_20260330T095729_VV_coh.png",
         "data_mounts/llaima/2026/llaima_20260330T095729_20260405T095630_VV_coh.png",
         "data_mounts/llaima/2026/llaima_20260405T095630_20260411T095729_VV_coh.png",
-        "data_mounts/llaima/2026/llaima_20260411T095729_20260417T095627_VV_coh.png"
+        "data_mounts/llaima/2026/llaima_20260411T095729_20260417T095627_VV_coh.png",
+        "data_mounts/llaima/2026/llaima_20260429T095627_20260505T095729_VV_coh.png",
+        "data_mounts/llaima/2026/llaima_20260505T095729_20260511T095628_VV_coh.png",
+        "data_mounts/llaima/2026/llaima_20260511T095628_20260517T095729_VV_coh.png",
+        "data_mounts/llaima/2026/llaima_20260517T095729_20260523T095629_VV_coh.png",
+        "data_mounts/llaima/2026/llaima_20260523T095629_20260529T095728_VV_coh.png",
+        "data_mounts/llaima/2026/llaima_20260529T095728_20260604T095630_VV_coh.png"
       ]
     },
     {
@@ -6241,7 +6457,13 @@
         "2026-03-30T09:57:29",
         "2026-04-05T09:56:30",
         "2026-04-11T09:57:29",
-        "2026-04-17T09:56:27"
+        "2026-04-17T09:56:27",
+        "2026-05-05T09:57:29",
+        "2026-05-11T09:56:28",
+        "2026-05-17T09:57:29",
+        "2026-05-23T09:56:29",
+        "2026-05-29T09:57:28",
+        "2026-06-04T09:56:30"
       ],
       "y": [
         0.0,
@@ -6325,6 +6547,12 @@
         0.0,
         0.0,
         0.000709,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         0.0,
         0.0,
         0.0,
@@ -6447,9 +6675,15 @@
         "data_mounts/llaima/2026/llaima_20260324T095630_20260330T095729_VV_disp.png",
         "data_mounts/llaima/2026/llaima_20260330T095729_20260405T095630_VV_disp.png",
         "data_mounts/llaima/2026/llaima_20260405T095630_20260411T095729_VV_disp.png",
-        "data_mounts/llaima/2026/llaima_20260411T095729_20260417T095627_VV_disp.png"
+        "data_mounts/llaima/2026/llaima_20260411T095729_20260417T095627_VV_disp.png",
+        "data_mounts/llaima/2026/llaima_20260429T095627_20260505T095729_VV_disp.png",
+        "data_mounts/llaima/2026/llaima_20260505T095729_20260511T095628_VV_disp.png",
+        "data_mounts/llaima/2026/llaima_20260511T095628_20260517T095729_VV_disp.png",
+        "data_mounts/llaima/2026/llaima_20260517T095729_20260523T095629_VV_disp.png",
+        "data_mounts/llaima/2026/llaima_20260523T095629_20260529T095728_VV_disp.png",
+        "data_mounts/llaima/2026/llaima_20260529T095728_20260604T095630_VV_disp.png"
       ]
     }
   ],
-  "fetched_at": "2026-04-30T15:46:36.457338+00:00"
+  "fetched_at": "2026-06-07T10:26:51.953264+00:00"
 }

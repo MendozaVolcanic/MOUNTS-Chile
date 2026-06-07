@@ -22,7 +22,10 @@ from pathlib import Path
 
 import requests
 
-BASE_URL  = "https://www.mounts-project.com"
+# mounts-project.com NO acepta HTTPS desde redes externas (port 443 cerrado).
+# Solo HTTP funciona desde scrapers. Las imagenes locales en latest/ se sirven
+# por GitHub Pages HTTPS sin mixed-content porque son paths relativos.
+BASE_URL  = "http://www.mounts-project.com"
 STATIC    = f"{BASE_URL}/static"
 BASE_DIR  = Path(__file__).parent
 DATA_DIR  = BASE_DIR / "data"
@@ -43,27 +46,89 @@ CHILEAN_VOLCANOES = {
 }
 
 PRODUCT_MAP = {
-    "_B12B11B8A_nir":     ("S2_hotspot",   "Sentinel-2"),
-    "_B4B3B2+B12B11B8A":  ("S2_RGB_NIR",   "Sentinel-2"),
-    "_SO2_PBL":           ("S5P_SO2",      "Sentinel-5P"),
-    "_VV_ifg":            ("S1_ifg",       "Sentinel-1"),
-    "_VV_int_fcnn":       ("S1_intensity", "Sentinel-1"),
-    "_VV_coh":            ("S1_coherence", "Sentinel-1"),
-    "_VV_disp":           ("S1_disp",      "Sentinel-1"),
-    "_VV_int.png":        ("S1_intensity_raw", "Sentinel-1"),
+    "_B12B11B8A_nir":     ("S2_hotspot",       "Sentinel-2"),
+    "_B4B3B2+B12B11B8A":  ("S2_RGB_NIR",       "Sentinel-2"),   # RGB true color visible
+    "_SO2_PBL":           ("S5P_SO2",          "Sentinel-5P"),
+    "_VV_ifg":            ("S1_ifg",           "Sentinel-1"),
+    "_VV_int_fcnn":       ("S1_intensity",     "Sentinel-1"),
+    "_VV_coh":            ("S1_coherence",     "Sentinel-1"),
+    "_VV_disp":           ("S1_disp",          "Sentinel-1"),
+    # Productos adicionales detectados en audit upstream
+    "_VV_int.png":        ("S1_intensity_raw", "Sentinel-1"),   # sin filtro CNN
+    "_zoom.png":          ("zoom_crater",      "varios"),       # recorte al crater
+    "_200dpi.png":        ("hires",            "varios"),       # alta resolucion
 }
+
+
+CACHE_DIR = BASE_DIR / ".cache"
+USER_AGENT = (
+    "MOUNTS-Chile-Mirror/1.0 "
+    "(+https://github.com/MendozaVolcanic/MOUNTS-Chile) "
+    "(contact: SERNAGEOMIN-OVDAS)"
+)
 
 
 def session() -> requests.Session:
     s = requests.Session()
-    s.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    s.headers.update({
+        "User-Agent": USER_AGENT,
+        "Accept-Encoding": "gzip, deflate",
+        "Accept": "text/html,application/xhtml+xml",
+    })
     return s
 
 
-def fetch_html(sess, url):
-    r = sess.get(url, timeout=30)
-    r.raise_for_status()
-    return r.text
+def _cache_meta_path(url: str) -> Path:
+    """Sanitize URL -> path en .cache/."""
+    safe = url.replace("://", "_").replace("/", "_").replace("?", "_")
+    return CACHE_DIR / f"{safe}.meta.json"
+
+
+def fetch_html(sess, url, retries: int = 3, use_cache: bool = True):
+    """
+    GET con backoff exponencial + If-Modified-Since cache.
+    Devuelve el HTML como string. Si 304 Not Modified, lee cache.
+    """
+    CACHE_DIR.mkdir(exist_ok=True)
+    meta_path = _cache_meta_path(url)
+    headers = {}
+    cached_body_path = None
+    if use_cache and meta_path.exists():
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            if meta.get("last_modified"):
+                headers["If-Modified-Since"] = meta["last_modified"]
+            if meta.get("etag"):
+                headers["If-None-Match"] = meta["etag"]
+            cached_body_path = CACHE_DIR / meta.get("body", "")
+        except (ValueError, KeyError):
+            pass
+
+    for attempt in range(retries):
+        try:
+            r = sess.get(url, timeout=30, headers=headers)
+            if r.status_code == 304 and cached_body_path and cached_body_path.exists():
+                log.debug(f"  cache HIT: {url}")
+                return cached_body_path.read_text(encoding="utf-8")
+            r.raise_for_status()
+            # Guardar en cache
+            if use_cache:
+                body_name = meta_path.stem.replace(".meta", "") + ".html"
+                body_path = CACHE_DIR / body_name
+                body_path.write_text(r.text, encoding="utf-8")
+                meta_path.write_text(json.dumps({
+                    "url": url,
+                    "last_modified": r.headers.get("Last-Modified"),
+                    "etag": r.headers.get("ETag"),
+                    "body": body_name,
+                }, indent=2), encoding="utf-8")
+            return r.text
+        except requests.RequestException as e:
+            wait = min(60, 2 ** attempt)
+            log.warning(f"  attempt {attempt+1}/{retries}: {e} (retry in {wait}s)")
+            if attempt < retries - 1:
+                time.sleep(wait)
+    raise RuntimeError(f"fetch failed after {retries} attempts: {url}")
 
 
 def classify(path: str) -> tuple[str, str]:
@@ -217,19 +282,31 @@ def main():
     sess = session()
     DATA_DIR.mkdir(exist_ok=True)
 
-    log.info(f"Cargando {len(vols)} volcanes · últimas {args.n} imágenes/producto")
+    log.info(f"Cargando {len(vols)} volcanes · últimas {args.n} imágenes/producto · paralelo")
 
-    total_imgs = 0
-    for volcano, sid in vols.items():
-        log.info(f"── {volcano.upper()} ({sid})")
+    # FASE 1: bajar HTMLs en paralelo (3 workers, rate-limit suave)
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    htmls = {}
+
+    def fetch_one(volcano, sid):
         try:
-            html = fetch_html(sess, f"{BASE_URL}/timeseries/{sid}")
-        except requests.RequestException as e:
-            log.error(f"  Error: {e}")
-            continue
+            return volcano, sid, fetch_html(sess, f"{BASE_URL}/timeseries/{sid}")
+        except Exception as e:
+            log.error(f"  {volcano}: fetch fallo: {e}")
+            return volcano, sid, None
 
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        futures = [ex.submit(fetch_one, v, s) for v, s in vols.items()]
+        for f in as_completed(futures):
+            volcano, sid, html = f.result()
+            if html:
+                htmls[volcano] = (sid, html)
+                log.info(f"  HTML  {volcano.upper()} ({sid}): {len(html)//1024} KB")
+
+    # FASE 2: parsear timeseries y bajar imagenes (secuencial, baseline 0.3s entre PNGs)
+    total_imgs = 0
+    for volcano, (sid, html) in htmls.items():
         save_timeseries(html, volcano, sid)
-
         if not args.only_timeseries:
             n = download_latest(sess, html, volcano, sid, args.n)
             total_imgs += n

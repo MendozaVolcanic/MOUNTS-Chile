@@ -53,11 +53,12 @@ STATUS_PRODUCTS = ["SWIR", "SO2", "DEF", "COH"]
 
 # Sufijos de imagen -> (etiqueta, orden)
 IMG_PRODUCTS = [
-    ("_SO2_PBL",       "SO2 TROPOMI"),
-    ("_B12B11B8A_nir", "S2 SWIR"),
-    ("_VV_disp",       "S1 InSAR disp"),
-    ("_VV_int_fcnn",   "S1 Intensidad"),
-    ("_VV_coh",        "S1 Coherencia"),
+    ("_B4B3B2+B12B11B8A", "S2 RGB visible"),   # nuevo: true color
+    ("_SO2_PBL",          "SO2 TROPOMI"),
+    ("_B12B11B8A_nir",    "S2 SWIR"),
+    ("_VV_disp",          "S1 InSAR disp"),
+    ("_VV_int_fcnn",      "S1 Intensidad"),
+    ("_VV_coh",           "S1 Coherencia"),
 ]
 
 # Mapa de trazas: nombre -> (yaxis_id, color, mode, dash, symbol, fill)
@@ -706,6 +707,99 @@ def build_streamgraph(product_trace="so2", title="SO2 multi-volcan",
 <script>window.addEventListener("load",function(){{ {chart_call} }});</script>'''
 
 
+def build_upstream_status_panel():
+    """
+    Panel con estado upstream:
+    - Citation actual (del /about)
+    - Cambios detectados en /news desde ultimo check
+    - Gap analysis summary
+    """
+    state_f = Path(__file__).parent / "upstream_state.json"
+    changes_f = Path(__file__).parent / "upstream_changes.json"
+    quality_f = Path(__file__).parent / "quality.json"
+
+    state = {}
+    if state_f.exists():
+        try:
+            state = json.loads(state_f.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            pass
+    citation = state.get("citation", {})
+    dois = citation.get("dois", [])
+
+    n_changes = 0
+    last_change = None
+    if changes_f.exists():
+        try:
+            changes = json.loads(changes_f.read_text(encoding="utf-8"))
+            n_changes = len(changes)
+            if changes:
+                last_change = changes[-1]
+        except (json.JSONDecodeError, IndexError):
+            pass
+
+    low_cov = 0
+    drift_n = 0
+    if quality_f.exists():
+        try:
+            q = json.loads(quality_f.read_text(encoding="utf-8"))
+            low_cov = q.get("summary", {}).get("products_with_low_coverage", 0)
+            drift_n = q.get("summary", {}).get("drift_events", 0)
+        except json.JSONDecodeError:
+            pass
+
+    dois_html = " ".join(
+        f'<a href="https://doi.org/{esc(d)}" target="_blank" '
+        f'style="font-family:monospace;font-size:.68rem">{esc(d)}</a>'
+        for d in dois[:3]
+    )
+
+    change_badge = ""
+    if last_change:
+        sev = last_change.get("severity", "low")
+        color = "#e74c3c" if sev == "high" else "#e67e22"
+        change_badge = (
+            f'<span style="background:{color};color:#fff;padding:2px 6px;'
+            f'border-radius:3px;font-size:.65rem">'
+            f'⚠ {n_changes} cambios upstream detectados</span>'
+        )
+    else:
+        change_badge = (
+            f'<span style="background:#2ecc71;color:#fff;padding:2px 6px;'
+            f'border-radius:3px;font-size:.65rem">'
+            f'✓ Upstream sin cambios</span>'
+        )
+
+    return f'''
+<div class="upstream-section">
+  <h2>Estado upstream MOUNTS</h2>
+  <div class="upstream-grid">
+    <div>
+      <div class="up-label">Citación oficial</div>
+      <div>{dois_html or '<i>no disponible</i>'}</div>
+      <div class="up-label" style="margin-top:6px">Contacto</div>
+      <div style="font-family:monospace;font-size:.7rem">{esc(', '.join(citation.get('contacts', [])))}</div>
+    </div>
+    <div>
+      <div class="up-label">Monitor upstream</div>
+      <div>{change_badge}</div>
+      <div class="up-label" style="margin-top:6px">Calidad de datos</div>
+      <div style="font-size:.7rem">
+        {low_cov} producto/s con cobertura &lt;50% ·
+        {drift_n} valores modificados retroactivamente
+      </div>
+    </div>
+  </div>
+  <p class="up-help">
+    El scraper monitorea <a href="http://www.mounts-project.com/news" target="_blank">/news</a> +
+    <a href="http://www.mounts-project.com/about" target="_blank">/about</a> + schema de cada
+    timeseries. Si MOUNTS cambia calibración (ej. baseline S2), se detecta y se loguea en
+    <a href="upstream_changes.json">upstream_changes.json</a>.
+    <a href="quality.json">quality.json</a> tiene el gap analysis completo.
+  </p>
+</div>'''
+
+
 def build_multi_alerts_panel(top_n=15):
     """
     Panel de alertas multi-producto: cuando >=2 productos del mismo volcan
@@ -882,6 +976,7 @@ def main():
     status = load_status()
     alerts = load_alerts()
     status_html = build_status_matrix(status)
+    upstream_html = build_upstream_status_panel()
     alerts_html = build_alerts_panel(alerts)
     history_html = build_history_panel(top_n=20)
     multi_html = build_multi_alerts_panel(top_n=15)
@@ -969,6 +1064,14 @@ a:hover{{text-decoration:underline}}
                   border-bottom:1px solid #30363d}}
 .alerts-table td{{padding:5px 8px;border-bottom:1px solid #21262d}}
 .alerts-table tr:hover{{background:#161b22}}
+
+/* === Upstream status === */
+.upstream-section{{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}}
+.upstream-section h2{{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:10px}}
+.upstream-grid{{display:grid;grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:700px){{.upstream-grid{{grid-template-columns:1fr}}}}
+.up-label{{font-size:.62rem;color:#8b949e;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}}
+.up-help{{font-size:.7rem;color:#6e7681;margin-top:10px}}
 
 /* === Streamgraph === */
 .streamgraph-section{{padding:14px;border-bottom:2px solid #21262d}}
@@ -1060,6 +1163,7 @@ function setTimeRange(days) {{
 }}
 </script>
 {status_html}
+{upstream_html}
 {alerts_html}
 {multi_html}
 {history_html}

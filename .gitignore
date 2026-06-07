@@ -8,3 +8,7 @@ __pycache__/
 mounts.db-wal
 mounts.db-shm
 mounts.db-journal
+# Cache HTTP local (rebuildeable, no necesita ir al repo)
+.cache/
+# Audit dump (research, no scope productivo)
+_audit/
