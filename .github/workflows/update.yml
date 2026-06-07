@@ -44,10 +44,16 @@ jobs:
 
       - name: Run pipeline (full)
         if: ${{ github.event.inputs.skip_fetch != 'true' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python update.py
 
       - name: Run pipeline (skip fetch)
         if: ${{ github.event.inputs.skip_fetch == 'true' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python update.py --skip-fetch
 
       - name: Show git status

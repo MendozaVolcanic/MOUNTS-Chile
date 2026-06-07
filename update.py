@@ -29,6 +29,7 @@ STEPS = [
     ("image_diff.py",       "Generar imagen diffs",                       False),
     ("quality.py",          "Gap analysis + drift detection",             False),
     ("db.py",               "Persistir en base de datos SQLite",          False),
+    ("notify_telegram.py",  "Notificar Telegram (opcional)",              False),
     ("export_csv.py",       "Exportar CSVs",                              False),
     ("generar_html.py",     "Regenerar dashboard HTML",                   False),
 ]

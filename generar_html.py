@@ -48,6 +48,9 @@ SEV_COLOR = {
     "gray":   "#3a3f47",
 }
 
+# Ranking ordinal de severidad (para comparar "subio" / "bajo" vs ayer)
+SEV_RANK = {"gray": 0, "stale": 0, "green": 1, "yellow": 2, "orange": 3, "red": 4}
+
 # Productos en el status matrix
 STATUS_PRODUCTS = ["SWIR", "SO2", "DEF", "COH"]
 
@@ -488,6 +491,37 @@ def load_status():
     return json.loads(f.read_text(encoding="utf-8"))
 
 
+def load_previous_status():
+    """
+    Lee el snapshot anterior (>20h atras) por (volcan, producto) de
+    status_history. Devuelve dict[(vol_key, product)] -> {severity, zscore}.
+    Usado para calcular diff vs ayer en cada celda del status board.
+    """
+    db_path = Path(__file__).parent / "mounts.db"
+    if not db_path.exists():
+        return {}
+    import sqlite3
+    conn = sqlite3.connect(str(db_path))
+    try:
+        # Para cada (vol, prod), buscar el snapshot mas reciente que sea >20h atras
+        # respecto al ahora. Asi capturamos la version "de ayer" / "hace ~1 dia"
+        cur = conn.execute("""
+            SELECT volcano_key, product, severity, zscore, snapshot_at
+            FROM status_history
+            WHERE snapshot_at < datetime('now', '-20 hours')
+            ORDER BY snapshot_at DESC
+        """)
+        # Tomar el primero (mas reciente) por (vol, prod)
+        result = {}
+        for vol, prod, sev, z, snap in cur:
+            key = (vol, prod)
+            if key not in result:
+                result[key] = {"severity": sev, "zscore": z, "snapshot_at": snap}
+        return result
+    finally:
+        conn.close()
+
+
 def load_alerts():
     f = Path(__file__).parent / "alerts.json"
     if not f.exists():
@@ -545,10 +579,11 @@ def fmt_value(v, unit):
 
 
 def build_status_matrix(status):
-    """Tabla 7x4 con sparklines y colores."""
+    """Tabla 7x4 con sparklines, colores y diff vs ~24h atras."""
     if not status or "volcanoes" not in status:
         return '<p style="color:#6e7681;padding:14px">Status no disponible. Corre anomalies.py</p>'
 
+    previous = load_previous_status()
     headers = "".join(f'<th>{p}</th>' for p in STATUS_PRODUCTS)
     rows = []
     for key, name, sid in VOLCANES:
@@ -574,6 +609,32 @@ def build_status_matrix(status):
             age = fmt_age(ps.get("age_hours"))
             spark = sparkline_svg(ps.get("sparkline_x", []), ps.get("sparkline_y", []),
                                   color=color, width=110, height=24)
+
+            # Diff vs ~24h atras
+            prev = previous.get((key, p))
+            diff_badge = ""
+            if prev and z is not None and prev.get("zscore") is not None:
+                dz = z - prev["zscore"]
+                prev_sev = prev.get("severity", "gray")
+                if prev_sev != sev:
+                    # cambio de severidad: lo mas notable
+                    arrow = "↑" if SEV_RANK.get(sev, 0) > SEV_RANK.get(prev_sev, 0) else "↓"
+                    arrow_color = "#e74c3c" if arrow == "↑" else "#2ecc71"
+                    diff_badge = (
+                        f'<span class="diff-badge" '
+                        f'style="background:{arrow_color};color:#fff" '
+                        f'title="ayer {prev_sev}, hoy {sev}">'
+                        f'{arrow} {prev_sev}→{sev}</span>'
+                    )
+                elif abs(dz) >= 0.5:
+                    # mismo nivel pero cambio significativo en z
+                    arrow = "↑" if dz > 0 else "↓"
+                    diff_badge = (
+                        f'<span class="diff-badge" '
+                        f'style="color:#8b949e" '
+                        f'title="cambio z-score vs ~24h">'
+                        f'{arrow}{abs(dz):.1f}σ</span>'
+                    )
             cells.append(
                 f'<td class="cell" style="border-left:3px solid {color}">'
                 f'<div class="cell-inner">'
@@ -582,7 +643,10 @@ def build_status_matrix(status):
                 f'<span class="cell-z">{z_str}</span>'
                 f'</div>'
                 f'<div class="cell-spark">{spark}</div>'
-                f'<div class="cell-age">{age}</div>'
+                f'<div class="cell-bottom">'
+                f'<span class="cell-age">{age}</span>'
+                f'{diff_badge}'
+                f'</div>'
                 f'</div></td>'
             )
         rows.append(
@@ -705,6 +769,80 @@ def build_streamgraph(product_trace="so2", title="SO2 multi-volcan",
   <div id="{div_id}" class="streamgraph"></div>
 </div>
 <script>window.addEventListener("load",function(){{ {chart_call} }});</script>'''
+
+
+def build_bulletin(status):
+    """
+    Bulletin textual auto-generado, una linea por volcan estilo GVP Smithsonian.
+    Lectura completa del estado en 30s.
+
+    Ejemplo:
+      Villarrica: SWIR estable, SO2 +2.1σ ultimos dias, sin deformacion InSAR.
+      Llaima: SWIR +5.8σ (transient), todo lo demas estable.
+    """
+    if not status or "volcanoes" not in status:
+        return ""
+
+    # Pesos para "redactar" en orden de severidad
+    def severity_phrase(p_label, ps):
+        if ps is None:
+            return None
+        sev = ps.get("severity", "gray")
+        z = ps.get("zscore_now")
+        if sev == "stale":
+            return f"<span style='color:{SEV_COLOR['stale']}'>{p_label} dato atrasado</span>"
+        if sev == "gray":
+            return None
+        if z is None:
+            return None
+        if sev == "green":
+            return f"<span style='color:{SEV_COLOR['green']}'>{p_label} en baseline</span>"
+        # Senal real
+        color = SEV_COLOR.get(sev, "#888")
+        z_disp = f">+50σ" if z > 50 else f"{z:+.1f}σ"
+        return f"<span style='color:{color}'><b>{p_label} {z_disp}</b></span>"
+
+    rows = []
+    for key, name, sid in VOLCANES:
+        v = status["volcanoes"].get(key, {})
+        prods = v.get("products", {})
+        overall = v.get("overall", "gray")
+        ov_color = SEV_COLOR.get(overall, "#3a3f47")
+
+        # Ordenar productos por severidad descendente para que lo importante salga primero
+        order = sorted(
+            STATUS_PRODUCTS,
+            key=lambda p: SEV_RANK.get((prods.get(p) or {}).get("severity", "gray"), 0),
+            reverse=True,
+        )
+
+        phrases = []
+        for p in order:
+            phrase = severity_phrase(p, prods.get(p))
+            if phrase:
+                phrases.append(phrase)
+
+        if not phrases:
+            text = '<span style="color:#6e7681">sin datos disponibles</span>'
+        else:
+            text = ", ".join(phrases) + "."
+
+        rows.append(
+            f'<div class="bull-row">'
+            f'<a class="bull-vol" href="#v-{esc(key)}" '
+            f'style="border-left:4px solid {ov_color}">{esc(name)}</a>'
+            f'<span class="bull-text">{text}</span>'
+            f'</div>'
+        )
+
+    return f'''
+<div class="bulletin-section">
+  <h2>Bulletin operacional</h2>
+  <p class="bull-help">Resumen automático por volcán. Lectura completa en 30s.</p>
+  <div class="bulletin-list">
+    {"".join(rows)}
+  </div>
+</div>'''
 
 
 def build_upstream_status_panel():
@@ -976,6 +1114,7 @@ def main():
     status = load_status()
     alerts = load_alerts()
     status_html = build_status_matrix(status)
+    bulletin_html = build_bulletin(status)
     upstream_html = build_upstream_status_panel()
     alerts_html = build_alerts_panel(alerts)
     history_html = build_history_panel(top_n=20)
@@ -1053,7 +1192,9 @@ a:hover{{text-decoration:underline}}
 .cell-val{{font-family:'SF Mono',Monaco,monospace;font-weight:600;font-size:.82rem}}
 .cell-z{{font-size:.65rem;color:#6e7681;font-family:'SF Mono',Monaco,monospace}}
 .cell-spark{{margin-top:1px}}
-.cell-age{{font-size:.6rem;color:#6e7681;text-align:right}}
+.cell-bottom{{display:flex;justify-content:space-between;align-items:center;gap:4px}}
+.cell-age{{font-size:.6rem;color:#6e7681}}
+.diff-badge{{font-size:.58rem;padding:1px 4px;border-radius:3px;font-family:'SF Mono',Monaco,monospace}}
 
 /* === Alerts === */
 .alerts-section{{padding:14px;border-bottom:2px solid #21262d}}
@@ -1064,6 +1205,19 @@ a:hover{{text-decoration:underline}}
                   border-bottom:1px solid #30363d}}
 .alerts-table td{{padding:5px 8px;border-bottom:1px solid #21262d}}
 .alerts-table tr:hover{{background:#161b22}}
+
+/* === Bulletin operacional === */
+.bulletin-section{{padding:14px;border-bottom:2px solid #21262d}}
+.bulletin-section h2{{font-size:.95rem;font-weight:600;color:#f0f6fc;margin-bottom:4px}}
+.bull-help{{font-size:.68rem;color:#6e7681;margin-bottom:10px}}
+.bulletin-list{{display:flex;flex-direction:column;gap:5px}}
+.bull-row{{display:grid;grid-template-columns:160px 1fr;gap:14px;align-items:center;
+          padding:6px 0;border-bottom:1px solid #1c2128}}
+.bull-row:last-child{{border-bottom:none}}
+.bull-vol{{font-size:.82rem;font-weight:700;color:#e2a44a;padding-left:8px}}
+.bull-vol:hover{{color:#f0c875}}
+.bull-text{{font-size:.78rem;color:#c8d2dc;line-height:1.4}}
+@media(max-width:700px){{.bull-row{{grid-template-columns:1fr}}}}
 
 /* === Upstream status === */
 .upstream-section{{padding:14px;border-bottom:2px solid #21262d;background:#0a0d11}}
@@ -1163,6 +1317,7 @@ function setTimeRange(days) {{
 }}
 </script>
 {status_html}
+{bulletin_html}
 {upstream_html}
 {alerts_html}
 {multi_html}

@@ -1,7 +1,164 @@
 {
-  "generated_at": "2026-06-07T09:41:58.009895+00:00",
+  "generated_at": "2026-06-07T11:31:16.063485+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 0,
-  "alerts": []
+  "count": 13,
+  "alerts": [
+    {
+      "date": "2026-05-17T17:56:04",
+      "value": 175.3,
+      "baseline": 0.1,
+      "zscore": 350.40000000000003,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "SO2",
+      "unit": "tons"
+    },
+    {
+      "date": "2026-05-21T18:16:04",
+      "value": 30.0,
+      "baseline": 0.1,
+      "zscore": 59.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Planchon-Peteroa",
+      "volcano_key": "planchon-peteroa",
+      "product": "SO2",
+      "unit": "tons"
+    },
+    {
+      "date": "2026-05-22T14:37:41",
+      "value": 13.0,
+      "baseline": 0.1,
+      "zscore": 25.8,
+      "run_length": 5,
+      "persistent": true,
+      "volcano": "Villarrica",
+      "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-05-17T14:37:39",
+      "value": 7.0,
+      "baseline": 0.1,
+      "zscore": 13.8,
+      "run_length": 2,
+      "persistent": false,
+      "volcano": "Villarrica",
+      "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-05-14T14:27:09",
+      "value": 4.0,
+      "baseline": 0.1,
+      "zscore": 7.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Nevados de Chillan",
+      "volcano_key": "nevados-de-chillan",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-05-21T14:28:11",
+      "value": 4.0,
+      "baseline": 0.1,
+      "zscore": 7.8,
+      "run_length": 4,
+      "persistent": true,
+      "volcano": "Villarrica",
+      "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-06-03T10:01:34",
+      "value": 168749.0,
+      "baseline": 38613.0,
+      "zscore": 5.9482585245452055,
+      "run_length": 3,
+      "persistent": true,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "COH",
+      "unit": "Npix_coh<0.5"
+    },
+    {
+      "date": "2026-05-19T14:27:11",
+      "value": 3.0,
+      "baseline": 0.1,
+      "zscore": 5.8,
+      "run_length": 3,
+      "persistent": true,
+      "volcano": "Villarrica",
+      "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-05-11T09:56:28",
+      "value": 492233.0,
+      "baseline": 179545.5,
+      "zscore": 3.949271243811256,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Copahue",
+      "volcano_key": "copahue",
+      "product": "COH",
+      "unit": "Npix_coh<0.5"
+    },
+    {
+      "date": "2026-05-17T14:37:39",
+      "value": 2.0,
+      "baseline": 0.1,
+      "zscore": 3.8,
+      "run_length": 2,
+      "persistent": false,
+      "volcano": "Nevados de Chillan",
+      "volcano_key": "nevados-de-chillan",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-05-14T14:27:09",
+      "value": 2.0,
+      "baseline": 0.1,
+      "zscore": 3.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Villarrica",
+      "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-05-22T10:01:35",
+      "value": 120193.0,
+      "baseline": 38613.0,
+      "zscore": 3.728860042051376,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "COH",
+      "unit": "Npix_coh<0.5"
+    },
+    {
+      "date": "2026-05-28T10:00:36",
+      "value": 120961.0,
+      "baseline": 38636.5,
+      "zscore": 3.1434762686624156,
+      "run_length": 2,
+      "persistent": false,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "COH",
+      "unit": "Npix_coh<0.5"
+    }
+  ]
 }

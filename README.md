@@ -85,6 +85,35 @@ GitHub Actions corre el pipeline cada 6 h ([`.github/workflows/update.yml`](.git
 - workflow_dispatch para trigger manual
 - commitea solo si hay cambios (con `[skip ci]` para no triggerear builds)
 
+## Notificaciones Telegram (opcional)
+
+Cuando se detectan anomalías nuevas, manda mensaje al bot. Setup:
+
+1. **Crear bot**: en Telegram, chat con `@BotFather`:
+   ```
+   /newbot
+   nombre: MOUNTS Chile Bot
+   username: mounts_chile_bot
+   ```
+   Anota el TOKEN.
+
+2. **Obtener chat ID**: agregá el bot a un grupo (o chateá directo). Luego visitá:
+   `https://api.telegram.org/bot<TOKEN>/getUpdates` → copiar `result[0].message.chat.id`.
+
+3. **Configurar secrets en GitHub** (Settings → Secrets and variables → Actions):
+   - `TELEGRAM_BOT_TOKEN`
+   - `TELEGRAM_CHAT_ID`
+
+4. **Test local**:
+   ```bash
+   export TELEGRAM_BOT_TOKEN=...
+   export TELEGRAM_CHAT_ID=...
+   python notify_telegram.py --test           # mensaje de prueba
+   python notify_telegram.py --dry-run         # ve qué enviaría
+   ```
+
+Si los secrets no están configurados, el step es no-op (no falla el pipeline).
+
 ## Endpoints estables
 
 Ver [API.md](API.md) — JSON/SQLite/CSV consumibles por máquinas:

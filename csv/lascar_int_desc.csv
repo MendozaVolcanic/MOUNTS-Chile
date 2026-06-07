@@ -239,3 +239,9 @@ date,value,unit,product,sensor,image_path,image_url
 2026-04-16T10:01:23,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260416T100123_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260416T100123_VV_int.png
 2026-04-22T10:00:34,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260422T100034_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260422T100034_VV_int.png
 2026-04-28T10:01:33,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260428T100133_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260428T100133_VV_int.png
+2026-05-04T10:00:35,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260504T100035_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260504T100035_VV_int.png
+2026-05-10T10:01:35,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260510T100135_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260510T100135_VV_int.png
+2026-05-16T10:00:36,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260516T100036_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260516T100036_VV_int.png
+2026-05-22T10:01:35,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260522T100135_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260522T100135_VV_int.png
+2026-05-28T10:00:36,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260528T100036_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260528T100036_VV_int.png
+2026-06-03T10:01:34,0.0,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260603T100134_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260603T100134_VV_int.png
