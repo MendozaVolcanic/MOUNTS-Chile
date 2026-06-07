@@ -1,6 +1,6 @@
 # MOUNTS-Chile — Estado del proyecto para continuación
 
-> Última actualización: 2026-06-07 · Última sesión: implementación V1 + V2 + V8
+> Última actualización: 2026-06-07 · Última sesión: C1 (tests pytest) + C2 (refactor dashboard/)
 
 Este archivo es el **snapshot canónico** del estado del proyecto. Si abrís una
 sesión nueva con Claude Code, leé esto primero (la próxima sesión debería
@@ -50,8 +50,9 @@ MOUNTS-Chile/
 ├── db.py                  SQLite ingest + multi-product alerts + queries CLI
 ├── notify_telegram.py     webhook alertas a bot Telegram (opcional)
 ├── export_csv.py          JSONs → CSVs estilo VRP
-├── generar_html.py        ⚠ 1300+ LOC, dios-archivo, refactor pendiente (C2)
+├── generar_html.py        orquestador delgado 63 LOC → paquete dashboard/ (C2 hecho)
 ├── dashboard.py           dashboard Streamlit interactivo (alternativa local)
+├── dashboard/             paquete HTML modular: config/charts/status/map/sections/template (C2)
 │
 ├── timeseries/            JSONs Plotly por volcán (numérico)
 ├── csv/                   CSVs por volcán + consolidados + events
@@ -71,7 +72,9 @@ MOUNTS-Chile/
 ├── anomalies.csv          export del catálogo histórico
 ├── index.html             dashboard principal (GH Pages)
 ├── map.html               mapa Folium embebido
-└── .github/workflows/update.yml  cron cada 6h
+├── tests/                 suite pytest (66 tests) + golden_master_check.py
+├── .github/workflows/update.yml  cron de datos cada 6h
+└── .github/workflows/test.yml    CI pytest (push/PR, read-only, Ubuntu)
 ```
 
 ### Pipeline
@@ -124,28 +127,35 @@ Pasos: `fetch_latest → monitor_upstream → anomalies → sync_latest → imag
 
 ## Tareas pendientes (priorizadas)
 
+### ✅ Completado esta sesión (C1 + C2, 2 agentes paralelos en worktrees aislados)
+
+- **C1 Tests pytest** — 66 tests verdes en local (Windows) y CI (Ubuntu).
+  Cubre el núcleo de mayor riesgo: `scraper.py` (classify_product,
+  parse_timestamp, extract_image_paths, extract_timeseries_json),
+  `anomalies.py` (robust_baseline + MAD floor, detect_anomalies,
+  severity_from_zscore, compute_product_status), `db.py`
+  (detect_multi_product_alerts, SQLite in-memory). CI en
+  `.github/workflows/test.yml` (read-only, paths-ignore de datos del cron).
+- **C2 Refactor `generar_html.py`** — 1346 → 63 LOC + paquete `dashboard/`
+  (config/charts/status/map/sections/template). Output byte-idéntico verificado
+  con golden master (`tests/golden_master_check.py`, normaliza timestamps +
+  UUIDs Folium). `update.py` lo invoca igual (contrato intacto).
+  Jinja2 evaluado y descartado en esta pasada (rompería identidad) — follow-up.
+
+⚠ Nota de proceso: los subagentes no pudieron ejecutar shell (sandbox); el
+código se entregó sin correr. La verificación (pytest + golden master) la hizo
+el agente principal, que encontró y arregló 3 bugs de fixture (C1) y 1 de
+encoding cp1252 en el verificador (C2). Lección: no confiar en "revisión
+manual" de un subagente que no pudo ejecutar — siempre correr la verificación.
+
 ### 🔴 Alta prioridad — lo siguiente que vale la pena
 
-1. **C1 Tests pytest** (3-5 días)
-   - 0 tests hoy, 4500+ LOC. Cada cambio puede romper algo silenciosamente.
-   - Cobertura objetivo: parsers (`extract_image_paths`, `parse_timestamp`,
-     `classify_product`, `robust_baseline`, `detect_anomalies`,
-     `detect_multi_product_alerts`).
-   - Estructura: `tests/test_anomalies.py`, `tests/test_scraper.py`, etc.
-     con fixtures de HTML mockeado en `tests/fixtures/`.
-   - Integrar en GH Actions `test.yml` workflow separado del cron de update.
+1. **C1b Ampliar cobertura de tests** (1-2 días)
+   - Deferidos: `update.py`, `quality.py`, `monitor_upstream.py`,
+     `image_diff.py`, `export_csv.py`, y rutas de I/O/red de `scraper.py`
+     (`fetch_page`, `download_image`). El núcleo puro ya quedó cubierto.
 
-2. **C2 Refactor `generar_html.py`** (2 días)
-   - Ya pasa los 1300 LOC, sigue creciendo. Antes de seguir agregando
-     features, separar en módulos:
-     - `dashboard/status.py` — status matrix + bulletin + diff badges
-     - `dashboard/charts.py` — Plotly per-volcano + streamgraph + baselines
-     - `dashboard/map.py` — Folium
-     - `dashboard/sections.py` — alerts, multi, history, upstream
-     - `dashboard/template.py` — base HTML + CSS
-   - Considerar templates Jinja2 en lugar de f-strings gigantes.
-
-3. **E2 Archivo histórico completo + resumability** (1 día)
+2. **E2 Archivo histórico completo + resumability** (1 día)
    - `scraper.py` existe pero `update.py` solo invoca `fetch_latest.py`.
    - Agregar flag `python scraper.py --archive` que baje TODO el catálogo
      histórico (~30K imágenes en lugar de 2356).
@@ -273,11 +283,11 @@ Dashboard HTML: 1.8 MB
 ## Commits recientes
 
 ```
+be98372  refactor: descomponer generar_html.py en paquete dashboard/ (C2)
+971c18e  test: suite pytest inicial del núcleo de datos (C1)
+b9030f0  docs: SESION_ESTADO.md — snapshot canónico
 d0c05e8  feat: 3 mejoras operacionales — bulletin, diff vs ayer, Telegram
 563558a  regen: HTML con panel upstream MOUNTS
 20176bb  feat: 5 fases de mejoras al scraper (monitor + quality + sync_latest)
 03355d3  fix: anomalies.csv auto-export
-613b760  feat: 9 mejoras dashboard (filtro temporal, streamgraph, multi-alerts)
-a5801b1  feat: base de datos SQLite con histórico
-f4729d5  feat: rediseño completo del dashboard — 5 capas
 ```
