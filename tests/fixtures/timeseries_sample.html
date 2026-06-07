@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+  Fixture HTML minimo pero fiel al formato real de mounts-project.com
+  /timeseries/<smithsonian_id>. Reproduce los dos patrones que parsea scraper.py:
+
+    1) extract_image_paths(): rutas de imagen embebidas como strings dentro
+       del JSON de Plotly (campo "text" de cada traza).
+    2) extract_timeseries_json(): el bloque Plotly de series temporales.
+
+  IMPORTANTE: este comentario evita a proposito incluir rutas .png literales
+  o el patron del bloque graph. Los regex de scraper.py escanean TODO el
+  documento (comentarios incluidos), asi que cualquier literal de ejemplo aqui
+  se contaria como dato real y romperia los conteos. Los nombres y la estructura
+  se derivaron de catalog.csv (datos reales del scraper).
+-->
+<html>
+<head><title>MOUNTS Lascar timeseries</title></head>
+<body>
+<div id="graph"></div>
+<script>
+var graph = {
+  "data": [
+    {
+      "name": "swir",
+      "x": ["2026-01-05", "2026-01-10", "2026-01-15"],
+      "y": [3, 4, 12],
+      "text": [
+        "data_mounts/lascar/2026/lascar_20260105T143521_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260110T143522_B12B11B8A_nir.png",
+        "data_mounts/lascar/2026/lascar_20260115T143523_B12B11B8A_nir.png"
+      ]
+    },
+    {
+      "name": "so2",
+      "x": ["2026-01-05", "2026-01-06"],
+      "y": [120.5, 88.0],
+      "text": [
+        "data_mounts/lascar/2026/lascar_20260105_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20260106_SO2_PBL.png"
+      ]
+    },
+    {
+      "name": "coh_desc",
+      "x": ["2026-01-04"],
+      "y": [1500.0],
+      "text": [
+        "data_mounts/lascar/2026/lascar_20260104T095629_20260116T095630_VV_coh.png"
+      ]
+    }
+  ],
+  "layout": {"title": "Lascar"}
+};
+Plotly.newPlot("graph", graph.data, graph.layout);
+</script>
+</body>
+</html>

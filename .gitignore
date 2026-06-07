@@ -1,6 +1,7 @@
 data/
 __pycache__/
 *.pyc
+.pytest_cache/
 .env
 # latest/ NO ignorado — se commitea para GitHub Pages
 # mounts.db SI se commitea para que esté disponible via Pages
@@ -12,3 +13,5 @@ mounts.db-journal
 .cache/
 # Audit dump (research, no scope productivo)
 _audit/
+# Estado local de Claude Code (worktrees, settings locales) — no va al repo
+.claude/
