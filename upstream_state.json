@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-06-08T16:33:48.153911+00:00",
+  "checked_at": "2026-06-08T20:39:04.090947+00:00",
   "news_hash": "ad4239a094ae9b86",
   "about_hash": "0569c10d1433b53a",
   "citation": {
@@ -50,8 +50,10 @@
   ],
   "schemas": {
     "lascar": {
-      "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Read timed out. (read timeout=30)"
+      "valid": true,
+      "n_traces": 13,
+      "missing": [],
+      "new": []
     },
     "planchon-peteroa": {
       "valid": true,
