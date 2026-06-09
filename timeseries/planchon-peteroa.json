@@ -864,7 +864,8 @@
         "2026-05-29T14:27:11",
         "2026-06-01T14:37:41",
         "2026-06-03T14:27:09",
-        "2026-06-06T14:37:39"
+        "2026-06-06T14:37:39",
+        "2026-06-08T14:27:11"
       ],
       "y": [
         0.1,
@@ -1686,6 +1687,7 @@
         0.1,
         0.1,
         9.0,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -2588,15 +2590,16 @@
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260529T142711_B12B11B8A_nir.png",
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260601T143741_B12B11B8A_nir.png",
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260603T142709_B12B11B8A_nir.png",
-        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260606T143739_B12B11B8A_nir.png"
+        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260606T143739_B12B11B8A_nir.png",
+        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260608T142711_B12B11B8A_nir.png"
       ]
     },
     {
       "name": "tbar_nir",
       "x": [
-        "2026-06-06T14:37:39",
-        "2026-06-06T14:37:39",
-        "2026-06-06T14:37:39"
+        "2026-06-08T14:27:11",
+        "2026-06-08T14:27:11",
+        "2026-06-08T14:27:11"
       ],
       "y": [
         0.1,
@@ -5174,7 +5177,8 @@
         "2026-06-05T18:34:35",
         "2026-06-06T18:14:35",
         "2026-06-07T17:59:35",
-        "2026-06-07T19:39:35"
+        "2026-06-07T19:39:35",
+        "2026-06-08T19:19:35"
       ],
       "y": [
         0.1,
@@ -7722,6 +7726,7 @@
         0.1,
         0.1,
         30.0,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -10312,15 +10317,16 @@
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260605T1834_SO2_PBL.png",
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260606T1814_SO2_PBL.png",
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260607T1759_SO2_PBL.png",
-        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260607T1939_SO2_PBL.png"
+        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260607T1939_SO2_PBL.png",
+        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260608T1919_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-06-07T19:39:35",
-        "2026-06-07T19:39:35",
-        "2026-06-07T19:39:35"
+        "2026-06-08T19:19:35",
+        "2026-06-08T19:19:35",
+        "2026-06-08T19:19:35"
       ],
       "y": [
         0.1,
@@ -12364,5 +12370,5 @@
       "text": []
     }
   ],
-  "fetched_at": "2026-06-08T20:36:43.363908+00:00"
+  "fetched_at": "2026-06-09T04:39:06.143227+00:00"
 }
