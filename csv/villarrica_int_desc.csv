@@ -252,3 +252,4 @@ date,value,unit,product,sensor,image_path,image_url
 2026-05-05T09:57:54,0.0,placeholder,int_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260505T095754_VV_int.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20260505T095754_VV_int.png
 2026-05-17T09:57:53,0.0,placeholder,int_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260517T095753_VV_int.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20260517T095753_VV_int.png
 2026-05-29T09:57:53,0.0,placeholder,int_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260529T095753_VV_int.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20260529T095753_VV_int.png
+2026-06-10T09:57:52,0.0,placeholder,int_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260610T095752_VV_int.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20260610T095752_VV_int.png
