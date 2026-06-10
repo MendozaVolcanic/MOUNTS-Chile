@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-10T04:54:12.348388+00:00",
+  "generated_at": "2026-06-10T10:38:05.603642+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 15,
+  "count": 14,
   "alerts": [
     {
       "date": "2026-05-17T17:56:04",
@@ -123,18 +123,6 @@
       "volcano_key": "villarrica",
       "product": "SWIR",
       "unit": "S2Pix"
-    },
-    {
-      "date": "2026-05-11T09:56:28",
-      "value": 492233.0,
-      "baseline": 179545.5,
-      "zscore": 3.949271243811256,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Copahue",
-      "volcano_key": "copahue",
-      "product": "COH",
-      "unit": "Npix_coh<0.5"
     },
     {
       "date": "2026-05-17T14:37:39",
