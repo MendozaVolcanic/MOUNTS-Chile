@@ -1629,3 +1629,4 @@ date,value,unit,product,sensor,image_path,image_url
 2026-06-08T19:19:35,0.1,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20260608T1919_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260608T1919_SO2_PBL.png
 2026-06-09T18:59:36,0.1,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20260609T1859_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260609T1859_SO2_PBL.png
 2026-06-10T18:39:35,0.1,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20260610T1839_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260610T1839_SO2_PBL.png
+2026-06-11T18:19:35,0.1,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20260611T1819_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260611T1819_SO2_PBL.png
