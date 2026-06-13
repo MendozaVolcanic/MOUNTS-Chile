@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-13T09:40:54.147763+00:00",
+  "generated_at": "2026-06-13T14:32:11.635405+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 14,
+  "count": 12,
   "alerts": [
     {
       "date": "2026-05-17T17:56:04",
@@ -65,18 +65,6 @@
       "unit": "S2Pix"
     },
     {
-      "date": "2026-05-14T14:27:09",
-      "value": 4.0,
-      "baseline": 0.1,
-      "zscore": 7.8,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Nevados de Chillan",
-      "volcano_key": "nevados-de-chillan",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
-    {
       "date": "2026-05-21T14:28:11",
       "value": 4.0,
       "baseline": 0.1,
@@ -133,18 +121,6 @@
       "persistent": false,
       "volcano": "Nevados de Chillan",
       "volcano_key": "nevados-de-chillan",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
-    {
-      "date": "2026-05-14T14:27:09",
-      "value": 2.0,
-      "baseline": 0.1,
-      "zscore": 3.8,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Villarrica",
-      "volcano_key": "villarrica",
       "product": "SWIR",
       "unit": "S2Pix"
     },
