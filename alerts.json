@@ -1,21 +1,9 @@
 {
-  "generated_at": "2026-06-16T17:26:18.300409+00:00",
+  "generated_at": "2026-06-16T21:23:49.255221+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 10,
+  "count": 11,
   "alerts": [
-    {
-      "date": "2026-05-17T17:56:04",
-      "value": 175.3,
-      "baseline": 0.1,
-      "zscore": 350.40000000000003,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Lascar",
-      "volcano_key": "lascar",
-      "product": "SO2",
-      "unit": "tons"
-    },
     {
       "date": "2026-05-21T18:16:04",
       "value": 30.0,
@@ -47,6 +35,30 @@
       "zscore": 25.8,
       "run_length": 5,
       "persistent": true,
+      "volcano": "Villarrica",
+      "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-06-16T14:37:39",
+      "value": 6.0,
+      "baseline": 0.1,
+      "zscore": 11.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Nevados de Chillan",
+      "volcano_key": "nevados-de-chillan",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-06-16T14:37:39",
+      "value": 6.0,
+      "baseline": 0.1,
+      "zscore": 11.8,
+      "run_length": 1,
+      "persistent": false,
       "volcano": "Villarrica",
       "volcano_key": "villarrica",
       "product": "SWIR",
