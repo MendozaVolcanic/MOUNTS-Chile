@@ -4079,6 +4079,7 @@ date,volcano,value,unit,track,product,sensor,image_path
 2026-06-13T14:38:01,Nevados de Chillan,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/nevadoschillan/2026/nevadoschillan_20260613T143801_B12B11B8A_nir.png
 2026-06-13T14:38:01,Planchon-Peteroa,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260613T143801_B12B11B8A_nir.png
 2026-06-16T14:37:39,Copahue,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/copahue/2026/copahue_20260616T143739_B12B11B8A_nir.png
+2026-06-16T14:37:39,Lascar,1.0,S2Pix,,thermal_swir,Sentinel-2,data_mounts/lascar/2026/lascar_20260616T143739_B12B11B8A_nir.png
 2026-06-16T14:37:39,Nevados de Chillan,6.0,S2Pix,,thermal_swir,Sentinel-2,data_mounts/nevadoschillan/2026/nevadoschillan_20260616T143739_B12B11B8A_nir.png
 2026-06-16T14:37:39,Planchon-Peteroa,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260616T143739_B12B11B8A_nir.png
 2026-06-16T14:37:39,Villarrica,6.0,S2Pix,,thermal_swir,Sentinel-2,data_mounts/villarrica/2026/villarrica_20260616T143739_B12B11B8A_nir.png
