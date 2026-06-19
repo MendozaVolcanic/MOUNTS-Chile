@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-06-19T05:30:21.138634+00:00",
+  "checked_at": "2026-06-19T11:03:00.637783+00:00",
   "news_hash": "ad4239a094ae9b86",
   "about_hash": "0569c10d1433b53a",
   "citation": {
@@ -82,28 +82,20 @@
       "new": []
     },
     "nevados-de-chillan": {
-      "valid": true,
-      "n_traces": 13,
-      "missing": [],
-      "new": []
+      "valid": false,
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Read timed out. (read timeout=30)"
     },
     "copahue": {
-      "valid": true,
-      "n_traces": 13,
-      "missing": [],
-      "new": []
+      "valid": false,
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Read timed out. (read timeout=30)"
     },
     "llaima": {
-      "valid": true,
-      "n_traces": 13,
-      "missing": [],
-      "new": []
+      "valid": false,
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Read timed out. (read timeout=30)"
     },
     "villarrica": {
-      "valid": true,
-      "n_traces": 13,
-      "missing": [],
-      "new": []
+      "valid": false,
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Read timed out. (read timeout=30)"
     }
   }
 }
