@@ -7,38 +7,38 @@
     "old_date": "20260613"
   },
   "planchon-peteroa": {
-    "new": "latest/planchon-peteroa/diff/new_planchonpeteroa_20260616T143739_B12B11B8A_nir.png",
-    "old": "latest/planchon-peteroa/diff/old_planchonpeteroa_20260613T143801_B12B11B8A_nir.png",
+    "new": "latest/planchon-peteroa/diff/new_planchonpeteroa_20260618T142711_B12B11B8A_nir.png",
+    "old": "latest/planchon-peteroa/diff/old_planchonpeteroa_20260616T143739_B12B11B8A_nir.png",
     "diff": "latest/planchon-peteroa/diff/diff.png",
-    "new_date": "20260616",
-    "old_date": "20260613"
+    "new_date": "20260618",
+    "old_date": "20260616"
   },
   "nevados-de-chillan": {
-    "new": "latest/nevados-de-chillan/diff/new_nevadoschillan_20260616T143739_B12B11B8A_nir.png",
-    "old": "latest/nevados-de-chillan/diff/old_nevadoschillan_20260613T143801_B12B11B8A_nir.png",
+    "new": "latest/nevados-de-chillan/diff/new_nevadoschillan_20260618T142711_B12B11B8A_nir.png",
+    "old": "latest/nevados-de-chillan/diff/old_nevadoschillan_20260616T143739_B12B11B8A_nir.png",
     "diff": "latest/nevados-de-chillan/diff/diff.png",
-    "new_date": "20260616",
-    "old_date": "20260613"
+    "new_date": "20260618",
+    "old_date": "20260616"
   },
   "copahue": {
-    "new": "latest/copahue/diff/new_copahue_20260616T143739_B12B11B8A_nir.png",
-    "old": "latest/copahue/diff/old_copahue_20260613T143801_B12B11B8A_nir.png",
+    "new": "latest/copahue/diff/new_copahue_20260618T142711_B12B11B8A_nir.png",
+    "old": "latest/copahue/diff/old_copahue_20260616T143739_B12B11B8A_nir.png",
     "diff": "latest/copahue/diff/diff.png",
-    "new_date": "20260616",
-    "old_date": "20260613"
+    "new_date": "20260618",
+    "old_date": "20260616"
   },
   "llaima": {
-    "new": "latest/llaima/diff/new_llaima_20260613T142709_B12B11B8A_nir.png",
-    "old": "latest/llaima/diff/old_llaima_20260610T142811_B12B11B8A_nir.png",
+    "new": "latest/llaima/diff/new_llaima_20260618T142711_B12B11B8A_nir.png",
+    "old": "latest/llaima/diff/old_llaima_20260613T142709_B12B11B8A_nir.png",
     "diff": "latest/llaima/diff/diff.png",
-    "new_date": "20260613",
-    "old_date": "20260610"
+    "new_date": "20260618",
+    "old_date": "20260613"
   },
   "villarrica": {
-    "new": "latest/villarrica/diff/new_villarrica_20260616T143739_B12B11B8A_nir.png",
-    "old": "latest/villarrica/diff/old_villarrica_20260613T142709_B12B11B8A_nir.png",
+    "new": "latest/villarrica/diff/new_villarrica_20260618T142711_B12B11B8A_nir.png",
+    "old": "latest/villarrica/diff/old_villarrica_20260616T143739_B12B11B8A_nir.png",
     "diff": "latest/villarrica/diff/diff.png",
-    "new_date": "20260616",
-    "old_date": "20260613"
+    "new_date": "20260618",
+    "old_date": "20260616"
   }
 }

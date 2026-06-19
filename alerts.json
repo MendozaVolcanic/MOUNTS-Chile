@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-18T20:42:45.658539+00:00",
+  "generated_at": "2026-06-19T05:30:25.128658+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 10,
+  "count": 12,
   "alerts": [
     {
       "date": "2026-05-21T18:16:04",
@@ -65,12 +65,36 @@
       "unit": "S2Pix"
     },
     {
+      "date": "2026-06-18T14:27:11",
+      "value": 4.0,
+      "baseline": 0.1,
+      "zscore": 7.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Copahue",
+      "volcano_key": "copahue",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
       "date": "2026-05-21T14:28:11",
       "value": 4.0,
       "baseline": 0.1,
       "zscore": 7.8,
       "run_length": 4,
       "persistent": true,
+      "volcano": "Villarrica",
+      "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-06-18T14:27:11",
+      "value": 4.0,
+      "baseline": 0.1,
+      "zscore": 7.8,
+      "run_length": 2,
+      "persistent": false,
       "volcano": "Villarrica",
       "volcano_key": "villarrica",
       "product": "SWIR",
