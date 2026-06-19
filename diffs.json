@@ -6,6 +6,13 @@
     "new_date": "20260616",
     "old_date": "20260613"
   },
+  "planchon-peteroa": {
+    "new": "latest/planchon-peteroa/diff/new_planchonpeteroa_20260618T142711_B12B11B8A_nir.png",
+    "old": "latest/planchon-peteroa/diff/old_planchonpeteroa_20260616T143739_B12B11B8A_nir.png",
+    "diff": "latest/planchon-peteroa/diff/diff.png",
+    "new_date": "20260618",
+    "old_date": "20260616"
+  },
   "nevados-de-chillan": {
     "new": "latest/nevados-de-chillan/diff/new_nevadoschillan_20260618T142711_B12B11B8A_nir.png",
     "old": "latest/nevados-de-chillan/diff/old_nevadoschillan_20260616T143739_B12B11B8A_nir.png",
