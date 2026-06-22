@@ -866,3 +866,4 @@ date,value,unit,product,sensor,image_path,image_url
 2026-06-13T14:38:01,0.1,S2Pix,thermal_swir,Sentinel-2,data_mounts/copahue/2026/copahue_20260613T143801_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260613T143801_B12B11B8A_nir.png
 2026-06-16T14:37:39,0.1,S2Pix,thermal_swir,Sentinel-2,data_mounts/copahue/2026/copahue_20260616T143739_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260616T143739_B12B11B8A_nir.png
 2026-06-18T14:27:11,4.0,S2Pix,thermal_swir,Sentinel-2,data_mounts/copahue/2026/copahue_20260618T142711_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260618T142711_B12B11B8A_nir.png
+2026-06-21T14:37:41,0.1,S2Pix,thermal_swir,Sentinel-2,data_mounts/copahue/2026/copahue_20260621T143741_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260621T143741_B12B11B8A_nir.png
