@@ -116,3 +116,4 @@ date,value,unit,product,sensor,image_path,image_url
 2026-05-29T09:57:28,0.0,placeholder,int_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260529T095728_VV_int.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260529T095728_VV_int.png
 2026-06-04T09:56:30,0.0,placeholder,int_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260604T095630_VV_int.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260604T095630_VV_int.png
 2026-06-10T09:57:27,0.0,placeholder,int_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260610T095727_VV_int.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260610T095727_VV_int.png
+2026-06-22T09:57:27,0.0,placeholder,int_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260622T095727_VV_int.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260622T095727_VV_int.png
