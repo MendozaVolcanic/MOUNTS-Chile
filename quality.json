@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T04:58:07.471667+00:00",
+  "generated_at": "2026-07-01T10:19:40.328586+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -291,11 +291,11 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 871,
+        "n_observations": 872,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-06-28T14:27:11",
-        "total_span_days": 2089,
-        "coverage_pct": 208.5,
+        "last_date": "2026-06-30T14:28:11",
+        "total_span_days": 2092,
+        "coverage_pct": 208.4,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
