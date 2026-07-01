@@ -1275,3 +1275,4 @@ date,volcano,value,unit,track,product,sensor,image_path
 2026-06-22T09:57:27,Llaima,538416.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260610T095727_20260622T095727_VV_coh.png
 2026-06-27T10:01:32,Lascar,12000.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260615T100133_20260627T100132_VV_coh.png
 2026-06-28T10:00:35,Lascar,202327.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260627T100132_20260628T100035_VV_coh.png
+2026-06-30T23:26:54,Planchon-Peteroa,509383.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260617T232729_20260630T232654_VV_coh.png

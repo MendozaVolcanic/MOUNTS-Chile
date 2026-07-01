@@ -4108,3 +4108,5 @@ date,volcano,value,unit,track,product,sensor,image_path
 2026-06-28T14:27:11,Nevados de Chillan,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/nevadoschillan/2026/nevadoschillan_20260628T142711_B12B11B8A_nir.png
 2026-06-28T14:27:11,Planchon-Peteroa,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260628T142711_B12B11B8A_nir.png
 2026-06-28T14:27:11,Villarrica,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/villarrica/2026/villarrica_20260628T142711_B12B11B8A_nir.png
+2026-06-30T14:28:11,Llaima,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/llaima/2026/llaima_20260630T142811_B12B11B8A_nir.png
+2026-06-30T14:28:11,Villarrica,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/villarrica/2026/villarrica_20260630T142811_B12B11B8A_nir.png

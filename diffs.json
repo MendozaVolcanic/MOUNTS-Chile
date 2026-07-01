@@ -28,17 +28,17 @@
     "old_date": "20260626"
   },
   "llaima": {
-    "new": "latest/llaima/diff/new_llaima_20260628T142711_B12B11B8A_nir.png",
-    "old": "latest/llaima/diff/old_llaima_20260623T142709_B12B11B8A_nir.png",
+    "new": "latest/llaima/diff/new_llaima_20260630T142811_B12B11B8A_nir.png",
+    "old": "latest/llaima/diff/old_llaima_20260628T142711_B12B11B8A_nir.png",
     "diff": "latest/llaima/diff/diff.png",
-    "new_date": "20260628",
-    "old_date": "20260623"
+    "new_date": "20260630",
+    "old_date": "20260628"
   },
   "villarrica": {
-    "new": "latest/villarrica/diff/new_villarrica_20260628T142711_B12B11B8A_nir.png",
-    "old": "latest/villarrica/diff/old_villarrica_20260626T143739_B12B11B8A_nir.png",
+    "new": "latest/villarrica/diff/new_villarrica_20260630T142811_B12B11B8A_nir.png",
+    "old": "latest/villarrica/diff/old_villarrica_20260628T142711_B12B11B8A_nir.png",
     "diff": "latest/villarrica/diff/diff.png",
-    "new_date": "20260628",
-    "old_date": "20260626"
+    "new_date": "20260630",
+    "old_date": "20260628"
   }
 }
