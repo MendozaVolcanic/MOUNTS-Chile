@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-03T09:39:54.257267+00:00",
+  "generated_at": "2026-07-03T14:36:28.412330+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 10,
+  "count": 9,
   "alerts": [
     {
       "date": "2026-06-09T19:04:35",
@@ -95,18 +95,6 @@
       "zscore": 6.151655206102281,
       "run_length": 1,
       "persistent": false,
-      "volcano": "Lascar",
-      "volcano_key": "lascar",
-      "product": "COH",
-      "unit": "Npix_coh<0.5"
-    },
-    {
-      "date": "2026-06-03T10:01:34",
-      "value": 168749.0,
-      "baseline": 38613.0,
-      "zscore": 5.9482585245452055,
-      "run_length": 3,
-      "persistent": true,
       "volcano": "Lascar",
       "volcano_key": "lascar",
       "product": "COH",
