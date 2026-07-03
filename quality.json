@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T14:36:35.295327+00:00",
+  "generated_at": "2026-07-03T19:54:56.202433+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,11 +109,11 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 872,
+        "n_observations": 873,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-01T14:37:41",
-        "total_span_days": 2093,
-        "coverage_pct": 208.3,
+        "last_date": "2026-07-03T14:27:09",
+        "total_span_days": 2094,
+        "coverage_pct": 208.5,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -291,11 +291,11 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 873,
+        "n_observations": 874,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-01T14:37:41",
-        "total_span_days": 2093,
-        "coverage_pct": 208.6,
+        "last_date": "2026-07-03T14:27:09",
+        "total_span_days": 2094,
+        "coverage_pct": 208.7,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -376,11 +376,11 @@
     },
     "llaima": {
       "swir": {
-        "n_observations": 235,
+        "n_observations": 236,
         "first_date": "2023-01-25T14:27:11",
-        "last_date": "2026-06-30T14:28:11",
-        "total_span_days": 1252,
-        "coverage_pct": 93.8,
+        "last_date": "2026-07-03T14:27:09",
+        "total_span_days": 1254,
+        "coverage_pct": 94.1,
         "n_gaps": 1,
         "largest_gap_days": 174,
         "gaps_top5": [
@@ -457,11 +457,11 @@
     },
     "villarrica": {
       "swir": {
-        "n_observations": 963,
+        "n_observations": 964,
         "first_date": "2020-01-19T14:36:59",
-        "last_date": "2026-07-01T14:37:41",
-        "total_span_days": 2355,
-        "coverage_pct": 204.5,
+        "last_date": "2026-07-03T14:27:09",
+        "total_span_days": 2356,
+        "coverage_pct": 204.6,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
