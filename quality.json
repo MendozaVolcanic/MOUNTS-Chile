@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T04:07:54.447244+00:00",
+  "generated_at": "2026-07-04T09:04:40.562714+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,11 +109,11 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 873,
+        "n_observations": 874,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-03T14:27:09",
-        "total_span_days": 2094,
-        "coverage_pct": 208.5,
+        "last_date": "2026-07-03T14:38:01",
+        "total_span_days": 2095,
+        "coverage_pct": 208.6,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -180,11 +180,11 @@
     "laguna-del-maule": {},
     "nevados-de-chillan": {
       "swir": {
-        "n_observations": 732,
+        "n_observations": 733,
         "first_date": "2018-08-17T14:37:39",
-        "last_date": "2026-07-01T14:37:41",
-        "total_span_days": 2875,
-        "coverage_pct": 127.3,
+        "last_date": "2026-07-03T14:38:01",
+        "total_span_days": 2877,
+        "coverage_pct": 127.4,
         "n_gaps": 3,
         "largest_gap_days": 754,
         "gaps_top5": [
