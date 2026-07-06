@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T15:58:26.656685+00:00",
+  "generated_at": "2026-07-06T20:17:59.775715+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,11 +109,11 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 874,
+        "n_observations": 875,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-03T14:38:01",
-        "total_span_days": 2095,
-        "coverage_pct": 208.6,
+        "last_date": "2026-07-06T14:37:39",
+        "total_span_days": 2098,
+        "coverage_pct": 208.5,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -180,10 +180,10 @@
     "laguna-del-maule": {},
     "nevados-de-chillan": {
       "swir": {
-        "n_observations": 733,
+        "n_observations": 734,
         "first_date": "2018-08-17T14:37:39",
-        "last_date": "2026-07-03T14:38:01",
-        "total_span_days": 2877,
+        "last_date": "2026-07-06T14:37:39",
+        "total_span_days": 2880,
         "coverage_pct": 127.4,
         "n_gaps": 3,
         "largest_gap_days": 754,
@@ -291,11 +291,11 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 874,
+        "n_observations": 876,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-03T14:27:09",
-        "total_span_days": 2094,
-        "coverage_pct": 208.7,
+        "last_date": "2026-07-06T14:37:39",
+        "total_span_days": 2098,
+        "coverage_pct": 208.8,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -457,11 +457,11 @@
     },
     "villarrica": {
       "swir": {
-        "n_observations": 964,
+        "n_observations": 966,
         "first_date": "2020-01-19T14:36:59",
-        "last_date": "2026-07-03T14:27:09",
-        "total_span_days": 2356,
-        "coverage_pct": 204.6,
+        "last_date": "2026-07-06T14:37:39",
+        "total_span_days": 2360,
+        "coverage_pct": 204.7,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
