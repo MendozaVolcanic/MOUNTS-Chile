@@ -1,10 +1,10 @@
 {
   "lascar": {
-    "new": "latest/lascar/diff/new_lascar_20260703T143801_B12B11B8A_nir.png",
-    "old": "latest/lascar/diff/old_lascar_20260701T143741_B12B11B8A_nir.png",
+    "new": "latest/lascar/diff/new_lascar_20260706T143739_B12B11B8A_nir.png",
+    "old": "latest/lascar/diff/old_lascar_20260703T143801_B12B11B8A_nir.png",
     "diff": "latest/lascar/diff/diff.png",
-    "new_date": "20260703",
-    "old_date": "20260701"
+    "new_date": "20260706",
+    "old_date": "20260703"
   },
   "planchon-peteroa": {
     "new": "latest/planchon-peteroa/diff/new_planchonpeteroa_20260706T143739_B12B11B8A_nir.png",
