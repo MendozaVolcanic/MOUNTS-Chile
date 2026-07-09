@@ -1,21 +1,9 @@
 {
-  "generated_at": "2026-07-09T15:39:21.130232+00:00",
+  "generated_at": "2026-07-09T20:11:08.881073+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 10,
+  "count": 9,
   "alerts": [
-    {
-      "date": "2026-06-09T19:04:35",
-      "value": 17.3,
-      "baseline": 0.1,
-      "zscore": 34.4,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Lascar",
-      "volcano_key": "lascar",
-      "product": "SO2",
-      "unit": "tons"
-    },
     {
       "date": "2026-06-16T14:37:39",
       "value": 6.0,
