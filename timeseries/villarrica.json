@@ -970,7 +970,8 @@
         "2026-07-01T14:37:41",
         "2026-07-03T14:27:09",
         "2026-07-03T14:38:01",
-        "2026-07-06T14:37:39"
+        "2026-07-06T14:37:39",
+        "2026-07-08T14:27:11"
       ],
       "y": [
         10.0,
@@ -1938,6 +1939,7 @@
         0.1,
         0.1,
         4.0,
+        0.1,
         0.1
       ],
       "text": [
@@ -2906,15 +2908,16 @@
         "data_mounts/villarrica/2026/villarrica_20260701T143741_B12B11B8A_nir.png",
         "data_mounts/villarrica/2026/villarrica_20260703T142709_B12B11B8A_nir.png",
         "data_mounts/villarrica/2026/villarrica_20260703T143801_B12B11B8A_nir.png",
-        "data_mounts/villarrica/2026/villarrica_20260706T143739_B12B11B8A_nir.png"
+        "data_mounts/villarrica/2026/villarrica_20260706T143739_B12B11B8A_nir.png",
+        "data_mounts/villarrica/2026/villarrica_20260708T142711_B12B11B8A_nir.png"
       ]
     },
     {
       "name": "tbar_nir",
       "x": [
-        "2026-07-06T14:37:39",
-        "2026-07-06T14:37:39",
-        "2026-07-06T14:37:39"
+        "2026-07-08T14:27:11",
+        "2026-07-08T14:27:11",
+        "2026-07-08T14:27:11"
       ],
       "y": [
         0.1,
@@ -6055,7 +6058,9 @@
         "2026-07-04T19:32:35",
         "2026-07-05T19:12:34",
         "2026-07-06T18:52:35",
-        "2026-07-07T18:32:35"
+        "2026-07-07T18:32:35",
+        "2026-07-08T18:18:06",
+        "2026-07-08T19:58:05"
       ],
       "y": [
         0.1,
@@ -8147,6 +8152,8 @@
         0.1,
         0.1,
         61.9,
+        0.1,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -12319,15 +12326,17 @@
         "data_mounts/villarrica/2026/villarrica_20260704T1932_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260705T1912_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260706T1852_SO2_PBL.png",
-        "data_mounts/villarrica/2026/villarrica_20260707T1832_SO2_PBL.png"
+        "data_mounts/villarrica/2026/villarrica_20260707T1832_SO2_PBL.png",
+        "data_mounts/villarrica/2026/villarrica_20260708T1818_SO2_PBL.png",
+        "data_mounts/villarrica/2026/villarrica_20260708T1958_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-07-07T18:32:35",
-        "2026-07-07T18:32:35",
-        "2026-07-07T18:32:35"
+        "2026-07-08T19:58:05",
+        "2026-07-08T19:58:05",
+        "2026-07-08T19:58:05"
       ],
       "y": [
         0.1,
@@ -15505,5 +15514,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-07-08T19:59:10.565510+00:00"
+  "fetched_at": "2026-07-09T04:18:17.610996+00:00"
 }
