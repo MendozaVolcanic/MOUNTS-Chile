@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T14:16:34.618149+00:00",
+  "generated_at": "2026-07-15T19:40:58.157333+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -119,9 +119,9 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2610,
+        "n_observations": 2611,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-07-14T19:44:07",
+        "last_date": "2026-07-15T17:45:06",
         "total_span_days": 2107,
         "coverage_pct": 123.9,
         "n_gaps": 3,
