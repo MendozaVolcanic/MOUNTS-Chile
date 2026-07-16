@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T14:28:27.799718+00:00",
+  "generated_at": "2026-07-16T19:38:51.024162+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,11 +109,11 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 878,
+        "n_observations": 879,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-13T14:27:09",
-        "total_span_days": 2104,
-        "coverage_pct": 208.7,
+        "last_date": "2026-07-16T14:37:39",
+        "total_span_days": 2108,
+        "coverage_pct": 208.5,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -457,11 +457,11 @@
     },
     "villarrica": {
       "swir": {
-        "n_observations": 969,
+        "n_observations": 970,
         "first_date": "2020-01-19T14:36:59",
-        "last_date": "2026-07-13T14:27:09",
-        "total_span_days": 2366,
-        "coverage_pct": 204.8,
+        "last_date": "2026-07-16T14:37:39",
+        "total_span_days": 2370,
+        "coverage_pct": 204.6,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
