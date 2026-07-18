@@ -15166,6 +15166,7 @@ date,volcano,value,unit,track,product,sensor,image_path
 2026-07-16T19:05:06,Planchon-Peteroa,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260716T1905_SO2_PBL.png
 2026-07-16T19:05:06,Villarrica,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20260716T1905_SO2_PBL.png
 2026-07-16T19:10:05,Lascar,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20260716T1910_SO2_PBL.png
+2026-07-17T18:50:05,Copahue,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20260717T1850_SO2_PBL.png
 2026-07-17T18:50:05,Lascar,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20260717T1850_SO2_PBL.png
 2026-07-17T18:50:05,Llaima,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20260717T1850_SO2_PBL.png
 2026-07-17T18:50:05,Nevados de Chillan,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/nevadoschillan/2026/nevadoschillan_20260717T1850_SO2_PBL.png
