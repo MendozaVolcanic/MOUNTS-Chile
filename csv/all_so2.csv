@@ -15178,3 +15178,5 @@ date,volcano,value,unit,track,product,sensor,image_path
 2026-07-18T18:29:34,Planchon-Peteroa,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260718T1829_SO2_PBL.png
 2026-07-18T18:29:34,Villarrica,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20260718T1829_SO2_PBL.png
 2026-07-18T18:34:34,Lascar,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20260718T1834_SO2_PBL.png
+2026-07-19T18:09:35,Llaima,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20260719T1809_SO2_PBL.png
+2026-07-19T18:09:35,Planchon-Peteroa,0.1,tons,,so2_mass,Sentinel-5P,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260719T1809_SO2_PBL.png
