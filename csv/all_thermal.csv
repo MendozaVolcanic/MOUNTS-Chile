@@ -4161,6 +4161,8 @@ date,volcano,value,unit,track,product,sensor,image_path
 2026-07-21T14:37:41,Planchon-Peteroa,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260721T143741_B12B11B8A_nir.png
 2026-07-21T14:37:41,Villarrica,2.0,S2Pix,,thermal_swir,Sentinel-2,data_mounts/villarrica/2026/villarrica_20260721T143741_B12B11B8A_nir.png
 2026-07-23T14:27:09,Copahue,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/copahue/2026/copahue_20260723T142709_B12B11B8A_nir.png
+2026-07-23T14:27:09,Llaima,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/llaima/2026/llaima_20260723T142709_B12B11B8A_nir.png
 2026-07-23T14:27:09,Nevados de Chillan,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/nevadoschillan/2026/nevadoschillan_20260723T142709_B12B11B8A_nir.png
 2026-07-23T14:27:09,Planchon-Peteroa,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260723T142709_B12B11B8A_nir.png
 2026-07-23T14:27:09,Villarrica,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/villarrica/2026/villarrica_20260723T142709_B12B11B8A_nir.png
+2026-07-23T14:38:01,Lascar,0.1,S2Pix,,thermal_swir,Sentinel-2,data_mounts/lascar/2026/lascar_20260723T143801_B12B11B8A_nir.png
