@@ -1,33 +1,59 @@
 {
-  "checked_at": "2026-07-27T04:07:02.116341+00:00",
+  "checked_at": "2026-07-27T10:13:44.936639+00:00",
   "schemas": {
     "lascar": {
       "valid": false,
       "reason": "500 Server Error: Internal Server Error for url: http://www.mounts-project.com/timeseries/355100"
     },
     "planchon-peteroa": {
-      "valid": false,
-      "reason": "500 Server Error: Internal Server Error for url: http://www.mounts-project.com/timeseries/357040"
+      "valid": true,
+      "n_traces": 13,
+      "missing": [],
+      "new": []
     },
     "laguna-del-maule": {
       "valid": false,
-      "reason": "500 Server Error: Internal Server Error for url: http://www.mounts-project.com/timeseries/357061"
+      "n_traces": 0,
+      "missing": [
+        "coh_asc",
+        "coh_desc",
+        "def_asc",
+        "def_desc",
+        "int_asc",
+        "int_desc",
+        "so2",
+        "swir",
+        "tbar_coh",
+        "tbar_disp",
+        "tbar_int",
+        "tbar_nir",
+        "tbar_so2"
+      ],
+      "new": []
     },
     "nevados-de-chillan": {
-      "valid": false,
-      "reason": "500 Server Error: Internal Server Error for url: http://www.mounts-project.com/timeseries/357070"
+      "valid": true,
+      "n_traces": 13,
+      "missing": [],
+      "new": []
     },
     "copahue": {
-      "valid": false,
-      "reason": "500 Server Error: Internal Server Error for url: http://www.mounts-project.com/timeseries/357090"
+      "valid": true,
+      "n_traces": 13,
+      "missing": [],
+      "new": []
     },
     "llaima": {
-      "valid": false,
-      "reason": "500 Server Error: Internal Server Error for url: http://www.mounts-project.com/timeseries/357110"
+      "valid": true,
+      "n_traces": 13,
+      "missing": [],
+      "new": []
     },
     "villarrica": {
-      "valid": false,
-      "reason": "500 Server Error: Internal Server Error for url: http://www.mounts-project.com/timeseries/357120"
+      "valid": true,
+      "n_traces": 13,
+      "missing": [],
+      "new": []
     }
   }
 }
