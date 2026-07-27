@@ -1,9 +1,16 @@
 {
+  "lascar": {
+    "new": "latest/lascar/diff/new_lascar_20260726T143749_B12B11B8A_nir.png",
+    "old": "latest/lascar/diff/old_lascar_20260723T143801_B12B11B8A_nir.png",
+    "diff": "latest/lascar/diff/diff.png",
+    "new_date": "20260726",
+    "old_date": "20260723"
+  },
   "planchon-peteroa": {
-    "new": "latest/planchon-peteroa/diff/new_planchonpeteroa_20260723T143801_B12B11B8A_nir.png",
-    "old": "latest/planchon-peteroa/diff/old_planchonpeteroa_20260723T142709_B12B11B8A_nir.png",
+    "new": "latest/planchon-peteroa/diff/new_planchonpeteroa_20260726T143749_B12B11B8A_nir.png",
+    "old": "latest/planchon-peteroa/diff/old_planchonpeteroa_20260723T143801_B12B11B8A_nir.png",
     "diff": "latest/planchon-peteroa/diff/diff.png",
-    "new_date": "20260723",
+    "new_date": "20260726",
     "old_date": "20260723"
   },
   "nevados-de-chillan": {
