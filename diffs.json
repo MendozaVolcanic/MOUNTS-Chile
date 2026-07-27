@@ -14,17 +14,17 @@
     "old_date": "20260723"
   },
   "nevados-de-chillan": {
-    "new": "latest/nevados-de-chillan/diff/new_nevadoschillan_20260723T143801_B12B11B8A_nir.png",
-    "old": "latest/nevados-de-chillan/diff/old_nevadoschillan_20260723T142709_B12B11B8A_nir.png",
+    "new": "latest/nevados-de-chillan/diff/new_nevadoschillan_20260726T143749_B12B11B8A_nir.png",
+    "old": "latest/nevados-de-chillan/diff/old_nevadoschillan_20260723T143801_B12B11B8A_nir.png",
     "diff": "latest/nevados-de-chillan/diff/diff.png",
-    "new_date": "20260723",
+    "new_date": "20260726",
     "old_date": "20260723"
   },
   "copahue": {
-    "new": "latest/copahue/diff/new_copahue_20260723T143801_B12B11B8A_nir.png",
-    "old": "latest/copahue/diff/old_copahue_20260723T142709_B12B11B8A_nir.png",
+    "new": "latest/copahue/diff/new_copahue_20260726T143749_B12B11B8A_nir.png",
+    "old": "latest/copahue/diff/old_copahue_20260723T143801_B12B11B8A_nir.png",
     "diff": "latest/copahue/diff/diff.png",
-    "new_date": "20260723",
+    "new_date": "20260726",
     "old_date": "20260723"
   },
   "llaima": {

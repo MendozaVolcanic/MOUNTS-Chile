@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T15:20:25.620925+00:00",
+  "generated_at": "2026-07-27T20:00:08.692030+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -180,10 +180,10 @@
     "laguna-del-maule": {},
     "nevados-de-chillan": {
       "swir": {
-        "n_observations": 742,
+        "n_observations": 743,
         "first_date": "2018-08-17T14:37:39",
-        "last_date": "2026-07-23T14:38:01",
-        "total_span_days": 2897,
+        "last_date": "2026-07-26T14:37:49",
+        "total_span_days": 2900,
         "coverage_pct": 128.1,
         "n_gaps": 3,
         "largest_gap_days": 754,
@@ -206,10 +206,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2689,
+        "n_observations": 2692,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-07-24T18:19:34",
-        "total_span_days": 2117,
+        "last_date": "2026-07-26T19:19:35",
+        "total_span_days": 2119,
         "coverage_pct": 127.0,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -291,20 +291,20 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 884,
+        "n_observations": 885,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-23T14:38:01",
-        "total_span_days": 2115,
-        "coverage_pct": 209.0,
+        "last_date": "2026-07-26T14:37:49",
+        "total_span_days": 2118,
+        "coverage_pct": 208.9,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2681,
+        "n_observations": 2682,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-07-25T19:39:34",
-        "total_span_days": 2118,
+        "last_date": "2026-07-26T19:19:35",
+        "total_span_days": 2119,
         "coverage_pct": 126.6,
         "n_gaps": 2,
         "largest_gap_days": 10,
