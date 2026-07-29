@@ -1286,3 +1286,6 @@ date,volcano,value,unit,track,product,sensor,image_path
 2026-07-17T09:56:29,Llaima,537610.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260705T095629_20260717T095629_VV_coh.png
 2026-07-22T10:00:37,Lascar,123514.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260710T100036_20260722T100037_VV_coh.png
 2026-07-24T23:26:55,Planchon-Peteroa,514194.0,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260712T232655_20260724T232655_VV_coh.png
+2026-07-29T09:56:05,Nevados de Chillan,530221.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2026/nevadoschillan_20260717T095604_20260729T095605_VV_coh.png
+2026-07-29T09:56:30,Copahue,525958.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260717T095629_20260729T095630_VV_coh.png
+2026-07-29T09:56:30,Llaima,480518.0,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260717T095629_20260729T095630_VV_coh.png
