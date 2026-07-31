@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T03:57:02.264133+00:00",
+  "generated_at": "2026-07-31T09:22:28.880838+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,10 +109,10 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 885,
+        "n_observations": 886,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-28T14:27:11",
-        "total_span_days": 2119,
+        "last_date": "2026-07-30T14:28:11",
+        "total_span_days": 2122,
         "coverage_pct": 208.8,
         "n_gaps": 0,
         "largest_gap_days": 0,
@@ -180,11 +180,11 @@
     "laguna-del-maule": {},
     "nevados-de-chillan": {
       "swir": {
-        "n_observations": 744,
+        "n_observations": 745,
         "first_date": "2018-08-17T14:37:39",
-        "last_date": "2026-07-28T14:27:11",
-        "total_span_days": 2901,
-        "coverage_pct": 128.2,
+        "last_date": "2026-07-30T14:28:11",
+        "total_span_days": 2903,
+        "coverage_pct": 128.3,
         "n_gaps": 3,
         "largest_gap_days": 754,
         "gaps_top5": [
@@ -291,11 +291,11 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 886,
+        "n_observations": 887,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-07-28T14:27:11",
-        "total_span_days": 2119,
-        "coverage_pct": 209.1,
+        "last_date": "2026-07-30T14:28:11",
+        "total_span_days": 2122,
+        "coverage_pct": 209.0,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -376,11 +376,11 @@
     },
     "llaima": {
       "swir": {
-        "n_observations": 241,
+        "n_observations": 242,
         "first_date": "2023-01-25T14:27:11",
-        "last_date": "2026-07-28T14:27:11",
-        "total_span_days": 1280,
-        "coverage_pct": 94.1,
+        "last_date": "2026-07-30T14:28:11",
+        "total_span_days": 1282,
+        "coverage_pct": 94.4,
         "n_gaps": 1,
         "largest_gap_days": 174,
         "gaps_top5": [
@@ -457,11 +457,11 @@
     },
     "villarrica": {
       "swir": {
-        "n_observations": 975,
+        "n_observations": 976,
         "first_date": "2020-01-19T14:36:59",
-        "last_date": "2026-07-28T14:27:11",
-        "total_span_days": 2381,
-        "coverage_pct": 204.7,
+        "last_date": "2026-07-30T14:28:11",
+        "total_span_days": 2383,
+        "coverage_pct": 204.8,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
