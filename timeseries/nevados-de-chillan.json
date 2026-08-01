@@ -749,7 +749,8 @@
         "2026-07-23T14:38:01",
         "2026-07-26T14:37:49",
         "2026-07-28T14:27:11",
-        "2026-07-30T14:28:11"
+        "2026-07-30T14:28:11",
+        "2026-07-31T14:37:41"
       ],
       "y": [
         0.1,
@@ -1488,6 +1489,7 @@
         0.1,
         0.1,
         7.0,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -2243,15 +2245,16 @@
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260723T143801_B12B11B8A_nir.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260726T143749_B12B11B8A_nir.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260728T142711_B12B11B8A_nir.png",
-        "data_mounts/nevadoschillan/2026/nevadoschillan_20260730T142811_B12B11B8A_nir.png"
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20260730T142811_B12B11B8A_nir.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20260731T143741_B12B11B8A_nir.png"
       ]
     },
     {
       "name": "tbar_nir",
       "x": [
-        "2026-07-30T14:28:11",
-        "2026-07-30T14:28:11",
-        "2026-07-30T14:28:11"
+        "2026-07-31T14:37:41",
+        "2026-07-31T14:37:41",
+        "2026-07-31T14:37:41"
       ],
       "y": [
         0.1,
@@ -4959,7 +4962,8 @@
         "2026-07-28T18:44:34",
         "2026-07-29T18:24:34",
         "2026-07-30T18:04:34",
-        "2026-07-30T19:44:34"
+        "2026-07-30T19:44:34",
+        "2026-07-31T19:25:21"
       ],
       "y": [
         0.1,
@@ -5344,6 +5348,7 @@
         0.1,
         0.1,
         669.0,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -10357,15 +10362,16 @@
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260728T1844_SO2_PBL.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260729T1824_SO2_PBL.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260730T1804_SO2_PBL.png",
-        "data_mounts/nevadoschillan/2026/nevadoschillan_20260730T1944_SO2_PBL.png"
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20260730T1944_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20260731T1925_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-07-30T19:44:34",
-        "2026-07-30T19:44:34",
-        "2026-07-30T19:44:34"
+        "2026-07-31T19:25:21",
+        "2026-07-31T19:25:21",
+        "2026-07-31T19:25:21"
       ],
       "y": [
         0.1,
@@ -11959,5 +11965,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-07-31T19:57:24.772711+00:00"
+  "fetched_at": "2026-08-01T03:55:32.162416+00:00"
 }
