@@ -22,6 +22,72 @@ import numpy as np
 import anomalies
 
 
+# --- select_orbit_trace -----------------------------------------------------
+
+class TestSelectOrbitTrace:
+    """
+    Sentinel-1 cubre cada volcan en orbita ascendente o descendente segun le
+    toque. ASC y DESC miden en geometrias de linea de vista DISTINTAS, asi que
+    no se pueden mezclar: hay que elegir una por volcan y declarar cual.
+
+    Caso real que motivo esto: Planchon-Peteroa solo tiene cobertura ASC
+    (219 obs), pero PRODUCTS hardcodeaba def_desc/coh_desc -> su deformacion
+    quedaba invisible en el status board.
+    """
+
+    def _tr(self, name, n, y=1.0):
+        return {"name": name, "x": [f"2026-01-{i+1:02d}T00:00:00" for i in range(n)],
+                "y": [y] * n}
+
+    def test_prefers_desc_when_both_have_data(self):
+        # Villarrica/Lascar: desc tiene mucha mas cobertura que asc.
+        traces = {"def_desc": self._tr("def_desc", 240),
+                  "def_asc":  self._tr("def_asc", 95)}
+        trace, orbit = anomalies.select_orbit_trace(traces, ["def_desc", "def_asc"])
+        assert orbit == "desc"
+        assert trace["name"] == "def_desc"
+
+    def test_falls_back_to_asc_when_desc_empty(self):
+        # Planchon-Peteroa: desc vacia, asc con datos -> debe elegir asc.
+        traces = {"def_desc": {"name": "def_desc", "x": [], "y": []},
+                  "def_asc":  self._tr("def_asc", 219)}
+        trace, orbit = anomalies.select_orbit_trace(traces, ["def_desc", "def_asc"])
+        assert orbit == "asc"
+        assert trace["name"] == "def_asc"
+
+    def test_falls_back_when_desc_absent(self):
+        traces = {"def_asc": self._tr("def_asc", 219)}
+        trace, orbit = anomalies.select_orbit_trace(traces, ["def_desc", "def_asc"])
+        assert orbit == "asc"
+
+    def test_picks_orbit_with_more_data(self):
+        # Si desc es una colilla y asc tiene la serie real, gana asc.
+        traces = {"def_desc": self._tr("def_desc", 3),
+                  "def_asc":  self._tr("def_asc", 200)}
+        trace, orbit = anomalies.select_orbit_trace(traces, ["def_desc", "def_asc"])
+        assert orbit == "asc"
+
+    def test_returns_none_when_no_data(self):
+        # Laguna del Maule: sin ninguna traza.
+        trace, orbit = anomalies.select_orbit_trace({}, ["def_desc", "def_asc"])
+        assert trace is None
+        assert orbit is None
+
+    def test_ignores_all_null_y(self):
+        # Traza presente pero con todos los y en None no cuenta como cobertura.
+        traces = {"def_desc": {"name": "def_desc", "x": ["2026-01-01T00:00:00"], "y": [None]},
+                  "def_asc":  self._tr("def_asc", 10)}
+        trace, orbit = anomalies.select_orbit_trace(traces, ["def_desc", "def_asc"])
+        assert orbit == "asc"
+
+    def test_single_candidate_no_orbit_suffix(self):
+        # Productos sin variante orbital (swir, so2) -> orbit None.
+        traces = {"swir": self._tr("swir", 50)}
+        trace, orbit = anomalies.select_orbit_trace(traces, ["swir"])
+        assert trace["name"] == "swir"
+        assert orbit is None
+
+
 # --- parse_iso --------------------------------------------------------------
 
 class TestParseIso:

@@ -88,6 +88,13 @@ def get_session() -> requests.Session:
 def fetch(sess, url):
     r = sess.get(url, timeout=30)
     r.raise_for_status()
+    # MOUNTS no declara charset en el Content-Type. Por spec HTTP, requests
+    # asume entonces ISO-8859-1 para text/*, y los acentos se rompen:
+    # "Chillan" -> "Chill�n", "Lascar" -> "L�scar". Detectamos el
+    # encoding real del contenido antes de decodificar.
+    ctype = (r.headers.get("content-type") or "").lower()
+    if "charset" not in ctype:
+        r.encoding = r.apparent_encoding or "utf-8"
     return r.text
 
 
@@ -243,19 +250,36 @@ def main():
     try:
         targets = fetch(sess, f"{BASE}/targets")
         vols = extract_target_volcanoes(targets)
-        new_state["n_volcanoes_global"] = len(vols)
         chileans_in_mounts = [v for v in vols if v[2] == "cl"]
-        new_state["chilean_volcanoes_in_mounts"] = chileans_in_mounts
-        log.info(f"  {len(vols)} volcanes globales, {len(chileans_in_mounts)} chilenos en MOUNTS")
-        # Detectar nuevo volcan chileno
-        old_cl = {v[0] for v in (state.get("chilean_volcanoes_in_mounts") or [])}
+        old_state_cl = state.get("chilean_volcanoes_in_mounts") or []
+        old_cl = {v[0] for v in old_state_cl}
         new_cl = {v[0] for v in chileans_in_mounts}
-        added = new_cl - old_cl
-        if added:
-            log.warning(f"  ⚠ Nuevo(s) volcan(es) chileno(s) en MOUNTS: {added}")
-            append_change({"page": "/targets", "new_chilean_volcanoes": list(added),
-                          "severity": "high"})
-            changes_detected += 1
+
+        if not vols:
+            # Parseo vacio = fetch parcial o cambio de markup upstream, NO que
+            # MOUNTS haya dejado de monitorear volcanes. Si sobreescribimos el
+            # estado con [], la corrida siguiente ve los 6 volcanes como
+            # "nuevos" y dispara una alarma high falsa. Esa era exactamente la
+            # causa de las 4 falsas alarmas historicas: no se pierde el
+            # baseline y se avisa como problema de parseo, no como cambio.
+            log.warning("  /targets devolvio 0 volcanes — se conserva el estado previo")
+            new_state["n_volcanoes_global"] = state.get("n_volcanoes_global")
+            new_state["chilean_volcanoes_in_mounts"] = old_state_cl
+        else:
+            new_state["n_volcanoes_global"] = len(vols)
+            new_state["chilean_volcanoes_in_mounts"] = chileans_in_mounts
+            log.info(f"  {len(vols)} volcanes globales, {len(chileans_in_mounts)} chilenos en MOUNTS")
+            added = new_cl - old_cl
+            # Solo es "nuevo" si habia baseline con el que comparar. Sin
+            # baseline (primera corrida o estado perdido) esto es inicializacion,
+            # no un cambio upstream.
+            if added and old_cl:
+                log.warning(f"  ⚠ Nuevo(s) volcan(es) chileno(s) en MOUNTS: {added}")
+                append_change({"page": "/targets", "new_chilean_volcanoes": sorted(added),
+                              "severity": "high"})
+                changes_detected += 1
+            elif added:
+                log.info(f"  Baseline inicial de volcanes chilenos: {sorted(added)}")
     except Exception as e:
         log.error(f"  /targets fail: {e}")
 

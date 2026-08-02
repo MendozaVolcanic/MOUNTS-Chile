@@ -51,6 +51,20 @@ SEV_COLOR = {
 # Ranking ordinal de severidad (para comparar "subio" / "bajo" vs ayer)
 SEV_RANK = {"gray": 0, "stale": 0, "green": 1, "yellow": 2, "orange": 3, "red": 4}
 
+# Forma por severidad, redundante con el color. El daltonismo rojo-verde
+# (deuteranopia/protanopia) afecta a ~8% de los hombres: rojo #e74c3c y verde
+# #2ecc71 son practicamente indistinguibles para ellos. Como este tablero se
+# usa para decidir alerta volcanica, la severidad no puede depender solo del
+# color.
+SEV_GLYPH = {
+    "red":    "▲",
+    "orange": "◆",
+    "yellow": "◑",
+    "green":  "●",
+    "stale":  "○",
+    "gray":   "·",
+}
+
 # Productos en el status matrix
 STATUS_PRODUCTS = ["SWIR", "SO2", "DEF", "COH"]
 

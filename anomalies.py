@@ -38,13 +38,52 @@ VOLCANES = [
     ("villarrica",         "Villarrica",          357120),
 ]
 
-# Productos a analizar: (trace_name, label, unit, expected_revisit_days)
+# Productos a analizar: (candidate_trace_names, label, unit, expected_revisit_days)
+#
+# Sentinel-1 cubre cada volcan en orbita ascendente (tarde) o descendente
+# (manana) segun le toque la pasada. La mayoria de los volcanes chilenos aqui
+# esta cubierta en DESC, pero Planchon-Peteroa es ASC puro. Por eso DEF y COH
+# llevan una lista de candidatos: se elige la orbita que realmente tenga datos.
+#
+# IMPORTANTE (fisica): ASC y DESC miden desplazamiento en geometrias de linea
+# de vista distintas. NO se pueden mezclar ni alternar en silencio. Por eso se
+# elige UNA orbita por volcan (la de mayor cobertura, estable en el tiempo) y
+# se declara cual en status.json -> el dashboard la muestra.
 PRODUCTS = [
-    ("swir",     "SWIR",  "S2Pix",        5),
-    ("so2",      "SO2",   "tons",         1),
-    ("def_desc", "DEF",   "m_LOS",        12),
-    ("coh_desc", "COH",   "Npix_coh<0.5", 12),
+    (["swir"],                 "SWIR",  "S2Pix",        5),
+    (["so2"],                  "SO2",   "tons",         1),
+    (["def_desc", "def_asc"],  "DEF",   "m_LOS",        12),
+    (["coh_desc", "coh_asc"],  "COH",   "Npix_coh<0.5", 12),
 ]
+
+
+def select_orbit_trace(traces, candidates):
+    """
+    Elige, entre las trazas candidatas, la que tenga mas cobertura real.
+
+    Devuelve (trace, orbit) donde orbit es "asc"/"desc" si el nombre elegido
+    lleva ese sufijo, o None si el producto no tiene variante orbital.
+    Devuelve (None, None) si ninguna candidata tiene datos.
+
+    "Cobertura real" = numero de puntos con y no nulo. Una traza presente pero
+    vacia (o toda en None) no cuenta: es justamente el caso de Planchon en
+    descendente, donde MOUNTS expone la traza pero sin observaciones.
+    """
+    best, best_n = None, 0
+    for name in candidates:
+        t = traces.get(name)
+        if not t:
+            continue
+        n = sum(1 for y in (t.get("y") or []) if y is not None)
+        if n > best_n:
+            best, best_n = t, n
+
+    if best is None:
+        return None, None
+
+    name = best.get("name") or ""
+    orbit = "asc" if name.endswith("_asc") else "desc" if name.endswith("_desc") else None
+    return best, orbit
 
 ROLLING_WINDOW_DAYS = 90
 ANOMALY_THRESHOLD   = 3.0   # desviaciones MAD
@@ -274,9 +313,12 @@ def main():
         traces = load_traces(key)
         prod_status = {}
 
-        for tname, label, unit, revisit in PRODUCTS:
-            trace = traces.get(tname)
+        for candidates, label, unit, revisit in PRODUCTS:
+            trace, orbit = select_orbit_trace(traces, candidates)
             ps = compute_product_status(trace, revisit) if trace else None
+            if ps is not None and orbit:
+                # Declarar que orbita se uso: ASC y DESC no son intercambiables.
+                ps["orbit"] = orbit
             prod_status[label] = ps
 
             # detectar anomalias recientes

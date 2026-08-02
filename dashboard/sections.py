@@ -324,7 +324,15 @@ def build_history_panel(top_n=20):
             AND ABS(julianday(e.date) - julianday(a.date)) <= 7
         )
     """).fetchone()[0]
-    precision = f"{tp/n_total:.0%}" if n_total else "—"
+    # OJO con la interpretacion: GVP cataloga eventos eruptivos NOTABLES, no
+    # toda anomalia satelital. Una anomalia termica o de SO2 sin entrada GVP
+    # NO es un falso positivo: puede ser actividad real por debajo del umbral
+    # de reporte de GVP. Por eso esto NO es "precision" en el sentido de
+    # deteccion, sino la fraccion de anomalias que coinciden con un evento
+    # GVP catalogado. Se rotula como "coincidencia" y se colorea de forma
+    # neutra: pintarlo de verde sugeriria que un valor bajo es "bueno" (o,
+    # peor, que un valor bajo mide mala calidad del detector).
+    coincidence = f"{tp/n_total:.0%}" if n_total else "—"
 
     conn.close()
 
@@ -352,7 +360,7 @@ def build_history_panel(top_n=20):
     <span><b>{n_total}</b> anomalías</span>
     <span><b>{n_obs:,}</b> observaciones</span>
     <span><b>{n_evt}</b> eventos GVP</span>
-    <span>Validación detector vs GVP (±7 d): <b style="color:{SEV_COLOR['green']}">{precision}</b> precisión</span>
+    <span title="Fracción de anomalías detectadas que caen a ±7 d de un evento eruptivo catalogado por GVP. NO es precisión de detección: GVP solo cataloga eventos notables, así que una anomalía sin evento GVP no implica falso positivo.">Coincidencia con eventos GVP (±7 d): <b style="color:#8b949e">{coincidence}</b> <span style="color:#6e7681;font-size:.9em">({tp}/{n_total}) ⓘ</span></span>
     <span><a href="anomalies.csv">📄 anomalies.csv</a></span>
     <span><a href="mounts.db">💾 mounts.db</a></span>
   </div>

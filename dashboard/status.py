@@ -14,7 +14,7 @@ Extraido de generar_html.py (refactor C2) sin cambios de logica.
 import json
 
 from .config import (
-    ROOT, VOLCANES, SEV_COLOR, SEV_RANK, STATUS_PRODUCTS, esc,
+    ROOT, VOLCANES, SEV_COLOR, SEV_RANK, SEV_GLYPH, STATUS_PRODUCTS, esc,
 )
 
 
@@ -113,6 +113,23 @@ def fmt_value(v, unit):
     return f"{v:.3g}"
 
 
+# Productos donde un valor bajo significa "no se detecto nada", no una medicion.
+# SWIR cuenta pixeles termicos (S2Pix) y SO2 es masa en toneladas: por debajo
+# del umbral MOUNTS reporta un valor placeholder (~0.1) que NO es una lectura
+# real. Mostrarlo como numero hace que un 0.1 se lea como anomalia termica
+# incipiente cuando en realidad es ausencia de senal. El streamgraph ya usa
+# este mismo criterio ("excluye no-detecciones y<=0.5").
+NONDETECT_PRODUCTS = {"SWIR", "SO2"}
+NONDETECT_THRESHOLD = 0.5
+
+
+def is_nondetection(product, value):
+    """True si el valor representa ausencia de senal, no una medicion."""
+    if value is None:
+        return False
+    return product in NONDETECT_PRODUCTS and abs(value) <= NONDETECT_THRESHOLD
+
+
 def build_status_matrix(status):
     """Tabla 7x4 con sparklines, colores y diff vs ~24h atras."""
     if not status or "volcanoes" not in status:
@@ -140,7 +157,23 @@ def build_status_matrix(status):
             color = SEV_COLOR.get(sev, "#3a3f47")
             z = ps.get("zscore_now")
             z_str = f"{z:+.1f}σ" if z is not None else "—"
-            val = fmt_value(ps.get("latest_value"), "")
+            raw_val = ps.get("latest_value")
+            nd = is_nondetection(p, raw_val)
+            if nd:
+                # Ausencia de senal: no mostrar el placeholder numerico.
+                val = "sin det."
+                val_style = f"color:#6e7681;font-size:.78em;letter-spacing:.02em"
+            else:
+                val = fmt_value(raw_val, "")
+                val_style = f"color:{color}"
+            # ASC/DESC no son intercambiables (geometrias de LOS distintas):
+            # declarar cual se esta mostrando.
+            orbit = ps.get("orbit")
+            orbit_badge = (
+                f'<span class="cell-orbit" title="orbita Sentinel-1 usada '
+                f'(ASC y DESC miden en geometrias de linea de vista distintas)">'
+                f'{esc(orbit.upper())}</span>' if orbit else ""
+            )
             age = fmt_age(ps.get("age_hours"))
             spark = sparkline_svg(ps.get("sparkline_x", []), ps.get("sparkline_y", []),
                                   color=color, width=110, height=24)
@@ -174,12 +207,16 @@ def build_status_matrix(status):
                 f'<td class="cell" style="border-left:3px solid {color}">'
                 f'<div class="cell-inner">'
                 f'<div class="cell-top">'
-                f'<span class="cell-val" style="color:{color}">{val}</span>'
-                f'<span class="cell-z">{z_str}</span>'
+                f'<span class="cell-val" style="{val_style}">{val}</span>'
+                f'<span class="cell-z">'
+                f'<span class="sev-glyph" style="color:{color}" '
+                f'title="severidad: {esc(sev)}">{SEV_GLYPH.get(sev, "·")}</span>'
+                f'{z_str}</span>'
                 f'</div>'
                 f'<div class="cell-spark">{spark}</div>'
                 f'<div class="cell-bottom">'
                 f'<span class="cell-age">{age}</span>'
+                f'{orbit_badge}'
                 f'{diff_badge}'
                 f'</div>'
                 f'</div></td>'
@@ -197,12 +234,15 @@ def build_status_matrix(status):
 <div class="status-section">
   <h2>Status board</h2>
   <p class="status-help">
-    Color = severidad (z-score MAD-robusto, baseline 90 d).
+    Severidad (z-score MAD-robusto, baseline 90 d). Cada nivel tiene forma
+    propia además de color: el daltonismo rojo-verde afecta a ~8% de los
+    hombres y este tablero se usa para decidir alerta.
     <span style="color:{SEV_COLOR['green']}">●</span> normal
-    <span style="color:{SEV_COLOR['yellow']}">●</span> atención
-    <span style="color:{SEV_COLOR['orange']}">●</span> elevado
-    <span style="color:{SEV_COLOR['red']}">●</span> alto
-    <span style="color:{SEV_COLOR['stale']}">●</span> dato atrasado
+    <span style="color:{SEV_COLOR['yellow']}">◑</span> atención
+    <span style="color:{SEV_COLOR['orange']}">◆</span> elevado
+    <span style="color:{SEV_COLOR['red']}">▲</span> alto
+    <span style="color:{SEV_COLOR['stale']}">○</span> dato atrasado
+    <span style="color:#6e7681">— sin detección / sin dato</span>
   </p>
   <table class="status-matrix">
     <thead><tr><th>Volcán</th>{headers}</tr></thead>
@@ -264,7 +304,14 @@ def build_bulletin(status):
                 phrases.append(phrase)
 
         if not phrases:
-            text = '<span style="color:#6e7681">sin datos disponibles</span>'
+            # Distinguir "MOUNTS no publica este volcan" de "nuestro pipeline
+            # fallo". Si el scraper corrio bien y la serie vino vacia, el vacio
+            # es de origen: mostrarlo como tal evita que se lea como una falla
+            # propia (caso Laguna del Maule, sin trazas en MOUNTS).
+            text = ('<span style="color:#6e7681">sin cobertura en MOUNTS '
+                    '<span title="El scraper consulta este volcán normalmente, '
+                    'pero MOUNTS no publica series para él. No es una falla del '
+                    'pipeline.">ⓘ</span></span>')
         else:
             text = ", ".join(phrases) + "."
 

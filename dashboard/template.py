@@ -87,6 +87,11 @@ a:hover{{text-decoration:underline}}
 .cell-bottom{{display:flex;justify-content:space-between;align-items:center;gap:4px}}
 .cell-age{{font-size:.6rem;color:#6e7681}}
 .diff-badge{{font-size:.58rem;padding:1px 4px;border-radius:3px;font-family:'SF Mono',Monaco,monospace}}
+/* Forma por severidad, redundante con el color (accesibilidad daltonica) */
+.sev-glyph{{margin-right:3px;font-size:.7rem}}
+/* Orbita S1 usada (ASC/DESC): geometrias de LOS distintas, hay que declararla */
+.cell-orbit{{font-size:.52rem;padding:0 3px;border-radius:2px;border:1px solid #30363d;
+  color:#8b949e;font-family:'SF Mono',Monaco,monospace;letter-spacing:.03em}}
 
 /* === Alerts === */
 .alerts-section{{padding:14px;border-bottom:2px solid #21262d}}
