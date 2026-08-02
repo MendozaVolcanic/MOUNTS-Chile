@@ -4,14 +4,29 @@ Base de datos SQLite para MOUNTS-Chile.
 Persiste el catalogo historico completo:
   observations    todas las muestras de todas las trazas (idempotente)
   anomalies       anomalias detectadas (con detected_at para auditoria)
-  events          flags tbar_* de GVP/USGS (ground truth)
+  events          marcadores tbar_* de MOUNTS — NO son eventos eruptivos
   status_history  snapshots periodicos del status board
+
+⚠ SOBRE LA TABLA `events` (verificado 2026-08-02):
+  A pesar del nombre, NO es ground truth de erupciones. Se llena con las
+  trazas `tbar_*` de MOUNTS, que son las lineas verticales que MOUNTS dibuja
+  en sus graficos para marcar la ultima observacion de cada producto.
+  Evidencia: cada tbar_* tiene exactamente 3 puntos con el mismo x; ese x
+  coincide con la fecha de la ultima observacion de su serie; solo hay dos
+  valores (0.1 y 0.0, los minimos de cada eje-y); y las filas por track son
+  proporcionales al revisit del sensor (so2 366, nir 141, coh/disp 35).
+  Cada corrida del cron agrega una fila cuando el marcador avanza.
+
+  Consecuencia: NO cruzar `anomalies` contra `events` para medir precision
+  ni TPR/FPR. Eso daba un "3% de precision" que no medía nada y llego a
+  publicarse en el dashboard. Para validar de verdad hace falta ground truth
+  externo (GVP Bulletin, niveles de alerta SERNAGEOMIN/OVDAS) -> tarea V7.
 
 Queries comunes (ver al final de este archivo):
     python db.py summary
     python db.py recent       # ultimas 20 anomalias
     python db.py top --n 30   # top 30 anomalias historicas
-    python db.py validate     # cruza detector vs eventos GVP
+    python db.py validate     # explica por que no hay validacion disponible
 
 Integrado al pipeline via update.py.
 """
@@ -47,6 +62,10 @@ PRODUCT_TRACES = {
     "int_desc": ("placeholder",   "Sentinel-1"),
 }
 
+# OJO: pese al nombre, estas trazas NO marcan eventos eruptivos. Son las
+# lineas verticales de "ultima observacion" que MOUNTS dibuja en sus graficos.
+# Se siguen persistiendo por fidelidad al upstream, pero no sirven como ground
+# truth. Ver la nota de la cabecera del modulo.
 EVENT_TRACES = {"tbar_so2", "tbar_nir", "tbar_disp", "tbar_int", "tbar_coh"}
 
 
@@ -442,36 +461,31 @@ def cmd_top(conn, n=30):
 
 def cmd_validate(conn, window_days=7):
     """
-    Valida el detector cruzando anomalias con eventos GVP/USGS (tbar_*).
-    True positive: anomalia con un evento dentro de ±window_days.
+    NO valida nada: informa por que no se puede validar todavia.
+
+    Este comando cruzaba anomalias contra la tabla `events` y reportaba una
+    "precision". Esa cifra no medía nada, porque `events` no contiene eventos
+    eruptivos (ver nota en la cabecera del modulo). Se dejo el comando para
+    que quien lo corra se entere del problema en vez de obtener un numero
+    falso, pero ya no imprime metricas de deteccion.
     """
-    cur = conn.execute("SELECT COUNT(*) FROM anomalies")
-    n_anom = cur.fetchone()[0]
-    cur = conn.execute("SELECT COUNT(*) FROM events")
-    n_evt = cur.fetchone()[0]
+    n_anom = conn.execute("SELECT COUNT(*) FROM anomalies").fetchone()[0]
+    n_evt  = conn.execute("SELECT COUNT(*) FROM events").fetchone()[0]
 
-    if n_anom == 0:
-        print("Sin anomalias para validar.")
-        return
-
-    cur = conn.execute(f"""
-        SELECT COUNT(DISTINCT a.id) FROM anomalies a
-        WHERE EXISTS (
-          SELECT 1 FROM events e
-          WHERE e.volcano_key = a.volcano_key
-            AND ABS(julianday(e.date) - julianday(a.date)) <= ?
-        )
-    """, (window_days,))
-    tp = cur.fetchone()[0]
-    fp = n_anom - tp
-
-    print(f"Validacion detector vs eventos GVP (ventana ±{window_days}d):")
-    print(f"  Total anomalias: {n_anom}")
-    print(f"  Total eventos:   {n_evt}")
-    print(f"  TP (anomalia con evento cercano):   {tp}")
-    print(f"  FP (anomalia sin evento cercano):   {fp}")
-    if n_anom:
-        print(f"  Precision (TP / (TP+FP)):           {tp/n_anom:.2%}")
+    print("Validacion del detector: NO DISPONIBLE")
+    print()
+    print(f"  Anomalias detectadas: {n_anom}")
+    print(f"  Filas en `events`:    {n_evt}  <- NO son eventos eruptivos")
+    print()
+    print("  La tabla `events` se llena con las trazas tbar_* de MOUNTS, que")
+    print("  son las lineas verticales que marcan la ultima observacion de")
+    print("  cada serie en los graficos. No hay ground truth de erupciones en")
+    print("  el sistema, asi que no se puede calcular TPR/FPR ni precision.")
+    print()
+    print("  Para validar de verdad hace falta ground truth externo:")
+    print("    - GVP Bulletin / Weekly Volcanic Activity Reports")
+    print("    - Cambios de nivel de alerta tecnica SERNAGEOMIN/OVDAS")
+    print("  Esa es la tarea V7 del roadmap.")
 
 
 def cmd_export_anomalies(conn, out_csv: str = "anomalies.csv"):

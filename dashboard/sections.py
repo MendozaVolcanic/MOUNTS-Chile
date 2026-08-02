@@ -324,15 +324,24 @@ def build_history_panel(top_n=20):
             AND ABS(julianday(e.date) - julianday(a.date)) <= 7
         )
     """).fetchone()[0]
-    # OJO con la interpretacion: GVP cataloga eventos eruptivos NOTABLES, no
-    # toda anomalia satelital. Una anomalia termica o de SO2 sin entrada GVP
-    # NO es un falso positivo: puede ser actividad real por debajo del umbral
-    # de reporte de GVP. Por eso esto NO es "precision" en el sentido de
-    # deteccion, sino la fraccion de anomalias que coinciden con un evento
-    # GVP catalogado. Se rotula como "coincidencia" y se colorea de forma
-    # neutra: pintarlo de verde sugeriria que un valor bajo es "bueno" (o,
-    # peor, que un valor bajo mide mala calidad del detector).
-    coincidence = f"{tp/n_total:.0%}" if n_total else "—"
+    # NO se publica ninguna metrica de validacion contra la tabla `events`.
+    #
+    # Motivo (verificado 2026-08-02): `events` NO contiene eventos eruptivos.
+    # Se llena con las trazas `tbar_*` de MOUNTS, que son las lineas
+    # verticales que MOUNTS dibuja en sus graficos para marcar la ultima
+    # observacion de cada producto. Evidencia: cada tbar_* tiene exactamente
+    # 3 puntos con el mismo x; ese x coincide exactamente con la fecha de la
+    # ultima observacion de su serie; solo hay dos valores (0.1 y 0.0, los
+    # minimos de cada eje-y); y el numero de filas por track es proporcional
+    # al revisit del sensor (so2 366, nir 141, coh/disp 35), o sea el
+    # marcador avanzando con cada pasada, no erupciones.
+    #
+    # Cruzar anomalias contra eso daba un "3% de precision" que no medía
+    # nada. Publicar una cifra de validacion sin ground truth real es peor
+    # que no publicar ninguna, sobre todo en un producto que apoya decisiones
+    # de alerta. Para una validacion de verdad hace falta ground truth
+    # externo (reportes GVP Bulletin, cambios de nivel de alerta
+    # SERNAGEOMIN/OVDAS): eso es la tarea V7.
 
     conn.close()
 
@@ -359,8 +368,7 @@ def build_history_panel(top_n=20):
   <div class="history-stats">
     <span><b>{n_total}</b> anomalías</span>
     <span><b>{n_obs:,}</b> observaciones</span>
-    <span><b>{n_evt}</b> eventos GVP</span>
-    <span title="Fracción de anomalías detectadas que caen a ±7 d de un evento eruptivo catalogado por GVP. NO es precisión de detección: GVP solo cataloga eventos notables, así que una anomalía sin evento GVP no implica falso positivo.">Coincidencia con eventos GVP (±7 d): <b style="color:#8b949e">{coincidence}</b> <span style="color:#6e7681;font-size:.9em">({tp}/{n_total}) ⓘ</span></span>
+    <span title="El detector aún no tiene validación contra ground truth externo (reportes GVP Bulletin o cambios de nivel de alerta SERNAGEOMIN). Los marcadores tbar_* de MOUNTS que antes se usaban para esto NO son eventos eruptivos: son las líneas verticales que marcan la última observación de cada serie." style="color:#8b949e">Detector <b>sin validación externa</b> aún <span style="color:#6e7681;font-size:.9em">ⓘ</span></span>
     <span><a href="anomalies.csv">📄 anomalies.csv</a></span>
     <span><a href="mounts.db">💾 mounts.db</a></span>
   </div>

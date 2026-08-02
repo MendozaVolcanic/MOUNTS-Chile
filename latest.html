@@ -164,7 +164,7 @@ a:hover{text-decoration:underline}
 <div class="topbar">
   <h1>&#127755; MOUNTS-Chile</h1>
   <div class="nav"><a href="#v-lascar">Lascar</a> &middot; <a href="#v-planchon-peteroa">Planchon-Peteroa</a> &middot; <a href="#v-laguna-del-maule">Laguna del Maule</a> &middot; <a href="#v-nevados-de-chillan">Nevados de Chillan</a> &middot; <a href="#v-copahue">Copahue</a> &middot; <a href="#v-llaima">Llaima</a> &middot; <a href="#v-villarrica">Villarrica</a></div>
-  <span class="meta">2026-08-02 11:47 UTC</span>
+  <span class="meta">2026-08-02 12:03 UTC</span>
   <span class="time-filter">
     <span style="font-size:.65rem;color:#6e7681">Rango:</span>
     <button onclick="setTimeRange(30)">30d</button>
@@ -278,8 +278,7 @@ function setTimeRange(days) {
   <div class="history-stats">
     <span><b>752</b> anomalías</span>
     <span><b>23,406</b> observaciones</span>
-    <span><b>615</b> eventos GVP</span>
-    <span title="Fracción de anomalías detectadas que caen a ±7 d de un evento eruptivo catalogado por GVP. NO es precisión de detección: GVP solo cataloga eventos notables, así que una anomalía sin evento GVP no implica falso positivo.">Coincidencia con eventos GVP (±7 d): <b style="color:#8b949e">3%</b> <span style="color:#6e7681;font-size:.9em">(23/752) ⓘ</span></span>
+    <span title="El detector aún no tiene validación contra ground truth externo (reportes GVP Bulletin o cambios de nivel de alerta SERNAGEOMIN). Los marcadores tbar_* de MOUNTS que antes se usaban para esto NO son eventos eruptivos: son las líneas verticales que marcan la última observación de cada serie." style="color:#8b949e">Detector <b>sin validación externa</b> aún <span style="color:#6e7681;font-size:.9em">ⓘ</span></span>
     <span><a href="anomalies.csv">📄 anomalies.csv</a></span>
     <span><a href="mounts.db">💾 mounts.db</a></span>
   </div>
@@ -590,7 +589,7 @@ function setTimeRange(days) {
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-08-02T11:47:29','2026-08-02T11:47:29'],y:[0.001,1e9],
+  x:['2026-08-02T12:03:56','2026-08-02T12:03:56'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -767,7 +766,7 @@ function setTimeRange(days) {
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-08-02T11:47:30','2026-08-02T11:47:30'],y:[0.001,1e9],
+  x:['2026-08-02T12:03:57','2026-08-02T12:03:57'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -959,7 +958,7 @@ function setTimeRange(days) {
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-08-02T11:47:31','2026-08-02T11:47:31'],y:[0.001,1e9],
+  x:['2026-08-02T12:03:57','2026-08-02T12:03:57'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1136,7 +1135,7 @@ function setTimeRange(days) {
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-08-02T11:47:33','2026-08-02T11:47:33'],y:[0.001,1e9],
+  x:['2026-08-02T12:03:58','2026-08-02T12:03:58'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1313,7 +1312,7 @@ function setTimeRange(days) {
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-08-02T11:47:34','2026-08-02T11:47:34'],y:[0.001,1e9],
+  x:['2026-08-02T12:03:59','2026-08-02T12:03:59'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'
@@ -1514,7 +1513,7 @@ function setTimeRange(days) {
   hovertemplate:'%{x}<br>%{y:.3g}<extra>tbar_coh</extra>'
 },
 {
-  x:['2026-08-02T11:47:35','2026-08-02T11:47:35'],y:[0.001,1e9],
+  x:['2026-08-02T12:03:59','2026-08-02T12:03:59'],y:[0.001,1e9],
   mode:'lines',type:'scatter',yaxis:'y3',
   line:{color:'#e74c3c',width:1.5,dash:'dot'},
   name:'Hoy',showlegend:false,hoverinfo:'none'

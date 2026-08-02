@@ -140,10 +140,25 @@ Pasos: `fetch_latest → monitor_upstream → anomalies → sync_latest → imag
    chicos (8e-05 m) sí son mediciones reales.
 10. **Laguna del Maule no tiene series en MOUNTS.** El scraper la consulta
     bien y vuelve `traces: []`. Es límite upstream, no falla del pipeline.
-11. **La métrica GVP no es "precisión".** GVP cataloga eventos eruptivos
-    notables, no toda anomalía satelital: una anomalía sin evento GVP no es
-    un falso positivo. Rotulada como "Coincidencia con eventos GVP" y en
-    color neutro. Hoy 3% (23/752). Para TPR/FPR real hace falta V7.
+11. 🔴 **La tabla `events` NO son eventos eruptivos — no hay ground truth
+    en el sistema.** (Verificado 2026-08-02, el hallazgo más importante de
+    esa sesión.)
+    - `events` se llena con las trazas `tbar_*` de MOUNTS, que son las
+      **líneas verticales** que MOUNTS dibuja en sus gráficos para marcar la
+      **última observación** de cada producto.
+    - Evidencia: cada `tbar_*` tiene **exactamente 3 puntos con el mismo
+      `x`**; ese `x` **coincide exacto** con la fecha de la última
+      observación de su serie (`tbar_nir`↔`swir`, `tbar_so2`↔`so2`,
+      `tbar_coh`↔`coh_desc`); solo hay **dos valores** (`0.1` y `0.0`, los
+      mínimos de cada eje-y); y las filas por track son **proporcionales al
+      revisit** del sensor (so2 366, nir 141, coh/disp 35) — el marcador
+      avanzando con cada pasada, no erupciones.
+    - **Consecuencia:** el dashboard publicó durante meses "615 eventos GVP"
+      y una "validación del detector: 3% precisión" construida sobre
+      artefactos de dibujo. **No medía nada.** Ya eliminado del sitio y de
+      `db.py validate`; hay test de regresión en `tests/test_db.py`.
+    - **NUNCA cruzar `anomalies` contra `events`** para medir precisión,
+      TPR o FPR.
 
 ---
 
@@ -212,7 +227,28 @@ verificada en vivo.
 - Mocking con `unittest.mock` de stdlib — **sin dependencias nuevas**.
   `time.sleep` parcheado: 110 tests en ~1 s.
 
-Aún deferidos en tests: `image_diff.py`, `export_csv.py`, `update.py`.
+**C1c — cobertura completa de módulos**
+
+110 → **152 tests**. Cerrados los que faltaban:
+- `image_diff.py` (14): `get_latest_two` (orden entre años, ignora productos
+  que no son SWIR), `compute_diff` (idénticas → negro, resalte en rojo,
+  redimensión si cambia el tamaño del render), `cleanup_old` (retención).
+- `export_csv.py` (11): descarta `y=None` (no-observación ≠ cero), URL
+  absoluta de imagen, alineación de longitudes dispares, exporta **ambas
+  órbitas** InSAR.
+- `update.py` (14): contrato **fail-fast** (un paso que falla aborta y los
+  siguientes NO corren) y el **orden del pipeline** como invariante
+  ejecutable (`anomalies` antes de `db` y de `generar_html`, `sync_latest`
+  antes de `image_diff`, solo `fetch` es salteable).
+
+**V7 — replanteado tras un hallazgo grave (ver quirk 11)**
+
+Al ir a calcular la curva ROC apareció que **la tabla `events` no son
+eventos eruptivos**, sino los marcadores de gráfico `tbar_*` de MOUNTS. El
+dashboard publicaba "615 eventos GVP" y "3% de precisión" construidos sobre
+artefactos de dibujo. **Eliminado del sitio, de `db.py validate` y
+documentado**, con test de regresión para que no vuelva. V7 real requiere
+ground truth externo — ver su ficha replanteada más abajo.
 
 ⚠ Pendiente operacional detectado: **el disco C: del PC local se llenó**
 (0 GB libres), lo que rompió un `git pull` a mitad y dejó el working tree
@@ -222,13 +258,7 @@ No afecta producción: el cron corre en los runners de GitHub.
 
 ### 🔴 Alta prioridad — lo siguiente que vale la pena
 
-1. **C1c Terminar cobertura de tests** (medio día)
-   - Ya cubiertos en C1b: `quality.py`, `monitor_upstream.py` y la capa de
-     red de `scraper.py`. **Faltan**: `image_diff.py`, `export_csv.py`,
-     `update.py` (orquestación: que un paso que falla no deje seguir a los
-     siguientes como si nada).
-
-2. **E2 Archivo histórico completo + resumability** (1 día)
+1. **E2 Archivo histórico completo + resumability** (1 día)
    - ⚠ **Decisión de almacenamiento tomada en la sesión 2026-08-02**: el
      archivo NO puede vivir en la raíz del repo. A ~290 KB/imagen, la
      historia completa (~30K imgs) son **~8.7 GB** y un año **~0.6–0.9 GB**,
@@ -264,11 +294,29 @@ No afecta producción: el cron corre en los runners de GitHub.
      (no reactiva).
    - `statsmodels.tsa.holtwinters.ExponentialSmoothing`.
 
-6. **V7 TPR/FPR del detector** (4h)
-   - Más allá del 100% precisión actual, calcular curva ROC contra eventos
-     GVP (`events` table en mounts.db).
-   - Por umbral de z (1.5, 3, 6), qué TPR vs FPR.
-   - Dirá si z≥3 es óptimo o debería ser z≥5.
+6. **V7 TPR/FPR del detector** — ⚠ **replanteado 2026-08-02, ya no son 4h**
+   - **El plan original era inviable**: asumía que la tabla `events` era
+     ground truth GVP. **No lo es** (ver quirk 11): son marcadores de gráfico
+     de MOUNTS. Cruzar contra eso daba el "3% de precisión" que no medía
+     nada y ya fue eliminado del dashboard.
+   - **El trabajo real de V7 es conseguir ground truth externo**, que es una
+     tarea de adquisición de datos, no de cálculo:
+     - **GVP Weekly Volcanic Activity Reports** / Bulletin of the Global
+       Volcanism Network — vía la API de GVP o scraping de volcano.si.edu.
+     - **Cambios de nivel de alerta técnica SERNAGEOMIN/OVDAS** — la
+       referencia más pertinente para Chile, y Nicolás tiene acceso interno.
+     - Opcional: DOAS SO₂ de OVDAS para validación cuantitativa de la traza
+       SO₂ (ya está en la lista de gates externos).
+   - Recién con eso: para cada umbral de z (1.5, 3, 6), calcular TPR y FPR
+     discretizando la línea de tiempo en ventanas y etiquetando cada una
+     como evento/no-evento. Dirá si z≥3 es el corte óptimo.
+   - **Ojo con el diseño de la métrica**: la dirección honesta es TPR
+     ("de los eventos reales, cuántos detectamos"), porque un evento
+     catalogado que no detectamos SÍ es una falla nuestra. La dirección
+     inversa (anomalía sin evento = falso positivo) es injusta: los
+     catálogos solo registran actividad notable, así que una anomalía
+     satelital sin entrada puede ser actividad real por debajo del umbral
+     de reporte.
 
 ### 🟢 Quick wins (<1 día)
 

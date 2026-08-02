@@ -152,3 +152,43 @@ class TestJulian:
 
     def test_invalid_returns_zero(self):
         assert db._julian("no-date") == 0
+
+
+# --- events NO es ground truth ----------------------------------------------
+
+class TestEventsNoEsGroundTruth:
+    """
+    Test de regresion sobre un hallazgo caro (2026-08-02).
+
+    La tabla `events` se llama asi pero NO contiene eventos eruptivos: se
+    llena con las trazas `tbar_*` de MOUNTS, que son las lineas verticales
+    que MOUNTS dibuja en sus graficos para marcar la ultima observacion de
+    cada producto.
+
+    Durante meses el dashboard publico "615 eventos GVP" y una
+    "validacion del detector: 3% de precision" construida sobre eso. La
+    cifra no medía nada. En un producto que apoya decisiones de alerta
+    volcanica, publicar una validacion sin ground truth es peor que no
+    publicar ninguna.
+
+    Estos tests existen para que la afirmacion no vuelva a colarse.
+    """
+
+    def test_cmd_validate_no_reporta_precision(self, memory_db, capsys):
+        db.cmd_validate(memory_db)
+        out = capsys.readouterr().out.lower()
+        assert "no disponible" in out
+        assert "precision" not in out or "no se puede calcular" in out
+        assert "%" not in out, "no debe imprimir ninguna metrica porcentual"
+
+    def test_cmd_validate_explica_el_motivo(self, memory_db, capsys):
+        db.cmd_validate(memory_db)
+        out = capsys.readouterr().out.lower()
+        assert "tbar" in out, "debe explicar de donde sale la tabla events"
+        assert "ground truth" in out
+        assert "v7" in out, "debe apuntar a la tarea que si daria validacion"
+
+    def test_event_traces_siguen_documentadas_como_no_ground_truth(self):
+        # Si alguien agrega una traza tbar_* nueva, que siga bajo la misma
+        # advertencia: son marcadores de grafico, no erupciones.
+        assert all(t.startswith("tbar_") for t in db.EVENT_TRACES)
