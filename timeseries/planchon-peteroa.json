@@ -5319,7 +5319,8 @@
         "2026-07-29T18:24:34",
         "2026-07-30T18:04:34",
         "2026-07-30T19:44:34",
-        "2026-07-31T19:25:21"
+        "2026-07-31T19:25:21",
+        "2026-08-01T19:10:20"
       ],
       "y": [
         0.1,
@@ -7867,6 +7868,7 @@
         0.1,
         0.1,
         30.0,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -10585,15 +10587,16 @@
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260729T1824_SO2_PBL.png",
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260730T1804_SO2_PBL.png",
         "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260730T1944_SO2_PBL.png",
-        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260731T1925_SO2_PBL.png"
+        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260731T1925_SO2_PBL.png",
+        "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260801T1910_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-07-31T19:25:21",
-        "2026-07-31T19:25:21",
-        "2026-07-31T19:25:21"
+        "2026-08-01T19:10:20",
+        "2026-08-01T19:10:20",
+        "2026-08-01T19:10:20"
       ],
       "y": [
         0.1,
@@ -12673,5 +12676,5 @@
       "text": []
     }
   ],
-  "fetched_at": "2026-08-01T19:38:13.360261+00:00"
+  "fetched_at": "2026-08-02T03:58:42.242395+00:00"
 }
