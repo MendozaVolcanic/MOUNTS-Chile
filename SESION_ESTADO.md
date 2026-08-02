@@ -192,6 +192,28 @@ InSAR 95–263 h. 20 de 22 series frescas.
 Tests: **73 pasando** (66 + 7 nuevos de órbita, TDD). CI verde. Producción
 verificada en vivo.
 
+**C1b — tests de las capas de red/calidad/upstream (commit `cd883e9`)**
+
+73 → **110 tests**. C1 cubrió el núcleo puro; C1b cubre las "cañerías"
+(red, disco, orquestación), que es donde ocurren los incidentes reales.
+
+- 🔴 **Bug encontrado y corregido: descarga NO atómica.** Si una descarga de
+  imagen se cortaba a mitad quedaba un PNG truncado; como `dest.exists()`
+  solo se evalúa al entrar, la corrida siguiente lo daba por bueno →
+  **imagen corrupta permanente**. Afectaba a `fetch_latest.py` (el del cron,
+  y sin reintentos) y a `scraper.py`. Ambos escriben ahora a `.part` +
+  `os.replace()` (atómico).
+  **Auditoría de integridad: 0 corruptos** sobre 885 PNG en `latest/` y 2356
+  en `data/` (firma PNG + chunk IEND). El bug era real pero **latente**.
+- **`monitor_upstream` refactorizado para ser testeable**: la lógica de las
+  falsas alarmas salió de `main()` a `diff_target_volcanoes() → TargetsDiff`
+  (función pura, 8 tests que cubren la regresión completa).
+- Cobertura nueva: monitor_upstream (12), quality (14), scraper-red (11).
+- Mocking con `unittest.mock` de stdlib — **sin dependencias nuevas**.
+  `time.sleep` parcheado: 110 tests en ~1 s.
+
+Aún deferidos en tests: `image_diff.py`, `export_csv.py`, `update.py`.
+
 ⚠ Pendiente operacional detectado: **el disco C: del PC local se llenó**
 (0 GB libres), lo que rompió un `git pull` a mitad y dejó el working tree
 inconsistente (se reparó con `git reset --hard origin/main`). Revisar
@@ -200,12 +222,25 @@ No afecta producción: el cron corre en los runners de GitHub.
 
 ### 🔴 Alta prioridad — lo siguiente que vale la pena
 
-1. **C1b Ampliar cobertura de tests** (1-2 días)
-   - Deferidos: `update.py`, `quality.py`, `monitor_upstream.py`,
-     `image_diff.py`, `export_csv.py`, y rutas de I/O/red de `scraper.py`
-     (`fetch_page`, `download_image`). El núcleo puro ya quedó cubierto.
+1. **C1c Terminar cobertura de tests** (medio día)
+   - Ya cubiertos en C1b: `quality.py`, `monitor_upstream.py` y la capa de
+     red de `scraper.py`. **Faltan**: `image_diff.py`, `export_csv.py`,
+     `update.py` (orquestación: que un paso que falla no deje seguir a los
+     siguientes como si nada).
 
 2. **E2 Archivo histórico completo + resumability** (1 día)
+   - ⚠ **Decisión de almacenamiento tomada en la sesión 2026-08-02**: el
+     archivo NO puede vivir en la raíz del repo. A ~290 KB/imagen, la
+     historia completa (~30K imgs) son **~8.7 GB** y un año **~0.6–0.9 GB**,
+     contra un límite de **1 GB para el sitio de GitHub Pages** (este repo
+     publica desde la raíz, o sea el repo entero ES el sitio). Además los
+     binarios en git quedan para siempre y no comprimen.
+   - Destino recomendado: **GitHub Releases** (assets hasta 2 GB, fuera de
+     la historia de git y fuera de Pages) para ya, y **Zenodo** después como
+     E10 (50 GB, DOI citable, ingesta automática desde un release).
+   - Alcance acordado para empezar: **1 año, todos los productos, sin
+     recomprimir** (integridad de datos), con `catalog.csv` + manifiesto de
+     checksums SHA-256 como índice.
    - `scraper.py` existe pero `update.py` solo invoca `fetch_latest.py`.
    - Agregar flag `python scraper.py --archive` que baje TODO el catálogo
      histórico (~30K imágenes en lugar de 2356).
