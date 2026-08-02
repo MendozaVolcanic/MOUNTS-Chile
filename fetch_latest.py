@@ -15,6 +15,7 @@ Uso:
 import argparse
 import json
 import logging
+import os
 import re
 import time
 from datetime import datetime, timezone
@@ -212,16 +213,26 @@ def download_latest(sess, html: str, volcano: str, sid: int, n: int) -> int:
                 continue
 
             dest.parent.mkdir(parents=True, exist_ok=True)
+            # Descarga atomica: se escribe a .part y se renombra al final. Si
+            # la conexion se corta a mitad, el .part se borra y dest nunca
+            # llega a existir. Sin esto quedaba un PNG truncado en disco y,
+            # como el chequeo dest.exists() de arriba lo da por bueno, la
+            # corrida siguiente lo saltaba: imagen corrupta de forma
+            # permanente. Aca es mas grave que en scraper.py porque este es el
+            # modulo que corre en el cron cada 6h y no tiene reintentos.
+            tmp = dest.with_name(dest.name + ".part")
             try:
                 r = sess.get(img_url, timeout=30, stream=True)
                 r.raise_for_status()
-                with open(dest, "wb") as f:
+                with open(tmp, "wb") as f:
                     for chunk in r.iter_content(16384):
                         f.write(chunk)
+                os.replace(tmp, dest)
                 log.info(f"  ✓ {pt:15} {fn}")
                 total += 1
                 time.sleep(0.3)
             except requests.RequestException as e:
+                tmp.unlink(missing_ok=True)
                 log.warning(f"  ✗ {fn}: {e}")
 
     return total

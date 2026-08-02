@@ -26,6 +26,7 @@ import argparse
 import csv
 import json
 import logging
+import os
 import re
 import time
 from datetime import datetime, timezone
@@ -130,18 +131,35 @@ def download_image(session: requests.Session, url: str, dest: Path, retries: int
         log.debug(f"Skip (existe): {dest.name}")
         return True
     dest.parent.mkdir(parents=True, exist_ok=True)
+    # Descarga atomica: se escribe a un .part y recien al terminar se renombra
+    # al nombre final. Si la conexion se corta a mitad, el .part se borra y
+    # dest nunca llega a existir.
+    #
+    # Sin esto, una descarga interrumpida dejaba un PNG truncado en disco; como
+    # el chequeo dest.exists() de arriba corre una sola vez al entrar, la
+    # corrida siguiente lo daba por bueno y saltaba la descarga: la imagen
+    # quedaba corrupta de forma permanente. os.replace es atomico y sobreescribe
+    # tanto en POSIX como en Windows.
+    tmp = dest.with_name(dest.name + ".part")
     for attempt in range(1, retries + 1):
         try:
             r = session.get(url, timeout=60, stream=True)
             r.raise_for_status()
-            with open(dest, "wb") as f:
+            with open(tmp, "wb") as f:
                 for chunk in r.iter_content(chunk_size=16384):
                     f.write(chunk)
+            os.replace(tmp, dest)
             return True
         except requests.RequestException as e:
             log.warning(f"Error descarga {dest.name}: {e}")
+            tmp.unlink(missing_ok=True)
             if attempt < retries:
                 time.sleep(REQUEST_DELAY * attempt)
+        except OSError as e:
+            # Disco lleno / permisos: tampoco debe quedar un parcial.
+            log.warning(f"Error escritura {dest.name}: {e}")
+            tmp.unlink(missing_ok=True)
+            raise
     return False
 
 

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-02T11:30:34.090672+00:00",
+  "checked_at": "2026-08-02T11:47:01.526782+00:00",
   "news_hash": "ad4239a094ae9b86",
   "about_hash": "0569c10d1433b53a",
   "citation": {
@@ -15,7 +15,6 @@
     ],
     "max_year": "2072"
   },
-  "n_volcanoes_global": 100,
   "chilean_volcanoes_in_mounts": [
     [
       357070,
@@ -48,6 +47,7 @@
       "cl"
     ]
   ],
+  "n_volcanoes_global": 100,
   "schemas": {
     "lascar": {
       "valid": true,

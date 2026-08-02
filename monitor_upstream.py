@@ -35,6 +35,7 @@ import logging
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import NamedTuple
 
 import requests
 
@@ -96,6 +97,51 @@ def fetch(sess, url):
     if "charset" not in ctype:
         r.encoding = r.apparent_encoding or "utf-8"
     return r.text
+
+
+class TargetsDiff(NamedTuple):
+    """Resultado de comparar /targets contra el estado previo."""
+    chilean_state: list      # que guardar en upstream_state.json
+    change: dict | None      # entrada para upstream_changes.json, o None
+    parse_failed: bool       # True si /targets no devolvio ningun volcan
+    n_global: int | None     # cuantos volcanes globales vio (None si fallo)
+
+
+def diff_target_volcanoes(vols, old_chilean) -> TargetsDiff:
+    """
+    Decide que guardar y si hay que avisar de un volcan chileno nuevo.
+
+    Separada de main() porque es la logica que produjo 4 falsas alarmas
+    'high' en produccion, y sin aislarla no se puede testear (main() hace
+    red y escribe archivos).
+
+    Dos reglas, cada una nacida de un modo de falla real:
+
+    1. Si `vols` viene vacio, el parseo fallo (fetch parcial o cambio de
+       markup upstream), NO es que MOUNTS haya dejado de monitorear
+       volcanes. Se conserva el baseline previo. Sobreescribirlo con []
+       hacia que la corrida siguiente viera los 6 volcanes de siempre como
+       "nuevos" y disparara una alarma falsa.
+
+    2. Solo se reporta "nuevo" si habia baseline con el que comparar. Sin
+       baseline (primera corrida, o estado perdido) esto es inicializacion,
+       no un cambio upstream.
+    """
+    if not vols:
+        return TargetsDiff(chilean_state=list(old_chilean), change=None,
+                           parse_failed=True, n_global=None)
+
+    chileans = [v for v in vols if v[2] == "cl"]
+    old_ids = {v[0] for v in (old_chilean or [])}
+    added = sorted({v[0] for v in chileans} - old_ids)
+
+    change = None
+    if added and old_ids:
+        change = {"page": "/targets", "new_chilean_volcanoes": added,
+                  "severity": "high"}
+
+    return TargetsDiff(chilean_state=chileans, change=change,
+                       parse_failed=False, n_global=len(vols))
 
 
 def content_hash(text: str) -> str:
@@ -250,36 +296,24 @@ def main():
     try:
         targets = fetch(sess, f"{BASE}/targets")
         vols = extract_target_volcanoes(targets)
-        chileans_in_mounts = [v for v in vols if v[2] == "cl"]
-        old_state_cl = state.get("chilean_volcanoes_in_mounts") or []
-        old_cl = {v[0] for v in old_state_cl}
-        new_cl = {v[0] for v in chileans_in_mounts}
+        d = diff_target_volcanoes(vols, state.get("chilean_volcanoes_in_mounts") or [])
 
-        if not vols:
-            # Parseo vacio = fetch parcial o cambio de markup upstream, NO que
-            # MOUNTS haya dejado de monitorear volcanes. Si sobreescribimos el
-            # estado con [], la corrida siguiente ve los 6 volcanes como
-            # "nuevos" y dispara una alarma high falsa. Esa era exactamente la
-            # causa de las 4 falsas alarmas historicas: no se pierde el
-            # baseline y se avisa como problema de parseo, no como cambio.
+        new_state["chilean_volcanoes_in_mounts"] = d.chilean_state
+        new_state["n_volcanoes_global"] = (
+            state.get("n_volcanoes_global") if d.parse_failed else d.n_global
+        )
+
+        if d.parse_failed:
             log.warning("  /targets devolvio 0 volcanes — se conserva el estado previo")
-            new_state["n_volcanoes_global"] = state.get("n_volcanoes_global")
-            new_state["chilean_volcanoes_in_mounts"] = old_state_cl
         else:
-            new_state["n_volcanoes_global"] = len(vols)
-            new_state["chilean_volcanoes_in_mounts"] = chileans_in_mounts
-            log.info(f"  {len(vols)} volcanes globales, {len(chileans_in_mounts)} chilenos en MOUNTS")
-            added = new_cl - old_cl
-            # Solo es "nuevo" si habia baseline con el que comparar. Sin
-            # baseline (primera corrida o estado perdido) esto es inicializacion,
-            # no un cambio upstream.
-            if added and old_cl:
-                log.warning(f"  ⚠ Nuevo(s) volcan(es) chileno(s) en MOUNTS: {added}")
-                append_change({"page": "/targets", "new_chilean_volcanoes": sorted(added),
-                              "severity": "high"})
-                changes_detected += 1
-            elif added:
-                log.info(f"  Baseline inicial de volcanes chilenos: {sorted(added)}")
+            log.info(f"  {d.n_global} volcanes globales, "
+                     f"{len(d.chilean_state)} chilenos en MOUNTS")
+
+        if d.change:
+            log.warning(f"  ⚠ Nuevo(s) volcan(es) chileno(s) en MOUNTS: "
+                        f"{d.change['new_chilean_volcanoes']}")
+            append_change(d.change)
+            changes_detected += 1
     except Exception as e:
         log.error(f"  /targets fail: {e}")
 
