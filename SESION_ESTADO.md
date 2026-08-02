@@ -1,6 +1,6 @@
 # MOUNTS-Chile — Estado del proyecto para continuación
 
-> Última actualización: 2026-06-07 · Última sesión: C1 (tests pytest) + C2 (refactor dashboard/)
+> Última actualización: 2026-08-02 · Última sesión: auditoría de datos + fix InSAR Planchón + legibilidad del tablero
 
 Este archivo es el **snapshot canónico** del estado del proyecto. Si abrís una
 sesión nueva con Claude Code, leé esto primero (la próxima sesión debería
@@ -121,7 +121,29 @@ Pasos: `fetch_latest → monitor_upstream → anomalies → sync_latest → imag
 6. **GitHub Actions cron 17 */6 * * *** corre cada 6h y commitea con
    `[skip ci]`. Si tu commit y el del bot se cruzan, hay que `git pull --rebase`.
 7. **Encoding Windows**: `notify_telegram.py` fuerza UTF-8 stdout (console
-   cp1252 rompe emojis).
+   cp1252 rompe emojis). Variante del mismo quirk: `requests` asume
+   ISO-8859-1 cuando el server no declara `charset` (MOUNTS no lo declara) →
+   hay que fijar `r.encoding` antes de leer `r.text`, si no los acentos
+   se rompen. Ya corregido en `monitor_upstream.fetch()`.
+8. **Órbita Sentinel-1 por volcán (ASC vs DESC)** — crítico:
+   - **Planchón-Peteroa es ASC puro** (219 obs). Los otros 6 son DESC.
+   - Villarrica tuvo ASC hasta nov-2021 (95 obs) y sigue en DESC (240).
+   - Láscar tiene una colilla ASC de 4 puntos de ene-2020 (ruido).
+   - **ASC y DESC miden en geometrías de línea de vista distintas: NO se
+     mezclan ni se alternan.** `select_orbit_trace()` elige la de mayor
+     cobertura real y declara cuál en `status.json` (campo `orbit`), que el
+     dashboard muestra como badge ASC/DESC.
+   - Cualquier producto nuevo con variante orbital debe seguir este patrón.
+9. **`0.1` en SWIR/SO₂ = NO-detección, no medición.** Es el placeholder de
+   MOUNTS bajo el umbral. El streamgraph ya excluía `y ≤ 0.5`; el status
+   board ahora muestra "sin det.". **No aplica a DEF/COH**, donde valores
+   chicos (8e-05 m) sí son mediciones reales.
+10. **Laguna del Maule no tiene series en MOUNTS.** El scraper la consulta
+    bien y vuelve `traces: []`. Es límite upstream, no falla del pipeline.
+11. **La métrica GVP no es "precisión".** GVP cataloga eventos eruptivos
+    notables, no toda anomalía satelital: una anomalía sin evento GVP no es
+    un falso positivo. Rotulada como "Coincidencia con eventos GVP" y en
+    color neutro. Hoy 3% (23/752). Para TPR/FPR real hace falta V7.
 
 ---
 
@@ -147,6 +169,34 @@ código se entregó sin correr. La verificación (pytest + golden master) la hiz
 el agente principal, que encontró y arregló 3 bugs de fixture (C1) y 1 de
 encoding cp1252 en el verificador (C2). Lección: no confiar en "revisión
 manual" de un subagente que no pudo ejecutar — siempre correr la verificación.
+
+### ✅ Completado 2026-08-02 (auditoría + fixes, commit `bea095a`)
+
+Auditoría de descarga de datos: **el cron está sano** (12/12 corridas OK,
+~3 min c/u). Frescura coherente con cada sensor: SO₂ ~13 h, SWIR ~42 h,
+InSAR 95–263 h. 20 de 22 series frescas.
+
+- **Punto ciego InSAR de Planchón-Peteroa (bug real, ver quirk 8)** — sus
+  219 obs de deformación/coherencia ASC eran invisibles en el status board
+  porque `PRODUCTS` hardcodeaba `def_desc`/`coh_desc`. Ahora
+  `select_orbit_trace()` elige la órbita con cobertura y la declara.
+- **4 falsas alarmas upstream** — un parseo vacío de `/targets`
+  sobreescribía el baseline con `[]` y la corrida siguiente reportaba los 6
+  volcanes como "nuevos" (severidad high). Ahora conserva el baseline y solo
+  reporta si había con qué comparar. Purgadas las 4 entradas falsas.
+- **Encoding de `monitor_upstream.fetch()`** (ver quirk 7).
+- **Legibilidad**: "sin det." en vez de `0.1` (quirk 9), formas por severidad
+  (accesibilidad daltónica), métrica GVP renombrada y neutra (quirk 11),
+  Laguna del Maule etiquetada como límite upstream (quirk 10).
+
+Tests: **73 pasando** (66 + 7 nuevos de órbita, TDD). CI verde. Producción
+verificada en vivo.
+
+⚠ Pendiente operacional detectado: **el disco C: del PC local se llenó**
+(0 GB libres), lo que rompió un `git pull` a mitad y dejó el working tree
+inconsistente (se reparó con `git reset --hard origin/main`). Revisar
+`C:\vrp_tmp` (8.3 GB), `Downloads` (19 GB), `.cache\huggingface` (10.5 GB).
+No afecta producción: el cron corre en los runners de GitHub.
 
 ### 🔴 Alta prioridad — lo siguiente que vale la pena
 
