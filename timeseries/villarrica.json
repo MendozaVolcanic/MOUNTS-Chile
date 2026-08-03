@@ -981,7 +981,8 @@
         "2026-07-26T14:37:49",
         "2026-07-28T14:27:11",
         "2026-07-30T14:28:11",
-        "2026-07-31T14:37:41"
+        "2026-07-31T14:37:41",
+        "2026-08-02T14:27:09"
       ],
       "y": [
         10.0,
@@ -1956,6 +1957,7 @@
         0.1,
         0.1,
         2.0,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -2939,15 +2941,16 @@
         "data_mounts/villarrica/2026/villarrica_20260726T143749_B12B11B8A_nir.png",
         "data_mounts/villarrica/2026/villarrica_20260728T142711_B12B11B8A_nir.png",
         "data_mounts/villarrica/2026/villarrica_20260730T142811_B12B11B8A_nir.png",
-        "data_mounts/villarrica/2026/villarrica_20260731T143741_B12B11B8A_nir.png"
+        "data_mounts/villarrica/2026/villarrica_20260731T143741_B12B11B8A_nir.png",
+        "data_mounts/villarrica/2026/villarrica_20260802T142709_B12B11B8A_nir.png"
       ]
     },
     {
       "name": "tbar_nir",
       "x": [
-        "2026-07-31T14:37:41",
-        "2026-07-31T14:37:41",
-        "2026-07-31T14:37:41"
+        "2026-08-02T14:27:09",
+        "2026-08-02T14:27:09",
+        "2026-08-02T14:27:09"
       ],
       "y": [
         0.1,
@@ -6121,7 +6124,8 @@
         "2026-07-30T18:04:34",
         "2026-07-30T19:44:34",
         "2026-07-31T19:25:21",
-        "2026-08-01T19:05:20"
+        "2026-08-01T19:05:20",
+        "2026-08-02T18:50:20"
       ],
       "y": [
         0.1,
@@ -8213,6 +8217,7 @@
         0.1,
         0.1,
         61.9,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -12451,15 +12456,16 @@
         "data_mounts/villarrica/2026/villarrica_20260730T1804_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260730T1944_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260731T1925_SO2_PBL.png",
-        "data_mounts/villarrica/2026/villarrica_20260801T1905_SO2_PBL.png"
+        "data_mounts/villarrica/2026/villarrica_20260801T1905_SO2_PBL.png",
+        "data_mounts/villarrica/2026/villarrica_20260802T1850_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-08-01T19:05:20",
-        "2026-08-01T19:05:20",
-        "2026-08-01T19:05:20"
+        "2026-08-02T18:50:20",
+        "2026-08-02T18:50:20",
+        "2026-08-02T18:50:20"
       ],
       "y": [
         0.1,
@@ -15637,5 +15643,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-08-02T19:40:41.806384+00:00"
+  "fetched_at": "2026-08-03T04:01:52.989289+00:00"
 }
