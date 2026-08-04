@@ -130,3 +130,96 @@ class TestExportPerVolcano:
         export_csv.export_per_volcano()
         assert read_csv(out / "lascar_so2_mass.csv")[0]["unit"] == "tons"
         assert read_csv(out / "lascar_coh_desc.csv")[0]["unit"] == "Npix_coh<0.5"
+
+
+class TestIsDetection:
+    """
+    El 0.1 de SWIR/SO2 es el placeholder de no-deteccion de MOUNTS, no una
+    medicion. Quien consuma el CSV tiene que poder filtrarlo: promediar sin
+    filtrar contamina cualquier estadistica aguas abajo.
+    """
+
+    def test_swir_bajo_umbral_no_es_deteccion(self):
+        assert export_csv.is_detection("swir", 0.1) is False
+
+    def test_so2_bajo_umbral_no_es_deteccion(self):
+        assert export_csv.is_detection("so2", 0.1) is False
+
+    def test_valor_en_el_umbral_no_es_deteccion(self):
+        assert export_csv.is_detection("swir", 0.5) is False
+
+    def test_valor_sobre_umbral_si_es_deteccion(self):
+        assert export_csv.is_detection("swir", 4.0) is True
+        assert export_csv.is_detection("so2", 120.0) is True
+
+    def test_insar_siempre_es_medicion_real(self):
+        # En deformacion 8e-05 m es una medicion real, no ausencia de senal.
+        assert export_csv.is_detection("def_asc", 8.12e-05) is True
+        assert export_csv.is_detection("coh_desc", 0.0) is True
+
+    def test_none_no_es_deteccion(self):
+        assert export_csv.is_detection("swir", None) is False
+
+
+class TestColumnaDetection:
+    def test_csv_marca_no_detecciones(self, dirs):
+        ts, out = dirs
+        write_ts(ts, "lascar", [{"name": "swir",
+                                 "x": ["2026-01-01", "2026-01-02"],
+                                 "y": [0.1, 7.0]}])
+        export_csv.export_per_volcano()
+        rows = read_csv(out / "lascar_thermal_swir.csv")
+        assert [r["detection"] for r in rows] == ["false", "true"]
+
+    def test_conserva_el_valor_crudo(self, dirs):
+        # Integridad de datos: no se altera lo que publica MOUNTS.
+        ts, out = dirs
+        write_ts(ts, "lascar", [{"name": "swir", "x": ["2026-01-01"], "y": [0.1]}])
+        export_csv.export_per_volcano()
+        assert read_csv(out / "lascar_thermal_swir.csv")[0]["value"] == "0.1"
+
+
+class TestExportActivityJson:
+    @pytest.fixture
+    def base(self, dirs, tmp_path, monkeypatch):
+        monkeypatch.setattr(export_csv, "BASE_DIR", tmp_path)
+        return tmp_path
+
+    def _load(self, base):
+        return json.loads((base / "actividad_termica_so2.json").read_text(encoding="utf-8"))
+
+    def test_incluye_ambas_series(self, dirs, base):
+        ts, _ = dirs
+        write_ts(ts, "lascar", [
+            {"name": "swir", "x": ["2026-01-01"], "y": [7.0]},
+            {"name": "so2",  "x": ["2026-01-01"], "y": [120.0]},
+        ])
+        export_csv.export_activity_json()
+        s = self._load(base)["volcanoes"]["lascar"]["series"]
+        assert set(s) == {"swir", "so2"}
+        assert s["swir"]["unit"] == "S2Pix"
+        assert s["so2"]["unit"] == "tons"
+
+    def test_cuenta_detecciones_por_separado(self, dirs, base):
+        ts, _ = dirs
+        write_ts(ts, "lascar", [{"name": "swir",
+                                 "x": ["2026-01-01", "2026-01-02", "2026-01-03"],
+                                 "y": [0.1, 7.0, 0.1]}])
+        export_csv.export_activity_json()
+        swir = self._load(base)["volcanoes"]["lascar"]["series"]["swir"]
+        assert swir["n_points"] == 3
+        assert swir["n_detections"] == 1, "solo el 7.0 es deteccion real"
+
+    def test_volcan_sin_datos_queda_vacio_pero_presente(self, dirs, base):
+        # Laguna del Maule: sin series en MOUNTS, pero debe figurar.
+        export_csv.export_activity_json()
+        v = self._load(base)["volcanoes"]["lascar"]
+        assert v["series"]["swir"]["n_points"] == 0
+        assert v["series"]["swir"]["first_date"] is None
+
+    def test_documenta_los_caveats_cientificos(self, dirs, base):
+        export_csv.export_activity_json()
+        notes = self._load(base)["notes"]
+        assert "Massimetti" in notes["swir"], "SWIR no son watts: hay que decirlo"
+        assert "PBL" in notes["so2"], "el caveat de Andes altos debe ir en el JSON"
+        assert "detection" in notes

@@ -107,7 +107,7 @@ Disponible para descarga directa. Schema:
 | `volcanoes` | 7 | `key, name, smithsonian_id, lat, lon` |
 | `observations` | 22 K | `volcano_key, product, date, value, unit, sensor, image_path` |
 | `anomalies` | 5+ | `volcano_key, product, date, value, baseline_median, baseline_mad, zscore, severity, detected_at` |
-| `events` | 30+ | `volcano_key, date, track_type, value` (tbar_* GVP) |
+| `events` | 600+ | `volcano_key, date, track_type, value` — ⚠ marcadores de gráfico `tbar_*` de MOUNTS, **NO** eventos eruptivos: no usar como ground truth |
 | `status_history` | * | snapshot por update |
 | `metadata` | 1+ | `key, value` (incluye `last_update`) |
 
@@ -171,9 +171,67 @@ Generado por `db.py export`. Súbset de `mounts.db.anomalies`.
 | `csv/<volcán>_def_{asc,desc}.csv` | Deformación InSAR |
 | `csv/all_thermal.csv` | SWIR consolidado todos los volcanes |
 | `csv/all_so2.csv` | SO₂ consolidado |
-| `csv/events.csv` | Eventos GVP/USGS |
+| `csv/events.csv` | Marcadores `tbar_*` de MOUNTS — ⚠ **no** son eventos eruptivos |
 
-Columnas: `date, value, unit, product, sensor, image_path, image_url`.
+Columnas: `date, value, detection, unit, product, sensor, image_path, image_url`
+(los consolidados agregan `volcano` y `track`).
+
+### ⚠ La columna `detection` — leer antes de promediar
+
+En **SWIR** y **SO₂**, MOUNTS publica un valor placeholder (~`0.1`) cuando no
+hay señal sobre el umbral. **No es una medición.** Se conserva el valor crudo
+(integridad de datos) y se marca con `detection`:
+
+- `detection=true` → medición real
+- `detection=false` → no-detección (valor ≤ 0.5)
+
+Esto importa más de lo que parece: **la serie de SO₂ es casi toda
+no-detección**. Nevados de Chillán tiene 1 detección real en 2.699 puntos;
+Láscar, 152 en 2.410. Promediar sin filtrar da un resultado sin sentido.
+
+```python
+import pandas as pd
+df = pd.read_csv("csv/all_thermal.csv")
+reales = df[df.detection]           # solo mediciones
+```
+
+No aplica a `def_*` / `coh_*`: ahí un valor chico (8e-05 m) **sí** es una
+medición real de desplazamiento.
+
+---
+
+## `/actividad_termica_so2.json` — Térmico + SO₂ consolidado
+
+Un solo JSON con las dos series de actividad de los 7 volcanes, pensado para
+consumir los datos sin tener que juntar 14 CSVs. Incluye los caveats
+científicos en el propio archivo (campo `notes`).
+
+```jsonc
+{
+  "generated_at": "...",
+  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
+  "notes": { "swir": "...", "so2": "...", "detection": "..." },
+  "volcanoes": {
+    "lascar": {
+      "name": "Lascar", "smithsonian_id": 355100,
+      "series": {
+        "swir": {
+          "product": "thermal_swir", "unit": "S2Pix", "sensor": "Sentinel-2",
+          "n_points": 450, "n_detections": 220,
+          "first_date": "2020-01-04T14:37:21", "last_date": "...",
+          "data": [{"date": "...", "value": 7.0, "detection": true,
+                    "image_path": "data_mounts/..."}]
+        },
+        "so2": { }
+      }
+    }
+  }
+}
+```
+
+Cobertura: **19.478 puntos**, desde 2018-08 (Nevados de Chillán) hasta hoy.
+Laguna del Maule figura con `n_points: 0` — MOUNTS no publica series para ese
+volcán.
 
 ---
 

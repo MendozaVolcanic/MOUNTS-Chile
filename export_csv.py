@@ -18,6 +18,7 @@ Uso:
 
 import csv
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parent
@@ -49,7 +50,27 @@ TRACE_MAP = {
 
 EVENT_TRACES = {"tbar_so2", "tbar_nir", "tbar_disp", "tbar_int", "tbar_coh"}
 
-COLS = ["date", "value", "unit", "product", "sensor", "image_path", "image_url"]
+COLS = ["date", "value", "detection", "unit", "product", "sensor", "image_path", "image_url"]
+
+# No-detecciones: en SWIR (conteo de pixeles termicos) y SO2 (masa), MOUNTS
+# publica un valor placeholder (~0.1) cuando no hay senal sobre el umbral. NO
+# es una medicion: promediarlo contamina cualquier estadistica aguas abajo.
+#
+# Se conserva el valor crudo tal como lo publica MOUNTS (integridad de datos:
+# no se altera el dato de origen) y se agrega la columna `detection` para que
+# quien consuma el CSV pueda filtrar. En def_/coh_ no aplica: ahi un valor
+# chico (8e-05 m) SI es una medicion real.
+NONDETECT_TRACES = {"swir", "so2"}
+NONDETECT_THRESHOLD = 0.5
+
+
+def is_detection(trace_name: str, value) -> bool:
+    """False si el valor representa ausencia de senal en vez de una medicion."""
+    if value is None:
+        return False
+    if trace_name not in NONDETECT_TRACES:
+        return True
+    return abs(value) > NONDETECT_THRESHOLD
 
 
 def load_ts(key):
@@ -88,7 +109,8 @@ def export_per_volcano():
                     if y is None:
                         continue
                     img_url = f"{MOUNTS_BASE}/{txt}" if txt else ""
-                    w.writerow([x, y, unit, product, sensor, txt, img_url])
+                    det = "true" if is_detection(tname, y) else "false"
+                    w.writerow([x, y, det, unit, product, sensor, txt, img_url])
             written += 1
             print(f"  {out.name:50s} ({n} filas)")
     print(f"Per-volcan/producto: {written} CSVs en {CSV_DIR}")
@@ -102,7 +124,8 @@ def export_consolidated():
         "all_deformation":  ["def_asc", "def_desc"],
         "all_coherence":    ["coh_asc", "coh_desc"],
     }
-    cols = ["date", "volcano", "value", "unit", "track", "product", "sensor", "image_path"]
+    cols = ["date", "volcano", "value", "detection", "unit", "track", "product",
+            "sensor", "image_path"]
 
     for fname, trace_names in consolidations.items():
         rows = []
@@ -125,7 +148,8 @@ def export_consolidated():
                 for x, y, txt in zip(xs[:n], ys[:n], texts):
                     if y is None:
                         continue
-                    rows.append([x, name, y, unit, track, product, sensor, txt])
+                    det = "true" if is_detection(tname, y) else "false"
+                    rows.append([x, name, y, det, unit, track, product, sensor, txt])
         rows.sort(key=lambda r: (r[0], r[1]))   # por fecha, volcan
         out = CSV_DIR / f"{fname}.csv"
         with open(out, "w", newline="", encoding="utf-8") as f:
@@ -136,7 +160,16 @@ def export_consolidated():
 
 
 def export_events():
-    """Eventos tbar_* — banderas de erupcion/actividad de GVP+USGS."""
+    """
+    Marcadores tbar_* de MOUNTS. ⚠ NO son eventos eruptivos.
+
+    Son las lineas verticales que MOUNTS dibuja en sus graficos para marcar la
+    ultima observacion de cada producto (3 puntos con el mismo x, valores
+    fijos 0.1/0.0 que son los minimos del eje-y, y una frecuencia que sigue el
+    revisit del sensor). Se exportan por fidelidad al upstream, pero NO sirven
+    como ground truth: no cruzarlos contra anomalias para medir precision.
+    Ver la nota de la cabecera de db.py.
+    """
     out = CSV_DIR / "events.csv"
     cols = ["date", "volcano", "track_type", "value", "image_path", "image_url"]
     rows = []
@@ -167,6 +200,71 @@ def export_events():
     print(f"  {out.name:30s} ({len(rows)} eventos)")
 
 
+def export_activity_json():
+    """
+    Un solo JSON con las dos series de actividad de los volcanes chilenos:
+    anomalia termica (SWIR) y masa de SO2. Es el endpoint pensado para que
+    alguien de afuera consuma los datos sin tener que juntar 14 CSVs.
+
+    Cada punto lleva `detection`: en SWIR y SO2 un valor <=0.5 es el
+    placeholder de no-deteccion de MOUNTS, no una medicion (ver
+    NONDETECT_TRACES). Se conserva el valor crudo y se marca el flag, para
+    que quien analice decida — promediar sin filtrar contamina la estadistica.
+    """
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
+        "notes": {
+            "swir": ("N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA "
+                     "(Massimetti+ 2020). NO son watts radiantes: no es "
+                     "comparable con el VRP de MIROVA."),
+            "so2": ("Masa de SO2 columnar integrada en el AOI, TROPOMI perfil "
+                    "PBL. El perfil PBL subestima 2-4x en volcanes andinos "
+                    "altos (Lascar 5592 m, Llaima 3125 m)."),
+            "detection": ("false = no-deteccion (MOUNTS publica ~0.1 como "
+                          "placeholder bajo el umbral). Filtrar por "
+                          "detection=true antes de promediar."),
+        },
+        "volcanoes": {},
+    }
+
+    for key, name, sid in VOLCANES:
+        data = load_ts(key)
+        entry = {"name": name, "smithsonian_id": sid, "series": {}}
+        traces = {t.get("name"): t for t in (data or {}).get("traces", []) if t.get("name")}
+        for tname in ("swir", "so2"):
+            t = traces.get(tname)
+            product, unit, sensor, desc = TRACE_MAP[tname]
+            pts = []
+            if t:
+                xs, ys = t.get("x") or [], t.get("y") or []
+                texts = t.get("text") or []
+                n = min(len(xs), len(ys))
+                texts = (texts + [""] * n)[:n] if texts else [""] * n
+                for x, y, txt in zip(xs[:n], ys[:n], texts):
+                    if y is None:
+                        continue
+                    pts.append({"date": x, "value": y,
+                                "detection": is_detection(tname, y),
+                                "image_path": txt})
+            n_det = sum(1 for p in pts if p["detection"])
+            entry["series"][tname] = {
+                "product": product, "unit": unit, "sensor": sensor,
+                "description": desc,
+                "n_points": len(pts), "n_detections": n_det,
+                "first_date": pts[0]["date"] if pts else None,
+                "last_date":  pts[-1]["date"] if pts else None,
+                "data": pts,
+            }
+        payload["volcanoes"][key] = entry
+
+    out = BASE_DIR / "actividad_termica_so2.json"
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+    tot = sum(s["n_points"] for v in payload["volcanoes"].values()
+              for s in v["series"].values())
+    print(f"  {out.name:30s} ({tot} puntos, {out.stat().st_size//1024} KB)")
+
+
 def main():
     CSV_DIR.mkdir(exist_ok=True)
     print("Per-volcan / producto")
@@ -180,6 +278,10 @@ def main():
     print("Eventos (tbar_*)")
     print("-" * 60)
     export_events()
+    print()
+    print("JSON de actividad (termico + SO2)")
+    print("-" * 60)
+    export_activity_json()
     print()
     print(f"Listo. Salida en {CSV_DIR}/")
 

@@ -87,6 +87,18 @@ a:hover{{text-decoration:underline}}
 .cell-bottom{{display:flex;justify-content:space-between;align-items:center;gap:4px}}
 .cell-age{{font-size:.6rem;color:#6e7681}}
 .diff-badge{{font-size:.58rem;padding:1px 4px;border-radius:3px;font-family:'SF Mono',Monaco,monospace}}
+/* Separador entre el bloque de graficos y el de analisis. Marca el cambio de
+   modo de lectura: arriba "como viene este volcan", abajo "que paso en el
+   conjunto". Sin esto, mover el status board al fondo lo volvia invisible. */
+.sec-divider{{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:16px 14px 8px;margin-top:8px;border-top:2px solid #21262d;
+  background:linear-gradient(180deg,#10151c,transparent)}}
+.sec-divider span{{font-size:.95rem;font-weight:600;color:#f0f6fc}}
+.sec-divider small{{font-size:.7rem;color:#6e7681}}
+/* Acceso directo al bloque de analisis desde la barra superior */
+.nav-jump{{font-size:.68rem;color:#58a6ff;text-decoration:none;
+  border:1px solid #30363d;border-radius:4px;padding:2px 7px;white-space:nowrap}}
+.nav-jump:hover{{background:#161b22}}
 /* Forma por severidad, redundante con el color (accesibilidad daltonica) */
 .sev-glyph{{margin-right:3px;font-size:.7rem}}
 /* Orbita S1 usada (ASC/DESC): geometrias de LOS distintas, hay que declararla */
@@ -182,6 +194,7 @@ a:hover{{text-decoration:underline}}
 <div class="topbar">
   <h1>&#127755; MOUNTS-Chile</h1>
   <div class="nav">{nav}</div>
+  <a class="nav-jump" href="#analisis" title="Status board, alertas, histórico, streamgraphs, mapa y estado upstream">↓ Análisis</a>
   <span class="meta">{esc(generated)}</span>
   <span class="time-filter">
     <span style="font-size:.65rem;color:#6e7681">Rango:</span>
@@ -213,16 +226,20 @@ function setTimeRange(days) {{
   }});
 }}
 </script>
-{status_html}
 {bulletin_html}
-{upstream_html}
+{sections}
+<div class="sec-divider" id="analisis">
+  <span>Análisis y contexto</span>
+  <small>Estado detallado, alertas, histórico y vista regional</small>
+</div>
+{status_html}
 {alerts_html}
 {multi_html}
 {history_html}
 {stream_so2}
 {stream_swir}
 {map_html}
-{sections}
+{upstream_html}
 <div class="foot">
   Fuente: <a href="https://www.mounts-project.com" target="_blank">mounts-project.com</a>
   (Valade et al. 2019, TU Berlin / GFZ Potsdam) &middot; Sentinel-1/2/5P &copy; Copernicus/ESA
