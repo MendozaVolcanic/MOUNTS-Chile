@@ -1273,6 +1273,7 @@ date,volcano,value,detection,unit,track,product,sensor,image_path
 2026-06-22T09:57:02,Nevados de Chillan,533466.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2026/nevadoschillan_20260610T095702_20260622T095702_VV_coh.png
 2026-06-22T09:57:27,Copahue,523203.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260610T095727_20260622T095727_VV_coh.png
 2026-06-22T09:57:27,Llaima,538416.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260610T095727_20260622T095727_VV_coh.png
+2026-06-22T09:57:51,Villarrica,530905.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/villarrica/2026/villarrica_20260610T095752_20260622T095751_VV_coh.png
 2026-06-27T10:01:32,Lascar,12000.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260615T100133_20260627T100132_VV_coh.png
 2026-06-28T10:00:35,Lascar,202327.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260627T100132_20260628T100035_VV_coh.png
 2026-06-30T23:26:54,Planchon-Peteroa,509383.0,true,Npix_coh<0.5,asc,coh_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20260617T232729_20260630T232654_VV_coh.png
@@ -1289,3 +1290,4 @@ date,volcano,value,detection,unit,track,product,sensor,image_path
 2026-07-29T09:56:05,Nevados de Chillan,530221.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/nevadoschillan/2026/nevadoschillan_20260717T095604_20260729T095605_VV_coh.png
 2026-07-29T09:56:30,Copahue,525958.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260717T095629_20260729T095630_VV_coh.png
 2026-07-29T09:56:30,Llaima,480518.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260717T095629_20260729T095630_VV_coh.png
+2026-08-03T10:00:37,Lascar,6543.0,true,Npix_coh<0.5,desc,coh_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260722T100037_20260803T100037_VV_coh.png
