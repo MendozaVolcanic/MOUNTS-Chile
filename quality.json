@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T20:04:53.746631+00:00",
+  "generated_at": "2026-08-04T03:44:36.880754+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -19,11 +19,11 @@
         ]
       },
       "so2": {
-        "n_observations": 2411,
+        "n_observations": 2412,
         "first_date": "2020-01-01T18:36:02",
-        "last_date": "2026-08-02T18:50:20",
+        "last_date": "2026-08-03T18:35:21",
         "total_span_days": 2405,
-        "coverage_pct": 100.2,
+        "coverage_pct": 100.3,
         "n_gaps": 6,
         "largest_gap_days": 250,
         "gaps_top5": [
@@ -119,10 +119,10 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2633,
+        "n_observations": 2634,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-08-02T18:50:20",
-        "total_span_days": 2126,
+        "last_date": "2026-08-03T18:30:20",
+        "total_span_days": 2127,
         "coverage_pct": 123.8,
         "n_gaps": 3,
         "largest_gap_days": 10,
@@ -206,10 +206,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2700,
+        "n_observations": 2701,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-08-02T18:50:20",
-        "total_span_days": 2126,
+        "last_date": "2026-08-03T18:30:20",
+        "total_span_days": 2127,
         "coverage_pct": 127.0,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -301,10 +301,10 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2690,
+        "n_observations": 2691,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-08-02T18:50:20",
-        "total_span_days": 2126,
+        "last_date": "2026-08-03T18:30:20",
+        "total_span_days": 2127,
         "coverage_pct": 126.5,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -392,10 +392,10 @@
         ]
       },
       "so2": {
-        "n_observations": 1696,
+        "n_observations": 1697,
         "first_date": "2023-01-21T18:08:00",
-        "last_date": "2026-08-02T18:50:20",
-        "total_span_days": 1289,
+        "last_date": "2026-08-03T18:30:20",
+        "total_span_days": 1290,
         "coverage_pct": 131.6,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -467,9 +467,9 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 3164,
+        "n_observations": 3165,
         "first_date": "2020-01-01T18:31:02",
-        "last_date": "2026-08-02T18:50:20",
+        "last_date": "2026-08-03T18:30:20",
         "total_span_days": 2405,
         "coverage_pct": 131.6,
         "n_gaps": 3,
@@ -503,14 +503,19 @@
         "gaps_top5": []
       },
       "def_desc": {
-        "n_observations": 240,
+        "n_observations": 241,
         "first_date": "2020-01-25T09:57:23",
-        "last_date": "2026-04-11T09:57:54",
-        "total_span_days": 2268,
-        "coverage_pct": 127.0,
-        "n_gaps": 3,
-        "largest_gap_days": 59,
+        "last_date": "2026-06-22T09:57:51",
+        "total_span_days": 2340,
+        "coverage_pct": 123.6,
+        "n_gaps": 4,
+        "largest_gap_days": 71,
         "gaps_top5": [
+          {
+            "from": "2026-04-11T09:57:54",
+            "to": "2026-06-22T09:57:51",
+            "days": 71
+          },
           {
             "from": "2025-05-10T09:58:06",
             "to": "2025-07-09T09:58:03",
@@ -539,14 +544,19 @@
         "gaps_top5": []
       },
       "coh_desc": {
-        "n_observations": 240,
+        "n_observations": 241,
         "first_date": "2020-01-25T09:57:23",
-        "last_date": "2026-04-11T09:57:54",
-        "total_span_days": 2268,
-        "coverage_pct": 127.0,
-        "n_gaps": 3,
-        "largest_gap_days": 59,
+        "last_date": "2026-06-22T09:57:51",
+        "total_span_days": 2340,
+        "coverage_pct": 123.6,
+        "n_gaps": 4,
+        "largest_gap_days": 71,
         "gaps_top5": [
+          {
+            "from": "2026-04-11T09:57:54",
+            "to": "2026-06-22T09:57:51",
+            "days": 71
+          },
           {
             "from": "2025-05-10T09:58:06",
             "to": "2025-07-09T09:58:03",
