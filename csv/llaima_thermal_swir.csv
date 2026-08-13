@@ -243,3 +243,4 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-07-30T14:28:11,0.1,false,S2Pix,thermal_swir,Sentinel-2,data_mounts/llaima/2026/llaima_20260730T142811_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260730T142811_B12B11B8A_nir.png
 2026-08-02T14:27:09,0.1,false,S2Pix,thermal_swir,Sentinel-2,data_mounts/llaima/2026/llaima_20260802T142709_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260802T142709_B12B11B8A_nir.png
 2026-08-07T14:27:11,0.1,false,S2Pix,thermal_swir,Sentinel-2,data_mounts/llaima/2026/llaima_20260807T142711_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260807T142711_B12B11B8A_nir.png
+2026-08-12T14:27:09,0.1,false,S2Pix,thermal_swir,Sentinel-2,data_mounts/llaima/2026/llaima_20260812T142709_B12B11B8A_nir.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20260812T142709_B12B11B8A_nir.png
