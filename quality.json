@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T03:05:28.322973+00:00",
+  "generated_at": "2026-08-13T07:58:39.063504+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -180,11 +180,11 @@
     "laguna-del-maule": {},
     "nevados-de-chillan": {
       "swir": {
-        "n_observations": 750,
+        "n_observations": 751,
         "first_date": "2018-08-17T14:37:39",
-        "last_date": "2026-08-10T14:37:41",
-        "total_span_days": 2915,
-        "coverage_pct": 128.6,
+        "last_date": "2026-08-12T14:38:01",
+        "total_span_days": 2917,
+        "coverage_pct": 128.7,
         "n_gaps": 3,
         "largest_gap_days": 754,
         "gaps_top5": [
