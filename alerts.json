@@ -1,9 +1,21 @@
 {
-  "generated_at": "2026-08-15T13:03:46.306861+00:00",
+  "generated_at": "2026-08-15T18:52:57.853849+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 1,
+  "count": 2,
   "alerts": [
+    {
+      "date": "2026-08-15T10:00:38",
+      "value": 451904.0,
+      "baseline": 120193.0,
+      "zscore": 5.411713842890937,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "COH",
+      "unit": "Npix_coh<0.5"
+    },
     {
       "date": "2026-07-21T14:37:41",
       "value": 2.0,
