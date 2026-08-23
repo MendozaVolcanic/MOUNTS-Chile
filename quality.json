@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T18:54:53.245560+00:00",
+  "generated_at": "2026-08-23T02:04:37.849544+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,20 +109,20 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 897,
+        "n_observations": 898,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-08-20T14:37:41",
-        "total_span_days": 2143,
-        "coverage_pct": 209.3,
+        "last_date": "2026-08-22T14:27:09",
+        "total_span_days": 2144,
+        "coverage_pct": 209.4,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2657,
+        "n_observations": 2658,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-08-21T19:33:44",
-        "total_span_days": 2145,
+        "last_date": "2026-08-22T19:13:43",
+        "total_span_days": 2146,
         "coverage_pct": 123.9,
         "n_gaps": 3,
         "largest_gap_days": 10,
@@ -206,10 +206,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2725,
+        "n_observations": 2726,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-08-21T19:33:44",
-        "total_span_days": 2145,
+        "last_date": "2026-08-22T19:13:43",
+        "total_span_days": 2146,
         "coverage_pct": 127.0,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -291,20 +291,20 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 898,
+        "n_observations": 899,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-08-20T14:37:41",
-        "total_span_days": 2143,
-        "coverage_pct": 209.5,
+        "last_date": "2026-08-22T14:27:09",
+        "total_span_days": 2144,
+        "coverage_pct": 209.7,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2715,
+        "n_observations": 2716,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-08-21T19:33:44",
-        "total_span_days": 2145,
+        "last_date": "2026-08-22T19:13:43",
+        "total_span_days": 2146,
         "coverage_pct": 126.6,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -376,11 +376,11 @@
     },
     "llaima": {
       "swir": {
-        "n_observations": 247,
+        "n_observations": 248,
         "first_date": "2023-01-25T14:27:11",
-        "last_date": "2026-08-19T14:28:11",
-        "total_span_days": 1302,
-        "coverage_pct": 94.9,
+        "last_date": "2026-08-22T14:27:09",
+        "total_span_days": 1304,
+        "coverage_pct": 95.1,
         "n_gaps": 1,
         "largest_gap_days": 174,
         "gaps_top5": [
@@ -392,11 +392,11 @@
         ]
       },
       "so2": {
-        "n_observations": 1722,
+        "n_observations": 1723,
         "first_date": "2023-01-21T18:08:00",
-        "last_date": "2026-08-21T19:33:44",
-        "total_span_days": 1308,
-        "coverage_pct": 131.7,
+        "last_date": "2026-08-22T19:13:43",
+        "total_span_days": 1309,
+        "coverage_pct": 131.6,
         "n_gaps": 2,
         "largest_gap_days": 10,
         "gaps_top5": [
@@ -457,20 +457,20 @@
     },
     "villarrica": {
       "swir": {
-        "n_observations": 987,
+        "n_observations": 988,
         "first_date": "2020-01-19T14:36:59",
-        "last_date": "2026-08-20T14:37:41",
-        "total_span_days": 2405,
-        "coverage_pct": 205.2,
+        "last_date": "2026-08-22T14:27:09",
+        "total_span_days": 2406,
+        "coverage_pct": 205.3,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 3190,
+        "n_observations": 3191,
         "first_date": "2020-01-01T18:31:02",
-        "last_date": "2026-08-21T19:33:44",
-        "total_span_days": 2424,
+        "last_date": "2026-08-22T19:13:43",
+        "total_span_days": 2425,
         "coverage_pct": 131.6,
         "n_gaps": 3,
         "largest_gap_days": 10,
