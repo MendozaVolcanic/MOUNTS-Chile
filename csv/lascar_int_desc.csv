@@ -252,3 +252,4 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-07-22T10:00:37,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260722T100037_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260722T100037_VV_int.png
 2026-08-03T10:00:37,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260803T100037_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260803T100037_VV_int.png
 2026-08-15T10:00:38,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260815T100038_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260815T100038_VV_int.png
+2026-08-27T10:00:39,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260827T100039_VV_int.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20260827T100039_VV_int.png
