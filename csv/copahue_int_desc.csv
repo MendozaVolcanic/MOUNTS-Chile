@@ -224,3 +224,4 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-07-29T09:56:30,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260729T095630_VV_int.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260729T095630_VV_int.png
 2026-08-10T09:56:31,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260810T095631_VV_int.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260810T095631_VV_int.png
 2026-08-22T09:56:31,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260822T095631_VV_int.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260822T095631_VV_int.png
+2026-09-03T09:56:32,0.0,true,placeholder,int_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260903T095632_VV_int.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20260903T095632_VV_int.png
