@@ -1,5 +1,53 @@
 {
-  "checked_at": "2026-09-04T16:29:22.271536+00:00",
+  "checked_at": "2026-09-04T20:51:49.865402+00:00",
+  "news_hash": "ad4239a094ae9b86",
+  "about_hash": "0569c10d1433b53a",
+  "citation": {
+    "dois": [
+      "10.1007/s00445-022-01523-1",
+      "10.1016/j.epsl.2021.117230",
+      "10.1038/s41467-023-38386-9",
+      "10.1109/IGARSS39084.2020.9323293",
+      "10.3389/feart.2022.1064171"
+    ],
+    "contacts": [
+      "valade@igeofisica.unam.mx"
+    ],
+    "max_year": "2072"
+  },
+  "chilean_volcanoes_in_mounts": [
+    [
+      357070,
+      "Chillán, Nevados de",
+      "cl"
+    ],
+    [
+      355100,
+      "Láscar",
+      "cl"
+    ],
+    [
+      357110,
+      "Llaima",
+      "cl"
+    ],
+    [
+      357061,
+      "Maule, Laguna del",
+      "cl"
+    ],
+    [
+      357040,
+      "Planchón-Peteroa",
+      "cl"
+    ],
+    [
+      357120,
+      "Villarrica",
+      "cl"
+    ]
+  ],
+  "n_volcanoes_global": 100,
   "schemas": {
     "lascar": {
       "valid": true,

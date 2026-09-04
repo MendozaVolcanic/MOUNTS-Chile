@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T16:29:38.007710+00:00",
+ "generated_at": "2026-09-04T20:52:05.711353+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -17470,10 +17470,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 903,
+     "n_points": 904,
      "n_detections": 40,
      "first_date": "2020-10-07T14:27:41",
-     "last_date": "2026-09-01T14:38:01",
+     "last_date": "2026-09-04T14:37:39",
      "data": [
       {
        "date": "2020-10-07T14:27:41",
@@ -22892,6 +22892,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260901T143801_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-09-04T14:37:39",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260904T143739_B12B11B8A_nir.png"
       }
      ]
     },
@@ -59984,10 +59990,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 904,
+     "n_points": 905,
      "n_detections": 40,
      "first_date": "2020-10-07T14:27:41",
-     "last_date": "2026-09-01T14:38:01",
+     "last_date": "2026-09-04T14:37:39",
      "data": [
       {
        "date": "2020-10-07T14:27:41",
@@ -65412,6 +65418,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/copahue/2026/copahue_20260901T143801_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-09-04T14:37:39",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/copahue/2026/copahue_20260904T143739_B12B11B8A_nir.png"
       }
      ]
     },

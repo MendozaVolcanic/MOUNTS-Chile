@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T16:29:35.066835+00:00",
+  "generated_at": "2026-09-04T20:52:02.557445+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,10 +109,10 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 903,
+        "n_observations": 904,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-09-01T14:38:01",
-        "total_span_days": 2155,
+        "last_date": "2026-09-04T14:37:39",
+        "total_span_days": 2158,
         "coverage_pct": 209.5,
         "n_gaps": 0,
         "largest_gap_days": 0,
@@ -291,10 +291,10 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 904,
+        "n_observations": 905,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-09-01T14:38:01",
-        "total_span_days": 2155,
+        "last_date": "2026-09-04T14:37:39",
+        "total_span_days": 2158,
         "coverage_pct": 209.7,
         "n_gaps": 0,
         "largest_gap_days": 0,
