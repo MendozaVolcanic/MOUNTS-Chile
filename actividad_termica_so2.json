@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-06T15:34:28.641683+00:00",
+ "generated_at": "2026-09-06T20:31:42.773636+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -22924,10 +22924,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2675,
+     "n_points": 2676,
      "n_detections": 21,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-09-05T18:11:11",
+     "last_date": "2026-09-06T17:51:11",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -38978,6 +38978,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260905T1811_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-06T17:51:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20260906T1751_SO2_PBL.png"
       }
      ]
     }
@@ -81878,10 +81884,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 250,
+     "n_points": 251,
      "n_detections": 17,
      "first_date": "2023-01-25T14:27:11",
-     "last_date": "2026-09-01T14:27:09",
+     "last_date": "2026-09-06T14:27:11",
      "data": [
       {
        "date": "2023-01-25T14:27:11",
@@ -83382,6 +83388,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/llaima/2026/llaima_20260901T142709_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-09-06T14:27:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/llaima/2026/llaima_20260906T142711_B12B11B8A_nir.png"
       }
      ]
     },
@@ -83390,10 +83402,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 1741,
+     "n_points": 1742,
      "n_detections": 4,
      "first_date": "2023-01-21T18:08:00",
-     "last_date": "2026-09-05T19:51:10",
+     "last_date": "2026-09-06T17:51:11",
      "data": [
       {
        "date": "2023-01-21T18:08:00",
@@ -93840,6 +93852,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/llaima/2026/llaima_20260905T1951_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-06T17:51:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/llaima/2026/llaima_20260906T1751_SO2_PBL.png"
       }
      ]
     }
