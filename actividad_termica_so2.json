@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-07T12:46:06.642653+00:00",
+ "generated_at": "2026-09-07T21:37:55.622230+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -43592,10 +43592,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2739,
+     "n_points": 2745,
      "n_detections": 1,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-09-02T19:06:10",
+     "last_date": "2026-09-06T19:31:11",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -60030,6 +60030,42 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20260902T1906_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-03T18:51:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20260903T1851_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-04T18:31:10",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20260904T1831_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-05T18:11:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20260905T1811_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-05T19:51:10",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20260905T1951_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-06T17:51:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20260906T1751_SO2_PBL.png"
+      },
+      {
+       "date": "2026-09-06T19:31:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20260906T1931_SO2_PBL.png"
       }
      ]
     }
