@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T16:36:47.149885+00:00",
+  "generated_at": "2026-09-11T21:04:54.327999+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -109,21 +109,21 @@
     },
     "planchon-peteroa": {
       "swir": {
-        "n_observations": 907,
+        "n_observations": 908,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-09-09T14:37:41",
-        "total_span_days": 2163,
-        "coverage_pct": 209.7,
+        "last_date": "2026-09-11T14:27:09",
+        "total_span_days": 2164,
+        "coverage_pct": 209.8,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2681,
+        "n_observations": 2683,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-09-10T18:16:10",
-        "total_span_days": 2165,
-        "coverage_pct": 123.8,
+        "last_date": "2026-09-11T18:01:11",
+        "total_span_days": 2166,
+        "coverage_pct": 123.9,
         "n_gaps": 3,
         "largest_gap_days": 10,
         "gaps_top5": [
@@ -180,11 +180,11 @@
     "laguna-del-maule": {},
     "nevados-de-chillan": {
       "swir": {
-        "n_observations": 760,
+        "n_observations": 761,
         "first_date": "2018-08-17T14:37:39",
-        "last_date": "2026-09-09T14:37:41",
-        "total_span_days": 2945,
-        "coverage_pct": 129.0,
+        "last_date": "2026-09-11T14:27:09",
+        "total_span_days": 2946,
+        "coverage_pct": 129.2,
         "n_gaps": 3,
         "largest_gap_days": 754,
         "gaps_top5": [
@@ -291,11 +291,11 @@
     },
     "copahue": {
       "swir": {
-        "n_observations": 908,
+        "n_observations": 909,
         "first_date": "2020-10-07T14:27:41",
-        "last_date": "2026-09-09T14:37:41",
-        "total_span_days": 2163,
-        "coverage_pct": 209.9,
+        "last_date": "2026-09-11T14:27:09",
+        "total_span_days": 2164,
+        "coverage_pct": 210.0,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
@@ -376,11 +376,11 @@
     },
     "llaima": {
       "swir": {
-        "n_observations": 252,
+        "n_observations": 253,
         "first_date": "2023-01-25T14:27:11",
-        "last_date": "2026-09-08T14:28:11",
-        "total_span_days": 1322,
-        "coverage_pct": 95.3,
+        "last_date": "2026-09-11T14:27:09",
+        "total_span_days": 1324,
+        "coverage_pct": 95.5,
         "n_gaps": 1,
         "largest_gap_days": 174,
         "gaps_top5": [
@@ -392,9 +392,9 @@
         ]
       },
       "so2": {
-        "n_observations": 1747,
+        "n_observations": 1748,
         "first_date": "2023-01-21T18:08:00",
-        "last_date": "2026-09-10T18:16:10",
+        "last_date": "2026-09-11T18:01:11",
         "total_span_days": 1328,
         "coverage_pct": 131.6,
         "n_gaps": 2,
