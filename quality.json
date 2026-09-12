@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T21:04:54.327999+00:00",
+  "generated_at": "2026-09-12T04:44:35.573455+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -19,10 +19,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2454,
+        "n_observations": 2455,
         "first_date": "2020-01-01T18:36:02",
-        "last_date": "2026-09-10T18:21:11",
-        "total_span_days": 2443,
+        "last_date": "2026-09-11T18:01:11",
+        "total_span_days": 2444,
         "coverage_pct": 100.5,
         "n_gaps": 6,
         "largest_gap_days": 250,
@@ -119,9 +119,9 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2683,
+        "n_observations": 2684,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-09-11T18:01:11",
+        "last_date": "2026-09-11T19:41:11",
         "total_span_days": 2166,
         "coverage_pct": 123.9,
         "n_gaps": 3,
@@ -206,10 +206,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2749,
+        "n_observations": 2751,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-09-10T18:16:10",
-        "total_span_days": 2165,
+        "last_date": "2026-09-11T19:41:11",
+        "total_span_days": 2166,
         "coverage_pct": 127.0,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -301,10 +301,10 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2739,
+        "n_observations": 2741,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-09-10T18:16:10",
-        "total_span_days": 2165,
+        "last_date": "2026-09-11T19:41:11",
+        "total_span_days": 2166,
         "coverage_pct": 126.5,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -392,10 +392,10 @@
         ]
       },
       "so2": {
-        "n_observations": 1748,
+        "n_observations": 1749,
         "first_date": "2023-01-21T18:08:00",
-        "last_date": "2026-09-11T18:01:11",
-        "total_span_days": 1328,
+        "last_date": "2026-09-11T19:41:11",
+        "total_span_days": 1329,
         "coverage_pct": 131.6,
         "n_gaps": 2,
         "largest_gap_days": 10,
