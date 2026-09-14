@@ -2534,6 +2534,7 @@
         "2026-09-08T18:56:10",
         "2026-09-09T18:36:11",
         "2026-09-10T18:16:10",
+        "2026-09-10T19:56:10",
         "2026-09-11T18:01:11",
         "2026-09-11T19:41:11",
         "2026-09-12T19:21:11",
@@ -3367,6 +3368,7 @@
         0.1,
         0.1,
         819.4,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -6040,6 +6042,7 @@
         "data_mounts/llaima/2026/llaima_20260908T1856_SO2_PBL.png",
         "data_mounts/llaima/2026/llaima_20260909T1836_SO2_PBL.png",
         "data_mounts/llaima/2026/llaima_20260910T1816_SO2_PBL.png",
+        "data_mounts/llaima/2026/llaima_20260910T1956_SO2_PBL.png",
         "data_mounts/llaima/2026/llaima_20260911T1801_SO2_PBL.png",
         "data_mounts/llaima/2026/llaima_20260911T1941_SO2_PBL.png",
         "data_mounts/llaima/2026/llaima_20260912T1921_SO2_PBL.png",
@@ -7210,5 +7213,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-14T12:59:40.754891+00:00"
+  "fetched_at": "2026-09-14T21:54:53.838717+00:00"
 }

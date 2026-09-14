@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-14T13:00:52.202671+00:00",
+  "generated_at": "2026-09-14T21:55:44.770489+00:00",
   "gaps": {
     "lascar": {
       "swir": {
-        "n_observations": 460,
+        "n_observations": 461,
         "first_date": "2020-01-04T14:37:21",
-        "last_date": "2026-09-09T14:37:41",
-        "total_span_days": 2440,
+        "last_date": "2026-09-14T14:37:39",
+        "total_span_days": 2445,
         "coverage_pct": 94.3,
         "n_gaps": 1,
         "largest_gap_days": 250,
@@ -19,10 +19,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2457,
+        "n_observations": 2458,
         "first_date": "2020-01-01T18:36:02",
-        "last_date": "2026-09-13T19:06:11",
-        "total_span_days": 2447,
+        "last_date": "2026-09-14T18:46:11",
+        "total_span_days": 2448,
         "coverage_pct": 100.4,
         "n_gaps": 6,
         "largest_gap_days": 250,
@@ -392,7 +392,7 @@
         ]
       },
       "so2": {
-        "n_observations": 1751,
+        "n_observations": 1752,
         "first_date": "2023-01-21T18:08:00",
         "last_date": "2026-09-13T19:01:11",
         "total_span_days": 1331,
@@ -457,20 +457,20 @@
     },
     "villarrica": {
       "swir": {
-        "n_observations": 994,
+        "n_observations": 997,
         "first_date": "2020-01-19T14:36:59",
-        "last_date": "2026-09-06T14:27:11",
-        "total_span_days": 2421,
-        "coverage_pct": 205.3,
+        "last_date": "2026-09-11T14:27:09",
+        "total_span_days": 2426,
+        "coverage_pct": 205.5,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 3212,
+        "n_observations": 3220,
         "first_date": "2020-01-01T18:31:02",
-        "last_date": "2026-09-07T19:16:10",
-        "total_span_days": 2441,
+        "last_date": "2026-09-13T19:01:11",
+        "total_span_days": 2447,
         "coverage_pct": 131.6,
         "n_gaps": 3,
         "largest_gap_days": 10,
