@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T11:54:12.932265+00:00",
+  "generated_at": "2026-09-15T17:08:07.196565+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -322,11 +322,11 @@
         ]
       },
       "def_desc": {
-        "n_observations": 212,
+        "n_observations": 213,
         "first_date": "2020-10-21T09:56:44",
-        "last_date": "2026-09-03T09:56:32",
-        "total_span_days": 2142,
-        "coverage_pct": 118.8,
+        "last_date": "2026-09-15T09:56:32",
+        "total_span_days": 2154,
+        "coverage_pct": 118.7,
         "n_gaps": 3,
         "largest_gap_days": 59,
         "gaps_top5": [
@@ -348,11 +348,11 @@
         ]
       },
       "coh_desc": {
-        "n_observations": 213,
+        "n_observations": 214,
         "first_date": "2020-10-21T09:56:44",
-        "last_date": "2026-09-03T09:56:32",
-        "total_span_days": 2142,
-        "coverage_pct": 119.3,
+        "last_date": "2026-09-15T09:56:32",
+        "total_span_days": 2154,
+        "coverage_pct": 119.2,
         "n_gaps": 3,
         "largest_gap_days": 59,
         "gaps_top5": [
@@ -413,11 +413,11 @@
         ]
       },
       "def_desc": {
-        "n_observations": 115,
+        "n_observations": 116,
         "first_date": "2023-02-26T09:57:43",
-        "last_date": "2026-09-03T09:56:32",
-        "total_span_days": 1284,
-        "coverage_pct": 107.5,
+        "last_date": "2026-09-15T09:56:32",
+        "total_span_days": 1296,
+        "coverage_pct": 107.4,
         "n_gaps": 2,
         "largest_gap_days": 59,
         "gaps_top5": [
@@ -434,11 +434,11 @@
         ]
       },
       "coh_desc": {
-        "n_observations": 115,
+        "n_observations": 116,
         "first_date": "2023-02-26T09:57:43",
-        "last_date": "2026-09-03T09:56:32",
-        "total_span_days": 1284,
-        "coverage_pct": 107.5,
+        "last_date": "2026-09-15T09:56:32",
+        "total_span_days": 1296,
+        "coverage_pct": 107.4,
         "n_gaps": 2,
         "largest_gap_days": 59,
         "gaps_top5": [
