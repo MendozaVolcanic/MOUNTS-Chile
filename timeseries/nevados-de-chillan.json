@@ -5074,7 +5074,8 @@
         "2026-09-15T18:26:11",
         "2026-09-16T18:06:10",
         "2026-09-16T19:46:11",
-        "2026-09-17T19:26:10"
+        "2026-09-17T19:26:10",
+        "2026-09-18T19:06:11"
       ],
       "y": [
         0.1,
@@ -5459,6 +5460,7 @@
         0.1,
         0.1,
         669.0,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -10594,15 +10596,16 @@
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260915T1826_SO2_PBL.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260916T1806_SO2_PBL.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20260916T1946_SO2_PBL.png",
-        "data_mounts/nevadoschillan/2026/nevadoschillan_20260917T1926_SO2_PBL.png"
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20260917T1926_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20260918T1906_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-09-17T19:26:10",
-        "2026-09-17T19:26:10",
-        "2026-09-17T19:26:10"
+        "2026-09-18T19:06:11",
+        "2026-09-18T19:06:11",
+        "2026-09-18T19:06:11"
       ],
       "y": [
         0.1,
@@ -12232,5 +12235,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-18T20:59:08.026868+00:00"
+  "fetched_at": "2026-09-19T04:44:27.141866+00:00"
 }
