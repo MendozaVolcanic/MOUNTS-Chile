@@ -1,21 +1,9 @@
 {
-  "generated_at": "2026-09-21T13:00:34.058775+00:00",
+  "generated_at": "2026-09-21T22:04:58.327885+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 4,
+  "count": 3,
   "alerts": [
-    {
-      "date": "2026-08-22T14:27:09",
-      "value": 9.0,
-      "baseline": 0.1,
-      "zscore": 17.8,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Villarrica",
-      "volcano_key": "villarrica",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
     {
       "date": "2026-09-14T14:37:39",
       "value": 5.0,
