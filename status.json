@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T17:04:42.223660+00:00",
+  "generated_at": "2026-09-22T21:26:46.004450+00:00",
   "volcanoes": {
     "lascar": {
       "name": "Lascar",
@@ -10,7 +10,7 @@
           "latest_date": "2026-09-21T14:38:01",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 26.4,
+          "age_hours": 30.8,
           "stale": false,
           "n_total": 463,
           "sparkline_x": [
@@ -71,7 +71,7 @@
           "latest_date": "2026-09-21T18:16:11",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 22.8,
+          "age_hours": 27.2,
           "stale": false,
           "n_total": 2465,
           "sparkline_x": [
@@ -288,7 +288,7 @@
           "latest_date": "2026-09-20T10:00:39",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 55.1,
+          "age_hours": 59.4,
           "stale": false,
           "n_total": 252,
           "sparkline_x": [
@@ -322,7 +322,7 @@
           "latest_date": "2026-09-20T10:00:39",
           "zscore_now": 1.7616802733161772,
           "severity": "yellow",
-          "age_hours": 55.1,
+          "age_hours": 59.4,
           "stale": false,
           "n_total": 252,
           "sparkline_x": [
@@ -363,7 +363,7 @@
           "latest_date": "2026-09-21T14:27:09",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 26.6,
+          "age_hours": 31.0,
           "stale": false,
           "n_total": 912,
           "sparkline_x": [
@@ -463,14 +463,13 @@
         },
         "SO2": {
           "latest_value": 0.1,
-          "latest_date": "2026-09-21T18:11:10",
+          "latest_date": "2026-09-22T17:56:11",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 22.9,
+          "age_hours": 3.5,
           "stale": false,
-          "n_total": 2696,
+          "n_total": 2697,
           "sparkline_x": [
-            "2026-06-23T19:36:23",
             "2026-06-25T19:02:34",
             "2026-06-26T18:42:35",
             "2026-06-27T18:22:34",
@@ -581,7 +580,8 @@
             "2026-09-18T19:11:10",
             "2026-09-19T18:51:10",
             "2026-09-20T18:31:11",
-            "2026-09-21T18:11:10"
+            "2026-09-21T18:11:10",
+            "2026-09-22T17:56:11"
           ],
           "sparkline_y": [
             0.1,
@@ -705,7 +705,7 @@
           "latest_date": "2026-09-10T23:26:58",
           "zscore_now": 0.001104,
           "severity": "green",
-          "age_hours": 281.6,
+          "age_hours": 286.0,
           "stale": false,
           "n_total": 223,
           "sparkline_x": [
@@ -737,7 +737,7 @@
           "latest_date": "2026-09-10T23:26:58",
           "zscore_now": 0.03716260652593432,
           "severity": "green",
-          "age_hours": 281.6,
+          "age_hours": 286.0,
           "stale": false,
           "n_total": 223,
           "sparkline_x": [
@@ -787,7 +787,7 @@
           "latest_date": "2026-09-21T14:38:01",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 26.4,
+          "age_hours": 30.8,
           "stale": false,
           "n_total": 766,
           "sparkline_x": [
@@ -873,12 +873,12 @@
         },
         "SO2": {
           "latest_value": 0.1,
-          "latest_date": "2026-09-21T19:51:10",
+          "latest_date": "2026-09-22T17:51:10",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 21.2,
+          "age_hours": 3.6,
           "stale": false,
-          "n_total": 2763,
+          "n_total": 2764,
           "sparkline_x": [
             "2026-06-25T19:02:34",
             "2026-06-26T18:42:35",
@@ -990,9 +990,11 @@
             "2026-09-19T18:51:10",
             "2026-09-20T18:31:11",
             "2026-09-21T18:11:10",
-            "2026-09-21T19:51:10"
+            "2026-09-21T19:51:10",
+            "2026-09-22T17:51:10"
           ],
           "sparkline_y": [
+            0.1,
             0.1,
             0.1,
             0.1,
@@ -1113,7 +1115,7 @@
           "latest_date": "2026-09-15T09:56:07",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 175.1,
+          "age_hours": 179.5,
           "stale": false,
           "n_total": 167,
           "sparkline_x": [
@@ -1145,7 +1147,7 @@
           "latest_date": "2026-09-15T09:56:07",
           "zscore_now": -0.021370541443585727,
           "severity": "green",
-          "age_hours": 175.1,
+          "age_hours": 179.5,
           "stale": false,
           "n_total": 167,
           "sparkline_x": [
@@ -1184,7 +1186,7 @@
           "latest_date": "2026-09-21T14:27:09",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 26.6,
+          "age_hours": 31.0,
           "stale": false,
           "n_total": 913,
           "sparkline_x": [
@@ -1286,12 +1288,12 @@
         },
         "SO2": {
           "latest_value": 0.1,
-          "latest_date": "2026-09-21T19:51:10",
+          "latest_date": "2026-09-22T17:51:10",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 21.2,
+          "age_hours": 3.6,
           "stale": false,
-          "n_total": 2753,
+          "n_total": 2754,
           "sparkline_x": [
             "2026-06-25T18:57:35",
             "2026-06-25T19:02:34",
@@ -1404,9 +1406,11 @@
             "2026-09-19T18:51:10",
             "2026-09-20T18:31:11",
             "2026-09-21T18:11:10",
-            "2026-09-21T19:51:10"
+            "2026-09-21T19:51:10",
+            "2026-09-22T17:51:10"
           ],
           "sparkline_y": [
+            0.1,
             0.1,
             0.1,
             0.1,
@@ -1528,7 +1532,7 @@
           "latest_date": "2026-09-15T09:56:32",
           "zscore_now": 0.000188,
           "severity": "green",
-          "age_hours": 175.1,
+          "age_hours": 179.5,
           "stale": false,
           "n_total": 213,
           "sparkline_x": [
@@ -1560,7 +1564,7 @@
           "latest_date": "2026-09-15T09:56:32",
           "zscore_now": 0.012396427091136555,
           "severity": "green",
-          "age_hours": 175.1,
+          "age_hours": 179.5,
           "stale": false,
           "n_total": 214,
           "sparkline_x": [
@@ -1599,7 +1603,7 @@
           "latest_date": "2026-09-21T14:27:09",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 26.6,
+          "age_hours": 31.0,
           "stale": false,
           "n_total": 255,
           "sparkline_x": [
@@ -1657,12 +1661,12 @@
         },
         "SO2": {
           "latest_value": 0.1,
-          "latest_date": "2026-09-21T19:51:10",
+          "latest_date": "2026-09-22T17:51:10",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 21.2,
+          "age_hours": 3.6,
           "stale": false,
-          "n_total": 1762,
+          "n_total": 1763,
           "sparkline_x": [
             "2026-06-25T18:57:35",
             "2026-06-26T18:42:35",
@@ -1779,9 +1783,11 @@
             "2026-09-19T18:51:10",
             "2026-09-20T18:31:11",
             "2026-09-21T18:11:10",
-            "2026-09-21T19:51:10"
+            "2026-09-21T19:51:10",
+            "2026-09-22T17:51:10"
           ],
           "sparkline_y": [
+            0.1,
             0.1,
             0.1,
             0.1,
@@ -1907,7 +1913,7 @@
           "latest_date": "2026-09-15T09:56:32",
           "zscore_now": -0.0001698,
           "severity": "green",
-          "age_hours": 175.1,
+          "age_hours": 179.5,
           "stale": false,
           "n_total": 116,
           "sparkline_x": [
@@ -1939,7 +1945,7 @@
           "latest_date": "2026-09-15T09:56:32",
           "zscore_now": -0.055688294301943976,
           "severity": "green",
-          "age_hours": 175.1,
+          "age_hours": 179.5,
           "stale": false,
           "n_total": 116,
           "sparkline_x": [
@@ -1978,7 +1984,7 @@
           "latest_date": "2026-09-21T14:27:09",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 26.6,
+          "age_hours": 31.0,
           "stale": false,
           "n_total": 1001,
           "sparkline_x": [
@@ -2079,7 +2085,7 @@
           "latest_date": "2026-09-21T19:51:10",
           "zscore_now": 0.0,
           "severity": "green",
-          "age_hours": 21.2,
+          "age_hours": 25.6,
           "stale": false,
           "n_total": 3230,
           "sparkline_x": [
@@ -2326,7 +2332,7 @@
           "latest_date": "2026-06-22T09:57:51",
           "zscore_now": null,
           "severity": "stale",
-          "age_hours": 2215.1,
+          "age_hours": 2219.5,
           "stale": true,
           "n_total": 241,
           "sparkline_x": [
@@ -2350,7 +2356,7 @@
           "latest_date": "2026-06-22T09:57:51",
           "zscore_now": null,
           "severity": "stale",
-          "age_hours": 2215.1,
+          "age_hours": 2219.5,
           "stale": true,
           "n_total": 241,
           "sparkline_x": [
