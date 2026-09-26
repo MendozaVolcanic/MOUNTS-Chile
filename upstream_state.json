@@ -1,33 +1,33 @@
 {
-  "checked_at": "2026-09-26T05:12:22.070726+00:00",
+  "checked_at": "2026-09-26T11:37:17.296805+00:00",
   "schemas": {
     "lascar": {
       "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/355100 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f38713e9340>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/355100 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f67e92ad2b0>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
     },
     "planchon-peteroa": {
       "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357040 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f38713e9220>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357040 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f67e9473e00>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
     },
     "laguna-del-maule": {
       "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357061 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f38713e8b30>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357061 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f67e92aca70>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
     },
     "nevados-de-chillan": {
       "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357070 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f38713e93d0>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357070 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f67e92ad340>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
     },
     "copahue": {
       "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357090 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f38713e9670>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357090 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f67e92ad5e0>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
     },
     "llaima": {
       "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357110 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f38713e9a30>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357110 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f67e92ad9a0>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
     },
     "villarrica": {
       "valid": false,
-      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357120 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f38713e9d30>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
+      "reason": "HTTPConnectionPool(host='www.mounts-project.com', port=80): Max retries exceeded with url: /timeseries/357120 (Caused by ConnectTimeoutError(<HTTPConnection(host='www.mounts-project.com', port=80) at 0x7f67e92adca0>, 'Connection to www.mounts-project.com timed out. (connect timeout=30)'))"
     }
   }
 }

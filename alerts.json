@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-26T05:17:23.628427+00:00",
+  "generated_at": "2026-09-26T11:42:20.877649+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 3,
+  "count": 2,
   "alerts": [
     {
       "date": "2026-09-14T14:37:39",
@@ -15,18 +15,6 @@
       "volcano_key": "villarrica",
       "product": "SWIR",
       "unit": "S2Pix"
-    },
-    {
-      "date": "2026-08-27T10:00:39",
-      "value": 448426.0,
-      "baseline": 91206.0,
-      "zscore": 4.55786001824573,
-      "run_length": 2,
-      "persistent": false,
-      "volcano": "Lascar",
-      "volcano_key": "lascar",
-      "product": "COH",
-      "unit": "Npix_coh<0.5"
     },
     {
       "date": "2026-09-14T14:37:39",
