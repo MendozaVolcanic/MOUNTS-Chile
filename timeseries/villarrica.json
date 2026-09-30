@@ -1006,7 +1006,10 @@
         "2026-09-16T14:27:11",
         "2026-09-19T14:37:41",
         "2026-09-21T14:27:09",
-        "2026-09-24T14:37:39"
+        "2026-09-24T14:37:39",
+        "2026-09-26T14:27:11",
+        "2026-09-28T14:28:01",
+        "2026-09-29T14:37:41"
       ],
       "y": [
         10.0,
@@ -2007,6 +2010,9 @@
         0.1,
         0.1,
         5.0,
+        0.1,
+        0.1,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -3014,15 +3020,18 @@
         "data_mounts/villarrica/2026/villarrica_20260916T142711_B12B11B8A_nir.png",
         "data_mounts/villarrica/2026/villarrica_20260919T143741_B12B11B8A_nir.png",
         "data_mounts/villarrica/2026/villarrica_20260921T142709_B12B11B8A_nir.png",
-        "data_mounts/villarrica/2026/villarrica_20260924T143739_B12B11B8A_nir.png"
+        "data_mounts/villarrica/2026/villarrica_20260924T143739_B12B11B8A_nir.png",
+        "data_mounts/villarrica/2026/villarrica_20260926T142711_B12B11B8A_nir.png",
+        "data_mounts/villarrica/2026/villarrica_20260928T142801_B12B11B8A_nir.png",
+        "data_mounts/villarrica/2026/villarrica_20260929T143741_B12B11B8A_nir.png"
       ]
     },
     {
       "name": "tbar_nir",
       "x": [
-        "2026-09-24T14:37:39",
-        "2026-09-24T14:37:39",
-        "2026-09-24T14:37:39"
+        "2026-09-29T14:37:41",
+        "2026-09-29T14:37:41",
+        "2026-09-29T14:37:41"
       ],
       "y": [
         0.1,
@@ -6269,10 +6278,12 @@
         "2026-09-23T19:16:10",
         "2026-09-24T18:56:10",
         "2026-09-25T18:36:10",
+        "2026-09-26T18:16:10",
         "2026-09-26T19:56:10",
         "2026-09-27T18:01:11",
         "2026-09-27T19:41:11",
-        "2026-09-28T19:21:11"
+        "2026-09-28T19:21:11",
+        "2026-09-29T19:01:11"
       ],
       "y": [
         0.1,
@@ -8364,6 +8375,8 @@
         0.1,
         0.1,
         61.9,
+        0.1,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -12751,18 +12764,20 @@
         "data_mounts/villarrica/2026/villarrica_20260923T1916_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260924T1856_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260925T1836_SO2_PBL.png",
+        "data_mounts/villarrica/2026/villarrica_20260926T1816_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260926T1956_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260927T1801_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20260927T1941_SO2_PBL.png",
-        "data_mounts/villarrica/2026/villarrica_20260928T1921_SO2_PBL.png"
+        "data_mounts/villarrica/2026/villarrica_20260928T1921_SO2_PBL.png",
+        "data_mounts/villarrica/2026/villarrica_20260929T1901_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-09-28T19:21:11",
-        "2026-09-28T19:21:11",
-        "2026-09-28T19:21:11"
+        "2026-09-29T19:01:11",
+        "2026-09-29T19:01:11",
+        "2026-09-29T19:01:11"
       ],
       "y": [
         0.1,
@@ -15946,5 +15961,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-09-29T22:24:33.805942+00:00"
+  "fetched_at": "2026-09-30T05:42:50.201921+00:00"
 }
