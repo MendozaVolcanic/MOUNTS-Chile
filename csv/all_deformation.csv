@@ -1314,3 +1314,4 @@ date,volcano,value,detection,unit,track,product,sensor,image_path
 2026-09-27T09:56:08,Nevados de Chillan,0.0,true,m_LOS,desc,def_desc,Sentinel-1,data_mounts/nevadoschillan/2026/nevadoschillan_20260915T095607_20260927T095608_VV_disp.png
 2026-09-27T09:56:32,Copahue,0.0,true,m_LOS,desc,def_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20260915T095632_20260927T095632_VV_disp.png
 2026-09-27T09:56:32,Llaima,0.0,true,m_LOS,desc,def_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20260915T095632_20260927T095632_VV_disp.png
+2026-10-02T10:00:39,Lascar,0.0,true,m_LOS,desc,def_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20260920T100039_20261002T100039_VV_disp.png
