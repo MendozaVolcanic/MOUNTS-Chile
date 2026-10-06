@@ -2478,3 +2478,4 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-10-02T18:09:02,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261002T1809_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261002T1809_SO2_PBL.png
 2026-10-03T17:49:01,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261003T1749_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261003T1749_SO2_PBL.png
 2026-10-04T19:14:01,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261004T1914_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261004T1914_SO2_PBL.png
+2026-10-05T18:54:01,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261005T1854_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261005T1854_SO2_PBL.png
