@@ -2770,3 +2770,5 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-10-04T19:09:01,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20261004T1909_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20261004T1909_SO2_PBL.png
 2026-10-05T18:49:01,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20261005T1849_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20261005T1849_SO2_PBL.png
 2026-10-06T18:29:02,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20261006T1829_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20261006T1829_SO2_PBL.png
+2026-10-07T18:14:02,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20261007T1814_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20261007T1814_SO2_PBL.png
+2026-10-07T19:54:01,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20261007T1954_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/copahue/2026/copahue_20261007T1954_SO2_PBL.png
