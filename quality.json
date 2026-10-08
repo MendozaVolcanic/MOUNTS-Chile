@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T23:14:58.888717+00:00",
+  "generated_at": "2026-10-08T06:17:48.540392+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -19,10 +19,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2481,
+        "n_observations": 2482,
         "first_date": "2020-01-01T18:36:02",
-        "last_date": "2026-10-06T18:34:02",
-        "total_span_days": 2469,
+        "last_date": "2026-10-07T18:14:02",
+        "total_span_days": 2470,
         "coverage_pct": 100.5,
         "n_gaps": 6,
         "largest_gap_days": 250,
@@ -119,10 +119,10 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2715,
+        "n_observations": 2716,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-10-06T18:34:02",
-        "total_span_days": 2191,
+        "last_date": "2026-10-07T18:14:02",
+        "total_span_days": 2192,
         "coverage_pct": 123.9,
         "n_gaps": 3,
         "largest_gap_days": 10,
