@@ -6315,7 +6315,9 @@
         "2026-10-10T18:54:01",
         "2026-10-11T18:39:01",
         "2026-10-12T18:19:02",
-        "2026-10-12T19:59:02"
+        "2026-10-12T19:59:02",
+        "2026-10-13T17:59:02",
+        "2026-10-13T19:39:01"
       ],
       "y": [
         0.1,
@@ -8407,6 +8409,8 @@
         0.1,
         0.1,
         61.9,
+        0.1,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -12835,15 +12839,17 @@
         "data_mounts/villarrica/2026/villarrica_20261010T1854_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20261011T1839_SO2_PBL.png",
         "data_mounts/villarrica/2026/villarrica_20261012T1819_SO2_PBL.png",
-        "data_mounts/villarrica/2026/villarrica_20261012T1959_SO2_PBL.png"
+        "data_mounts/villarrica/2026/villarrica_20261012T1959_SO2_PBL.png",
+        "data_mounts/villarrica/2026/villarrica_20261013T1759_SO2_PBL.png",
+        "data_mounts/villarrica/2026/villarrica_20261013T1939_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-10-12T19:59:02",
-        "2026-10-12T19:59:02",
-        "2026-10-12T19:59:02"
+        "2026-10-13T19:39:01",
+        "2026-10-13T19:39:01",
+        "2026-10-13T19:39:01"
       ],
       "y": [
         0.1,
@@ -16027,5 +16033,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-10-13T14:22:45.692244+00:00"
+  "fetched_at": "2026-10-13T22:54:52.585860+00:00"
 }
