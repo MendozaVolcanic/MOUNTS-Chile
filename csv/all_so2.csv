@@ -15848,3 +15848,4 @@ date,volcano,value,detection,unit,track,product,sensor,image_path
 2026-10-15T19:02:48,Nevados de Chillan,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/nevadoschillan/2026/nevadoschillan_20261015T1902_SO2_PBL.png
 2026-10-15T19:02:48,Planchon-Peteroa,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/planchonpeteroa/2026/planchonpeteroa_20261015T1902_SO2_PBL.png
 2026-10-15T19:02:48,Villarrica,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20261015T1902_SO2_PBL.png
+2026-10-15T19:07:48,Lascar,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261015T1907_SO2_PBL.png
