@@ -15891,3 +15891,4 @@ date,volcano,value,detection,unit,track,product,sensor,image_path
 2026-10-21T18:52:48,Copahue,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20261021T1852_SO2_PBL.png
 2026-10-21T18:52:48,Lascar,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261021T1852_SO2_PBL.png
 2026-10-21T18:52:48,Planchon-Peteroa,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/planchonpeteroa/2026/planchonpeteroa_20261021T1852_SO2_PBL.png
+2026-10-22T18:37:48,Lascar,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261022T1837_SO2_PBL.png
