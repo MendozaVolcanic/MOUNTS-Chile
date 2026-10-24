@@ -1801,3 +1801,5 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-10-20T19:07:48,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20261020T1907_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20261020T1907_SO2_PBL.png
 2026-10-21T18:47:48,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20261021T1847_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20261021T1847_SO2_PBL.png
 2026-10-22T18:32:49,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20261022T1832_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20261022T1832_SO2_PBL.png
+2026-10-23T18:12:48,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20261023T1812_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20261023T1812_SO2_PBL.png
+2026-10-23T19:52:48,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20261023T1952_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/llaima/2026/llaima_20261023T1952_SO2_PBL.png
