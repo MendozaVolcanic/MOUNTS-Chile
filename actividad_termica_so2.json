@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T13:18:33.874785+00:00",
+ "generated_at": "2026-10-26T22:47:57.075693+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -17890,10 +17890,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 929,
+     "n_points": 930,
      "n_detections": 40,
      "first_date": "2020-10-07T14:27:41",
-     "last_date": "2026-10-24T14:37:49",
+     "last_date": "2026-10-26T14:27:11",
      "data": [
       {
        "date": "2020-10-07T14:27:41",
@@ -23468,6 +23468,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261024T143749_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-10-26T14:27:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261026T142711_B12B11B8A_nir.png"
       }
      ]
     },
@@ -44648,10 +44654,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2800,
+     "n_points": 2807,
      "n_detections": 1,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-10-20T19:07:48",
+     "last_date": "2026-10-25T19:17:48",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -61452,6 +61458,48 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261020T1907_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-21T18:52:48",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261021T1852_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-22T18:32:49",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261022T1832_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-23T18:12:48",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261023T1812_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-23T19:52:48",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261023T1952_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-24T17:52:48",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261024T1752_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-24T19:32:48",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261024T1932_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-25T19:17:48",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261025T1917_SO2_PBL.png"
       }
      ]
     }
@@ -83852,10 +83900,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 263,
+     "n_points": 264,
      "n_detections": 17,
      "first_date": "2023-01-25T14:27:11",
-     "last_date": "2026-10-21T14:27:09",
+     "last_date": "2026-10-26T14:27:11",
      "data": [
       {
        "date": "2023-01-25T14:27:11",
@@ -85434,6 +85482,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/llaima/2026/llaima_20261021T142709_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-10-26T14:27:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/llaima/2026/llaima_20261026T142711_B12B11B8A_nir.png"
       }
      ]
     },
@@ -96302,10 +96356,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 1016,
+     "n_points": 1017,
      "n_detections": 418,
      "first_date": "2020-01-19T14:36:59",
-     "last_date": "2026-10-24T14:37:49",
+     "last_date": "2026-10-26T14:27:11",
      "data": [
       {
        "date": "2020-01-19T14:36:59",
@@ -102402,6 +102456,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/villarrica/2026/villarrica_20261024T143749_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-10-26T14:27:11",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/villarrica/2026/villarrica_20261026T142711_B12B11B8A_nir.png"
       }
      ]
     },

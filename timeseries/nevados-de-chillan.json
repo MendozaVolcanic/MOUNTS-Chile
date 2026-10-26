@@ -5167,7 +5167,14 @@
         "2026-10-18T18:07:48",
         "2026-10-18T19:47:48",
         "2026-10-19T19:27:48",
-        "2026-10-20T19:07:48"
+        "2026-10-20T19:07:48",
+        "2026-10-21T18:52:48",
+        "2026-10-22T18:32:49",
+        "2026-10-23T18:12:48",
+        "2026-10-23T19:52:48",
+        "2026-10-24T17:52:48",
+        "2026-10-24T19:32:48",
+        "2026-10-25T19:17:48"
       ],
       "y": [
         0.1,
@@ -5552,6 +5559,13 @@
         0.1,
         0.1,
         669.0,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -10771,15 +10785,22 @@
         "data_mounts/nevadoschillan/2026/nevadoschillan_20261018T1807_SO2_PBL.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20261018T1947_SO2_PBL.png",
         "data_mounts/nevadoschillan/2026/nevadoschillan_20261019T1927_SO2_PBL.png",
-        "data_mounts/nevadoschillan/2026/nevadoschillan_20261020T1907_SO2_PBL.png"
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261020T1907_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261021T1852_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261022T1832_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261023T1812_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261023T1952_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261024T1752_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261024T1932_SO2_PBL.png",
+        "data_mounts/nevadoschillan/2026/nevadoschillan_20261025T1917_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-10-20T19:07:48",
-        "2026-10-20T19:07:48",
-        "2026-10-20T19:07:48"
+        "2026-10-25T19:17:48",
+        "2026-10-25T19:17:48",
+        "2026-10-25T19:17:48"
       ],
       "y": [
         0.1,
@@ -12433,5 +12454,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-10-26T13:17:18.872340+00:00"
+  "fetched_at": "2026-10-26T22:46:11.433739+00:00"
 }
