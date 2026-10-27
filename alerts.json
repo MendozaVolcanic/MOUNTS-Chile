@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-26T22:47:48.410123+00:00",
+  "generated_at": "2026-10-27T05:16:33.994971+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 8,
+  "count": 9,
   "alerts": [
     {
       "date": "2026-10-18T18:07:48",
@@ -35,6 +35,18 @@
       "zscore": 51.8,
       "run_length": 3,
       "persistent": true,
+      "volcano": "Nevados de Chillan",
+      "volcano_key": "nevados-de-chillan",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-10-24T14:37:49",
+      "value": 20.0,
+      "baseline": 0.1,
+      "zscore": 39.8,
+      "run_length": 1,
+      "persistent": false,
       "volcano": "Nevados de Chillan",
       "volcano_key": "nevados-de-chillan",
       "product": "SWIR",
