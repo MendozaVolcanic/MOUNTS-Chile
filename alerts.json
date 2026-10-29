@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T13:17:06.678565+00:00",
+  "generated_at": "2026-10-29T22:53:06.465347+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
   "count": 9,
@@ -15,6 +15,18 @@
       "volcano_key": "planchon-peteroa",
       "product": "SO2",
       "unit": "tons"
+    },
+    {
+      "date": "2026-10-29T14:37:41",
+      "value": 30.0,
+      "baseline": 0.1,
+      "zscore": 59.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Nevados de Chillan",
+      "volcano_key": "nevados-de-chillan",
+      "product": "SWIR",
+      "unit": "S2Pix"
     },
     {
       "date": "2026-10-07T18:14:02",
@@ -93,18 +105,6 @@
       "value": 9.0,
       "baseline": 0.1,
       "zscore": 17.8,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Nevados de Chillan",
-      "volcano_key": "nevados-de-chillan",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
-    {
-      "date": "2026-09-29T14:37:41",
-      "value": 2.0,
-      "baseline": 0.1,
-      "zscore": 3.8,
       "run_length": 1,
       "persistent": false,
       "volcano": "Nevados de Chillan",
