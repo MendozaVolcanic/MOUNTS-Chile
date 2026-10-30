@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T22:53:12.427586+00:00",
+  "generated_at": "2026-10-30T06:00:42.304706+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -119,9 +119,9 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2741,
+        "n_observations": 2742,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-10-29T18:02:21",
+        "last_date": "2026-10-29T19:42:21",
         "total_span_days": 2214,
         "coverage_pct": 123.8,
         "n_gaps": 3,
@@ -206,9 +206,9 @@
         ]
       },
       "so2": {
-        "n_observations": 2809,
+        "n_observations": 2810,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-10-29T18:02:21",
+        "last_date": "2026-10-29T19:42:21",
         "total_span_days": 2214,
         "coverage_pct": 126.9,
         "n_gaps": 2,
@@ -301,9 +301,9 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2798,
+        "n_observations": 2799,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-10-29T18:02:21",
+        "last_date": "2026-10-29T19:42:21",
         "total_span_days": 2214,
         "coverage_pct": 126.4,
         "n_gaps": 2,
@@ -392,11 +392,11 @@
         ]
       },
       "so2": {
-        "n_observations": 1809,
+        "n_observations": 1810,
         "first_date": "2023-01-21T18:08:00",
-        "last_date": "2026-10-29T18:02:21",
-        "total_span_days": 1376,
-        "coverage_pct": 131.5,
+        "last_date": "2026-10-29T19:42:21",
+        "total_span_days": 1377,
+        "coverage_pct": 131.4,
         "n_gaps": 2,
         "largest_gap_days": 10,
         "gaps_top5": [
@@ -467,10 +467,10 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 3277,
+        "n_observations": 3278,
         "first_date": "2020-01-01T18:31:02",
-        "last_date": "2026-10-29T18:02:21",
-        "total_span_days": 2492,
+        "last_date": "2026-10-29T19:42:21",
+        "total_span_days": 2493,
         "coverage_pct": 131.5,
         "n_gaps": 3,
         "largest_gap_days": 10,

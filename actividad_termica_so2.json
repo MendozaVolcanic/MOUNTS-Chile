@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T22:53:14.780844+00:00",
+ "generated_at": "2026-10-30T06:00:45.717810+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -23506,10 +23506,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2741,
+     "n_points": 2742,
      "n_detections": 23,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-10-29T18:02:21",
+     "last_date": "2026-10-29T19:42:21",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -39956,6 +39956,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261029T1802_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-29T19:42:21",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261029T1942_SO2_PBL.png"
       }
      ]
     }
@@ -44714,10 +44720,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2809,
+     "n_points": 2810,
      "n_detections": 1,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-10-29T18:02:21",
+     "last_date": "2026-10-29T19:42:21",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -61572,6 +61578,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261029T1802_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-29T19:42:21",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261029T1942_SO2_PBL.png"
       }
      ]
     }
@@ -67190,10 +67202,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2798,
+     "n_points": 2799,
      "n_detections": 35,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-10-29T18:02:21",
+     "last_date": "2026-10-29T19:42:21",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -83982,6 +83994,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/copahue/2026/copahue_20261029T1802_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-29T19:42:21",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/copahue/2026/copahue_20261029T1942_SO2_PBL.png"
       }
      ]
     }
@@ -85592,10 +85610,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 1809,
+     "n_points": 1810,
      "n_detections": 4,
      "first_date": "2023-01-21T18:08:00",
-     "last_date": "2026-10-29T18:02:21",
+     "last_date": "2026-10-29T19:42:21",
      "data": [
       {
        "date": "2023-01-21T18:08:00",
@@ -96450,6 +96468,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/llaima/2026/llaima_20261029T1802_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-29T19:42:21",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/llaima/2026/llaima_20261029T1942_SO2_PBL.png"
       }
      ]
     }
@@ -102584,10 +102608,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 3277,
+     "n_points": 3278,
      "n_detections": 35,
      "first_date": "2020-01-01T18:31:02",
-     "last_date": "2026-10-29T18:02:21",
+     "last_date": "2026-10-29T19:42:21",
      "data": [
       {
        "date": "2020-01-01T18:31:02",
@@ -122250,6 +122274,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/villarrica/2026/villarrica_20261029T1802_SO2_PBL.png"
+      },
+      {
+       "date": "2026-10-29T19:42:21",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/villarrica/2026/villarrica_20261029T1942_SO2_PBL.png"
       }
      ]
     }
