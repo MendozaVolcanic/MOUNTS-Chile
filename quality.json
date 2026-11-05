@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T07:00:46.595489+00:00",
+  "generated_at": "2026-11-05T20:07:13.326033+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -457,11 +457,11 @@
     },
     "villarrica": {
       "swir": {
-        "n_observations": 1020,
+        "n_observations": 1021,
         "first_date": "2020-01-19T14:36:59",
-        "last_date": "2026-11-03T14:37:49",
-        "total_span_days": 2480,
-        "coverage_pct": 205.6,
+        "last_date": "2026-11-05T14:27:51",
+        "total_span_days": 2481,
+        "coverage_pct": 205.8,
         "n_gaps": 0,
         "largest_gap_days": 0,
         "gaps_top5": []
