@@ -15985,3 +15985,9 @@ date,volcano,value,detection,unit,track,product,sensor,image_path
 2026-11-04T19:27:26,Nevados de Chillan,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/nevadoschillan/2026/nevadoschillan_20261104T1927_SO2_PBL.png
 2026-11-04T19:27:26,Planchon-Peteroa,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/planchonpeteroa/2026/planchonpeteroa_20261104T1927_SO2_PBL.png
 2026-11-04T19:27:26,Villarrica,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20261104T1927_SO2_PBL.png
+2026-11-05T19:07:27,Copahue,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/copahue/2026/copahue_20261105T1907_SO2_PBL.png
+2026-11-05T19:07:27,Llaima,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/llaima/2026/llaima_20261105T1907_SO2_PBL.png
+2026-11-05T19:07:27,Villarrica,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20261105T1907_SO2_PBL.png
+2026-11-05T19:12:26,Lascar,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261105T1912_SO2_PBL.png
+2026-11-05T19:12:26,Nevados de Chillan,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/nevadoschillan/2026/nevadoschillan_20261105T1912_SO2_PBL.png
+2026-11-05T19:12:26,Planchon-Peteroa,0.1,false,tons,,so2_mass,Sentinel-5P,data_mounts/planchonpeteroa/2026/planchonpeteroa_20261105T1912_SO2_PBL.png
