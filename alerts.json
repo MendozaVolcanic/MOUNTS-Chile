@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-06T07:00:19.286925+00:00",
+  "generated_at": "2026-11-06T19:33:52.084752+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 10,
+  "count": 9,
   "alerts": [
     {
       "date": "2026-10-18T18:07:48",
@@ -39,18 +39,6 @@
       "volcano_key": "nevados-de-chillan",
       "product": "SWIR",
       "unit": "S2Pix"
-    },
-    {
-      "date": "2026-10-07T18:14:02",
-      "value": 27.3,
-      "baseline": 0.1,
-      "zscore": 54.4,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Planchon-Peteroa",
-      "volcano_key": "planchon-peteroa",
-      "product": "SO2",
-      "unit": "tons"
     },
     {
       "date": "2026-10-16T14:27:11",
