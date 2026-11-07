@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T19:34:03.203931+00:00",
+ "generated_at": "2026-11-07T06:11:51.561406+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -2872,10 +2872,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2512,
+     "n_points": 2513,
      "n_detections": 152,
      "first_date": "2020-01-01T18:36:02",
-     "last_date": "2026-11-05T19:12:26",
+     "last_date": "2026-11-06T18:57:26",
      "data": [
       {
        "date": "2020-01-01T18:36:02",
@@ -17948,6 +17948,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/lascar/2026/lascar_20261105T1912_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-06T18:57:26",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/lascar/2026/lascar_20261106T1857_SO2_PBL.png"
       }
      ]
     }
@@ -23584,10 +23590,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2751,
+     "n_points": 2752,
      "n_detections": 23,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-11-05T19:12:26",
+     "last_date": "2026-11-06T18:52:27",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -40094,6 +40100,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261105T1912_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-06T18:52:27",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261106T1852_SO2_PBL.png"
       }
      ]
     }
@@ -44870,10 +44882,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2818,
+     "n_points": 2819,
      "n_detections": 1,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-11-05T19:12:26",
+     "last_date": "2026-11-06T18:52:27",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -61782,6 +61794,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261105T1912_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-06T18:52:27",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261106T1852_SO2_PBL.png"
       }
      ]
     }
@@ -67424,10 +67442,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2807,
+     "n_points": 2809,
      "n_detections": 35,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-11-05T19:07:27",
+     "last_date": "2026-11-06T18:52:27",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -84270,6 +84288,18 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/copahue/2026/copahue_20261105T1907_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-05T19:12:26",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/copahue/2026/copahue_20261105T1912_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-06T18:52:27",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/copahue/2026/copahue_20261106T1852_SO2_PBL.png"
       }
      ]
     }
@@ -85892,10 +85922,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 1818,
+     "n_points": 1819,
      "n_detections": 4,
      "first_date": "2023-01-21T18:08:00",
-     "last_date": "2026-11-05T19:07:27",
+     "last_date": "2026-11-06T18:52:27",
      "data": [
       {
        "date": "2023-01-21T18:08:00",
@@ -96804,6 +96834,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/llaima/2026/llaima_20261105T1907_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-06T18:52:27",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/llaima/2026/llaima_20261106T1852_SO2_PBL.png"
       }
      ]
     }
@@ -102956,10 +102992,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 3286,
+     "n_points": 3287,
      "n_detections": 35,
      "first_date": "2020-01-01T18:31:02",
-     "last_date": "2026-11-05T19:07:27",
+     "last_date": "2026-11-06T18:52:27",
      "data": [
       {
        "date": "2020-01-01T18:31:02",
@@ -122676,6 +122712,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/villarrica/2026/villarrica_20261105T1907_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-06T18:52:27",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/villarrica/2026/villarrica_20261106T1852_SO2_PBL.png"
       }
      ]
     }
