@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T22:00:19.514252+00:00",
+ "generated_at": "2026-11-08T06:17:44.576430+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -2872,10 +2872,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2513,
+     "n_points": 2514,
      "n_detections": 152,
      "first_date": "2020-01-01T18:36:02",
-     "last_date": "2026-11-06T18:57:26",
+     "last_date": "2026-11-07T18:38:46",
      "data": [
       {
        "date": "2020-01-01T18:36:02",
@@ -17954,6 +17954,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/lascar/2026/lascar_20261106T1857_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-07T18:38:46",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/lascar/2026/lascar_20261107T1838_SO2_PBL.png"
       }
      ]
     }
@@ -17968,10 +17974,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 935,
+     "n_points": 936,
      "n_detections": 40,
      "first_date": "2020-10-07T14:27:41",
-     "last_date": "2026-11-05T14:27:51",
+     "last_date": "2026-11-07T14:28:01",
      "data": [
       {
        "date": "2020-10-07T14:27:41",
@@ -23582,6 +23588,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261105T142751_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-11-07T14:28:01",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/planchonpeteroa/2026/planchonpeteroa_20261107T142801_B12B11B8A_nir.png"
       }
      ]
     },
@@ -61826,10 +61838,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 936,
+     "n_points": 937,
      "n_detections": 40,
      "first_date": "2020-10-07T14:27:41",
-     "last_date": "2026-11-05T14:27:51",
+     "last_date": "2026-11-07T14:28:01",
      "data": [
       {
        "date": "2020-10-07T14:27:41",
@@ -67446,6 +67458,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/copahue/2026/copahue_20261105T142751_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-11-07T14:28:01",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/copahue/2026/copahue_20261107T142801_B12B11B8A_nir.png"
       }
      ]
     },
@@ -84332,10 +84350,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 266,
+     "n_points": 267,
      "n_detections": 17,
      "first_date": "2023-01-25T14:27:11",
-     "last_date": "2026-11-05T14:27:51",
+     "last_date": "2026-11-07T14:28:01",
      "data": [
       {
        "date": "2023-01-25T14:27:11",
@@ -85932,6 +85950,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/llaima/2026/llaima_20261105T142751_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-11-07T14:28:01",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/llaima/2026/llaima_20261107T142801_B12B11B8A_nir.png"
       }
      ]
     },
@@ -96878,10 +96902,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 1021,
+     "n_points": 1022,
      "n_detections": 418,
      "first_date": "2020-01-19T14:36:59",
-     "last_date": "2026-11-05T14:27:51",
+     "last_date": "2026-11-07T14:28:01",
      "data": [
       {
        "date": "2020-01-19T14:36:59",
@@ -103008,6 +103032,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/villarrica/2026/villarrica_20261105T142751_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-11-07T14:28:01",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/villarrica/2026/villarrica_20261107T142801_B12B11B8A_nir.png"
       }
      ]
     },
