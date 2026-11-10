@@ -1330,3 +1330,4 @@ date,volcano,value,detection,unit,track,product,sensor,image_path
 2026-11-02T09:56:32,Copahue,2.56e-05,true,m_LOS,desc,def_desc,Sentinel-1,data_mounts/copahue/2026/copahue_20261021T095632_20261102T095632_VV_disp.png
 2026-11-02T09:56:32,Llaima,0.000105,true,m_LOS,desc,def_desc,Sentinel-1,data_mounts/llaima/2026/llaima_20261021T095632_20261102T095632_VV_disp.png
 2026-11-07T10:00:39,Lascar,0.0,true,m_LOS,desc,def_desc,Sentinel-1,data_mounts/lascar/2026/lascar_20261026T100039_20261107T100039_VV_disp.png
+2026-11-09T23:26:58,Planchon-Peteroa,0.000163,true,m_LOS,asc,def_asc,Sentinel-1,data_mounts/planchonpeteroa/2026/planchonpeteroa_20261028T232658_20261109T232658_VV_disp.png
