@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T07:23:56.845766+00:00",
+ "generated_at": "2026-11-12T20:06:53.384401+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -2878,10 +2878,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2519,
+     "n_points": 2520,
      "n_detections": 152,
      "first_date": "2020-01-01T18:36:02",
-     "last_date": "2026-11-10T19:21:04",
+     "last_date": "2026-11-11T18:59:28",
      "data": [
       {
        "date": "2020-01-01T18:36:02",
@@ -17996,6 +17996,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/lascar/2026/lascar_20261110T1921_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-11T18:59:28",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/lascar/2026/lascar_20261111T1859_SO2_PBL.png"
       }
      ]
     }
@@ -44990,10 +44996,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2826,
+     "n_points": 2827,
      "n_detections": 1,
      "first_date": "2020-10-06T17:59:31",
-     "last_date": "2026-11-11T18:59:28",
+     "last_date": "2026-11-12T18:39:28",
      "data": [
       {
        "date": "2020-10-06T17:59:31",
@@ -61950,6 +61956,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261111T1859_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-12T18:39:28",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/nevadoschillan/2026/nevadoschillan_20261112T1839_SO2_PBL.png"
       }
      ]
     }
@@ -103274,10 +103286,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 3294,
+     "n_points": 3295,
      "n_detections": 35,
      "first_date": "2020-01-01T18:31:02",
-     "last_date": "2026-11-11T18:59:28",
+     "last_date": "2026-11-12T18:39:28",
      "data": [
       {
        "date": "2020-01-01T18:31:02",
@@ -123042,6 +123054,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/villarrica/2026/villarrica_20261111T1859_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-12T18:39:28",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/villarrica/2026/villarrica_20261112T1839_SO2_PBL.png"
       }
      ]
     }
