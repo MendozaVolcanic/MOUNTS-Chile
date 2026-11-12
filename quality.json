@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T19:44:26.329875+00:00",
+  "generated_at": "2026-11-12T07:23:54.904941+00:00",
   "gaps": {
     "lascar": {
       "swir": {
@@ -119,11 +119,11 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2757,
+        "n_observations": 2758,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-11-10T19:16:04",
-        "total_span_days": 2226,
-        "coverage_pct": 123.9,
+        "last_date": "2026-11-11T18:59:28",
+        "total_span_days": 2227,
+        "coverage_pct": 123.8,
         "n_gaps": 3,
         "largest_gap_days": 10,
         "gaps_top5": [
@@ -206,10 +206,10 @@
         ]
       },
       "so2": {
-        "n_observations": 2825,
+        "n_observations": 2826,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-11-10T19:16:04",
-        "total_span_days": 2226,
+        "last_date": "2026-11-11T18:59:28",
+        "total_span_days": 2227,
         "coverage_pct": 126.9,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -301,11 +301,11 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 2815,
+        "n_observations": 2816,
         "first_date": "2020-10-06T17:59:31",
-        "last_date": "2026-11-10T19:16:04",
-        "total_span_days": 2226,
-        "coverage_pct": 126.5,
+        "last_date": "2026-11-11T18:59:28",
+        "total_span_days": 2227,
+        "coverage_pct": 126.4,
         "n_gaps": 2,
         "largest_gap_days": 10,
         "gaps_top5": [
@@ -392,10 +392,10 @@
         ]
       },
       "so2": {
-        "n_observations": 1825,
+        "n_observations": 1826,
         "first_date": "2023-01-21T18:08:00",
-        "last_date": "2026-11-10T19:16:04",
-        "total_span_days": 1389,
+        "last_date": "2026-11-11T18:59:28",
+        "total_span_days": 1390,
         "coverage_pct": 131.4,
         "n_gaps": 2,
         "largest_gap_days": 10,
@@ -467,11 +467,11 @@
         "gaps_top5": []
       },
       "so2": {
-        "n_observations": 3293,
+        "n_observations": 3294,
         "first_date": "2020-01-01T18:31:02",
-        "last_date": "2026-11-10T19:16:04",
-        "total_span_days": 2505,
-        "coverage_pct": 131.5,
+        "last_date": "2026-11-11T18:59:28",
+        "total_span_days": 2506,
+        "coverage_pct": 131.4,
         "n_gaps": 3,
         "largest_gap_days": 10,
         "gaps_top5": [
