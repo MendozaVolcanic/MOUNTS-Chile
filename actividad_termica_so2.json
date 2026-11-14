@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T06:42:20.414688+00:00",
+ "generated_at": "2026-11-14T18:17:46.208125+00:00",
  "source": "mounts-project.com (Valade et al. 2019, TU Berlin / GFZ)",
  "notes": {
   "swir": "N de pixeles termicos anomalos sobre Sentinel-2 L1C TOA (Massimetti+ 2020). NO son watts radiantes: no es comparable con el VRP de MIROVA.",
@@ -16,10 +16,10 @@
      "unit": "S2Pix",
      "sensor": "Sentinel-2",
      "description": "N pixeles termicos anomalos (Massimetti+ 2020)",
-     "n_points": 475,
+     "n_points": 476,
      "n_detections": 220,
      "first_date": "2020-01-04T14:37:21",
-     "last_date": "2026-11-08T14:37:41",
+     "last_date": "2026-11-13T14:36:49",
      "data": [
       {
        "date": "2020-01-04T14:37:21",
@@ -2870,6 +2870,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/lascar/2026/lascar_20261108T143741_B12B11B8A_nir.png"
+      },
+      {
+       "date": "2026-11-13T14:36:49",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/lascar/2026/lascar_20261113T143649_B12B11B8A_nir.png"
       }
      ]
     },
@@ -2878,10 +2884,10 @@
      "unit": "tons",
      "sensor": "Sentinel-5P",
      "description": "SO2 columnar integrado AOI, perfil PBL TROPOMI",
-     "n_points": 2521,
+     "n_points": 2522,
      "n_detections": 152,
      "first_date": "2020-01-01T18:36:02",
-     "last_date": "2026-11-12T18:44:28",
+     "last_date": "2026-11-13T18:24:28",
      "data": [
       {
        "date": "2020-01-01T18:36:02",
@@ -18008,6 +18014,12 @@
        "value": 0.1,
        "detection": false,
        "image_path": "data_mounts/lascar/2026/lascar_20261112T1844_SO2_PBL.png"
+      },
+      {
+       "date": "2026-11-13T18:24:28",
+       "value": 0.1,
+       "detection": false,
+       "image_path": "data_mounts/lascar/2026/lascar_20261113T1824_SO2_PBL.png"
       }
      ]
     }
