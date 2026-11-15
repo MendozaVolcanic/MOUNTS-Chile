@@ -3,13 +3,12 @@
 <head>
     
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
@@ -17,10 +16,11 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_0d966d85bc65eebd5c4351bb764e4ea2 {
+                #map_c3663c19f64a79cac7e3d447f2a5e65e {
                     position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
+                    width: 100.0vw;
+                    height: 100.0vh;
+
                     left: 0.0%;
                     top: 0.0%;
                 }
@@ -35,14 +35,218 @@
             }
             </style>
 
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
+            <style>/*
+ * Glyphicons Halflings -- the icon font used by folium's default Awesome Markers
+ * (Icon(prefix="glyphicon")). Extracted from Bootstrap 3's glyphicon rules only.
+ *
+ * folium previously loaded netdna's bootstrap-glyphicons.css, which despite its
+ * name ships a full Bootstrap-3 base stylesheet (normalize reset + global `body`
+ * rules) that leaked onto the host page (GH-1820). This file provides just the
+ * @font-face and .glyphicon/.glyphicon-* rules needed for the markers, with no
+ * page-wide side effects. Font files are served from jsDelivr.
+ */
+@font-face{font-family:'Glyphicons Halflings';src:url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.eot');src:url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.woff') format('woff'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;}
+.glyphicon-asterisk:before{content:"\2a";}
+.glyphicon-plus:before{content:"\2b";}
+.glyphicon-euro:before{content:"\20ac";}
+.glyphicon-minus:before{content:"\2212";}
+.glyphicon-cloud:before{content:"\2601";}
+.glyphicon-envelope:before{content:"\2709";}
+.glyphicon-pencil:before{content:"\270f";}
+.glyphicon-glass:before{content:"\e001";}
+.glyphicon-music:before{content:"\e002";}
+.glyphicon-search:before{content:"\e003";}
+.glyphicon-heart:before{content:"\e005";}
+.glyphicon-star:before{content:"\e006";}
+.glyphicon-star-empty:before{content:"\e007";}
+.glyphicon-user:before{content:"\e008";}
+.glyphicon-film:before{content:"\e009";}
+.glyphicon-th-large:before{content:"\e010";}
+.glyphicon-th:before{content:"\e011";}
+.glyphicon-th-list:before{content:"\e012";}
+.glyphicon-ok:before{content:"\e013";}
+.glyphicon-remove:before{content:"\e014";}
+.glyphicon-zoom-in:before{content:"\e015";}
+.glyphicon-zoom-out:before{content:"\e016";}
+.glyphicon-off:before{content:"\e017";}
+.glyphicon-signal:before{content:"\e018";}
+.glyphicon-cog:before{content:"\e019";}
+.glyphicon-trash:before{content:"\e020";}
+.glyphicon-home:before{content:"\e021";}
+.glyphicon-file:before{content:"\e022";}
+.glyphicon-time:before{content:"\e023";}
+.glyphicon-road:before{content:"\e024";}
+.glyphicon-download-alt:before{content:"\e025";}
+.glyphicon-download:before{content:"\e026";}
+.glyphicon-upload:before{content:"\e027";}
+.glyphicon-inbox:before{content:"\e028";}
+.glyphicon-play-circle:before{content:"\e029";}
+.glyphicon-repeat:before{content:"\e030";}
+.glyphicon-refresh:before{content:"\e031";}
+.glyphicon-list-alt:before{content:"\e032";}
+.glyphicon-flag:before{content:"\e034";}
+.glyphicon-headphones:before{content:"\e035";}
+.glyphicon-volume-off:before{content:"\e036";}
+.glyphicon-volume-down:before{content:"\e037";}
+.glyphicon-volume-up:before{content:"\e038";}
+.glyphicon-qrcode:before{content:"\e039";}
+.glyphicon-barcode:before{content:"\e040";}
+.glyphicon-tag:before{content:"\e041";}
+.glyphicon-tags:before{content:"\e042";}
+.glyphicon-book:before{content:"\e043";}
+.glyphicon-print:before{content:"\e045";}
+.glyphicon-font:before{content:"\e047";}
+.glyphicon-bold:before{content:"\e048";}
+.glyphicon-italic:before{content:"\e049";}
+.glyphicon-text-height:before{content:"\e050";}
+.glyphicon-text-width:before{content:"\e051";}
+.glyphicon-align-left:before{content:"\e052";}
+.glyphicon-align-center:before{content:"\e053";}
+.glyphicon-align-right:before{content:"\e054";}
+.glyphicon-align-justify:before{content:"\e055";}
+.glyphicon-list:before{content:"\e056";}
+.glyphicon-indent-left:before{content:"\e057";}
+.glyphicon-indent-right:before{content:"\e058";}
+.glyphicon-facetime-video:before{content:"\e059";}
+.glyphicon-picture:before{content:"\e060";}
+.glyphicon-map-marker:before{content:"\e062";}
+.glyphicon-adjust:before{content:"\e063";}
+.glyphicon-tint:before{content:"\e064";}
+.glyphicon-edit:before{content:"\e065";}
+.glyphicon-share:before{content:"\e066";}
+.glyphicon-check:before{content:"\e067";}
+.glyphicon-move:before{content:"\e068";}
+.glyphicon-step-backward:before{content:"\e069";}
+.glyphicon-fast-backward:before{content:"\e070";}
+.glyphicon-backward:before{content:"\e071";}
+.glyphicon-play:before{content:"\e072";}
+.glyphicon-pause:before{content:"\e073";}
+.glyphicon-stop:before{content:"\e074";}
+.glyphicon-forward:before{content:"\e075";}
+.glyphicon-fast-forward:before{content:"\e076";}
+.glyphicon-step-forward:before{content:"\e077";}
+.glyphicon-eject:before{content:"\e078";}
+.glyphicon-chevron-left:before{content:"\e079";}
+.glyphicon-chevron-right:before{content:"\e080";}
+.glyphicon-plus-sign:before{content:"\e081";}
+.glyphicon-minus-sign:before{content:"\e082";}
+.glyphicon-remove-sign:before{content:"\e083";}
+.glyphicon-ok-sign:before{content:"\e084";}
+.glyphicon-question-sign:before{content:"\e085";}
+.glyphicon-info-sign:before{content:"\e086";}
+.glyphicon-screenshot:before{content:"\e087";}
+.glyphicon-remove-circle:before{content:"\e088";}
+.glyphicon-ok-circle:before{content:"\e089";}
+.glyphicon-ban-circle:before{content:"\e090";}
+.glyphicon-arrow-left:before{content:"\e091";}
+.glyphicon-arrow-right:before{content:"\e092";}
+.glyphicon-arrow-up:before{content:"\e093";}
+.glyphicon-arrow-down:before{content:"\e094";}
+.glyphicon-share-alt:before{content:"\e095";}
+.glyphicon-resize-full:before{content:"\e096";}
+.glyphicon-resize-small:before{content:"\e097";}
+.glyphicon-exclamation-sign:before{content:"\e101";}
+.glyphicon-gift:before{content:"\e102";}
+.glyphicon-leaf:before{content:"\e103";}
+.glyphicon-eye-open:before{content:"\e105";}
+.glyphicon-eye-close:before{content:"\e106";}
+.glyphicon-warning-sign:before{content:"\e107";}
+.glyphicon-plane:before{content:"\e108";}
+.glyphicon-random:before{content:"\e110";}
+.glyphicon-comment:before{content:"\e111";}
+.glyphicon-magnet:before{content:"\e112";}
+.glyphicon-chevron-up:before{content:"\e113";}
+.glyphicon-chevron-down:before{content:"\e114";}
+.glyphicon-retweet:before{content:"\e115";}
+.glyphicon-shopping-cart:before{content:"\e116";}
+.glyphicon-folder-close:before{content:"\e117";}
+.glyphicon-folder-open:before{content:"\e118";}
+.glyphicon-resize-vertical:before{content:"\e119";}
+.glyphicon-resize-horizontal:before{content:"\e120";}
+.glyphicon-hdd:before{content:"\e121";}
+.glyphicon-bullhorn:before{content:"\e122";}
+.glyphicon-certificate:before{content:"\e124";}
+.glyphicon-thumbs-up:before{content:"\e125";}
+.glyphicon-thumbs-down:before{content:"\e126";}
+.glyphicon-hand-right:before{content:"\e127";}
+.glyphicon-hand-left:before{content:"\e128";}
+.glyphicon-hand-up:before{content:"\e129";}
+.glyphicon-hand-down:before{content:"\e130";}
+.glyphicon-circle-arrow-right:before{content:"\e131";}
+.glyphicon-circle-arrow-left:before{content:"\e132";}
+.glyphicon-circle-arrow-up:before{content:"\e133";}
+.glyphicon-circle-arrow-down:before{content:"\e134";}
+.glyphicon-globe:before{content:"\e135";}
+.glyphicon-tasks:before{content:"\e137";}
+.glyphicon-filter:before{content:"\e138";}
+.glyphicon-fullscreen:before{content:"\e140";}
+.glyphicon-dashboard:before{content:"\e141";}
+.glyphicon-heart-empty:before{content:"\e143";}
+.glyphicon-link:before{content:"\e144";}
+.glyphicon-phone:before{content:"\e145";}
+.glyphicon-usd:before{content:"\e148";}
+.glyphicon-gbp:before{content:"\e149";}
+.glyphicon-sort:before{content:"\e150";}
+.glyphicon-sort-by-alphabet:before{content:"\e151";}
+.glyphicon-sort-by-alphabet-alt:before{content:"\e152";}
+.glyphicon-sort-by-order:before{content:"\e153";}
+.glyphicon-sort-by-order-alt:before{content:"\e154";}
+.glyphicon-sort-by-attributes:before{content:"\e155";}
+.glyphicon-sort-by-attributes-alt:before{content:"\e156";}
+.glyphicon-unchecked:before{content:"\e157";}
+.glyphicon-expand:before{content:"\e158";}
+.glyphicon-collapse-down:before{content:"\e159";}
+.glyphicon-collapse-up:before{content:"\e160";}
+.glyphicon-log-in:before{content:"\e161";}
+.glyphicon-flash:before{content:"\e162";}
+.glyphicon-log-out:before{content:"\e163";}
+.glyphicon-new-window:before{content:"\e164";}
+.glyphicon-record:before{content:"\e165";}
+.glyphicon-save:before{content:"\e166";}
+.glyphicon-open:before{content:"\e167";}
+.glyphicon-saved:before{content:"\e168";}
+.glyphicon-import:before{content:"\e169";}
+.glyphicon-export:before{content:"\e170";}
+.glyphicon-send:before{content:"\e171";}
+.glyphicon-floppy-disk:before{content:"\e172";}
+.glyphicon-floppy-saved:before{content:"\e173";}
+.glyphicon-floppy-remove:before{content:"\e174";}
+.glyphicon-floppy-save:before{content:"\e175";}
+.glyphicon-floppy-open:before{content:"\e176";}
+.glyphicon-credit-card:before{content:"\e177";}
+.glyphicon-transfer:before{content:"\e178";}
+.glyphicon-cutlery:before{content:"\e179";}
+.glyphicon-header:before{content:"\e180";}
+.glyphicon-compressed:before{content:"\e181";}
+.glyphicon-earphone:before{content:"\e182";}
+.glyphicon-phone-alt:before{content:"\e183";}
+.glyphicon-tower:before{content:"\e184";}
+.glyphicon-stats:before{content:"\e185";}
+.glyphicon-sd-video:before{content:"\e186";}
+.glyphicon-hd-video:before{content:"\e187";}
+.glyphicon-subtitles:before{content:"\e188";}
+.glyphicon-sound-stereo:before{content:"\e189";}
+.glyphicon-sound-dolby:before{content:"\e190";}
+.glyphicon-sound-5-1:before{content:"\e191";}
+.glyphicon-sound-6-1:before{content:"\e192";}
+.glyphicon-sound-7-1:before{content:"\e193";}
+.glyphicon-copyright-mark:before{content:"\e194";}
+.glyphicon-registration-mark:before{content:"\e195";}
+.glyphicon-cloud-download:before{content:"\e197";}
+.glyphicon-cloud-upload:before{content:"\e198";}
+.glyphicon-tree-conifer:before{content:"\e199";}
+.glyphicon-tree-deciduous:before{content:"\e200";}
+.glyphicon-briefcase:before{content:"\1f4bc";}
+.glyphicon-calendar:before{content:"\1f4c5";}
+.glyphicon-pushpin:before{content:"\1f4cc";}
+.glyphicon-paperclip:before{content:"\1f4ce";}
+.glyphicon-camera:before{content:"\1f4f7";}
+.glyphicon-lock:before{content:"\1f512";}
+.glyphicon-bell:before{content:"\1f514";}
+.glyphicon-bookmark:before{content:"\1f516";}
+.glyphicon-fire:before{content:"\1f525";}
+.glyphicon-wrench:before{content:"\1f527";}
+</style>
 
             <script>
                 L_NO_TOUCH = false;
@@ -54,14 +258,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_0d966d85bc65eebd5c4351bb764e4ea2" ></div>
+            <div class="folium-map" id="map_c3663c19f64a79cac7e3d447f2a5e65e" ></div>
         
 </body>
 <script>
     
     
-            var map_0d966d85bc65eebd5c4351bb764e4ea2 = L.map(
-                "map_0d966d85bc65eebd5c4351bb764e4ea2",
+            var map_c3663c19f64a79cac7e3d447f2a5e65e = L.map(
+                "map_c3663c19f64a79cac7e3d447f2a5e65e",
                 {
                     center: [-33.0, -70.5],
                     crs: L.CRS.EPSG3857,
@@ -78,7 +282,7 @@
 
         
     
-            var tile_layer_60127da4187b2a0e7f4adb6472ead2cb = L.tileLayer(
+            var tile_layer_aa5568056849f3bd448cb1d3c0cbc062 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -95,33 +299,33 @@
             );
         
     
-            tile_layer_60127da4187b2a0e7f4adb6472ead2cb.addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            tile_layer_aa5568056849f3bd448cb1d3c0cbc062.addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var circle_marker_6e2104db7769a961ac4e66a12658619b = L.circleMarker(
+            var circle_marker_99e03335b47fa23dd21779309b688418 = L.circleMarker(
                 [-23.37, -67.73],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 2}
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-        var popup_b309fcaf82d681161345f79077f175e9 = L.popup({
+        var popup_eaa58a00b38d2c76d73b361ec0effd91 = L.popup({
   "maxWidth": 240,
 });
 
         
             
-                var html_014d941fb2390ababa8ca18b1d3e689a = $(`<div id="html_014d941fb2390ababa8ca18b1d3e689a" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Lascar</b><br><span style="color:#666;font-size:11px">Smithsonian 355100</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (+0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">162684 (-4.7σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-lascar" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
-                popup_b309fcaf82d681161345f79077f175e9.setContent(html_014d941fb2390ababa8ca18b1d3e689a);
+                var html_17037d757309b781fe8bea2bd1994741 = $(`<div id="html_17037d757309b781fe8bea2bd1994741" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Lascar</b><br><span style="color:#666;font-size:11px">Smithsonian 355100</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (+0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">162684 (-4.7σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-lascar" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
+                popup_eaa58a00b38d2c76d73b361ec0effd91.setContent(html_17037d757309b781fe8bea2bd1994741);
             
         
 
-        circle_marker_6e2104db7769a961ac4e66a12658619b.bindPopup(popup_b309fcaf82d681161345f79077f175e9)
+        circle_marker_99e03335b47fa23dd21779309b688418.bindPopup(popup_eaa58a00b38d2c76d73b361ec0effd91)
         ;
 
         
     
     
-            circle_marker_6e2104db7769a961ac4e66a12658619b.bindTooltip(
+            circle_marker_99e03335b47fa23dd21779309b688418.bindTooltip(
                 `<div>
                      Lascar — green
                  </div>`,
@@ -131,46 +335,55 @@
             );
         
     
-            var marker_87493d0cb26fd7452e9d421c6fb37307 = L.marker(
+            var marker_ae69362f542907bad07bb5f7c0d81c89 = L.marker(
                 [-23.37, -67.73],
                 {
 }
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var div_icon_d369c4864acefda40a5ef784480755d2 = L.divIcon({
+            var div_icon_c7bf730b75a1b95da7bbe04a6d1c14f0 = L.divIcon({
   "html": "\u003cdiv style=\"font-size:10px;color:#fff;text-shadow:1px 1px 2px #000;transform:translate(12px,-6px);white-space:nowrap;font-weight:600\"\u003eLascar\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_87493d0cb26fd7452e9d421c6fb37307.setIcon(div_icon_d369c4864acefda40a5ef784480755d2);
+                {
+                    const element = marker_ae69362f542907bad07bb5f7c0d81c89.getElement();
+                    if (element) {
+                        element.style.width = "";
+                        element.style.height = "";
+                        element.style.marginLeft = "";
+                        element.style.marginTop = "";
+                    }
+                }
+                marker_ae69362f542907bad07bb5f7c0d81c89.setIcon(div_icon_c7bf730b75a1b95da7bbe04a6d1c14f0);
             
     
-            var circle_marker_54efafabba448c982a9b6dc5bce6841c = L.circleMarker(
+            var circle_marker_e50f4ed172fa86be34a8310808a98f8b = L.circleMarker(
                 [-35.24, -70.57],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 2}
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-        var popup_572a00f798b6e3d2407b1760be6f01a9 = L.popup({
+        var popup_711d53fd4eb685f439fa8981cf5b3c9a = L.popup({
   "maxWidth": 240,
 });
 
         
             
-                var html_6cc3946e0664f31ca28241dab724e63e = $(`<div id="html_6cc3946e0664f31ca28241dab724e63e" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Planchon-Peteroa</b><br><span style="color:#666;font-size:11px">Smithsonian 357040</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0.000163 (-0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">487248 (-0.5σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-planchon-peteroa" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
-                popup_572a00f798b6e3d2407b1760be6f01a9.setContent(html_6cc3946e0664f31ca28241dab724e63e);
+                var html_d5fe9b6fd36eb482cc86bbd08e4eddea = $(`<div id="html_d5fe9b6fd36eb482cc86bbd08e4eddea" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Planchon-Peteroa</b><br><span style="color:#666;font-size:11px">Smithsonian 357040</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0.000163 (-0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">487248 (-0.5σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-planchon-peteroa" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
+                popup_711d53fd4eb685f439fa8981cf5b3c9a.setContent(html_d5fe9b6fd36eb482cc86bbd08e4eddea);
             
         
 
-        circle_marker_54efafabba448c982a9b6dc5bce6841c.bindPopup(popup_572a00f798b6e3d2407b1760be6f01a9)
+        circle_marker_e50f4ed172fa86be34a8310808a98f8b.bindPopup(popup_711d53fd4eb685f439fa8981cf5b3c9a)
         ;
 
         
     
     
-            circle_marker_54efafabba448c982a9b6dc5bce6841c.bindTooltip(
+            circle_marker_e50f4ed172fa86be34a8310808a98f8b.bindTooltip(
                 `<div>
                      Planchon-Peteroa — green
                  </div>`,
@@ -180,46 +393,55 @@
             );
         
     
-            var marker_3319cc4866cf7b7a39b5fb434fce3808 = L.marker(
+            var marker_e578e9aa35fa8fd3558be63761a9adfe = L.marker(
                 [-35.24, -70.57],
                 {
 }
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var div_icon_282b8e8403287fd4980db5c92f537739 = L.divIcon({
+            var div_icon_0e087d064bd50c53a8215e71bcd76c72 = L.divIcon({
   "html": "\u003cdiv style=\"font-size:10px;color:#fff;text-shadow:1px 1px 2px #000;transform:translate(12px,-6px);white-space:nowrap;font-weight:600\"\u003ePlanchon-Peteroa\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_3319cc4866cf7b7a39b5fb434fce3808.setIcon(div_icon_282b8e8403287fd4980db5c92f537739);
+                {
+                    const element = marker_e578e9aa35fa8fd3558be63761a9adfe.getElement();
+                    if (element) {
+                        element.style.width = "";
+                        element.style.height = "";
+                        element.style.marginLeft = "";
+                        element.style.marginTop = "";
+                    }
+                }
+                marker_e578e9aa35fa8fd3558be63761a9adfe.setIcon(div_icon_0e087d064bd50c53a8215e71bcd76c72);
             
     
-            var circle_marker_3e3da799d3b4dc7a6fe229b26e7de76e = L.circleMarker(
+            var circle_marker_7fb9428b804d10fa3bd284c297492713 = L.circleMarker(
                 [-36.1, -70.49],
                 {"bubblingMouseEvents": true, "color": "#3a3f47", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3a3f47", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 2}
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-        var popup_04a390de118e3395a26a6d62ce60a503 = L.popup({
+        var popup_b051af7ea05f26441ef2557bd2761bb8 = L.popup({
   "maxWidth": 240,
 });
 
         
             
-                var html_3f190d478f1c8ddf1b3120ed79eb82dd = $(`<div id="html_3f190d478f1c8ddf1b3120ed79eb82dd" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Laguna del Maule</b><br><span style="color:#666;font-size:11px">Smithsonian 357061</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#888">—</td></tr><tr><td>SO2</td><td style="color:#888">—</td></tr><tr><td>DEF</td><td style="color:#888">—</td></tr><tr><td>COH</td><td style="color:#888">—</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-laguna-del-maule" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
-                popup_04a390de118e3395a26a6d62ce60a503.setContent(html_3f190d478f1c8ddf1b3120ed79eb82dd);
+                var html_f02f11af660f26b98d3d0d32eff9f8d1 = $(`<div id="html_f02f11af660f26b98d3d0d32eff9f8d1" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Laguna del Maule</b><br><span style="color:#666;font-size:11px">Smithsonian 357061</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#888">—</td></tr><tr><td>SO2</td><td style="color:#888">—</td></tr><tr><td>DEF</td><td style="color:#888">—</td></tr><tr><td>COH</td><td style="color:#888">—</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-laguna-del-maule" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
+                popup_b051af7ea05f26441ef2557bd2761bb8.setContent(html_f02f11af660f26b98d3d0d32eff9f8d1);
             
         
 
-        circle_marker_3e3da799d3b4dc7a6fe229b26e7de76e.bindPopup(popup_04a390de118e3395a26a6d62ce60a503)
+        circle_marker_7fb9428b804d10fa3bd284c297492713.bindPopup(popup_b051af7ea05f26441ef2557bd2761bb8)
         ;
 
         
     
     
-            circle_marker_3e3da799d3b4dc7a6fe229b26e7de76e.bindTooltip(
+            circle_marker_7fb9428b804d10fa3bd284c297492713.bindTooltip(
                 `<div>
                      Laguna del Maule — gray
                  </div>`,
@@ -229,46 +451,55 @@
             );
         
     
-            var marker_503c6f1c44eb9343dd1ead7a211c1bfb = L.marker(
+            var marker_8cd64ffd4fc5fd7514f57873c9fdd16b = L.marker(
                 [-36.1, -70.49],
                 {
 }
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var div_icon_293d70d686a42774ec843efda7c50529 = L.divIcon({
+            var div_icon_3e2cf803fcda9c4689c97ff931ac7d3b = L.divIcon({
   "html": "\u003cdiv style=\"font-size:10px;color:#fff;text-shadow:1px 1px 2px #000;transform:translate(12px,-6px);white-space:nowrap;font-weight:600\"\u003eLaguna del Maule\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_503c6f1c44eb9343dd1ead7a211c1bfb.setIcon(div_icon_293d70d686a42774ec843efda7c50529);
+                {
+                    const element = marker_8cd64ffd4fc5fd7514f57873c9fdd16b.getElement();
+                    if (element) {
+                        element.style.width = "";
+                        element.style.height = "";
+                        element.style.marginLeft = "";
+                        element.style.marginTop = "";
+                    }
+                }
+                marker_8cd64ffd4fc5fd7514f57873c9fdd16b.setIcon(div_icon_3e2cf803fcda9c4689c97ff931ac7d3b);
             
     
-            var circle_marker_15a9f4fbc6c9e651a3723585e77d1e66 = L.circleMarker(
+            var circle_marker_0d525d6dbe84bd803df2157003546d5d = L.circleMarker(
                 [-36.86, -71.38],
                 {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 2}
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-        var popup_c3823aa423b17af7b1ef2e270723fd58 = L.popup({
+        var popup_0d2f498c1a6ba64801be48b46f3b7f3e = L.popup({
   "maxWidth": 240,
 });
 
         
             
-                var html_b6762a0eec3b101f06a5cf6aa8e5c729 = $(`<div id="html_b6762a0eec3b101f06a5cf6aa8e5c729" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Nevados de Chillan</b><br><span style="color:#666;font-size:11px">Smithsonian 357070</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#e74c3c;font-family:monospace">25.0 (+49.8σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (+0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">474929 (-1.0σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-nevados-de-chillan" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
-                popup_c3823aa423b17af7b1ef2e270723fd58.setContent(html_b6762a0eec3b101f06a5cf6aa8e5c729);
+                var html_99e19626be21377ecf17bc728b7c0369 = $(`<div id="html_99e19626be21377ecf17bc728b7c0369" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Nevados de Chillan</b><br><span style="color:#666;font-size:11px">Smithsonian 357070</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#e74c3c;font-family:monospace">25.0 (+49.8σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (+0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">474929 (-1.0σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-nevados-de-chillan" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
+                popup_0d2f498c1a6ba64801be48b46f3b7f3e.setContent(html_99e19626be21377ecf17bc728b7c0369);
             
         
 
-        circle_marker_15a9f4fbc6c9e651a3723585e77d1e66.bindPopup(popup_c3823aa423b17af7b1ef2e270723fd58)
+        circle_marker_0d525d6dbe84bd803df2157003546d5d.bindPopup(popup_0d2f498c1a6ba64801be48b46f3b7f3e)
         ;
 
         
     
     
-            circle_marker_15a9f4fbc6c9e651a3723585e77d1e66.bindTooltip(
+            circle_marker_0d525d6dbe84bd803df2157003546d5d.bindTooltip(
                 `<div>
                      Nevados de Chillan — red
                  </div>`,
@@ -278,46 +509,55 @@
             );
         
     
-            var marker_a784f4dbf89e84ac4171abdfb3351668 = L.marker(
+            var marker_ea031bb72da9a94a1323d6ffc919f725 = L.marker(
                 [-36.86, -71.38],
                 {
 }
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var div_icon_16a6ef8e7b2292c03639b3ade6e182e9 = L.divIcon({
+            var div_icon_09a6a6512b87cd62e4ab6513a4021b9b = L.divIcon({
   "html": "\u003cdiv style=\"font-size:10px;color:#fff;text-shadow:1px 1px 2px #000;transform:translate(12px,-6px);white-space:nowrap;font-weight:600\"\u003eNevados de Chillan\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_a784f4dbf89e84ac4171abdfb3351668.setIcon(div_icon_16a6ef8e7b2292c03639b3ade6e182e9);
+                {
+                    const element = marker_ea031bb72da9a94a1323d6ffc919f725.getElement();
+                    if (element) {
+                        element.style.width = "";
+                        element.style.height = "";
+                        element.style.marginLeft = "";
+                        element.style.marginTop = "";
+                    }
+                }
+                marker_ea031bb72da9a94a1323d6ffc919f725.setIcon(div_icon_09a6a6512b87cd62e4ab6513a4021b9b);
             
     
-            var circle_marker_16af4f7e09cd2a2dad2eca32ee7a00a0 = L.circleMarker(
+            var circle_marker_264bab5620e99673756f00ede7e46dcc = L.circleMarker(
                 [-37.85, -71.17],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 2}
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-        var popup_cb886ba075446f51c8c7431baed36335 = L.popup({
+        var popup_cf87e363c037756140be2a9b8b2bfd73 = L.popup({
   "maxWidth": 240,
 });
 
         
             
-                var html_6e0c296de8d5fa23a0fd4e0619e368c5 = $(`<div id="html_6e0c296de8d5fa23a0fd4e0619e368c5" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Copahue</b><br><span style="color:#666;font-size:11px">Smithsonian 357090</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (-0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">425969 (-1.9σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-copahue" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
-                popup_cb886ba075446f51c8c7431baed36335.setContent(html_6e0c296de8d5fa23a0fd4e0619e368c5);
+                var html_144a49f0ba6592130dea2e971961faf3 = $(`<div id="html_144a49f0ba6592130dea2e971961faf3" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Copahue</b><br><span style="color:#666;font-size:11px">Smithsonian 357090</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (-0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">425969 (-1.9σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-copahue" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
+                popup_cf87e363c037756140be2a9b8b2bfd73.setContent(html_144a49f0ba6592130dea2e971961faf3);
             
         
 
-        circle_marker_16af4f7e09cd2a2dad2eca32ee7a00a0.bindPopup(popup_cb886ba075446f51c8c7431baed36335)
+        circle_marker_264bab5620e99673756f00ede7e46dcc.bindPopup(popup_cf87e363c037756140be2a9b8b2bfd73)
         ;
 
         
     
     
-            circle_marker_16af4f7e09cd2a2dad2eca32ee7a00a0.bindTooltip(
+            circle_marker_264bab5620e99673756f00ede7e46dcc.bindTooltip(
                 `<div>
                      Copahue — green
                  </div>`,
@@ -327,46 +567,55 @@
             );
         
     
-            var marker_256bbc53bba16b1a6ff2265692937f08 = L.marker(
+            var marker_ed7a051676217eaf7c541d48ed517263 = L.marker(
                 [-37.85, -71.17],
                 {
 }
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var div_icon_18f1fde3258a71fb1a7061f60bb46162 = L.divIcon({
+            var div_icon_7c73c536e4dc61b8471ef11784efba21 = L.divIcon({
   "html": "\u003cdiv style=\"font-size:10px;color:#fff;text-shadow:1px 1px 2px #000;transform:translate(12px,-6px);white-space:nowrap;font-weight:600\"\u003eCopahue\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_256bbc53bba16b1a6ff2265692937f08.setIcon(div_icon_18f1fde3258a71fb1a7061f60bb46162);
+                {
+                    const element = marker_ed7a051676217eaf7c541d48ed517263.getElement();
+                    if (element) {
+                        element.style.width = "";
+                        element.style.height = "";
+                        element.style.marginLeft = "";
+                        element.style.marginTop = "";
+                    }
+                }
+                marker_ed7a051676217eaf7c541d48ed517263.setIcon(div_icon_7c73c536e4dc61b8471ef11784efba21);
             
     
-            var circle_marker_b066f89750c19d55473ac2dc47f1c13e = L.circleMarker(
+            var circle_marker_8b2ecacceb29814c3dfc08de3c40d43e = L.circleMarker(
                 [-38.69, -71.73],
                 {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 2}
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-        var popup_de282011dab053cd47a00aaff6f72570 = L.popup({
+        var popup_ad35473d3331834e757865b100dbeb15 = L.popup({
   "maxWidth": 240,
 });
 
         
             
-                var html_8258237d8934470c2b0637fafe27576d = $(`<div id="html_8258237d8934470c2b0637fafe27576d" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Llaima</b><br><span style="color:#666;font-size:11px">Smithsonian 357110</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (+0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">373636 (-2.7σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-llaima" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
-                popup_de282011dab053cd47a00aaff6f72570.setContent(html_8258237d8934470c2b0637fafe27576d);
+                var html_ee07c6e9054283f49af48deb66089d8e = $(`<div id="html_ee07c6e9054283f49af48deb66089d8e" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Llaima</b><br><span style="color:#666;font-size:11px">Smithsonian 357110</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#2ecc71;font-family:monospace">0 (+0.0σ)</td></tr><tr><td>COH</td><td style="color:#2ecc71;font-family:monospace">373636 (-2.7σ)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-llaima" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
+                popup_ad35473d3331834e757865b100dbeb15.setContent(html_ee07c6e9054283f49af48deb66089d8e);
             
         
 
-        circle_marker_b066f89750c19d55473ac2dc47f1c13e.bindPopup(popup_de282011dab053cd47a00aaff6f72570)
+        circle_marker_8b2ecacceb29814c3dfc08de3c40d43e.bindPopup(popup_ad35473d3331834e757865b100dbeb15)
         ;
 
         
     
     
-            circle_marker_b066f89750c19d55473ac2dc47f1c13e.bindTooltip(
+            circle_marker_8b2ecacceb29814c3dfc08de3c40d43e.bindTooltip(
                 `<div>
                      Llaima — green
                  </div>`,
@@ -376,46 +625,55 @@
             );
         
     
-            var marker_37f17b52e62748488308c7830b4a37d3 = L.marker(
+            var marker_6b8a7613c73769f7f89cbd6e6abd65e3 = L.marker(
                 [-38.69, -71.73],
                 {
 }
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var div_icon_399fcb8db0a99512504b20957daf316d = L.divIcon({
+            var div_icon_f80d61f38528a0b1b9f94f17f2a829a3 = L.divIcon({
   "html": "\u003cdiv style=\"font-size:10px;color:#fff;text-shadow:1px 1px 2px #000;transform:translate(12px,-6px);white-space:nowrap;font-weight:600\"\u003eLlaima\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_37f17b52e62748488308c7830b4a37d3.setIcon(div_icon_399fcb8db0a99512504b20957daf316d);
+                {
+                    const element = marker_6b8a7613c73769f7f89cbd6e6abd65e3.getElement();
+                    if (element) {
+                        element.style.width = "";
+                        element.style.height = "";
+                        element.style.marginLeft = "";
+                        element.style.marginTop = "";
+                    }
+                }
+                marker_6b8a7613c73769f7f89cbd6e6abd65e3.setIcon(div_icon_f80d61f38528a0b1b9f94f17f2a829a3);
             
     
-            var circle_marker_a596deab8545efaf412bd7de72856473 = L.circleMarker(
+            var circle_marker_307f4cfde9b6a18f30b3b9f04f11557f = L.circleMarker(
                 [-39.42, -71.93],
                 {"bubblingMouseEvents": true, "color": "#e67e22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e67e22", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 2}
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-        var popup_1cd2b91c2f03b68b2f8cd738cb1cc187 = L.popup({
+        var popup_a7a79bcbee7ee91b488fd95071ce3e82 = L.popup({
   "maxWidth": 240,
 });
 
         
             
-                var html_08308c440026ded68ef8bf1e10a250a3 = $(`<div id="html_08308c440026ded68ef8bf1e10a250a3" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Villarrica</b><br><span style="color:#666;font-size:11px">Smithsonian 357120</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#e67e22;font-family:monospace">3.00 (+5.8σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#7f8c8d;font-family:monospace">0.000319 (—)</td></tr><tr><td>COH</td><td style="color:#7f8c8d;font-family:monospace">530905 (—)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-villarrica" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
-                popup_1cd2b91c2f03b68b2f8cd738cb1cc187.setContent(html_08308c440026ded68ef8bf1e10a250a3);
+                var html_3da018e778beb81bdc6163e7e0a0f403 = $(`<div id="html_3da018e778beb81bdc6163e7e0a0f403" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui;font-size:12px;min-width:180px"><b style="font-size:13px;color:#222">Villarrica</b><br><span style="color:#666;font-size:11px">Smithsonian 357120</span><table style="margin-top:6px;font-size:11px;border-collapse:collapse"><tr><td>SWIR</td><td style="color:#e67e22;font-family:monospace">3.00 (+5.8σ)</td></tr><tr><td>SO2</td><td style="color:#2ecc71;font-family:monospace">0.1 (+0.0σ)</td></tr><tr><td>DEF</td><td style="color:#7f8c8d;font-family:monospace">0.000319 (—)</td></tr><tr><td>COH</td><td style="color:#7f8c8d;font-family:monospace">530905 (—)</td></tr></table><a href="https://mendozavolcanic.github.io/MOUNTS-Chile/#v-villarrica" style="font-size:11px;color:#0969da">Ver detalle &rarr;</a></div></div>`)[0];
+                popup_a7a79bcbee7ee91b488fd95071ce3e82.setContent(html_3da018e778beb81bdc6163e7e0a0f403);
             
         
 
-        circle_marker_a596deab8545efaf412bd7de72856473.bindPopup(popup_1cd2b91c2f03b68b2f8cd738cb1cc187)
+        circle_marker_307f4cfde9b6a18f30b3b9f04f11557f.bindPopup(popup_a7a79bcbee7ee91b488fd95071ce3e82)
         ;
 
         
     
     
-            circle_marker_a596deab8545efaf412bd7de72856473.bindTooltip(
+            circle_marker_307f4cfde9b6a18f30b3b9f04f11557f.bindTooltip(
                 `<div>
                      Villarrica — orange
                  </div>`,
@@ -425,20 +683,29 @@
             );
         
     
-            var marker_0087df9ef847d741e165c4e58d892ecf = L.marker(
+            var marker_bf8d9e88c00c30b518c9cb4b9e315e9f = L.marker(
                 [-39.42, -71.93],
                 {
 }
-            ).addTo(map_0d966d85bc65eebd5c4351bb764e4ea2);
+            ).addTo(map_c3663c19f64a79cac7e3d447f2a5e65e);
         
     
-            var div_icon_c8236cacba469f269ac224dfc05b0093 = L.divIcon({
+            var div_icon_3b4b78428f71540f9e93813953bb6e00 = L.divIcon({
   "html": "\u003cdiv style=\"font-size:10px;color:#fff;text-shadow:1px 1px 2px #000;transform:translate(12px,-6px);white-space:nowrap;font-weight:600\"\u003eVillarrica\u003c/div\u003e",
   "className": "empty",
 });
         
     
-                marker_0087df9ef847d741e165c4e58d892ecf.setIcon(div_icon_c8236cacba469f269ac224dfc05b0093);
+                {
+                    const element = marker_bf8d9e88c00c30b518c9cb4b9e315e9f.getElement();
+                    if (element) {
+                        element.style.width = "";
+                        element.style.height = "";
+                        element.style.marginLeft = "";
+                        element.style.marginTop = "";
+                    }
+                }
+                marker_bf8d9e88c00c30b518c9cb4b9e315e9f.setIcon(div_icon_3b4b78428f71540f9e93813953bb6e00);
             
 </script>
 </html>
