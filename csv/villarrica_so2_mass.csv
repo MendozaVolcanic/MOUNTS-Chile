@@ -3298,3 +3298,4 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-11-13T19:59:29,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20261113T1959_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20261113T1959_SO2_PBL.png
 2026-11-14T17:59:28,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20261114T1759_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20261114T1759_SO2_PBL.png
 2026-11-14T19:39:28,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20261114T1939_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20261114T1939_SO2_PBL.png
+2026-11-15T19:24:29,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/villarrica/2026/villarrica_20261115T1924_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/villarrica/2026/villarrica_20261115T1924_SO2_PBL.png
