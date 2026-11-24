@@ -1,9 +1,21 @@
 {
-  "generated_at": "2026-11-23T07:54:44.223695+00:00",
+  "generated_at": "2026-11-24T00:03:42.522531+00:00",
   "lookback_days": 30,
   "threshold": 3.0,
-  "count": 8,
+  "count": 10,
   "alerts": [
+    {
+      "date": "2026-11-23T14:36:49",
+      "value": 37.0,
+      "baseline": 0.1,
+      "zscore": 73.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Nevados de Chillan",
+      "volcano_key": "nevados-de-chillan",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
     {
       "date": "2026-10-29T14:37:41",
       "value": 30.0,
@@ -53,18 +65,6 @@
       "unit": "S2Pix"
     },
     {
-      "date": "2026-10-24T14:37:49",
-      "value": 20.0,
-      "baseline": 0.1,
-      "zscore": 39.8,
-      "run_length": 1,
-      "persistent": false,
-      "volcano": "Nevados de Chillan",
-      "volcano_key": "nevados-de-chillan",
-      "product": "SWIR",
-      "unit": "S2Pix"
-    },
-    {
       "date": "2026-10-31T14:27:19",
       "value": 18.0,
       "baseline": 0.1,
@@ -97,6 +97,30 @@
       "persistent": false,
       "volcano": "Villarrica",
       "volcano_key": "villarrica",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-11-23T14:36:49",
+      "value": 2.0,
+      "baseline": 0.1,
+      "zscore": 3.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Lascar",
+      "volcano_key": "lascar",
+      "product": "SWIR",
+      "unit": "S2Pix"
+    },
+    {
+      "date": "2026-11-23T14:36:49",
+      "value": 2.0,
+      "baseline": 0.1,
+      "zscore": 3.8,
+      "run_length": 1,
+      "persistent": false,
+      "volcano": "Copahue",
+      "volcano_key": "copahue",
       "product": "SWIR",
       "unit": "S2Pix"
     }
