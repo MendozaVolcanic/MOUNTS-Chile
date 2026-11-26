@@ -35,10 +35,10 @@
     "old_date": "20261120"
   },
   "villarrica": {
-    "new": "latest/villarrica/diff/new_villarrica_20261123T143649_B12B11B8A_nir.png",
-    "old": "latest/villarrica/diff/old_villarrica_20261120T143751_B12B11B8A_nir.png",
+    "new": "latest/villarrica/diff/new_villarrica_20261125T142751_B12B11B8A_nir.png",
+    "old": "latest/villarrica/diff/old_villarrica_20261123T143649_B12B11B8A_nir.png",
     "diff": "latest/villarrica/diff/diff.png",
-    "new_date": "20261123",
-    "old_date": "20261120"
+    "new_date": "20261125",
+    "old_date": "20261123"
   }
 }
