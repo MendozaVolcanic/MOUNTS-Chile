@@ -2532,8 +2532,10 @@ date,value,detection,unit,product,sensor,image_path,image_url
 2026-11-21T19:14:28,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261121T1914_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261121T1914_SO2_PBL.png
 2026-11-22T18:54:28,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261122T1854_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261122T1854_SO2_PBL.png
 2026-11-23T18:34:29,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261123T1834_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261123T1834_SO2_PBL.png
+2026-11-23T18:39:28,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261123T1839_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261123T1839_SO2_PBL.png
 2026-11-24T18:15:46,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261124T1815_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261124T1815_SO2_PBL.png
 2026-11-24T18:20:46,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261124T1820_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261124T1820_SO2_PBL.png
 2026-11-25T18:00:46,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261125T1800_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261125T1800_SO2_PBL.png
 2026-11-26T17:40:46,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261126T1740_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261126T1740_SO2_PBL.png
 2026-11-26T19:20:46,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261126T1920_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261126T1920_SO2_PBL.png
+2026-11-27T19:00:46,0.1,false,tons,so2_mass,Sentinel-5P,data_mounts/lascar/2026/lascar_20261127T1900_SO2_PBL.png,http://www.mounts-project.com/static/data_mounts/lascar/2026/lascar_20261127T1900_SO2_PBL.png

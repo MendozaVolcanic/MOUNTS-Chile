@@ -3995,11 +3995,13 @@
         "2026-11-21T19:14:28",
         "2026-11-22T18:54:28",
         "2026-11-23T18:34:29",
+        "2026-11-23T18:39:28",
         "2026-11-24T18:15:46",
         "2026-11-24T18:20:46",
         "2026-11-25T18:00:46",
         "2026-11-26T17:40:46",
-        "2026-11-26T19:20:46"
+        "2026-11-26T19:20:46",
+        "2026-11-27T19:00:46"
       ],
       "y": [
         0.1,
@@ -6351,6 +6353,8 @@
         0.1,
         0.1,
         17.3,
+        0.1,
+        0.1,
         0.1,
         0.1,
         0.1,
@@ -9075,19 +9079,21 @@
         "data_mounts/lascar/2026/lascar_20261121T1914_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20261122T1854_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20261123T1834_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20261123T1839_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20261124T1815_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20261124T1820_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20261125T1800_SO2_PBL.png",
         "data_mounts/lascar/2026/lascar_20261126T1740_SO2_PBL.png",
-        "data_mounts/lascar/2026/lascar_20261126T1920_SO2_PBL.png"
+        "data_mounts/lascar/2026/lascar_20261126T1920_SO2_PBL.png",
+        "data_mounts/lascar/2026/lascar_20261127T1900_SO2_PBL.png"
       ]
     },
     {
       "name": "tbar_so2",
       "x": [
-        "2026-11-26T19:20:46",
-        "2026-11-26T19:20:46",
-        "2026-11-26T19:20:46"
+        "2026-11-27T19:00:46",
+        "2026-11-27T19:00:46",
+        "2026-11-27T19:00:46"
       ],
       "y": [
         0.1,
@@ -11557,5 +11563,5 @@
       ]
     }
   ],
-  "fetched_at": "2026-11-27T21:26:40.617733+00:00"
+  "fetched_at": "2026-11-28T08:00:31.656245+00:00"
 }
